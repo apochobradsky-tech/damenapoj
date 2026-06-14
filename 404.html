@@ -454,6 +454,33 @@
       gap: 12px;
     }
 
+    .az-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .az-filter button {
+      min-width: 38px;
+      min-height: 38px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 900;
+    }
+
+    .az-filter button.active,
+    .az-filter button:hover {
+      border-color: rgba(45, 156, 255, 0.45);
+      background: #eef8ff;
+      box-shadow: 0 0 0 3px rgba(45, 156, 255, 0.1);
+    }
+
     .extra-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -698,6 +725,22 @@
       border-bottom: 0;
     }
 
+    .compare-verdict {
+      margin: 0 0 14px;
+      padding: 12px;
+      border: 1px solid #cfeadf;
+      border-radius: var(--radius);
+      background: #f0fbf5;
+      color: #214c35;
+      font-weight: 850;
+    }
+
+    .compare-winner {
+      color: #126941;
+      background: #e9f8f0;
+      font-weight: 950;
+    }
+
     .sugar-story {
       display: grid;
       gap: 12px;
@@ -937,7 +980,14 @@
         <div class="container">
           <h2>Rozcestník nápojů</h2>
           <p class="note" id="knownCount">Déenko už zná přes 30 nápojů.</p>
+          <div class="az-filter" id="cardAzFilter" aria-label="Filtrovat nápoje podle počátečního písmene"></div>
+          <div class="search-card">
+            <div class="search-row">
+              <input id="cardFilterInput" type="text" aria-label="Filtrovat nápoje v rozcestníku" placeholder="Filtrovat nápoje podle názvu...">
+            </div>
+          </div>
           <div class="compare-grid" id="compareGrid"></div>
+          <button class="button secondary" id="cardShowMore" type="button">Zobrazit další nápoje</button>
         </div>
       </section>
 
@@ -1095,6 +1145,9 @@
       const button = document.getElementById('searchButton');
       const suggestions = document.getElementById('suggestions');
       const compareGrid = document.getElementById('compareGrid');
+      const cardAzFilter = document.getElementById('cardAzFilter');
+      const cardFilterInput = document.getElementById('cardFilterInput');
+      const cardShowMore = document.getElementById('cardShowMore');
       const rankingsGrid = document.getElementById('rankingsGrid');
       const categoryGrid = document.getElementById('categoryGrid');
       const eckoSearch = document.getElementById('eckoSearch');
@@ -1107,6 +1160,10 @@
       let modelProducts = [];
       let activeProduct = null;
       let eckoEntries = [];
+      let cardFilterQuery = '';
+      let cardActiveLetter = '';
+      let cardVisibleLimit = 30;
+      let lastCardCategorySlug = null;
 
       function byId(items) {
         return Object.fromEntries(items.map((item) => [item.id, item]));
@@ -1214,11 +1271,14 @@
       }
 
       function appPath(path = '/') {
-        if (window.location.protocol === 'file:') return path;
+        if (window.location.protocol === 'file:') return `#${path}`;
         return `${APP_BASE_PATH}${path}`;
       }
 
       function routePathname() {
+        if (window.location.protocol === 'file:' && window.location.hash.startsWith('#/')) {
+          return window.location.hash.slice(1);
+        }
         const pathname = window.location.pathname;
         if (APP_BASE_PATH && pathname === APP_BASE_PATH) return '/';
         if (APP_BASE_PATH && pathname.startsWith(`${APP_BASE_PATH}/`)) {
@@ -1498,12 +1558,20 @@
         });
       }
 
+      function eckoProductMeta(product) {
+        return [
+          product.categoryLabel || product.type || '',
+          `${product.sugar} g cukru`,
+          `${product.caffeine} mg kofeinu`
+        ].filter(Boolean).join(' · ');
+      }
+
       function renderEckoDatabaseDetail(name) {
         const detailName = name.replace(/^E\d+\s+/, '');
         const detail = ingredientDetails(detailName);
         const products = productsForEcko(name).slice(0, 12);
         const productsHtml = products.length
-          ? `<p><strong>Vyskytuje se v nápojích:</strong></p><ul class="simple-list">${products.map((product) => `<li>${productLink(product)}<br><span class="note">${escapeHtml(product.categoryLabel)} · ${product.sugar} g cukru · ${product.caffeine} mg kofeinu</span></li>`).join('')}</ul>`
+          ? `<p><strong>Vyskytuje se v nápojích:</strong></p><ul class="simple-list">${products.map((product) => `<li>${productLink(product)}<br><span class="note">${escapeHtml(eckoProductMeta(product))}</span></li>`).join('')}</ul>`
           : '<p><strong>Vyskytuje se v nápojích:</strong><br>V aktuální databázi není u této látky přiřazený nápoj.</p>';
         eckoDatabaseDetail.innerHTML = `
           <h4>${escapeHtml(detail.title)}</h4>
@@ -2019,6 +2087,11 @@
       }
 
       function findProduct(query) {
+        const normalized = normalizeText(query.trim());
+        const exactBrandMatches = modelProducts.filter((product) => normalizeText(product.brand) === normalized);
+        if (exactBrandMatches.length) {
+          return exactBrandMatches.find((product) => normalizeText(product.name).includes('original')) || exactBrandMatches[0];
+        }
         return searchProducts(query)[0] || modelProducts[0];
       }
 
@@ -2068,25 +2141,52 @@
         return sweeteners.length ? sweeteners.join(', ') : 'bez sladidel v datech';
       }
 
+      function hasCompareSweeteners(product) {
+        return sweetenerText(product) !== 'bez sladidel v datech';
+      }
+
       function compareValue(product, key) {
         return numericValue(product?.scores?.[key]?.[0]);
+      }
+
+      function betterProduct(first, second, valueA, valueB, mode) {
+        if (valueA === valueB) return null;
+        if (mode === 'lower') return valueA < valueB ? first : second;
+        if (mode === 'higher') return valueA > valueB ? first : second;
+        return null;
+      }
+
+      function compareCellClass(product, winner) {
+        return winner && product.id === winner.id ? ' class="compare-winner"' : '';
       }
 
       function renderComparison() {
         if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
         const first = modelProducts.find((product) => product.id === compareDrinkA.value) || modelProducts[0];
         const second = modelProducts.find((product) => product.id === compareDrinkB.value) || modelProducts[1] || modelProducts[0];
+        const sweetenerWinner = hasCompareSweeteners(first) === hasCompareSweeteners(second)
+          ? null
+          : hasCompareSweeteners(first) ? second : first;
         const rows = [
-          ['Cukr v balení', `${first.sugar} g`, `${second.sugar} g`],
-          ['Kalorie v balení', `${first.calories} kcal`, `${second.calories} kcal`],
-          ['Kofein v balení', `${first.caffeine} mg`, `${second.caffeine} mg`],
-          ['Sladidla', sweetenerText(first), sweetenerText(second)],
-          ['Hubnutí', `${compareValue(first, 'weight')}/10`, `${compareValue(second, 'weight')}/10`],
-          ['Děti', `${compareValue(first, 'kids')}/10`, `${compareValue(second, 'kids')}/10`],
-          ['Energie', `${compareValue(first, 'energy')}/10`, `${compareValue(second, 'energy')}/10`],
-          ['Sport', `${compareValue(first, 'sport')}/10`, `${compareValue(second, 'sport')}/10`]
+          { label: 'Cukr v balení', valueA: `${first.sugar} g`, valueB: `${second.sugar} g`, winner: betterProduct(first, second, numericValue(first.sugar), numericValue(second.sugar), 'lower') },
+          { label: 'Kalorie v balení', valueA: `${first.calories} kcal`, valueB: `${second.calories} kcal`, winner: betterProduct(first, second, numericValue(first.calories), numericValue(second.calories), 'lower') },
+          { label: 'Kofein v balení', valueA: `${first.caffeine} mg`, valueB: `${second.caffeine} mg`, winner: betterProduct(first, second, numericValue(first.caffeine), numericValue(second.caffeine), 'lower') },
+          { label: 'Sladidla', valueA: sweetenerText(first), valueB: sweetenerText(second), winner: sweetenerWinner },
+          { label: 'Hubnutí', valueA: `${compareValue(first, 'weight')}/10`, valueB: `${compareValue(second, 'weight')}/10`, winner: betterProduct(first, second, compareValue(first, 'weight'), compareValue(second, 'weight'), 'higher') },
+          { label: 'Děti', valueA: `${compareValue(first, 'kids')}/10`, valueB: `${compareValue(second, 'kids')}/10`, winner: betterProduct(first, second, compareValue(first, 'kids'), compareValue(second, 'kids'), 'higher') },
+          { label: 'Energie', valueA: `${compareValue(first, 'energy')}/10`, valueB: `${compareValue(second, 'energy')}/10`, winner: betterProduct(first, second, compareValue(first, 'energy'), compareValue(second, 'energy'), 'higher') },
+          { label: 'Sport', valueA: `${compareValue(first, 'sport')}/10`, valueB: `${compareValue(second, 'sport')}/10`, winner: betterProduct(first, second, compareValue(first, 'sport'), compareValue(second, 'sport'), 'higher') }
         ];
+        const weightWinner = betterProduct(first, second, compareValue(first, 'weight'), compareValue(second, 'weight'), 'higher');
+        const sugarWinner = betterProduct(first, second, numericValue(first.sugar), numericValue(second.sugar), 'lower');
+        const energyWinner = betterProduct(first, second, compareValue(first, 'energy'), compareValue(second, 'energy'), 'higher');
+        const winnerText = (label, winner) => `${label}: ${winner ? winner.name : 'vyrovnané'}`;
         comparisonResult.innerHTML = `
+          <p class="compare-verdict">${[
+            winnerText('Lepší volba pro hubnutí', weightWinner),
+            winnerText('Méně cukru', sugarWinner),
+            winnerText('Více energie', energyWinner)
+          ].join(' · ')}</p>
           <table class="compare-table">
             <thead>
               <tr>
@@ -2096,7 +2196,7 @@
               </tr>
             </thead>
             <tbody>
-              ${rows.map(([label, valueA, valueB]) => `<tr><th>${escapeHtml(label)}</th><td>${escapeHtml(valueA)}</td><td>${escapeHtml(valueB)}</td></tr>`).join('')}
+              ${rows.map(({ label, valueA, valueB, winner }) => `<tr><th>${escapeHtml(label)}</th><td${compareCellClass(first, winner)}>${escapeHtml(valueA)}</td><td${compareCellClass(second, winner)}>${escapeHtml(valueB)}</td></tr>`).join('')}
             </tbody>
           </table>
         `;
@@ -2328,7 +2428,15 @@
       function renderCards() {
         document.getElementById('knownCount').textContent = `Déenko už zná ${modelProducts.length} nápojů.`;
         const categorySlug = categoryFromPath();
+        if (categorySlug !== lastCardCategorySlug) {
+          cardVisibleLimit = 30;
+          cardFilterQuery = '';
+          cardActiveLetter = '';
+          if (cardFilterInput) cardFilterInput.value = '';
+          lastCardCategorySlug = categorySlug;
+        }
         const visibleProducts = categorySlug ? productsForCategorySlug(categorySlug) : modelProducts;
+        const normalizedFilter = normalizeText(cardFilterQuery.trim());
         const featuredNames = [
           'Coca-Cola Original CZ',
           'Coca-Cola Zero CZ',
@@ -2349,19 +2457,51 @@
           const rankB = featuredRank.has(b.name) ? featuredRank.get(b.name) : Number.POSITIVE_INFINITY;
           return rankA - rankB || a.name.localeCompare(b.name, 'cs');
         });
+        const filteredProducts = normalizedFilter
+          ? orderedProducts.filter((product) => normalizeText(product.name).startsWith(normalizedFilter))
+          : cardActiveLetter
+            ? orderedProducts.filter((product) => normalizeText(product.name).startsWith(normalizeText(cardActiveLetter)))
+          : orderedProducts;
+        renderAzFilter();
+        const displayedProducts = filteredProducts.slice(0, cardVisibleLimit);
         if (categorySlug) updateCategorySeo(categorySlug, visibleProducts);
-        compareGrid.innerHTML = orderedProducts.map((product) => `
+        compareGrid.innerHTML = displayedProducts.length ? displayedProducts.map((product) => `
           <article class="mini-card ${product.id === activeProduct.id ? 'active' : ''}" data-id="${product.id}">
             <strong>${product.name}</strong>
             <small>${product.sugar} g cukru · ${product.caffeine} mg kofeinu</small>
           </article>
-        `).join('');
+        `).join('') : '<div class="source-item">Žádný nápoj nezačíná tímto textem.</div>';
+        if (cardShowMore) {
+          const hasMore = filteredProducts.length > displayedProducts.length;
+          cardShowMore.hidden = !hasMore;
+          cardShowMore.textContent = `Zobrazit další nápoje`;
+        }
         compareGrid.querySelectorAll('.mini-card').forEach((card) => {
           card.addEventListener('click', () => {
             const product = modelProducts.find((item) => item.id === card.dataset.id);
             if (!product) return;
             render(product, { pushUrl: true });
             document.getElementById('productDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        });
+      }
+
+      function renderAzFilter() {
+        if (!cardAzFilter) return;
+        const letters = ['Vše', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'V', 'Z'];
+        const textFilterActive = cardFilterQuery.trim().length > 0;
+        cardAzFilter.innerHTML = letters.map((letter) => {
+          const value = letter === 'Vše' ? '' : letter;
+          const active = !textFilterActive && cardActiveLetter === value;
+          return `<button class="${active ? 'active' : ''}" type="button" data-letter="${escapeHtml(value)}">${letter}</button>`;
+        }).join('');
+        cardAzFilter.querySelectorAll('[data-letter]').forEach((button) => {
+          button.addEventListener('click', () => {
+            cardActiveLetter = button.dataset.letter;
+            cardFilterQuery = '';
+            cardVisibleLimit = 30;
+            if (cardFilterInput) cardFilterInput.value = '';
+            renderCards();
           });
         });
       }
@@ -2419,6 +2559,16 @@
         eckoClear.addEventListener('click', () => {
           eckoSearch.value = '';
           renderEckoList('');
+        });
+        cardFilterInput.addEventListener('input', () => {
+          cardFilterQuery = cardFilterInput.value;
+          if (cardFilterQuery.trim()) cardActiveLetter = '';
+          cardVisibleLimit = 30;
+          renderCards();
+        });
+        cardShowMore.addEventListener('click', () => {
+          cardVisibleLimit += 30;
+          renderCards();
         });
         renderSearchResults(modelProducts);
       }
