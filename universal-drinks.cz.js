@@ -1,0 +1,8461 @@
+﻿window.DAMENAPOJ_DATA = {
+    "schema":  "damenapoj-univerzalni-napoj-v1",
+    "poznamka":  "MVP/prototypová a zaokrouhlená data pro český trh. Hodnoty je potřeba před produkcí ověřit podle aktuálních českých etiket.",
+    "napoje":  [
+                   {
+                       "nazev":  "7UP CZ",
+                       "vyrobce":  "7UP",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  29,
+                       "cukr_na_100_ml":  7,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Sprite CZ",
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Actimel Original CZ",
+                       "vyrobce":  "Actimel",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Birell Světlé Nealko CZ",
+                                              "Cool Nealko Radler Citron CZ",
+                                              "Flora ProActiv Drink CZ",
+                                              "Kinderini Kakao CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Albert Cola Original CZ",
+                       "vyrobce":  "Albert",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Dr Pepper CZ",
+                                              "Freeway Cola CZ",
+                                              "K-Classic Cola CZ",
+                                              "Penny Cola Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Coca-Cola Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Aquila Jemně Perlivá CZ",
+                       "vyrobce":  "Aquila",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ",
+                                              "Dobrá voda Neperlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Aquila Neperlivá CZ",
+                       "vyrobce":  "Aquila",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ",
+                                              "Dobrá voda Neperlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Arizona Green Tea CZ",
+                       "vyrobce":  "Arizona",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Club-Mate CZ",
+                                              "FuzeTea Broskev CZ",
+                                              "Kombucha Ginger CZ",
+                                              "Kombucha Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Big Shock Original CZ",
+                       "vyrobce":  "Big Shock",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Big Shock Exotic CZ",
+                                              "Big Shock Watermelon CZ",
+                                              "Monster Energy Original CZ",
+                                              "Monster Juiced Monarch CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Big Shock Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Big Shock Zero CZ",
+                       "vyrobce":  "Big Shock",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  9,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Hell Zero CZ",
+                                              "Monster Lewis Hamilton Zero CZ",
+                                              "Monster Ultra White CZ",
+                                              "Rockstar Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Birell Malina Limetka CZ",
+                       "vyrobce":  "Birell",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ",
+                                              "Jupík Multivitamin CZ",
+                                              "Kubík Waterrr Jahoda CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Birell Pomelo Grep CZ",
+                       "vyrobce":  "Birell",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  25,
+                       "cukr_na_100_ml":  4.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  2,
+                       "energie":  2,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Birell Světlé Nealko CZ",
+                                              "Fanta Orange CZ",
+                                              "Actimel Original CZ",
+                                              "Cool Nealko Radler Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Birell Světlé Nealko CZ",
+                       "vyrobce":  "Birell",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Birell Pomelo Grep CZ",
+                                              "Actimel Original CZ",
+                                              "Cool Nealko Radler Citron CZ",
+                                              "Flora ProActiv Drink CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Cappy Pomeranč CZ",
+                       "vyrobce":  "Cappy",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  43,
+                       "cukr_na_100_ml":  9,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  4,
+                       "deti":  6,
+                       "energie":  3,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Cappy Jablko CZ",
+                                              "Relax 100% Jablko CZ",
+                                              "Relax 100% Pomeranč CZ",
+                                              "Tesco 100% Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Capri-Sun Multivitamin CZ",
+                       "vyrobce":  "Capri-Sun",
+                       "objem":  200,
+                       "kalorie_na_100_ml":  27,
+                       "cukr_na_100_ml":  6.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ",
+                                              "Jupík Multivitamin CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Club-Mate CZ",
+                       "vyrobce":  "Club-Mate",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Arizona Green Tea CZ",
+                                              "FuzeTea Broskev CZ",
+                                              "Kombucha Ginger CZ",
+                                              "Kombucha Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Coca-Cola Original CZ",
+                       "vyrobce":  "Coca-Cola",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.6,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ",
+                                              "Freeway Cola CZ",
+                                              "K-Classic Cola CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Coca-Cola Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Coca-Cola Zero CZ",
+                       "vyrobce":  "Coca-Cola",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  0.3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  9.6,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Dr Pepper Zero CZ",
+                                              "Freeway Cola Zero CZ",
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Cool Nealko Radler Citron CZ",
+                       "vyrobce":  "Cool",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ",
+                                              "Flora ProActiv Drink CZ",
+                                              "Kinderini Kakao CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Dobrá voda Neperlivá CZ",
+                       "vyrobce":  "Dobrá voda",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ",
+                                              "Dobrá voda Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Dobrá voda Jahoda CZ",
+                       "vyrobce":  "Dobrá voda",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Neperlivá CZ",
+                                              "Dobrá voda Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Dr Pepper CZ",
+                       "vyrobce":  "Dr Pepper",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Albert Cola Original CZ",
+                                              "Freeway Cola CZ",
+                                              "K-Classic Cola CZ",
+                                              "Penny Cola Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Dr Pepper Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Evian CZ",
+                       "vyrobce":  "Evian",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Fanta Orange CZ",
+                       "vyrobce":  "Fanta",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  19,
+                       "cukr_na_100_ml":  4.6,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Shokata CZ",
+                                              "Birell Pomelo Grep CZ",
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Fanta Shokata CZ",
+                       "vyrobce":  "Fanta",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Orange CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ",
+                                              "Malinovka Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Fanta Zero Orange CZ",
+                       "vyrobce":  "Fanta",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kinley Tonic Zero CZ",
+                                              "Kofola Bez cukru CZ",
+                                              "Pepsi Max Lime CZ",
+                                              "Royal Crown Cola No Sugar CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Fatra Přírodní CZ",
+                       "vyrobce":  "Fatra",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  8,
+                       "hubnuti":  10,
+                       "deti":  7,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Flora ProActiv Drink CZ",
+                       "vyrobce":  "Flora",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ",
+                                              "Cool Nealko Radler Citron CZ",
+                                              "Kinderini Kakao CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "FuzeTea Broskev CZ",
+                       "vyrobce":  "FuzeTea",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "FuzeTea Citron CZ",
+                                              "Arizona Green Tea CZ",
+                                              "Club-Mate CZ",
+                                              "Kombucha Ginger CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Gatorade Orange CZ",
+                       "vyrobce":  "Gatorade",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Gatorade Cool Blue CZ",
+                                              "Isostar Hydrate \u0026 Perform CZ",
+                                              "Oshee Vitamin Water CZ",
+                                              "Powerade Mountain Blast CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Granini Multivitamin CZ",
+                       "vyrobce":  "Granini",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Granini Pomeranč CZ",
+                                              "Birell Malina Limetka CZ",
+                                              "Hello Pomeranč CZ",
+                                              "Jupík Multivitamin CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Hanácká kyselka CZ",
+                       "vyrobce":  "Hanácká kyselka",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Hell Classic CZ",
+                       "vyrobce":  "Hell",
+                       "objem":  250,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  3,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Red Bull Energy Drink CZ",
+                                              "Amper Energy Original CZ",
+                                              "Big Shock Exotic CZ",
+                                              "Big Shock Watermelon CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Hell Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Hello Pomeranč CZ",
+                       "vyrobce":  "Hello",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Hello Jablko CZ",
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Jupík Multivitamin CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Hell Zero CZ",
+                       "vyrobce":  "Hell",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  9,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Big Shock Zero CZ",
+                                              "Monster Lewis Hamilton Zero CZ",
+                                              "Monster Ultra White CZ",
+                                              "Rockstar Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Isostar Hydrate \u0026 Perform CZ",
+                       "vyrobce":  "Isostar",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Gatorade Orange CZ",
+                                              "Oshee Vitamin Water CZ",
+                                              "Powerade Mountain Blast CZ",
+                                              "Vitamin Well Defence CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Jupík Aqua Jahoda CZ",
+                       "vyrobce":  "Jupík",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  17,
+                       "cukr_na_100_ml":  4,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Jupík Multivitamin CZ",
+                                              "Toma Jablko CZ",
+                                              "Toma Pomeranč CZ",
+                                              "Birell Malina Limetka CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Jupík Multivitamin CZ",
+                       "vyrobce":  "Jupík",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Jupík Aqua Jahoda CZ",
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "K-Classic Cola CZ",
+                       "vyrobce":  "K-Classic",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ",
+                                              "Freeway Cola CZ",
+                                              "Penny Cola Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Coca-Cola Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kinderini Kakao CZ",
+                       "vyrobce":  "Kinderini",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ",
+                                              "Cool Nealko Radler Citron CZ",
+                                              "Flora ProActiv Drink CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kinley Tonic CZ",
+                       "vyrobce":  "Kinley",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  35,
+                       "cukr_na_100_ml":  8.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "tonic",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  3,
+                       "deti":  3,
+                       "energie":  1,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Tonic má výraznou chuť a často i cukr. Hodí se spíš občas, ne jako hlavní pití během dne.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "River Tonic Original CZ",
+                                              "Schweppes Tonic CZ",
+                                              "Mirinda Orange CZ",
+                                              "Fanta Shokata CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kinley Tonic Zero CZ",
+                       "vyrobce":  "Kinley",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Zero Orange CZ",
+                                              "Kofola Bez cukru CZ",
+                                              "Pepsi Max Lime CZ",
+                                              "Royal Crown Cola No Sugar CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kofola Bez cukru CZ",
+                       "vyrobce":  "Kofola",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kofola Bez cukru Citron CZ",
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ",
+                                              "Pepsi Max Lime CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kofola Citrus CZ",
+                       "vyrobce":  "Kofola",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kofola Meruňková CZ",
+                                              "Fanta Shokata CZ",
+                                              "Malinovka Original CZ",
+                                              "Sanpellegrino Aranciata CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kofola Meruňková CZ",
+                       "vyrobce":  "Kofola",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kofola Citrus CZ",
+                                              "Fanta Shokata CZ",
+                                              "Malinovka Original CZ",
+                                              "Sanpellegrino Aranciata CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kofola Original CZ",
+                       "vyrobce":  "Kofola",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  32,
+                       "cukr_na_100_ml":  8,
+                       "kofein_na_100_ml":  4.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  3,
+                       "deti":  4,
+                       "energie":  3,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Clever Cola Original CZ",
+                                              "Pepsi Lime CZ",
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Kofola Bez cukru Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kombucha Ginger CZ",
+                       "vyrobce":  "Loklok",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kombucha Original CZ",
+                                              "Arizona Green Tea CZ",
+                                              "Club-Mate CZ",
+                                              "FuzeTea Broskev CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kombucha Original CZ",
+                       "vyrobce":  "Loklok",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kombucha Ginger CZ",
+                                              "Arizona Green Tea CZ",
+                                              "Club-Mate CZ",
+                                              "FuzeTea Broskev CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Korunní Jemně Perlivá CZ",
+                       "vyrobce":  "Korunní",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Korunní Neperlivá CZ",
+                                              "Korunní Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kubík Waterrr Jahoda CZ",
+                       "vyrobce":  "Kubík",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ",
+                                              "Jupík Multivitamin CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kunín Kakao CZ",
+                       "vyrobce":  "Kunín",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ",
+                                              "Cool Nealko Radler Citron CZ",
+                                              "Flora ProActiv Drink CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Lipton Ice Tea Lemon CZ",
+                       "vyrobce":  "Lipton",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Lipton Green Ice Tea CZ",
+                                              "Lipton Ice Tea Peach CZ",
+                                              "Arizona Green Tea CZ",
+                                              "Club-Mate CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Magnesia Neperlivá CZ",
+                       "vyrobce":  "Magnesia",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Magnesia Jemně Perlivá CZ",
+                                              "Magnesia Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Malinovka Original CZ",
+                       "vyrobce":  "Malinovka",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ",
+                                              "Sanpellegrino Aranciata CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Bílé hrozno CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Imuno Citron CZ",
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Esence Citron CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Esence Limetka CZ",
+                                              "Mattoni Esence Okurka CZ",
+                                              "Mattoni Esence Pomeranč CZ",
+                                              "Mattoni Grand CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Grand CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Esence Citron CZ",
+                                              "Mattoni Esence Limetka CZ",
+                                              "Mattoni Esence Okurka CZ",
+                                              "Mattoni Esence Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Imuno Citron CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Bílé hrozno CZ",
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Jemně Perlivá CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Esence Citron CZ",
+                                              "Mattoni Esence Limetka CZ",
+                                              "Mattoni Esence Okurka CZ",
+                                              "Mattoni Esence Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Perlivá CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Esence Citron CZ",
+                                              "Mattoni Esence Limetka CZ",
+                                              "Mattoni Esence Okurka CZ",
+                                              "Mattoni Esence Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mirinda Orange CZ",
+                       "vyrobce":  "Mirinda",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  40,
+                       "cukr_na_100_ml":  9.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  3,
+                       "deti":  4,
+                       "energie":  2,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ",
+                                              "Malinovka Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Energy Original CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Juiced Monarch CZ",
+                                              "Monster Mango Loco CZ",
+                                              "Monster Pacific Punch CZ",
+                                              "Big Shock Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Monster Lewis Hamilton Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Juiced Monarch CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Energy Original CZ",
+                                              "Monster Mango Loco CZ",
+                                              "Monster Pacific Punch CZ",
+                                              "Big Shock Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Monster Lewis Hamilton Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Lewis Hamilton Zero CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  9,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Ultra White CZ",
+                                              "Monster Ultra Fiesta Mango CZ",
+                                              "Monster Ultra Gold CZ",
+                                              "Monster Ultra Paradise CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Mango Loco CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Energy Original CZ",
+                                              "Monster Juiced Monarch CZ",
+                                              "Monster Pacific Punch CZ",
+                                              "Big Shock Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Monster Lewis Hamilton Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Pacific Punch CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Energy Original CZ",
+                                              "Monster Juiced Monarch CZ",
+                                              "Monster Mango Loco CZ",
+                                              "Big Shock Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Monster Lewis Hamilton Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Ultra White CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  2,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  9,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Lewis Hamilton Zero CZ",
+                                              "Monster Ultra Fiesta Mango CZ",
+                                              "Monster Ultra Gold CZ",
+                                              "Monster Ultra Paradise CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Natura Lehce Perlivá CZ",
+                       "vyrobce":  "Natura",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Natura Neperlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Natura Neperlivá CZ",
+                       "vyrobce":  "Natura",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Natura Lehce Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Nescafé Azera Nitro CZ",
+                       "vyrobce":  "Nescafé",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ",
+                                              "Cool Nealko Radler Citron CZ",
+                                              "Flora ProActiv Drink CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Nestea Citron CZ",
+                       "vyrobce":  "Nestea",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  19,
+                       "cukr_na_100_ml":  4.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Nestea Broskev CZ",
+                                              "FuzeTea Citron CZ",
+                                              "Lipton Green Ice Tea CZ",
+                                              "Lipton Ice Tea Peach CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Nutrend Carnitine Activity CZ",
+                       "vyrobce":  "Nutrend",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  9,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Nutrend Isodrinx Grapefruit CZ",
+                                              "Isostar Zero Hydrate Lemon CZ",
+                                              "Powerade Zero Mountain Blast CZ",
+                                              "Prime Hydration Ice Pop CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Ondrášovka Jemně Perlivá CZ",
+                       "vyrobce":  "Ondrášovka",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Ondrášovka Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Oshee Vitamin Water CZ",
+                       "vyrobce":  "Oshee",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Oshee Isotonic Lemon CZ",
+                                              "Gatorade Orange CZ",
+                                              "Isostar Hydrate \u0026 Perform CZ",
+                                              "Powerade Mountain Blast CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Penny Cola Original CZ",
+                       "vyrobce":  "Penny",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ",
+                                              "Freeway Cola CZ",
+                                              "K-Classic Cola CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Coca-Cola Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Pepsi Max CZ",
+                       "vyrobce":  "Pepsi",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  12,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Pepsi Max Lime CZ",
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ",
+                                              "Kofola Bez cukru CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Pepsi Original CZ",
+                       "vyrobce":  "Pepsi",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  43,
+                       "cukr_na_100_ml":  10.7,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Pepsi Lime CZ",
+                                              "Coca-Cola Original CZ",
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Pepsi Max CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Perrier Original CZ",
+                       "vyrobce":  "Perrier",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Pfanner Ice Tea Peach CZ",
+                       "vyrobce":  "Pfanner",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Arizona Green Tea CZ",
+                                              "Club-Mate CZ",
+                                              "FuzeTea Broskev CZ",
+                                              "Kombucha Ginger CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Powerade Mountain Blast CZ",
+                       "vyrobce":  "Powerade",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Powerade Blood Orange CZ",
+                                              "Gatorade Orange CZ",
+                                              "Isostar Hydrate \u0026 Perform CZ",
+                                              "Oshee Vitamin Water CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Prime Hydration Ice Pop CZ",
+                       "vyrobce":  "Prime",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Isostar Zero Hydrate Lemon CZ",
+                                              "Powerade Zero Mountain Blast CZ",
+                                              "Nutrend Isodrinx Grapefruit CZ",
+                                              "Oshee Isotonic Lemon CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "ProBrands Protein Coffee CZ",
+                       "vyrobce":  "ProBrands",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ",
+                                              "Cool Nealko Radler Citron CZ",
+                                              "Flora ProActiv Drink CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Radenska Original CZ",
+                       "vyrobce":  "Radenska",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rajec Mateřídouška CZ",
+                       "vyrobce":  "Rajec",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  9,
+                       "hubnuti":  10,
+                       "deti":  8,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Rajec Jemně Perlivá CZ",
+                                              "Rajec Neperlivá CZ",
+                                              "Rajec Pampeliška CZ",
+                                              "Rajec Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rajec Neperlivá CZ",
+                       "vyrobce":  "Rajec",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Rajec Jemně Perlivá CZ",
+                                              "Rajec Mateřídouška CZ",
+                                              "Rajec Pampeliška CZ",
+                                              "Rajec Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "RC Cola CZ",
+                       "vyrobce":  "RC Cola",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ",
+                                              "Freeway Cola CZ",
+                                              "K-Classic Cola CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Coca-Cola Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Red Bull Energy Drink CZ",
+                       "vyrobce":  "Red Bull",
+                       "objem":  250,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  3,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Red Bull Blue Edition CZ",
+                                              "Red Bull Juneberry CZ",
+                                              "Red Bull Tropical CZ",
+                                              "Red Bull Watermelon CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Red Bull Sugarfree CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Red Bull Sugarfree CZ",
+                       "vyrobce":  "Red Bull",
+                       "objem":  250,
+                       "kalorie_na_100_ml":  3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Red Bull Zero CZ",
+                                              "Amper Energy Zero CZ",
+                                              "Kong Strong Sugarfree CZ",
+                                              "Monster Ultra Fiesta Mango CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Red Bull Tropical CZ",
+                       "vyrobce":  "Red Bull",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Red Bull Watermelon CZ",
+                                              "Red Bull Blue Edition CZ",
+                                              "Red Bull Juneberry CZ",
+                                              "Red Bull Energy Drink CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Red Bull Sugarfree CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Red Bull Watermelon CZ",
+                       "vyrobce":  "Red Bull",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Red Bull Tropical CZ",
+                                              "Red Bull Blue Edition CZ",
+                                              "Red Bull Juneberry CZ",
+                                              "Red Bull Energy Drink CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Red Bull Sugarfree CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Relax 100% Jablko CZ",
+                       "vyrobce":  "Relax",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  43,
+                       "cukr_na_100_ml":  9,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  4,
+                       "deti":  6,
+                       "energie":  3,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Relax 100% Pomeranč CZ",
+                                              "Relax Multivitamin CZ",
+                                              "Relax Rajče CZ",
+                                              "Cappy Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Relax 100% Pomeranč CZ",
+                       "vyrobce":  "Relax",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  43,
+                       "cukr_na_100_ml":  9,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  4,
+                       "deti":  6,
+                       "energie":  3,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Relax 100% Jablko CZ",
+                                              "Relax Multivitamin CZ",
+                                              "Relax Rajče CZ",
+                                              "Cappy Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Relax Multivitamin CZ",
+                       "vyrobce":  "Relax",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Relax Rajče CZ",
+                                              "Relax 100% Jablko CZ",
+                                              "Relax 100% Pomeranč CZ",
+                                              "Birell Malina Limetka CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Relax Rajče CZ",
+                       "vyrobce":  "Relax",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Relax Multivitamin CZ",
+                                              "Relax 100% Jablko CZ",
+                                              "Relax 100% Pomeranč CZ",
+                                              "Birell Malina Limetka CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "River Tonic Original CZ",
+                       "vyrobce":  "River",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  35,
+                       "cukr_na_100_ml":  8.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "tonic",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  3,
+                       "deti":  3,
+                       "energie":  1,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Tonic má výraznou chuť a často i cukr. Hodí se spíš občas, ne jako hlavní pití během dne.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kinley Tonic CZ",
+                                              "Schweppes Tonic CZ",
+                                              "Mirinda Orange CZ",
+                                              "Fanta Shokata CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rockstar Original CZ",
+                       "vyrobce":  "Rockstar",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Big Shock Original CZ",
+                                              "Monster Energy Original CZ",
+                                              "Monster Juiced Monarch CZ",
+                                              "Monster Mango Loco CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Rockstar Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rockstar Zero CZ",
+                       "vyrobce":  "Rockstar",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  9,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Big Shock Zero CZ",
+                                              "Hell Zero CZ",
+                                              "Monster Lewis Hamilton Zero CZ",
+                                              "Monster Ultra White CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Royal Crown Cola CZ",
+                       "vyrobce":  "Royal Crown",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ",
+                                              "Freeway Cola CZ",
+                                              "K-Classic Cola CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Royal Crown Cola No Sugar CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Royal Crown Cola No Sugar CZ",
+                       "vyrobce":  "Royal Crown",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ",
+                                              "Kofola Bez cukru CZ",
+                                              "Pepsi Max Lime CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Saguaro Neperlivá CZ",
+                       "vyrobce":  "Saguaro",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Saguaro Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Saguaro Perlivá CZ",
+                       "vyrobce":  "Saguaro",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Saguaro Neperlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "San Benedetto Neperlivá CZ",
+                       "vyrobce":  "San Benedetto",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Sanpellegrino Aranciata CZ",
+                       "vyrobce":  "Sanpellegrino",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ",
+                                              "Malinovka Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Semtex Original CZ",
+                       "vyrobce":  "Semtex",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Semtex Cactus CZ",
+                                              "Semtex Forte CZ",
+                                              "Big Shock Original CZ",
+                                              "Monster Energy Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Semtex Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Semtex Zero CZ",
+                       "vyrobce":  "Semtex",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  9,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Big Shock Zero CZ",
+                                              "Hell Zero CZ",
+                                              "Monster Lewis Hamilton Zero CZ",
+                                              "Monster Ultra White CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Schweppes Tonic CZ",
+                       "vyrobce":  "Schweppes",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  35,
+                       "cukr_na_100_ml":  8.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "tonic",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  3,
+                       "deti":  3,
+                       "energie":  1,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Tonic má výraznou chuť a často i cukr. Hodí se spíš občas, ne jako hlavní pití během dne.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kinley Tonic CZ",
+                                              "River Tonic Original CZ",
+                                              "Mirinda Orange CZ",
+                                              "Fanta Shokata CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Schweppes Tonic Zero CZ",
+                       "vyrobce":  "Schweppes",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ",
+                                              "Kofola Bez cukru CZ",
+                                              "Pepsi Max Lime CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Sprite CZ",
+                       "vyrobce":  "Sprite",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  28,
+                       "cukr_na_100_ml":  6.6,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "7UP CZ",
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Sprite Zero CZ",
+                       "vyrobce":  "Sprite",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ",
+                                              "Kofola Bez cukru CZ",
+                                              "Pepsi Max Lime CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Starbucks Doubleshot Espresso CZ",
+                       "vyrobce":  "Starbucks",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Starbucks Frappuccino Caramel CZ",
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ",
+                                              "Cool Nealko Radler Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Starbucks Frappuccino Caramel CZ",
+                       "vyrobce":  "Starbucks",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Starbucks Doubleshot Espresso CZ",
+                                              "Actimel Original CZ",
+                                              "Birell Světlé Nealko CZ",
+                                              "Cool Nealko Radler Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Studený čaj Broskev CZ",
+                       "vyrobce":  "Podravka",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  21,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Arizona Green Tea CZ",
+                                              "Club-Mate CZ",
+                                              "FuzeTea Broskev CZ",
+                                              "Kombucha Ginger CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Sunquick Orange CZ",
+                       "vyrobce":  "Sunquick",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ",
+                                              "Jupík Multivitamin CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Targa Florio Citron CZ",
+                       "vyrobce":  "Targa Florio",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ",
+                                              "Malinovka Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Tesco 100% Pomeranč CZ",
+                       "vyrobce":  "Tesco",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  43,
+                       "cukr_na_100_ml":  9,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  4,
+                       "deti":  6,
+                       "energie":  3,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Cappy Pomeranč CZ",
+                                              "Relax 100% Jablko CZ",
+                                              "Relax 100% Pomeranč CZ",
+                                              "Cappy Jablko CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Tesco Cola Zero CZ",
+                       "vyrobce":  "Tesco",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ",
+                                              "Kofola Bez cukru CZ",
+                                              "Pepsi Max Lime CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Tiger Zero CZ",
+                       "vyrobce":  "Tiger",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  3,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  9,
+                       "deti":  0,
+                       "energie":  10,
+                       "sport":  5,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Tiger Sugar Free CZ",
+                                              "Big Shock Zero CZ",
+                                              "Hell Zero CZ",
+                                              "Monster Lewis Hamilton Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Toma Limonáda Citron CZ",
+                       "vyrobce":  "Toma",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ",
+                                              "Malinovka Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Toma Natura Neperlivá CZ",
+                       "vyrobce":  "Toma",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Toma Natura Jemně Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Toma Pomeranč CZ",
+                       "vyrobce":  "Toma",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  20,
+                       "cukr_na_100_ml":  4.8,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Toma Jablko CZ",
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Top Topic Orange CZ",
+                       "vyrobce":  "Top Topic",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ",
+                                              "Malinovka Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Vinea Bílá CZ",
+                       "vyrobce":  "Vinea",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  48,
+                       "cukr_na_100_ml":  12,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  4,
+                       "energie":  3,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Vinea Červená CZ",
+                                              "Mirinda Orange CZ",
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Vinea Červená CZ",
+                       "vyrobce":  "Vinea",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Vinea Bílá CZ",
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Vinea Light Bílá CZ",
+                       "vyrobce":  "Vinea",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K",
+                                        "aspartam",
+                                        "acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ",
+                                              "Kofola Bez cukru CZ",
+                                              "Pepsi Max Lime CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Vitamin Well Defence CZ",
+                       "vyrobce":  "Vitamin Well",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  22,
+                       "cukr_na_100_ml":  5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Gatorade Orange CZ",
+                                              "Isostar Hydrate \u0026 Perform CZ",
+                                              "Oshee Vitamin Water CZ",
+                                              "Powerade Mountain Blast CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "ZON Malina CZ",
+                       "vyrobce":  "ZON",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  31,
+                       "cukr_na_100_ml":  7.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "limonada",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Slazený nápoj pro chuť. Pokud řešíte energii, hubnutí nebo pití pro děti, sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "voda",
+                                           "neslazený čaj",
+                                           "zero varianta"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Fanta Shokata CZ",
+                                              "Kofola Citrus CZ",
+                                              "Kofola Meruňková CZ",
+                                              "Malinovka Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "zero varianta stejného typu"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Freeway Cola CZ",
+                       "vyrobce":  "Freeway",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ",
+                                              "K-Classic Cola CZ",
+                                              "Penny Cola Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Freeway Cola Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Freeway Cola Zero CZ",
+                       "vyrobce":  "Freeway",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d",
+                                    "E951",
+                                    "E950"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Dr Pepper Zero CZ",
+                                              "Coca-Cola Zero CZ",
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Clever Cola Original CZ",
+                       "vyrobce":  "Clever",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.5,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Pepsi Lime CZ",
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ",
+                                              "Freeway Cola CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Coca-Cola Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Tesco Cola Original CZ",
+                       "vyrobce":  "Tesco",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.6,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Albert Cola Original CZ",
+                                              "Dr Pepper CZ",
+                                              "Freeway Cola CZ",
+                                              "K-Classic Cola CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Tesco Cola Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Dr Pepper Zero CZ",
+                       "vyrobce":  "Dr Pepper",
+                       "objem":  330,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  9.5,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d",
+                                    "E951",
+                                    "E950"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Freeway Cola Zero CZ",
+                                              "Coca-Cola Zero CZ",
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Pepsi Lime CZ",
+                       "vyrobce":  "Pepsi",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  42,
+                       "cukr_na_100_ml":  10.5,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+                                    "E150d"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  2,
+                       "deti":  3,
+                       "energie":  4,
+                       "sport":  2,
+                       "lidske_vysvetleni":  "Klasický colový nápoj se sladkou chutí. Hlavní věc ke sledování je cukr v balení a menší dávka kofeinu.",
+                       "alternativy":  [
+                                           "Coca-Cola Zero CZ",
+                                           "Pepsi Max CZ",
+                                           "voda s citronem"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Pepsi Original CZ",
+                                              "Clever Cola Original CZ",
+                                              "Coca-Cola Original CZ",
+                                              "Albert Cola Original CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci stejný typ s méně cukrem",
+                                                     "napoj":  "Pepsi Max CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Pepsi Max Lime CZ",
+                       "vyrobce":  "Pepsi",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  10,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d",
+                                    "E951",
+                                    "E950"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Pepsi Max CZ",
+                                              "Fanta Zero Orange CZ",
+                                              "Kinley Tonic Zero CZ",
+                                              "Kofola Bez cukru CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kofola Bez cukru Citron CZ",
+                       "vyrobce":  "Kofola",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  7,
+                       "sladidla":  [
+                                        "Aspartam",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E150d",
+                                    "E951",
+                                    "E950"
+                                ],
+                       "kategorie":  "cola",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  4,
+                       "energie":  4,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Colový nápoj bez cukru. Při hubnutí může dávat smysl víc než klasická cola, pozor ale na sladidla a kofein.",
+                       "alternativy":  [
+                                           "Mattoni Esence Citron CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "káva + voda"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kofola Bez cukru CZ",
+                                              "Dr Pepper Zero CZ",
+                                              "Freeway Cola Zero CZ",
+                                              "Coca-Cola Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci bez kofeinu",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Ultra Paradise CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  2,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Magnesia Neperlivá CZ",
+                                           "voda + krátká pauza"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Ultra Fiesta Mango CZ",
+                                              "Monster Ultra Gold CZ",
+                                              "Monster Ultra Violet CZ",
+                                              "Monster Lewis Hamilton Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Ultra Fiesta Mango CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  2,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Magnesia Neperlivá CZ",
+                                           "voda + krátká pauza"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Ultra Gold CZ",
+                                              "Monster Ultra Paradise CZ",
+                                              "Monster Ultra Violet CZ",
+                                              "Monster Lewis Hamilton Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Ultra Gold CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  2,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Magnesia Neperlivá CZ",
+                                           "voda + krátká pauza"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Ultra Fiesta Mango CZ",
+                                              "Monster Ultra Paradise CZ",
+                                              "Monster Ultra Violet CZ",
+                                              "Monster Lewis Hamilton Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Monster Ultra Violet CZ",
+                       "vyrobce":  "Monster",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  2,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Magnesia Neperlivá CZ",
+                                           "voda + krátká pauza"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Monster Ultra Fiesta Mango CZ",
+                                              "Monster Ultra Gold CZ",
+                                              "Monster Ultra Paradise CZ",
+                                              "Monster Lewis Hamilton Zero CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Red Bull Zero CZ",
+                       "vyrobce":  "Red Bull",
+                       "objem":  250,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Magnesia Neperlivá CZ",
+                                           "voda + krátká pauza"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Red Bull Sugarfree CZ",
+                                              "Amper Energy Zero CZ",
+                                              "Kong Strong Sugarfree CZ",
+                                              "Monster Ultra Fiesta Mango CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Red Bull Blue Edition CZ",
+                       "vyrobce":  "Red Bull",
+                       "objem":  250,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Red Bull Juneberry CZ",
+                                              "Red Bull Energy Drink CZ",
+                                              "Red Bull Tropical CZ",
+                                              "Red Bull Watermelon CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Red Bull Sugarfree CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Red Bull Juneberry CZ",
+                       "vyrobce":  "Red Bull",
+                       "objem":  250,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Red Bull Blue Edition CZ",
+                                              "Red Bull Energy Drink CZ",
+                                              "Red Bull Tropical CZ",
+                                              "Red Bull Watermelon CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Red Bull Sugarfree CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Big Shock Exotic CZ",
+                       "vyrobce":  "Big Shock",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Big Shock Watermelon CZ",
+                                              "Big Shock Original CZ",
+                                              "Amper Energy Original CZ",
+                                              "Kong Strong Classic CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Big Shock Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Big Shock Watermelon CZ",
+                       "vyrobce":  "Big Shock",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Big Shock Exotic CZ",
+                                              "Big Shock Original CZ",
+                                              "Amper Energy Original CZ",
+                                              "Kong Strong Classic CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Big Shock Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Semtex Forte CZ",
+                       "vyrobce":  "Semtex",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Semtex Cactus CZ",
+                                              "Semtex Original CZ",
+                                              "Amper Energy Original CZ",
+                                              "Big Shock Exotic CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Semtex Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Semtex Cactus CZ",
+                       "vyrobce":  "Semtex",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Semtex Forte CZ",
+                                              "Semtex Original CZ",
+                                              "Amper Energy Original CZ",
+                                              "Big Shock Exotic CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Semtex Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Tiger Classic CZ",
+                       "vyrobce":  "Tiger",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Amper Energy Original CZ",
+                                              "Big Shock Exotic CZ",
+                                              "Big Shock Watermelon CZ",
+                                              "Kong Strong Classic CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Tiger Sugar Free CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Tiger Sugar Free CZ",
+                       "vyrobce":  "Tiger",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  2,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Magnesia Neperlivá CZ",
+                                           "voda + krátká pauza"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Tiger Zero CZ",
+                                              "Amper Energy Zero CZ",
+                                              "Kong Strong Sugarfree CZ",
+                                              "Monster Ultra Fiesta Mango CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kong Strong Classic CZ",
+                       "vyrobce":  "Kong Strong",
+                       "objem":  250,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Amper Energy Original CZ",
+                                              "Big Shock Exotic CZ",
+                                              "Big Shock Watermelon CZ",
+                                              "Red Bull Blue Edition CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Kong Strong Sugarfree CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Kong Strong Sugarfree CZ",
+                       "vyrobce":  "Kong Strong",
+                       "objem":  250,
+                       "kalorie_na_100_ml":  2,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Magnesia Neperlivá CZ",
+                                           "voda + krátká pauza"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Amper Energy Zero CZ",
+                                              "Monster Ultra Fiesta Mango CZ",
+                                              "Monster Ultra Gold CZ",
+                                              "Monster Ultra Paradise CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Amper Energy Original CZ",
+                       "vyrobce":  "Amper",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  46,
+                       "cukr_na_100_ml":  11,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  1,
+                       "hubnuti":  2,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Energetický nápoj s kofeinem a cukrem. Může dát rychlou energii, ale sledujte hlavně cukr v balení a kofein.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Red Bull Sugarfree CZ",
+                                           "Monster Ultra White CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Big Shock Exotic CZ",
+                                              "Big Shock Watermelon CZ",
+                                              "Kong Strong Classic CZ",
+                                              "Red Bull Blue Edition CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "Amper Energy Zero CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Amper Energy Zero CZ",
+                       "vyrobce":  "Amper",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  2,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  32,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "energeticky",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  8,
+                       "deti":  0,
+                       "energie":  9,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Energetický nápoj bez cukru. Hodí se spíš pro rychlé povzbuzení, ale kvůli kofeinu není ideální pro děti ani večerní pití.",
+                       "alternativy":  [
+                                           "káva + voda",
+                                           "Magnesia Neperlivá CZ",
+                                           "voda + krátká pauza"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Kong Strong Sugarfree CZ",
+                                              "Monster Ultra Fiesta Mango CZ",
+                                              "Monster Ultra Gold CZ",
+                                              "Monster Ultra Paradise CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci energii s méně cukrem",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pití pro děti",
+                                                     "napoj":  "neslazený čaj"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Magnesia Jemně Perlivá CZ",
+                       "vyrobce":  "Magnesia",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Magnesia Neperlivá CZ",
+                                              "Magnesia Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Magnesia Perlivá CZ",
+                       "vyrobce":  "Magnesia",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Magnesia Jemně Perlivá CZ",
+                                              "Magnesia Neperlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rajec Jemně Perlivá CZ",
+                       "vyrobce":  "Rajec",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Rajec Mateřídouška CZ",
+                                              "Rajec Neperlivá CZ",
+                                              "Rajec Pampeliška CZ",
+                                              "Rajec Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rajec Perlivá CZ",
+                       "vyrobce":  "Rajec",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Rajec Jemně Perlivá CZ",
+                                              "Rajec Mateřídouška CZ",
+                                              "Rajec Neperlivá CZ",
+                                              "Rajec Pampeliška CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Korunní Neperlivá CZ",
+                       "vyrobce":  "Korunní",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Korunní Jemně Perlivá CZ",
+                                              "Korunní Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Korunní Perlivá CZ",
+                       "vyrobce":  "Korunní",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Korunní Jemně Perlivá CZ",
+                                              "Korunní Neperlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Dobrá voda Perlivá CZ",
+                       "vyrobce":  "Dobrá voda",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Dobrá voda Citron CZ",
+                                              "Dobrá voda Jahoda CZ",
+                                              "Dobrá voda Neperlivá CZ",
+                                              "Aquila Jemně Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Toma Natura Jemně Perlivá CZ",
+                       "vyrobce":  "Toma",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  10,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Toma Natura Neperlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Ondrášovka Perlivá CZ",
+                       "vyrobce":  "Ondrášovka",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  8,
+                       "lidske_vysvetleni":  "Jednoduché pití bez cukru a kofeinu. Dává smysl na běžný den, při sportu i pro děti.",
+                       "alternativy":  [
+                                           "Magnesia Neperlivá CZ",
+                                           "Rajec Neperlivá CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Ondrášovka Jemně Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ",
+                                              "Aquila Neperlivá CZ",
+                                              "Dobrá voda Citron CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Esence Pomeranč CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Ochucená voda může být příjemná změna. Sledujte hlavně cukr nebo sladidla podle konkrétní varianty.",
+                       "alternativy":  [
+                                           "neperlivá voda",
+                                           "Mattoni Esence Citron CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Esence Citron CZ",
+                                              "Mattoni Esence Limetka CZ",
+                                              "Mattoni Esence Okurka CZ",
+                                              "Mattoni Grand CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Esence Limetka CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Ochucená voda může být příjemná změna. Sledujte hlavně cukr nebo sladidla podle konkrétní varianty.",
+                       "alternativy":  [
+                                           "neperlivá voda",
+                                           "Mattoni Esence Citron CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Esence Citron CZ",
+                                              "Mattoni Esence Okurka CZ",
+                                              "Mattoni Esence Pomeranč CZ",
+                                              "Mattoni Grand CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Mattoni Esence Okurka CZ",
+                       "vyrobce":  "Mattoni",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Ochucená voda může být příjemná změna. Sledujte hlavně cukr nebo sladidla podle konkrétní varianty.",
+                       "alternativy":  [
+                                           "neperlivá voda",
+                                           "Mattoni Esence Citron CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Mattoni Esence Citron CZ",
+                                              "Mattoni Esence Limetka CZ",
+                                              "Mattoni Esence Pomeranč CZ",
+                                              "Mattoni Grand CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rajec Pampeliška CZ",
+                       "vyrobce":  "Rajec",
+                       "objem":  750,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Ochucená voda může být příjemná změna. Sledujte hlavně cukr nebo sladidla podle konkrétní varianty.",
+                       "alternativy":  [
+                                           "neperlivá voda",
+                                           "Mattoni Esence Citron CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Rajec Jemně Perlivá CZ",
+                                              "Rajec Mateřídouška CZ",
+                                              "Rajec Neperlivá CZ",
+                                              "Rajec Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Dobrá voda Citron CZ",
+                       "vyrobce":  "Dobrá voda",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  0,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  10,
+                       "hubnuti":  10,
+                       "deti":  9,
+                       "energie":  1,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Ochucená voda může být příjemná změna. Sledujte hlavně cukr nebo sladidla podle konkrétní varianty.",
+                       "alternativy":  [
+                                           "neperlivá voda",
+                                           "Mattoni Esence Citron CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Dobrá voda Jahoda CZ",
+                                              "Dobrá voda Neperlivá CZ",
+                                              "Dobrá voda Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Korunní Citron CZ",
+                       "vyrobce":  "Korunní",
+                       "objem":  1500,
+                       "kalorie_na_100_ml":  16,
+                       "cukr_na_100_ml":  3.8,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "voda",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  1,
+                       "sport":  4,
+                       "lidske_vysvetleni":  "Ochucená voda může být příjemná změna. Sledujte hlavně cukr nebo sladidla podle konkrétní varianty.",
+                       "alternativy":  [
+                                           "neperlivá voda",
+                                           "Mattoni Esence Citron CZ",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Korunní Jemně Perlivá CZ",
+                                              "Korunní Neperlivá CZ",
+                                              "Korunní Perlivá CZ",
+                                              "Aquila Jemně Perlivá CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci více chuti",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci energii",
+                                                     "napoj":  "káva + voda"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Lipton Ice Tea Peach CZ",
+                       "vyrobce":  "Lipton",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  19,
+                       "cukr_na_100_ml":  4.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Lipton Green Ice Tea CZ",
+                                              "Lipton Ice Tea Lemon CZ",
+                                              "FuzeTea Citron CZ",
+                                              "Nestea Broskev CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Lipton Green Ice Tea CZ",
+                       "vyrobce":  "Lipton",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  19,
+                       "cukr_na_100_ml":  4.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Lipton Ice Tea Peach CZ",
+                                              "Lipton Ice Tea Lemon CZ",
+                                              "FuzeTea Citron CZ",
+                                              "Nestea Broskev CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "FuzeTea Citron CZ",
+                       "vyrobce":  "FuzeTea",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  19,
+                       "cukr_na_100_ml":  4.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "FuzeTea Broskev CZ",
+                                              "Lipton Green Ice Tea CZ",
+                                              "Lipton Ice Tea Peach CZ",
+                                              "Nestea Broskev CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Nestea Broskev CZ",
+                       "vyrobce":  "Nestea",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  19,
+                       "cukr_na_100_ml":  4.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Nestea Citron CZ",
+                                              "FuzeTea Citron CZ",
+                                              "Lipton Green Ice Tea CZ",
+                                              "Lipton Ice Tea Peach CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rauch Ice Tea Peach CZ",
+                       "vyrobce":  "Rauch",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  28,
+                       "cukr_na_100_ml":  6.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "San Benedetto Ice Tea Lemon CZ",
+                                              "Arizona Green Tea CZ",
+                                              "Club-Mate CZ",
+                                              "FuzeTea Broskev CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "San Benedetto Ice Tea Lemon CZ",
+                       "vyrobce":  "San Benedetto",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  28,
+                       "cukr_na_100_ml":  6.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "ledovy caj",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ledový čaj často působí lehce, ale může přidat cukr podobně nenápadně jako limonáda. Sledujte hlavně cukr v balení.",
+                       "alternativy":  [
+                                           "neslazený ledový čaj",
+                                           "voda s citronem",
+                                           "Mattoni Esence Citron CZ"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Rauch Ice Tea Peach CZ",
+                                              "Arizona Green Tea CZ",
+                                              "Club-Mate CZ",
+                                              "FuzeTea Broskev CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "neslazený ledový čaj"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Rauch Bravo Pomeranč CZ",
+                       "vyrobce":  "Rauch",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  10,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  3,
+                       "deti":  5,
+                       "energie":  3,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Cappy Jablko CZ",
+                                              "Granini Pomeranč CZ",
+                                              "Hello Jablko CZ",
+                                              "Pfanner Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Cappy Jablko CZ",
+                       "vyrobce":  "Cappy",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  10,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  3,
+                       "deti":  5,
+                       "energie":  3,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Cappy Pomeranč CZ",
+                                              "Granini Pomeranč CZ",
+                                              "Hello Jablko CZ",
+                                              "Pfanner Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Toma Jablko CZ",
+                       "vyrobce":  "Toma",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  20,
+                       "cukr_na_100_ml":  4.8,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  5,
+                       "energie":  2,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Toma Pomeranč CZ",
+                                              "Birell Malina Limetka CZ",
+                                              "Granini Multivitamin CZ",
+                                              "Hello Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Hello Jablko CZ",
+                       "vyrobce":  "Hello",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  10,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  3,
+                       "deti":  5,
+                       "energie":  3,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Hello Pomeranč CZ",
+                                              "Cappy Jablko CZ",
+                                              "Granini Pomeranč CZ",
+                                              "Pfanner Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Granini Pomeranč CZ",
+                       "vyrobce":  "Granini",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  10,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  3,
+                       "deti":  5,
+                       "energie":  3,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Granini Multivitamin CZ",
+                                              "Cappy Jablko CZ",
+                                              "Hello Jablko CZ",
+                                              "Pfanner Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Pfanner Pomeranč CZ",
+                       "vyrobce":  "Pfanner",
+                       "objem":  1000,
+                       "kalorie_na_100_ml":  45,
+                       "cukr_na_100_ml":  10,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "dzus",
+                       "kazdodenni_piti":  2,
+                       "hubnuti":  3,
+                       "deti":  5,
+                       "energie":  3,
+                       "sport":  3,
+                       "lidske_vysvetleni":  "Ovocný nápoj může působit přirozeně, ale cukr v balení umí být vysoký. Dává smysl spíš jako chuťová volba než pití celý den.",
+                       "alternativy":  [
+                                           "celé ovoce + voda",
+                                           "ředěný džus",
+                                           "neslazený čaj"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Cappy Jablko CZ",
+                                              "Granini Pomeranč CZ",
+                                              "Hello Jablko CZ",
+                                              "Rauch Bravo Pomeranč CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci méně cukru",
+                                                     "napoj":  "ředěný džus"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci běžné pití",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci pro děti",
+                                                     "napoj":  "celé ovoce + voda"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Powerade Blood Orange CZ",
+                       "vyrobce":  "Powerade",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  18,
+                       "cukr_na_100_ml":  4.3,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  3,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Powerade Mountain Blast CZ",
+                                              "Powerade Zero Mountain Blast CZ",
+                                              "Oshee Isotonic Lemon CZ",
+                                              "Nutrend Isodrinx Grapefruit CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Powerade Zero Mountain Blast CZ",
+                       "vyrobce":  "Powerade",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Isostar Zero Hydrate Lemon CZ",
+                                              "Powerade Blood Orange CZ",
+                                              "Powerade Mountain Blast CZ",
+                                              "Prime Hydration Ice Pop CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Isostar Zero Hydrate Lemon CZ",
+                       "vyrobce":  "Isostar",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  1,
+                       "cukr_na_100_ml":  0,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+                                        "Sukralóza",
+                                        "Acesulfam K"
+                                    ],
+                       "ecka":  [
+                                    "E955",
+                                    "E950"
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  5,
+                       "hubnuti":  8,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Powerade Zero Mountain Blast CZ",
+                                              "Isostar Hydrate \u0026 Perform CZ",
+                                              "Prime Hydration Ice Pop CZ",
+                                              "Nutrend Isodrinx Grapefruit CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Nutrend Isodrinx Grapefruit CZ",
+                       "vyrobce":  "Nutrend",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  16,
+                       "cukr_na_100_ml":  3.8,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Oshee Isotonic Lemon CZ",
+                                              "Powerade Blood Orange CZ",
+                                              "Gatorade Orange CZ",
+                                              "Isostar Hydrate \u0026 Perform CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Oshee Isotonic Lemon CZ",
+                       "vyrobce":  "Oshee",
+                       "objem":  750,
+                       "kalorie_na_100_ml":  19,
+                       "cukr_na_100_ml":  4.5,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  4,
+                       "hubnuti":  5,
+                       "deti":  6,
+                       "energie":  2,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Oshee Vitamin Water CZ",
+                                              "Gatorade Orange CZ",
+                                              "Isostar Hydrate \u0026 Perform CZ",
+                                              "Powerade Mountain Blast CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "nazev":  "Gatorade Cool Blue CZ",
+                       "vyrobce":  "Gatorade",
+                       "objem":  500,
+                       "kalorie_na_100_ml":  25,
+                       "cukr_na_100_ml":  6,
+                       "kofein_na_100_ml":  0,
+                       "sladidla":  [
+
+                                    ],
+                       "ecka":  [
+
+                                ],
+                       "kategorie":  "iontak",
+                       "kazdodenni_piti":  3,
+                       "hubnuti":  4,
+                       "deti":  5,
+                       "energie":  3,
+                       "sport":  7,
+                       "lidske_vysvetleni":  "Nápoj mířený na hydrataci nebo sport. Dává smysl hlavně při delší aktivitě, běžně přes den sledujte cukr a kalorie.",
+                       "alternativy":  [
+                                           "voda + jídlo po sportu",
+                                           "Magnesia Neperlivá CZ",
+                                           "iontový nápoj jen při delší aktivitě"
+                                       ],
+                       "podobne_napoje":  [
+                                              "Gatorade Orange CZ",
+                                              "Isostar Hydrate \u0026 Perform CZ",
+                                              "Oshee Vitamin Water CZ",
+                                              "Powerade Mountain Blast CZ"
+                                          ],
+                       "lepsi_alternativy":  [
+                                                 {
+                                                     "cil":  "Chci sport",
+                                                     "napoj":  "Isostar Zero Hydrate Lemon CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci každý den",
+                                                     "napoj":  "Aquila Jemně Perlivá CZ"
+                                                 },
+                                                 {
+                                                     "cil":  "Chci sladkou chuť",
+                                                     "napoj":  "Dobrá voda Citron CZ"
+                                                 }
+                                             ]
+                   }
+               ]
+}
+;
+if (document && document.documentElement) document.documentElement.dataset.damenapojData = 'loaded';

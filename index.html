@@ -1,0 +1,2282 @@
+﻿<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DámeNápoj.cz - produktová analýza</title>
+  <meta name="description" content="DámeNápoj.cz překládá etikety nápojů do lidské řeči: cukr, kofein, kalorie, složení, vhodnost pro děti, hubnutí, sport a běžné pití.">
+  <link rel="canonical" href="https://www.damenapoj.cz/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DámeNápoj.cz">
+  <meta property="og:title" content="DámeNápoj.cz - produktová analýza">
+  <meta property="og:description" content="Překládáme etikety nápojů do lidské řeči.">
+  <meta property="og:url" content="https://www.damenapoj.cz/">
+  <script type="application/ld+json" id="productSchema">{}</script>
+  <style>
+    :root {
+      --ink: #143047;
+      --muted: #66788a;
+      --line: #dce8f1;
+      --soft: #f4f9fc;
+      --card: #ffffff;
+      --blue: #2d9cff;
+      --cyan: #34c7c5;
+      --green: #29a86d;
+      --yellow: #f2a91f;
+      --red: #e25353;
+      --pink: #f47ab5;
+      --shadow: 0 20px 55px rgba(37, 76, 105, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 82% 8%, rgba(52, 199, 197, 0.18), transparent 26rem),
+        radial-gradient(circle at 15% 0%, rgba(45, 156, 255, 0.12), transparent 28rem),
+        linear-gradient(180deg, #ffffff 0%, #f5fbff 42%, #ffffff 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .page.home-mode .detail-section {
+      display: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.82);
+      border-bottom: 1px solid rgba(220, 232, 241, 0.78);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--cyan), var(--green));
+      border-radius: var(--radius);
+    }
+
+    .nav small {
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .hero {
+      padding: 56px 0 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.6fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+      max-width: 780px;
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .hero-title {
+      margin: 0 0 16px;
+      max-width: 780px;
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      line-height: 1.08;
+    }
+
+    .product-title {
+      margin-bottom: 10px;
+      font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      line-height: 1.08;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .lead {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .search-card,
+    .summary-card,
+    .product-detail,
+    .mini-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(220, 232, 241, 0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .search-card {
+      margin-top: 28px;
+      padding: 12px;
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+    }
+
+    .search-row input {
+      width: 100%;
+      min-height: 56px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      outline: none;
+      color: var(--ink);
+      background: #fff;
+      font-weight: 750;
+    }
+
+    .button {
+      min-height: 56px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: var(--radius);
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 16px 32px rgba(45, 156, 255, 0.22);
+      cursor: pointer;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .suggestion {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      color: var(--ink);
+      background: #fff;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .suggestion:hover {
+      border-color: rgba(45, 156, 255, 0.45);
+      background: #eef8ff;
+    }
+
+    .summary-card {
+      padding: 22px;
+      display: grid;
+      align-content: space-between;
+      gap: 20px;
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 14px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .section {
+      padding: 34px 0;
+    }
+
+    .section.is-empty {
+      display: none;
+    }
+
+    .product-detail {
+      padding: 28px;
+    }
+
+    .detail-top {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 26px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .drink-art {
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 36%, rgba(45, 156, 255, 0.14), transparent 7rem),
+        linear-gradient(180deg, #f7fcff, #eef7fb);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .package {
+      position: relative;
+      width: 96px;
+      height: 220px;
+      border-radius: 24px 24px 16px 16px;
+      border: 1px solid rgba(78, 104, 130, 0.2);
+      background: linear-gradient(90deg, rgba(255,255,255,0.45), transparent 42%), var(--pack);
+      box-shadow: inset -18px 0 28px rgba(20, 48, 71, 0.08), 0 24px 34px rgba(20, 48, 71, 0.13);
+    }
+
+    .package.bottle {
+      width: 82px;
+      height: 236px;
+      border-radius: 30px 30px 18px 18px;
+    }
+
+    .package.bottle::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: -34px;
+      height: 48px;
+      border-radius: 10px 10px 6px 6px;
+      border: 1px solid rgba(78, 104, 130, 0.2);
+      background: #f7fcff;
+    }
+
+    .package-label {
+      position: absolute;
+      inset: 72px 10px auto;
+      min-height: 82px;
+      display: grid;
+      place-items: center;
+      padding: 8px;
+      color: #fff;
+      background: rgba(20, 48, 71, 0.8);
+      border-radius: var(--radius);
+      text-align: center;
+      font-weight: 950;
+      line-height: 1.05;
+      text-transform: uppercase;
+      font-size: 0.92rem;
+    }
+
+    .pill-row,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 34px;
+      padding: 7px 10px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 850;
+    }
+
+    .pill.good {
+      color: #126941;
+      background: #e9f8f0;
+    }
+
+    .pill.ok {
+      color: #145c88;
+      background: #eaf6ff;
+    }
+
+    .pill.warn {
+      color: #8a5a06;
+      background: #fff5dc;
+    }
+
+    .pill.bad {
+      color: #9c2932;
+      background: #fff0f1;
+    }
+
+    .human-text {
+      margin: 18px 0 0;
+      padding: 18px;
+      border: 1px solid #cfe7f3;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #f1fbff, #f5fff6);
+      color: #244259;
+      font-size: 1.05rem;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .score-list,
+    .insight-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .score-card,
+    .insight {
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .score-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 9px;
+      font-weight: 900;
+    }
+
+    .bar {
+      height: 10px;
+      overflow: hidden;
+      background: #eaf1f5;
+      border-radius: var(--radius);
+    }
+
+    .bar span {
+      display: block;
+      width: var(--value);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--color);
+    }
+
+    .aside-card {
+      display: grid;
+      gap: 14px;
+    }
+
+    .insight strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .insight p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .extra-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .content-block {
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .simple-list,
+    .faq-list,
+    .source-list,
+    .ingredient-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .simple-list li,
+    .faq-item,
+    .source-item {
+      padding: 12px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .source-card {
+      background: linear-gradient(135deg, #ffffff, #f2fbff);
+    }
+
+    .source-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #244259;
+      font-weight: 850;
+    }
+
+    .sense-list,
+    .rankings-grid,
+    .category-grid,
+    .ecko-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .sense-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sense-item,
+    .ranking-card,
+    .category-card {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft);
+    }
+
+    .sense-item strong,
+    .ranking-card strong,
+    .category-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .rankings-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .ranking-card ol {
+      display: grid;
+      gap: 8px;
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .ranking-card a,
+    .category-card a {
+      color: var(--ink);
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .category-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .ecko-grid {
+      grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+      margin-top: 16px;
+      align-items: start;
+    }
+
+    .ecko-list-button {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      font-weight: 850;
+    }
+
+    .ecko-list-button span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .source-item.check::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      color: #126941;
+      background: #e9f8f0;
+      font-weight: 950;
+    }
+
+    .source-date {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .source-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ingredients-card {
+      background: linear-gradient(135deg, #ffffff, #f9fffb);
+    }
+
+    .ingredient-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ingredient-button {
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: #244259;
+      background: var(--soft);
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      font-weight: 850;
+    }
+
+    .ingredient-button:hover,
+    .ingredient-button.active {
+      border-color: rgba(45, 156, 255, 0.45);
+      background: #eef8ff;
+      box-shadow: 0 0 0 3px rgba(45, 156, 255, 0.1);
+    }
+
+    .ecko-detail {
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid #cfe7f3;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #f1fbff, #ffffff);
+    }
+
+    .ecko-detail h4 {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+    }
+
+    .ecko-detail p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .ecko-detail p:last-child {
+      margin-bottom: 0;
+    }
+
+    .sugar-story {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .sugar-story-main {
+      padding: 16px;
+      border-radius: var(--radius);
+      color: #244259;
+      background: linear-gradient(135deg, #fff7ed, #fff);
+      border: 1px solid #ffe1ba;
+    }
+
+    .sugar-story-main strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    .sugar-story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .sugar-story-stat {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .sugar-story-stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .sugar-story-stat strong {
+      display: block;
+      margin-top: 3px;
+      font-size: 1.05rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .mini-card {
+      padding: 14px;
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 55px rgba(37, 76, 105, 0.16);
+    }
+
+    .mini-card.active {
+      border-color: rgba(45, 156, 255, 0.55);
+      box-shadow: 0 0 0 3px rgba(45, 156, 255, 0.12), var(--shadow);
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .mini-card small {
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .detail-top,
+      .main-grid,
+      .extra-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .nav small {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .search-row {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .quick-stats,
+      .compare-grid,
+      .sugar-story-grid,
+      .sense-list,
+      .rankings-grid,
+      .category-grid,
+      .ecko-grid,
+      .ingredient-list {
+        grid-template-columns: 1fr;
+      }
+
+      .product-detail {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="container nav">
+        <div class="brand"><span class="mark">DN</span><span>DámeNápoj.cz</span></div>
+        <small>Překládáme etikety do lidské řeči.</small>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="hero-title" role="heading" aria-level="2">Co přesně piju?</p>
+            <p class="lead">Zadejte název nápoje. Během pár sekund uvidíte cukr, kofein, vhodnost pro hubnutí, děti i běžné pití v češtině, které rozumíte.</p>
+            <div class="search-card">
+              <div class="search-row">
+                <input id="searchInput" type="text" value="Coca-Cola Original" aria-label="Název nápoje">
+                <button class="button" id="searchButton" type="button">Vysvětlit nápoj</button>
+              </div>
+              <div class="suggestions" id="suggestions"></div>
+            </div>
+          </div>
+
+          <aside class="summary-card" aria-label="Rychlé shrnutí">
+            <div>
+              <h3>10sekundový výstup</h3>
+              <p class="lead" style="font-size:1rem;margin-bottom:0;">Žádné luštění tabulek. Nejdřív lidské vysvětlení, potom jasná čísla a důsledky.</p>
+            </div>
+            <div class="quick-stats">
+              <div class="stat"><strong id="heroSugar">35 g</strong><span>cukr v balení</span></div>
+              <div class="stat"><strong id="heroCaffeine">32 mg</strong><span>kofein v balení</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section detail-section">
+        <div class="container">
+          <article class="product-detail" id="productDetail">
+            <div class="detail-top">
+              <div class="drink-art">
+                <div class="package" id="packageArt">
+                  <div class="package-label" id="packageLabel">Coca-Cola<br>Original</div>
+                </div>
+              </div>
+              <div>
+                <div class="tag-row" id="topTags"></div>
+                <h1 class="product-title" id="productName">Coca-Cola Original</h1>
+                <div class="pill-row" id="quickPills"></div>
+                <p class="human-text" id="humanText"></p>
+              </div>
+            </div>
+
+            <div class="main-grid">
+              <div class="score-list" id="scoreList"></div>
+              <aside class="aside-card">
+                <div class="insight-list" id="insights"></div>
+              </aside>
+            </div>
+
+            <div class="extra-grid">
+              <section class="content-block">
+                <h3>Pro koho dává smysl</h3>
+                <div class="sense-list" id="senseList"></div>
+              </section>
+              <section class="content-block">
+                <h3>Podobné nápoje</h3>
+                <ul class="simple-list" id="similarDrinks"></ul>
+              </section>
+              <section class="content-block">
+                <h3>Lepší alternativa pro stejný cíl</h3>
+                <ul class="simple-list" id="betterAlternatives"></ul>
+              </section>
+              <section class="content-block">
+                <h3>Kdyby to byl 1 kus denně</h3>
+                <div class="human-text" id="annualSugarText"></div>
+              </section>
+              <section class="content-block">
+                <h3>Nejčastější otázky</h3>
+                <div class="faq-list" id="faqList"></div>
+              </section>
+              <section class="content-block source-card">
+                <h3>Zdroj dat / ověřeno / český trh</h3>
+                <div class="source-list" id="dataSource"></div>
+              </section>
+              <section class="content-block ingredients-card">
+                <h3>Složení</h3>
+                <div class="ingredient-list" id="ingredientList"></div>
+                <div class="ecko-detail" id="eckoDetail"></div>
+              </section>
+            </div>
+          </article>
+
+          <p class="note">Hodnoty jsou prototypové a zaokrouhlené pro běžné balení. Cíl stránky je ukázat způsob vysvětlení, ne nahradit etiketu výrobce.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Rozcestník nápojů</h2>
+          <p class="note" id="knownCount">Déenko už zná přes 30 nápojů.</p>
+          <div class="compare-grid" id="compareGrid"></div>
+        </div>
+      </section>
+
+      <section class="section detail-only">
+        <div class="container">
+          <h2>TOP žebříčky podle cíle</h2>
+          <div class="rankings-grid" id="rankingsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section detail-only">
+        <div class="container">
+          <h2>Kategorie nápojů</h2>
+          <div class="category-grid" id="categoryGrid"></div>
+        </div>
+      </section>
+
+      <section class="section detail-only">
+        <div class="container">
+          <h2>Ečkopedie</h2>
+          <p class="note">Vyhledatelné vysvětlení látek, které se v nápojích objevují nejčastěji.</p>
+          <div class="search-card">
+            <div class="search-row">
+              <input id="eckoSearch" type="text" value="" aria-label="Hledat látku nebo éčko" placeholder="Např. E150d, kofein, aspartam...">
+              <button class="button" id="eckoClear" type="button">Vyčistit</button>
+            </div>
+          </div>
+          <div class="ecko-grid">
+            <div class="source-list" id="eckoList"></div>
+            <div class="ecko-detail" id="eckoDatabaseDetail"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.write(`<script src="${window.location.protocol === 'file:' ? '' : '/'}universal-drinks.cz.js"><\/script>`);
+  </script>
+  <script>
+    (() => {
+      const DATA_URLS = [`${window.location.protocol === 'file:' ? '' : '/'}universal-drinks.cz.json`];
+      const colorsByCategory = {
+        cola: 'linear-gradient(155deg, #d71920, #8f1018)',
+        cola_zero: 'linear-gradient(155deg, #111827, #475569)',
+        energy_drink: 'linear-gradient(155deg, #27498f, #c7d8f0 48%, #d73737)',
+        energy_drink_zero: 'linear-gradient(155deg, #f8fafc, #cbd5e1)',
+        mineral_water: 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)',
+        water: 'linear-gradient(155deg, #e0f2fe, #ffffff 48%, #bae6fd)',
+        hydration_drink: 'linear-gradient(155deg, #38bdf8, #ffffff 48%, #a7f3d0)',
+        juice: 'linear-gradient(155deg, #fb923c, #fff7ed 48%, #f97316)'
+        ,
+        lemonade: 'linear-gradient(155deg, #fb923c, #fff7ed 48%, #facc15)',
+        iced_tea: 'linear-gradient(155deg, #fef3c7, #ffffff 48%, #d97706)',
+        tonic: 'linear-gradient(155deg, #dbeafe, #ffffff 48%, #93c5fd)',
+        juice_drink: 'linear-gradient(155deg, #fed7aa, #ffffff 48%, #fb923c)'
+      };
+
+      const similarByProduct = {
+        'product-coca-cola-original': ['Pepsi', 'Kofola', 'Coca-Cola Zero', 'RC Cola'],
+        'product-coca-cola-zero': ['Coca-Cola Original', 'Pepsi Max', 'Kofola Bez cukru', 'RC Cola Zero'],
+        'product-red-bull-energy-drink': ['Monster Energy', 'Semtex', 'Big Shock', 'Tiger Energy'],
+        'product-mattoni-jemne-perliva': ['Magnesia', 'Rajec', 'Korunní', 'Dobrá voda'],
+        'product-kofola-original': ['Coca-Cola Original', 'Pepsi', 'RC Cola', 'Kofola Bez cukru'],
+        'product-prime-hydration': ['Gatorade Zero', 'Powerade Zero', 'Vitamin Well', 'Nutrend Isodrinx'],
+        'product-magnesia-neperliva': ['Rajec', 'Mattoni', 'Dobrá voda', 'Korunní'],
+        'product-rajec-neperliva': ['Magnesia', 'Mattoni', 'Dobrá voda', 'Toma Natura'],
+        'product-monster-ultra-white': ['Big Shock Zero', 'Red Bull Sugarfree', 'Tiger Zero', 'Prime Hydration'],
+        'product-relax-pomeranc': ['Cappy Pomeranč', 'Pfanner Pomeranč', 'Rio Fresh', 'Toma džus']
+      };
+
+      const alternativesByCategory = {
+        cola: [
+          ['Chci energii', 'voda + káva'],
+          ['Chci sladkou chuť', 'zero varianta nebo menší porce'],
+          ['Chci pití pro děti', 'voda nebo neslazený čaj']
+        ],
+        cola_zero: [
+          ['Chci méně sladidel', 'voda s citronem'],
+          ['Chci energii', 'voda + káva'],
+          ['Chci pití pro děti', 'voda nebo neslazený čaj']
+        ],
+        energy_drink: [
+          ['Chci energii', 'káva + voda'],
+          ['Chci méně cukru', 'sugarfree varianta'],
+          ['Chci pití pro děti', 'voda nebo neslazený čaj']
+        ],
+        energy_drink_zero: [
+          ['Chci energii', 'káva + voda'],
+          ['Chci bez kofeinu', 'ochucená voda bez cukru'],
+          ['Chci pití pro děti', 'voda nebo neslazený čaj']
+        ],
+        mineral_water: [
+          ['Chci energii', 'minerálka + káva'],
+          ['Chci sladkou chuť', 'voda s ovocem'],
+          ['Chci pití pro děti', 'neperlivá voda']
+        ],
+        water: [
+          ['Chci energii', 'voda + káva'],
+          ['Chci sladkou chuť', 'voda s ovocem'],
+          ['Chci po sportu', 'voda + jídlo podle zátěže']
+        ],
+        hydration_drink: [
+          ['Chci energii', 'káva + voda'],
+          ['Chci sladkou chuť', 'ochucená voda bez cukru'],
+          ['Chci pití pro děti', 'voda nebo neslazený čaj']
+        ],
+        juice: [
+          ['Chci méně cukru', 'ředěný džus nebo voda s ovocem'],
+          ['Chci pití pro děti', 'voda, neslazený čaj nebo menší porce džusu'],
+          ['Chci běžné pití', 'voda jako základ']
+        ],
+        lemonade: [
+          ['Chci méně cukru', 'menší porce nebo zero varianta'],
+          ['Chci pití pro děti', 'voda nebo neslazený čaj'],
+          ['Chci běžné pití', 'voda jako základ']
+        ],
+        iced_tea: [
+          ['Chci méně cukru', 'neslazený ledový čaj'],
+          ['Chci pití pro děti', 'voda nebo ovocný neslazený čaj'],
+          ['Chci běžné pití', 'voda jako základ']
+        ],
+        tonic: [
+          ['Chci méně cukru', 'tonic bez cukru nebo perlivá voda'],
+          ['Chci hořkou chuť', 'perlivá voda s citronem'],
+          ['Chci běžné pití', 'voda jako základ']
+        ],
+        juice_drink: [
+          ['Chci méně cukru', 'ředěný džus nebo voda s ovocem'],
+          ['Chci pití pro děti', 'voda nebo menší porce džusu'],
+          ['Chci běžné pití', 'voda jako základ']
+        ]
+      };
+
+      const input = document.getElementById('searchInput');
+      const button = document.getElementById('searchButton');
+      const suggestions = document.getElementById('suggestions');
+      const compareGrid = document.getElementById('compareGrid');
+      const rankingsGrid = document.getElementById('rankingsGrid');
+      const categoryGrid = document.getElementById('categoryGrid');
+      const eckoSearch = document.getElementById('eckoSearch');
+      const eckoClear = document.getElementById('eckoClear');
+      const eckoList = document.getElementById('eckoList');
+      const eckoDatabaseDetail = document.getElementById('eckoDatabaseDetail');
+      let modelProducts = [];
+      let activeProduct = null;
+      let eckoEntries = [];
+
+      function byId(items) {
+        return Object.fromEntries(items.map((item) => [item.id, item]));
+      }
+
+      function round(value, digits = 0) {
+        const factor = 10 ** digits;
+        return Math.round(value * factor) / factor;
+      }
+
+      function scoreColor(value) {
+        if (value >= 8) return 'linear-gradient(90deg, var(--green), var(--cyan))';
+        if (value >= 5) return 'linear-gradient(90deg, var(--yellow), #ffd166)';
+        return 'linear-gradient(90deg, var(--red), #ff9a9a)';
+      }
+
+      function packageLabel(productName) {
+        const parts = productName.split(' ');
+        if (parts.length <= 2) return productName.replace(' ', '<br>');
+        return `${parts.slice(0, 2).join(' ')}<br>${parts.slice(2).join(' ')}`;
+      }
+
+      function packageText(pkg) {
+        const type = {
+          can: 'plechovka',
+          pet_bottle: 'lahev',
+          carton: 'krabice'
+        }[pkg.package_type] || 'balení';
+        return `${type} ${pkg.volume_ml} ml`;
+      }
+
+      function packageTextFromMl(drink) {
+        const canCategories = ['cola', 'cola_zero', 'energy_drink', 'energy_drink_zero'];
+        const type = canCategories.includes(drink.category) ? 'plechovka' : drink.packageMl >= 1000 ? 'krabice' : 'lahev';
+        return `${type} ${drink.packageMl} ml`;
+      }
+
+      function amountForPackage(per100, volume) {
+        return round((per100 || 0) * volume / 100, per100 < 1 ? 1 : 0);
+      }
+
+      function sugarCubes(grams) {
+        return round(grams / 5, 1);
+      }
+
+      function sugarKgPerYear(grams) {
+        return (grams * 365 / 1000).toFixed(1).replace('.', ',');
+      }
+
+      function formatNumber(value, digits = 1) {
+        return Number(value).toFixed(digits).replace(/\.0$/, '').replace('.', ',');
+      }
+
+      function sugarStory(grams) {
+        const week = grams * 7;
+        const month = grams * 30;
+        const year = grams * 365;
+        const cubes = Math.round(year / 5);
+        const kiloBags = year / 1000;
+        const shoppingBags = Math.max(0, Math.round(kiloBags / 6));
+        if (year === 0) {
+          return {
+            week: '0 g',
+            month: '0 g',
+            year: '0 kg',
+            cubes: '0',
+            image: 'Za rok z toho nevznikne žádná taška cukru.',
+            sentence: 'Tohle je přesně ten typ nápoje, který vám cukr do dne nenápadně nepřidává.'
+          };
+        }
+        return {
+          week: `${formatNumber(week / 1000)} kg`,
+          month: `${formatNumber(month / 1000)} kg`,
+          year: `${formatNumber(year / 1000)} kg`,
+          cubes: cubes.toLocaleString('cs-CZ'),
+          image: kiloBags >= 8
+            ? `To odpovídá přibližně ${Math.max(1, shoppingBags)} plným nákupním taškám cukru.`
+            : `To odpovídá přibližně ${formatNumber(kiloBags)} běžným kilovým balením cukru.`,
+          sentence: year >= 10000
+            ? 'Jedna lahev nebo plechovka denně už není drobnost, ale viditelná hromada cukru za rok.'
+            : 'Na jednom kusu to vypadá nenápadně, ale opakování z toho udělá konkrétní množství.'
+        };
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#039;');
+      }
+
+      function setMeta(selector, attribute, value) {
+        let element = document.head.querySelector(selector);
+        if (!element) {
+          element = document.createElement('meta');
+          const nameMatch = selector.match(/meta\[name="([^"]+)"\]/);
+          const propertyMatch = selector.match(/meta\[property="([^"]+)"\]/);
+          if (nameMatch) element.setAttribute('name', nameMatch[1]);
+          if (propertyMatch) element.setAttribute('property', propertyMatch[1]);
+          document.head.appendChild(element);
+        }
+        element.setAttribute(attribute, value);
+      }
+
+      function productPath(product) {
+        return `/napoj/${product.id}`;
+      }
+
+      const categoryRoutes = {
+        energy_drink: 'energeticke-napoje',
+        energy_drink_zero: 'energeticke-napoje',
+        cola: 'kolove-napoje',
+        cola_zero: 'kolove-napoje',
+        mineral_water: 'mineralni-vody',
+        water: 'mineralni-vody',
+        flavored_water: 'mineralni-vody',
+        juice: 'dzusy',
+        juice_drink: 'dzusy',
+        lemonade: 'limonady',
+        iced_tea: 'limonady',
+        tonic: 'limonady'
+      };
+
+      function categoryPath(category) {
+        return `/kategorie/${categoryRoutes[category] || category}`;
+      }
+
+      function productUrl(product) {
+        return `${window.location.origin}${productPath(product)}`;
+      }
+
+      function metaDescription(product) {
+        return `${product.name}: ${product.sugar} g cukru, ${product.caffeine} mg kofeinu v balení ${product.package}. Lidské vysvětlení složení, vhodnosti pro hubnutí, děti, sport a běžné pití.`;
+      }
+
+      function updateSeo(product) {
+        const title = `${product.name}: cukr, kofein a složení | DámeNápoj.cz`;
+        const description = metaDescription(product);
+        const url = productUrl(product);
+        document.title = title;
+        document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+        setMeta('meta[name="description"]', 'content', description);
+        setMeta('meta[property="og:type"]', 'content', 'product');
+        setMeta('meta[property="og:title"]', 'content', title);
+        setMeta('meta[property="og:description"]', 'content', description);
+        setMeta('meta[property="og:url"]', 'content', url);
+        document.getElementById('productSchema').textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: product.name,
+          brand: { '@type': 'Brand', name: product.brand },
+          category: product.type,
+          description,
+          url,
+          additionalProperty: [
+            { '@type': 'PropertyValue', name: 'Trh', value: product.sourceInfo.variant },
+            { '@type': 'PropertyValue', name: 'Země', value: product.sourceInfo.market },
+            { '@type': 'PropertyValue', name: 'Balení', value: product.package },
+            { '@type': 'PropertyValue', name: 'Cukr na 100 ml', value: `${product.sugarPer100} g` },
+            { '@type': 'PropertyValue', name: 'Cukr v balení', value: `${product.sugar} g` },
+            { '@type': 'PropertyValue', name: 'Kofein na 100 ml', value: `${product.caffeinePer100} mg` },
+            { '@type': 'PropertyValue', name: 'Kofein v balení', value: `${product.caffeine} mg` },
+            { '@type': 'PropertyValue', name: 'Kalorie na 100 ml', value: `${product.caloriesPer100} kcal` },
+            { '@type': 'PropertyValue', name: 'Kalorie v balení', value: `${product.calories} kcal` },
+            { '@type': 'PropertyValue', name: 'Ověřeno', value: product.sourceInfo.verifiedAt }
+          ]
+        });
+      }
+
+      function updateHomeSeo() {
+        const title = 'DámeNápoj.cz - vyhledávání nápojů podle cukru, kofeinu a složení';
+        const description = 'Vyhledejte nápoj a rychle pochopte cukr, kofein, kalorie, sladidla, éčka, skóre pro hubnutí, děti, energii, sport a každodenní pití.';
+        const url = window.location.origin + '/';
+        document.title = title;
+        document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+        setMeta('meta[name="description"]', 'content', description);
+        setMeta('meta[property="og:type"]', 'content', 'website');
+        setMeta('meta[property="og:title"]', 'content', title);
+        setMeta('meta[property="og:description"]', 'content', description);
+        setMeta('meta[property="og:url"]', 'content', url);
+        document.getElementById('productSchema').textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'DámeNápoj.cz',
+          url,
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: `${url}?q={search_term_string}`,
+            'query-input': 'required name=search_term_string'
+          }
+        });
+      }
+
+      function senseMark(score) {
+        if (score >= 7) return ['✅', 'dává smysl'];
+        if (score >= 4) return ['⚠', 'záleží'];
+        return ['❌', 'spíš ne'];
+      }
+
+      function eveningScore(product) {
+        if (product.caffeine >= 80) return 1;
+        if (product.caffeine > 0) return 4;
+        return product.scores.daily[0];
+      }
+
+      function renderSense(product) {
+        const items = [
+          ['energie', product.scores.energy[0]],
+          ['hubnutí', product.scores.weight[0]],
+          ['děti', product.scores.kids[0]],
+          ['večer / běžné pití', Math.min(product.scores.daily[0], eveningScore(product))],
+          ['před sportem', product.scores.sport[0]]
+        ];
+        document.getElementById('senseList').innerHTML = items.map(([label, score]) => {
+          const [icon, text] = senseMark(score);
+          return `<div class="sense-item"><strong>${icon} ${label}</strong><span class="note">${text}</span></div>`;
+        }).join('');
+      }
+
+      const eckoDetails = {
+        'Barvivo E150d': {
+          title: 'E150d - karamelové barvivo',
+          what: 'Potravinářské barvivo používané pro tmavou hnědou barvu.',
+          usage: 'Dodává tmavou barvu cole.',
+          common: 'Cola nápoje, omáčky, pečivo.',
+          kids: 'Pro děti je důležitější sledovat celý nápoj, hlavně cukr a kofein.',
+          weight: 'Samo o sobě nepřidává významné kalorie, ale často je v nápojích s cukrem.'
+        },
+        'E150d': {
+          title: 'E150d - karamelové barvivo',
+          what: 'Potravinářské barvivo používané pro tmavou hnědou barvu.',
+          usage: 'Dodává tmavou barvu cole.',
+          common: 'Cola nápoje, omáčky, pečivo.',
+          kids: 'Pro děti je důležitější sledovat celý nápoj, hlavně cukr a kofein.',
+          weight: 'Samo o sobě nepřidává významné kalorie, ale často je v nápojích s cukrem.'
+        },
+        'E330': {
+          title: 'E330 - kyselina citronová',
+          what: 'Běžná potravinářská kyselina, která dodává svěží kyselost.',
+          usage: 'Upravuje chuť a kyselost nápoje.',
+          common: 'Limonády, džusy, bonbony, ochucené vody.',
+          kids: 'Obvykle běžná složka, u citlivých dětí může vadit kyselost nápoje.',
+          weight: 'Nemá významné kalorie, při hubnutí sledujte hlavně cukr v celém nápoji.'
+        },
+        'Kyselina citronová': {
+          title: 'E330 - kyselina citronová',
+          what: 'Běžná potravinářská kyselina, která dodává svěží kyselost.',
+          usage: 'Upravuje chuť a kyselost nápoje.',
+          common: 'Limonády, džusy, bonbony, ochucené vody.',
+          kids: 'Obvykle běžná složka, u citlivých dětí může vadit kyselost nápoje.',
+          weight: 'Nemá významné kalorie, při hubnutí sledujte hlavně cukr v celém nápoji.'
+        },
+        'Aspartam': {
+          title: 'E951 - aspartam',
+          what: 'Intenzivní sladidlo používané místo cukru.',
+          usage: 'Dodává sladkou chuť s minimem kalorií.',
+          common: 'Zero limonády, sugarfree nápoje, žvýkačky.',
+          kids: 'U dětí je dobré sledovat celkový návyk na sladkou chuť a množství zero nápojů.',
+          weight: 'Může pomoci snížit příjem cukru, ale neřeší celý pitný režim.'
+        },
+        'Acesulfam K': {
+          title: 'E950 - acesulfam K',
+          what: 'Intenzivní sladidlo často kombinované s dalšími sladidly.',
+          usage: 'Zesiluje sladkou chuť bez běžného cukru.',
+          common: 'Zero limonády, energetické nápoje bez cukru, ochucené nápoje.',
+          kids: 'Pro děti spíš občas, hlavně kvůli zvyku na velmi sladkou chuť.',
+          weight: 'Snižuje cukr a kalorie v nápoji, ale sledujte i kofein a frekvenci.'
+        },
+        'Sukralóza': {
+          title: 'E955 - sukralóza',
+          what: 'Intenzivní sladidlo s velmi nízkým kalorickým dopadem.',
+          usage: 'Nahrazuje cukr ve sladkých nápojích.',
+          common: 'Sugarfree energy drinky, zero limonády, ochucené nápoje.',
+          kids: 'U dětí je dobré držet zero nápoje spíš jako občasnou volbu.',
+          weight: 'Může dávat smysl při snižování cukru, ale není to důvod pít sladké nápoje bez limitu.'
+        }
+      };
+
+      const basicIngredientDetails = {
+        'Voda': ['Základ nápoje.', 'Voda, limonády, čaje, minerální nápoje.', 'Běžná složka nápojů.'],
+        'Přírodní minerální voda': ['Základ minerální vody s přirozenými minerály.', 'Minerální vody.', 'Běžná volba pro pitný režim.'],
+        'Pramenitá voda': ['Základní voda z podzemního zdroje.', 'Balené vody.', 'Běžná volba pro každodenní pití.'],
+        'Cukr': ['Dodává sladkou chuť a energii.', 'Limonády, džusy, ochucené čaje.', 'Sledujte množství, hlavně při hubnutí a u dětí.'],
+        'Sacharóza': ['Forma cukru, která dodává rychlou energii.', 'Limonády, energy drinky, sladkosti.', 'Počítá se do celkového příjmu cukru.'],
+        'Glukóza': ['Jednoduchý cukr s rychlým zdrojem energie.', 'Energy drinky, sladké nápoje, sportovní výživa.', 'Sledujte množství stejně jako u ostatních cukrů.'],
+        'Glukózový sirup': ['Sladká sirupová složka s obsahem cukrů.', 'Limonády, cukrovinky, dezerty.', 'Zvyšuje příjem cukru a kalorií.'],
+        'Přirozené cukry': ['Cukry pocházející přirozeně z ovoce nebo šťávy.', 'Džusy, smoothie, ovocné nápoje.', 'I přirozený cukr se počítá do celkové energie.'],
+        'Oxid uhličitý': ['Vytváří bublinky.', 'Perlivé vody, limonády, colové nápoje.', 'Pro většinu lidí běžná složka, citlivým může vadit kvůli nadýmání.'],
+        'Kyselina fosforečná': ['Dodává typickou kyselost colovým nápojům.', 'Cola nápoje.', 'V běžném množství se používá v potravinářství.'],
+        'Kyselina citronová': ['Dodává kyselost a svěžest.', 'Limonády, džusy, ochucené vody.', 'Běžně používaná potravinářská kyselina.'],
+        'Přírodní aroma': ['Doplňuje chuťový profil nápoje.', 'Limonády, čaje, ochucené vody.', 'Běžně používaná složka, přesné složení bývá součástí receptury výrobce.'],
+        'Aroma': ['Doplňuje chuťový profil nápoje.', 'Limonády, energetické nápoje, ochucené vody.', 'Běžná složka, přesné složení bývá receptura výrobce.'],
+        'Kofein': ['Může povzbudit a zvýšit bdělost.', 'Cola nápoje, energetické nápoje, káva, čaj.', 'Dospělí ho běžně tolerují, u dětí a citlivých lidí je dobré hlídat množství.'],
+        'Taurin': ['Typická látka v energy drincích, často vedle kofeinu.', 'Energetické nápoje.', 'U energy drinků sledujte hlavně kombinaci s kofeinem.'],
+        'Sladidla': ['Dodávají sladkou chuť bez běžného množství cukru.', 'Zero limonády, sugarfree energy drinky.', 'Pro běžnou populaci se používají v povolených množstvích, u dětí je dobré hlídat zvyk na sladkou chuť.'],
+        'Vitaminy skupiny B': ['Přidané vitaminy typické pro energetické nápoje.', 'Energy drinky, doplňkové nápoje.', 'Samy o sobě z energy drinku nedělají každodenní pití.'],
+        'Vitaminy': ['Přidané mikroživiny.', 'Energy drinky, funkční nápoje.', 'Důležité je sledovat celý nápoj, ne jen přidané vitaminy.'],
+        'Chinin': ['Dodává typickou hořkost tonicu.', 'Tonicové nápoje.', 'Běžně se používá v malých potravinářských množstvích.'],
+        'Barviva': ['Dodávají nápoji barvu.', 'Limonády, cukrovinky, ochucené nápoje.', 'Sledujte konkrétní typ barviva, pokud ho etiketa uvádí.']
+      };
+
+      function ingredientDetails(name) {
+        if (eckoDetails[name]) return eckoDetails[name];
+        const fallback = basicIngredientDetails[name] || [
+          'Součást složení uvedená na etiketě.',
+          'Záleží na konkrétním typu nápoje.',
+          'Pro přesnější výklad je potřeba napojení na Ečkopedii.'
+        ];
+        return {
+          title: name,
+          what: fallback[0],
+          usage: fallback[0],
+          common: fallback[1],
+          kids: fallback[2],
+          weight: 'Při hubnutí sledujte hlavně cukr, kalorie a velikost balení celého nápoje.'
+        };
+      }
+
+      function splitIngredients(rawText) {
+        const cleaned = (rawText || '')
+          .replace(/\.$/, '')
+          .replace('přírodní aroma včetně kofeinu', 'přírodní aroma, kofein')
+          .replace('Přírodní aroma včetně kofeinu', 'Přírodní aroma, kofein');
+        return cleaned
+          .split(',')
+          .map((item) => item.trim())
+          .filter(Boolean)
+          .map((item) => item.charAt(0).toUpperCase() + item.slice(1));
+      }
+
+      function renderEckoDetail(name) {
+        const detail = ingredientDetails(name);
+        document.getElementById('eckoDetail').innerHTML = `
+          <h4>${escapeHtml(detail.title)}</h4>
+          <p><strong>Co to je:</strong><br>${escapeHtml(detail.what || detail.usage)}</p>
+          <p><strong>Proč se používá:</strong><br>${escapeHtml(detail.usage)}</p>
+          <p><strong>Kde se používá:</strong><br>${escapeHtml(detail.common)}</p>
+          <p><strong>Vhodnost pro děti:</strong><br>${escapeHtml(detail.kids)}</p>
+          <p><strong>Poznámky pro hubnutí:</strong><br>${escapeHtml(detail.weight)}</p>
+        `;
+        document.querySelectorAll('.ingredient-button').forEach((button) => {
+          button.classList.toggle('active', button.dataset.ingredient === name);
+        });
+      }
+
+      function renderEckoDatabaseDetail(name) {
+        const detail = ingredientDetails(name);
+        eckoDatabaseDetail.innerHTML = `
+          <h4>${escapeHtml(detail.title)}</h4>
+          <p><strong>Co to je:</strong><br>${escapeHtml(detail.what || detail.usage)}</p>
+          <p><strong>Proč se používá:</strong><br>${escapeHtml(detail.usage)}</p>
+          <p><strong>Kde se používá:</strong><br>${escapeHtml(detail.common)}</p>
+          <p><strong>Vhodnost pro děti:</strong><br>${escapeHtml(detail.kids)}</p>
+          <p><strong>Poznámky pro hubnutí:</strong><br>${escapeHtml(detail.weight)}</p>
+        `;
+      }
+
+      function buildEckoEntries() {
+        const aliases = {
+          'Barvivo E150d': 'E150d',
+          'E950': 'E950 Acesulfam K',
+          'E951': 'E951 Aspartam',
+          'E955': 'E955 Sukralóza',
+          'Kyselina citronová': 'E330 Kyselina citronová',
+          'Aspartam': 'E951 Aspartam',
+          'Acesulfam K': 'E950 Acesulfam K',
+          'Sukralóza': 'E955 Sukralóza'
+        };
+        const counts = new Map();
+        modelProducts.forEach((product) => {
+          [...new Set([...(product.ingredients || []), ...(product.substances || [])])].forEach((name) => {
+            const label = aliases[name] || name;
+            counts.set(label, (counts.get(label) || 0) + 1);
+          });
+        });
+        ['E150d', 'E951 Aspartam', 'E950 Acesulfam K', 'E955 Sukralóza', 'E330 Kyselina citronová', 'Kofein', 'Taurin', 'Cukr', 'Oxid uhličitý', 'Kyselina fosforečná'].forEach((name) => {
+          if (!counts.has(name)) counts.set(name, 0);
+        });
+        eckoEntries = [...counts.entries()]
+          .filter(([, count]) => count > 0)
+          .map(([name, count]) => ({ name, count }))
+          .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'cs'));
+      }
+
+      function toggleDataSection(element, hasContent) {
+        const section = element && element.closest('.section');
+        if (section) section.classList.toggle('is-empty', !hasContent);
+      }
+
+      function renderEckoList(query = '') {
+        toggleDataSection(eckoList, eckoEntries.length > 0);
+        if (!eckoEntries.length) {
+          eckoList.innerHTML = '';
+          eckoDatabaseDetail.innerHTML = '';
+          return;
+        }
+        const normalized = normalizeText(query);
+        const filtered = eckoEntries
+          .filter((entry) => !normalized || normalizeText(entry.name).includes(normalized))
+          .slice(0, 24);
+        if (!filtered.length) {
+          eckoList.innerHTML = '<div class="source-item">Nic nenalezeno.</div>';
+          eckoDatabaseDetail.innerHTML = '';
+          return;
+        }
+        eckoList.innerHTML = filtered.map((entry) => `
+          <button class="ecko-list-button" type="button" data-ecko="${escapeHtml(entry.name)}">
+            ${escapeHtml(entry.name)}
+            <span>${entry.count}× v databázi nápojů</span>
+          </button>
+        `).join('');
+        eckoList.querySelectorAll('[data-ecko]').forEach((button) => {
+          button.addEventListener('click', () => renderEckoDatabaseDetail(button.dataset.ecko.replace(/^E\\d+\\s+/, '')));
+        });
+        renderEckoDatabaseDetail((filtered[0] && filtered[0].name.replace(/^E\\d+\\s+/, '')) || 'Kofein');
+      }
+
+      function pillForSugar(sugar) {
+        if (sugar === 0) return ['good', 'bez cukru'];
+        if (sugar <= 5) return ['good', 'málo cukru'];
+        if (sugar <= 20) return ['warn', 'cukr'];
+        return ['bad', 'hodně cukru'];
+      }
+
+      function pillForCaffeine(caffeine) {
+        if (caffeine === 0) return ['good', 'bez kofeinu'];
+        if (caffeine < 50) return ['warn', 'obsahuje kofein'];
+        return ['bad', 'hodně kofeinu'];
+      }
+
+      function makeFaq(product) {
+        const caffeineText = product.caffeine === 0
+          ? 'Ne, tento nápoj neobsahuje kofein.'
+          : `Ano, v běžném balení je přibližně ${product.caffeine} mg kofeinu.`;
+        const kidsText = product.scores.kids[0] >= 8
+          ? 'Ano, obecně dává smysl i pro děti. Pořád ale záleží na věku, množství a celkovém pitném režimu.'
+          : product.scores.kids[0] >= 5
+            ? 'Spíš občas. Není to vyloženě energy drink, ale pořád sledujte sladidla, cukr nebo bublinky.'
+            : 'Spíš ne jako běžné pití. Sledujte hlavně cukr, kofein nebo sladidla.';
+        const weightText = product.scores.weight[0] >= 8
+          ? 'Ano, při hubnutí může dávat smysl, protože má málo cukru a kalorií.'
+          : product.scores.weight[0] >= 5
+            ? 'Dá se započítat, ale hlídejte množství a frekvenci.'
+            : 'Při hubnutí není ideální, protože cukr a kalorie se rychle nasčítají.';
+        const sportText = product.scores.sport[0] >= 7
+          ? 'Může se hodit kolem sportu, hlavně jako hydratace nebo nápoj s nízkým cukrem.'
+          : product.scores.sport[0] >= 4
+            ? 'Záleží na situaci. Před sportem sledujte hlavně kofein, cukr a toleranci žaludku.'
+            : 'Spíš ne jako cílený sportovní nápoj. Pro běžný pohyb obvykle stačí voda.';
+        return { kids: kidsText, weight: weightText, caffeine: caffeineText, sport: sportText };
+      }
+
+      function mapMvpDrink(drink) {
+        const sugar = drink.sugarGPerPackage;
+        const caffeine = drink.caffeineMgPerPackage;
+        const category = drink.category;
+        const scores = {
+          daily: [drink.scores.daily, 'Každodenní pití', dailyText(drink.scores.daily)],
+          weight: [drink.scores.weightLoss, 'Hubnutí', weightText(drink.scores.weightLoss)],
+          kids: [drink.scores.children, 'Děti', kidsText(drink.scores.children)],
+          energy: [drink.scores.energy, 'Energie', energyText(drink.scores.energy, caffeine)],
+          sport: [drink.scores.sport, 'Sport', sportText(drink.scores.sport)]
+        };
+        const hasSweeteners = drink.substances.some((item) => {
+          const value = normalizeText(item);
+          return value.includes('sladidl') || value.includes('aspartam') || value.includes('acesulfam') || value.includes('sukraloza');
+        });
+        const isBottle = !['cola', 'cola_zero', 'energy_drink', 'energy_drink_zero'].includes(category) || drink.packageMl >= 1000;
+        return {
+          id: drink.id,
+          productId: drink.id,
+          productName: drink.productName,
+          variantName: drink.productName,
+          name: drink.productName,
+          brand: drink.brand,
+          type: categoryLabel(category),
+          package: packageTextFromMl(drink),
+          packageMl: drink.packageMl,
+          sugar,
+          sugarPer100: drink.sugarGPer100ml,
+          caffeine,
+          caffeinePer100: drink.caffeineMgPer100ml,
+          calories: drink.kcalPerPackage,
+          caloriesPer100: drink.kcalPer100ml,
+          cubes: sugarCubes(sugar),
+          color: colorsByCategory[category] || 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)',
+          shape: isBottle ? 'bottle' : 'can',
+          tags: [drink.brand, categoryLabel(category), drink.market, ...drink.tags.slice(0, 3)],
+          pills: [
+            pillForSugar(sugar),
+            pillForCaffeine(caffeine),
+            hasSweeteners ? ['warn', 'obsahuje sladidla'] : ['good', 'bez sladidel v datech'],
+            [scores.daily[0] >= 7 ? 'good' : scores.daily[0] >= 4 ? 'warn' : 'bad', scores.daily[0] >= 7 ? 'vhodné na každý den' : 'spíš občas']
+          ],
+          scores,
+          human: drink.humanSummary,
+          pros: drink.biggestBenefits,
+          cons: drink.biggestDrawbacks,
+          sourceInfo: {
+            source: drink.sourceNote,
+            verifiedAt: drink.checkedAt,
+            market: drink.country,
+            variant: drink.market,
+            ean: drink.ean || 'neuvedeno',
+            compositionCheckedAt: drink.checkedAt
+          },
+          ingredients: drink.ingredients,
+          substances: drink.substances,
+          similar: drink.similarProducts,
+          alternatives: drink.alternatives,
+          raw: drink,
+          faq: null
+        };
+      }
+
+      function universalCategory(category) {
+        return {
+          cola: 'cola',
+          energeticky: 'energy_drink',
+          dzus: 'juice',
+          voda: 'water',
+          iontak: 'hydration_drink',
+          limonada: 'lemonade',
+          tonic: 'tonic',
+          'ledovy caj': 'iced_tea'
+        }[normalizeText(category)] || 'lemonade';
+      }
+
+      function slugify(value) {
+        return normalizeText(value).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      }
+
+      function mapUniversalDrink(drink) {
+        const category = universalCategory(drink.kategorie);
+        const sugar = amountForPackage(drink.cukr_na_100_ml, drink.objem);
+        const caffeine = amountForPackage(drink.kofein_na_100_ml, drink.objem);
+        const calories = amountForPackage(drink.kalorie_na_100_ml, drink.objem);
+        const scores = {
+          daily: [drink.kazdodenni_piti, 'Každodenní pití', dailyText(drink.kazdodenni_piti)],
+          weight: [drink.hubnuti, 'Hubnutí', weightText(drink.hubnuti)],
+          kids: [drink.deti, 'Děti', kidsText(drink.deti)],
+          energy: [drink.energie, 'Energie', energyText(drink.energie, caffeine)],
+          sport: [drink.sport, 'Sport', sportText(drink.sport)]
+        };
+        const sweeteners = drink.sladidla || [];
+        const eNumbers = drink.ecka || [];
+        const derivedIngredients = [
+          'Voda',
+          sugar > 0 ? 'Cukr' : null,
+          caffeine > 0 ? 'Kofein' : null,
+          ...sweeteners.map((item) => item.charAt(0).toUpperCase() + item.slice(1)),
+          ...eNumbers
+        ].filter(Boolean);
+        return {
+          id: slugify(drink.nazev),
+          productId: slugify(drink.nazev),
+          productName: drink.nazev,
+          variantName: drink.nazev,
+          name: drink.nazev,
+          brand: drink.vyrobce,
+          type: categoryLabel(category),
+          package: packageTextFromMl({ category, packageMl: drink.objem }),
+          packageMl: drink.objem,
+          sugar,
+          sugarPer100: drink.cukr_na_100_ml,
+          caffeine,
+          caffeinePer100: drink.kofein_na_100_ml,
+          calories,
+          caloriesPer100: drink.kalorie_na_100_ml,
+          cubes: sugarCubes(sugar),
+          color: colorsByCategory[category] || 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)',
+          shape: ['cola', 'cola_zero', 'energy_drink', 'energy_drink_zero'].includes(category) ? 'can' : 'bottle',
+          tags: [drink.vyrobce, drink.kategorie, ...sweeteners, ...eNumbers],
+          pills: [
+            pillForSugar(sugar),
+            pillForCaffeine(caffeine),
+            sweeteners.length ? ['warn', 'obsahuje sladidla'] : ['good', 'bez sladidel'],
+            [scores.daily[0] >= 7 ? 'good' : scores.daily[0] >= 4 ? 'warn' : 'bad', scores.daily[0] >= 7 ? 'vhodné na každý den' : 'spíš občas']
+          ],
+          scores,
+          human: drink.lidske_vysvetleni,
+          pros: [
+            sugar === 0 ? 'bez cukru' : `${sugar} g cukru v balení`,
+            caffeine === 0 ? 'bez kofeinu' : `${caffeine} mg kofeinu v balení`,
+            `${calories} kcal v balení`
+          ],
+          cons: [
+            sugar > 20 ? 'cukr se rychle nasčítá' : sugar === 0 ? 'sladká chuť může držet zvyk na sladké' : 'sledujte množství',
+            caffeine > 50 ? 'vyšší kofein' : caffeine > 0 ? 'obsahuje kofein' : 'nedodá kofeinovou energii',
+            sweeteners.length ? 'obsahuje sladidla' : eNumbers.length ? 'obsahuje éčka uvedená na etiketě' : 'jednoduché složení'
+          ],
+          sourceInfo: {
+            source: 'MVP záznam / veřejné údaje / etiketa k ověření',
+            verifiedAt: '13. 6. 2026',
+            market: 'Česká republika',
+            variant: 'CZ',
+            ean: 'neuvedeno',
+            compositionCheckedAt: '13. 6. 2026'
+          },
+          ingredients: [...new Set(derivedIngredients)],
+          substances: [...new Set(derivedIngredients)],
+          sweeteners,
+          eNumbers,
+          similar: drink.podobne_napoje || [],
+          alternatives: (drink.lepsi_alternativy || []).map((item) => [item.cil, item.napoj]),
+          raw: { category },
+          faq: null
+        };
+      }
+
+      function similarityScore(source, candidate) {
+        if (!source || !candidate || source.id === candidate.id) return -Infinity;
+        let score = 0;
+        if (source.raw.category === candidate.raw.category) score += 60;
+        if (source.brand === candidate.brand) score += 18;
+        if ((source.sugar === 0) === (candidate.sugar === 0)) score += 14;
+        if ((source.caffeine === 0) === (candidate.caffeine === 0)) score += 10;
+        score -= Math.abs(numericValue(source.sugar) - numericValue(candidate.sugar)) / 3;
+        score -= Math.abs(numericValue(source.caffeine) - numericValue(candidate.caffeine)) / 20;
+        score -= Math.abs(scoreValue(source, 'daily') - scoreValue(candidate, 'daily'));
+        return score;
+      }
+
+      function bestProductName(products, filter, fallback) {
+        const match = products.find(filter);
+        return match ? match.name : fallback;
+      }
+
+      function betterAlternativesFor(product, products) {
+        const sameBrandZero = bestProductName(products, (item) => item.id !== product.id && item.brand === product.brand && item.raw.category === product.raw.category && item.sugar === 0, '');
+        const sameCategoryZero = sameBrandZero || bestProductName(products, (item) => item.id !== product.id && item.raw.category === product.raw.category && item.sugar === 0, 'zero varianta');
+        const water = bestProductName(products, (item) => item.raw.category === 'water' && item.sugar === 0 && item.caffeine === 0, 'voda');
+        const flavoredWater = bestProductName(products, (item) => item.raw.category === 'water' && item.sugar === 0 && item.name !== water, 'ochucená voda bez cukru');
+        const sameBrandZeroEnergy = bestProductName(products, (item) => item.id !== product.id && item.brand === product.brand && item.raw.category === 'energy_drink' && item.sugar === 0 && item.caffeine > 0, '');
+        const zeroEnergy = sameBrandZeroEnergy || bestProductName(products, (item) => item.raw.category === 'energy_drink' && item.sugar === 0 && item.caffeine > 0, 'energy drink bez cukru');
+        const lowSugarSport = bestProductName(products, (item) => item.raw.category === 'hydration_drink' && item.sugar <= 5, 'voda + jídlo po sportu');
+
+        if (product.raw.category === 'water') {
+          return [
+            ['Chci chuť', flavoredWater],
+            ['Chci energii', 'káva + voda'],
+            ['Chci sport', lowSugarSport]
+          ];
+        }
+        if (product.raw.category === 'energy_drink') {
+          return [
+            ['Chci energii', product.sugar > 0 ? zeroEnergy : 'káva + voda'],
+            ['Chci méně cukru', product.sugar > 0 ? zeroEnergy : water],
+            ['Chci běžné pití', water]
+          ];
+        }
+        if (product.raw.category === 'hydration_drink') {
+          return [
+            ['Chci sport', lowSugarSport],
+            ['Chci každý den', water],
+            ['Chci sladkou chuť', flavoredWater]
+          ];
+        }
+        if (product.sugar > 0) {
+          return [
+            ['Chci stejný typ s méně cukrem', sameCategoryZero],
+            ['Chci běžné pití', water],
+            ['Chci pití pro děti', 'voda nebo neslazený čaj']
+          ];
+        }
+        return [
+          ['Chci běžné pití', water],
+          ['Chci bez kofeinu', product.caffeine > 0 ? flavoredWater : water],
+          ['Chci sladkou chuť', flavoredWater]
+        ];
+      }
+
+      function mapModel(data) {
+        if (data.napoje) {
+          const products = data.napoje.map(mapUniversalDrink);
+          return products.map((product) => ({
+            ...product,
+            similar: product.similar.length ? product.similar : products
+              .filter((item) => item.id !== product.id)
+              .sort((a, b) => similarityScore(product, b) - similarityScore(product, a))
+              .slice(0, 4)
+              .map((item) => item.name),
+            alternatives: product.alternatives.length ? product.alternatives : betterAlternativesFor(product, products),
+            faq: makeFaq(product)
+          }));
+        }
+        if (data.drinks) {
+          return data.drinks.map(mapMvpDrink).map((product) => ({ ...product, faq: makeFaq(product) }));
+        }
+        const brands = byId(data.brands);
+        const products = byId(data.products);
+        return data.product_variants.map((variant) => {
+          const product = products[variant.product_id];
+          const brand = brands[product.brand_id];
+          const pkg = variant.packages.find((item) => item.is_default) || variant.packages[0];
+          const nutrition = variant.nutrition_facts;
+          const sugar = amountForPackage(nutrition.sugars_g, pkg.volume_ml);
+          const caffeine = amountForPackage(nutrition.caffeine_mg, pkg.volume_ml);
+          const calories = amountForPackage(nutrition.energy_kcal, pkg.volume_ml);
+          const hasSweeteners = variant.substances.some((item) => {
+            const substance = data.substances.find((sub) => sub.id === item.substance_id);
+            return substance && substance.substance_type === 'sweetener';
+          });
+          const category = product.category;
+          const scores = {
+            daily: [variant.scores.daily_drinking_score, 'Každodenní pití', dailyText(variant.scores.daily_drinking_score)],
+            weight: [variant.scores.weight_loss_score, 'Hubnutí', weightText(variant.scores.weight_loss_score)],
+            kids: [variant.scores.children_score, 'Děti', kidsText(variant.scores.children_score)],
+            energy: [variant.scores.energy_score, 'Energie', energyText(variant.scores.energy_score, caffeine)],
+            sport: [variant.scores.sport_score, 'Sport', sportText(variant.scores.sport_score)]
+          };
+          return {
+            id: variant.id,
+            productId: product.id,
+            productName: product.name,
+            variantName: variant.market_name,
+            name: variant.market_name,
+            brand: brand.name,
+            type: product.category.replaceAll('_', ' '),
+            package: packageText(pkg),
+            sugar,
+            caffeine,
+            calories,
+            cubes: sugarCubes(sugar),
+            color: colorsByCategory[category] || 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)',
+            shape: pkg.package_type === 'can' ? 'can' : 'bottle',
+            tags: [brand.name, categoryLabel(category), variant.country_iso_code],
+            pills: [
+              pillForSugar(sugar),
+              pillForCaffeine(caffeine),
+              hasSweeteners ? ['warn', 'obsahuje sladidla'] : ['good', 'bez sladidel v datech'],
+              [scores.daily[0] >= 7 ? 'good' : scores.daily[0] >= 4 ? 'warn' : 'bad', scores.daily[0] >= 7 ? 'vhodné na každý den' : 'spíš občas']
+            ],
+            scores,
+            human: variant.analysis_texts.human_explanation,
+            pros: variant.analysis_texts.biggest_benefits,
+            cons: variant.analysis_texts.biggest_drawbacks,
+            sourceInfo: {
+              source: 'Oficiální etiketa výrobce',
+              verifiedAt: '13. 6. 2026',
+              market: variant.country_iso_code === 'CZ' ? 'Česká republika' : variant.country_iso_code,
+              variant: variant.country_iso_code,
+              ean: variant.id === 'variant-coca-cola-original-cz' ? '5449000000996' : 'neuvedeno',
+              compositionCheckedAt: '13. 6. 2026'
+            },
+            ingredients: splitIngredients(variant.ingredients && variant.ingredients.raw_text),
+            similar: similarByProduct[product.id] || [],
+            alternatives: alternativesByCategory[category] || alternativesByCategory.water,
+            faq: null
+          };
+        }).map((product) => ({ ...product, faq: makeFaq(product) }));
+      }
+
+      function normalizeText(value) {
+        return value
+          .toString()
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+      }
+
+      function searchableText(product) {
+        return normalizeText([
+          product.brand,
+          product.productName,
+          product.variantName,
+          product.name,
+          product.type,
+          ...(product.tags || []),
+          ...(product.substances || [])
+        ].join(' '));
+      }
+
+      function searchProducts(query) {
+        const normalized = normalizeText(query.trim());
+        if (!normalized) return modelProducts;
+        const words = normalized.split(/\s+/).filter(Boolean);
+        return modelProducts
+          .map((product) => {
+            const haystack = searchableText(product);
+            const startsWithName = normalizeText(product.name).startsWith(normalized) ? 20 : 0;
+            const startsWithBrand = normalizeText(product.brand).startsWith(normalized) ? 16 : 0;
+            const fullMatch = haystack.includes(normalized) ? 10 : 0;
+            const wordScore = words.reduce((score, word) => score + (haystack.includes(word) ? 3 : -8), 0);
+            return { product, score: startsWithName + startsWithBrand + fullMatch + wordScore };
+          })
+          .filter((item) => item.score > 0)
+          .sort((a, b) => b.score - a.score || a.product.name.localeCompare(b.product.name, 'cs'))
+          .map((item) => item.product);
+      }
+
+      function mergeDatabases(parts) {
+        return {
+          meta: {
+            project: 'DámeNápoj.cz',
+            market: 'CZ',
+            source_files: DATA_URLS
+          },
+          countries: parts.flatMap((part) => part.countries || []),
+          substances: parts.flatMap((part) => part.substances || []),
+          ecko_entries: parts.flatMap((part) => part.ecko_entries || []),
+          brands: parts.flatMap((part) => part.brands || []),
+          products: parts.flatMap((part) => part.products || []),
+          product_variants: parts.flatMap((part) => part.product_variants || []),
+          drinks: parts.flatMap((part) => part.drinks || []),
+          napoje: parts.flatMap((part) => part.napoje || [])
+        };
+      }
+
+      function categoryLabel(category) {
+        return {
+          cola: 'sladká limonáda',
+          cola_zero: 'zero limonáda',
+          energy_drink: 'energy drink',
+          energy_drink_zero: 'energy bez cukru',
+          mineral_water: 'minerální voda',
+          water: 'voda',
+          hydration_drink: 'hydratační nápoj',
+          juice: 'džus',
+          lemonade: 'limonáda',
+          iced_tea: 'ledový čaj',
+          tonic: 'tonic',
+          juice_drink: 'ovocný nápoj',
+          flavored_water: 'ochucená voda',
+          flavored_beer_non_alcoholic: 'nealko ochucený nápoj'
+        }[category] || category;
+      }
+
+      function dailyText(score) {
+        if (score >= 8) return 'Dobrá volba pro běžné pití.';
+        if (score >= 5) return 'Spíš občas než jako hlavní pití každý den.';
+        return 'Na každodenní pití se hodí spíš jiná volba.';
+      }
+
+      function weightText(score) {
+        if (score >= 8) return 'Při hubnutí může dávat smysl.';
+        if (score >= 5) return 'Dá se započítat, ale sledujte množství.';
+        return 'Při hubnutí sledujte hlavně cukr a kalorie.';
+      }
+
+      function kidsText(score) {
+        if (score >= 8) return 'Obecně vhodné i pro děti.';
+        if (score >= 5) return 'Spíš občas, podle věku a množství.';
+        return 'Pro děti není ideální jako běžné pití.';
+      }
+
+      function energyText(score, caffeine) {
+        if (score >= 8) return `Silněji povzbuzující nápoj, kofein cca ${caffeine} mg v balení.`;
+        if (score >= 4) return 'Může lehce povzbudit, ale není to stabilní energie.';
+        return 'Nepůsobí jako zdroj energie, spíš jako hydratace nebo chuť.';
+      }
+
+      function sportText(score) {
+        if (score >= 7) return 'Může dávat smysl kolem sportu.';
+        if (score >= 4) return 'Záleží na situaci, sledujte cukr, kofein a žaludek.';
+        return 'Před sportem se většinou hodí spíš voda a vhodné jídlo.';
+      }
+
+      function findProduct(query) {
+        return searchProducts(query)[0] || modelProducts[0];
+      }
+
+      function findLinkedProduct(query) {
+        const matches = searchProducts(query);
+        return matches[0] || null;
+      }
+
+      function productLink(product) {
+        return `<a href="${productPath(product)}" data-product-link="${product.id}">${escapeHtml(product.name)}</a>`;
+      }
+
+      function bindProductLinks(scope = document) {
+        scope.querySelectorAll('[data-product-link]').forEach((link) => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const product = modelProducts.find((item) => item.id === link.dataset.productLink);
+            if (product) {
+              render(product, { pushUrl: true });
+              document.getElementById('productDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+      }
+
+      function bindCategoryLinks(scope = document) {
+        scope.querySelectorAll('[data-category-link]').forEach((link) => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const slug = link.dataset.categoryLink;
+            if (!slug) return;
+            const nextPath = `/kategorie/${slug}`;
+            if (window.location.pathname !== nextPath) {
+              window.history.pushState({ categorySlug: slug }, '', nextPath);
+            }
+            renderCards();
+            document.getElementById('compareGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        });
+      }
+
+      function numericValue(value, fallback = 0) {
+        const number = Number(value);
+        return Number.isFinite(number) ? number : fallback;
+      }
+
+      function scoreValue(product, key) {
+        return numericValue(product?.scores?.[key]?.[0]);
+      }
+
+      function renderRankings() {
+        const rankingDefs = [
+          ['TOP nápoje na hubnutí', (product) => scoreValue(product, 'weight') * 10 - numericValue(product.sugar)],
+          ['TOP nápoje pro energii', (product) => scoreValue(product, 'energy') * 10 + numericValue(product.caffeine) / 10],
+          ['TOP nápoje pro děti', (product) => scoreValue(product, 'kids') * 10 - numericValue(product.caffeine) / 10 - numericValue(product.sugar) / 5],
+          ['TOP nápoje na každý den', (product) => scoreValue(product, 'daily') * 10 - numericValue(product.sugar) / 5],
+          ['TOP nápoje bez cukru', (product) => numericValue(product.sugar) === 0 ? scoreValue(product, 'daily') * 10 : -numericValue(product.sugar)],
+          ['TOP nápoje bez kofeinu', (product) => numericValue(product.caffeine) === 0 ? scoreValue(product, 'daily') * 10 - numericValue(product.sugar) / 5 : -numericValue(product.caffeine)]
+        ];
+        const products = modelProducts.filter((product) => product && product.id && product.name);
+        const cards = rankingDefs.map(([title, ranker]) => {
+          const items = [...products]
+            .sort((a, b) => ranker(b) - ranker(a))
+            .slice(0, 8);
+          if (!items.length) return '';
+          return `<section class="ranking-card"><strong>${title}</strong><ol>${items.map((product) => `<li>${productLink(product)}</li>`).join('')}</ol></section>`;
+        }).filter(Boolean);
+        toggleDataSection(rankingsGrid, cards.length > 0);
+        rankingsGrid.innerHTML = cards.join('');
+        bindProductLinks(rankingsGrid);
+      }
+
+      function renderCategories() {
+        const categories = [
+          ['Energetické nápoje', 'energeticke-napoje', (product) => product.raw.category.includes('energy')],
+          ['Kolové nápoje', 'kolove-napoje', (product) => product.raw.category.includes('cola')],
+          ['Minerální vody', 'mineralni-vody', (product) => ['mineral_water', 'water', 'flavored_water'].includes(product.raw.category)],
+          ['Zero nápoje', 'zero-napoje', (product) => product.sugar === 0],
+          ['Džusy', 'dzusy', (product) => ['juice', 'juice_drink'].includes(product.raw.category)],
+          ['Limonády', 'limonady', (product) => ['lemonade', 'iced_tea', 'tonic'].includes(product.raw.category)]
+        ];
+        const cards = categories.map(([title, slug, filter]) => {
+          const count = modelProducts.filter((product) => product && product.raw && filter(product)).length;
+          if (!count) return '';
+          return `<article class="category-card"><a href="/kategorie/${slug}" data-category-link="${slug}">${title}</a><span class="note">${count} nápojů v MVP databázi</span></article>`;
+        }).filter(Boolean);
+        toggleDataSection(categoryGrid, cards.length > 0);
+        categoryGrid.innerHTML = cards.join('');
+        bindCategoryLinks(categoryGrid);
+      }
+
+      function productFromPath() {
+        const match = window.location.pathname.match(/^\/napoj(?:e)?\/([^/]+)\/?$/);
+        if (!match) return null;
+        return modelProducts.find((product) => product.id === decodeURIComponent(match[1])) || null;
+      }
+
+      function categoryFromPath() {
+        const match = window.location.pathname.match(/^\/kategorie\/([^/]+)\/?$/);
+        return match ? decodeURIComponent(match[1]) : null;
+      }
+
+      function productsForCategorySlug(slug) {
+        const filters = {
+          'energeticke-napoje': (product) => product.raw.category.includes('energy'),
+          'kolove-napoje': (product) => product.raw.category.includes('cola'),
+          'mineralni-vody': (product) => ['mineral_water', 'water', 'flavored_water'].includes(product.raw.category),
+          'zero-napoje': (product) => product.sugar === 0,
+          'dzusy': (product) => ['juice', 'juice_drink'].includes(product.raw.category),
+          'limonady': (product) => ['lemonade', 'iced_tea', 'tonic'].includes(product.raw.category)
+        };
+        return filters[slug] ? modelProducts.filter(filters[slug]) : modelProducts;
+      }
+
+      function initialProductFromRoute() {
+        const routeProduct = productFromPath();
+        if (routeProduct) return routeProduct;
+        const categorySlug = categoryFromPath();
+        if (categorySlug) return productsForCategorySlug(categorySlug)[0] || modelProducts[0];
+        return modelProducts[0];
+      }
+
+      function isHomeRoute() {
+        return window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+      }
+
+      function updateCategorySeo(slug, products) {
+        const titles = {
+          'energeticke-napoje': 'Energetické nápoje',
+          'kolove-napoje': 'Kolové nápoje',
+          'mineralni-vody': 'Minerální vody',
+          'zero-napoje': 'Zero nápoje',
+          'dzusy': 'Džusy a ovocné nápoje',
+          'limonady': 'Limonády'
+        };
+        const title = `${titles[slug] || 'Kategorie nápojů'} | DámeNápoj.cz`;
+        const description = `${titles[slug] || 'Kategorie nápojů'} pro český trh: cukr, kofein, složení a lidské vysvětlení u ${products.length} nápojů.`;
+        document.title = title;
+        setMeta('meta[name="description"]', 'content', description);
+        setMeta('meta[property="og:title"]', 'content', title);
+        setMeta('meta[property="og:description"]', 'content', description);
+        setMeta('meta[property="og:type"]', 'content', 'website');
+        document.querySelector('link[rel="canonical"]')?.setAttribute('href', `${window.location.origin}/kategorie/${slug}`);
+      }
+
+      function render(product, options = {}) {
+        if (!product) return;
+        activeProduct = product;
+        document.querySelector('.page')?.classList.toggle('home-mode', isHomeRoute() && !options.pushUrl);
+        if (isHomeRoute() && !options.pushUrl) {
+          updateHomeSeo();
+        } else {
+          updateSeo(product);
+        }
+        if (options.pushUrl) {
+          const nextPath = productPath(product);
+          if (window.location.pathname !== nextPath) {
+            window.history.pushState({ productId: product.id }, '', nextPath);
+          }
+          document.querySelector('.page')?.classList.remove('home-mode');
+        }
+        const currentInput = document.getElementById('searchInput');
+        currentInput.value = product.name;
+        currentInput.dataset.autofilled = 'true';
+        document.getElementById('heroSugar').textContent = `${product.sugar} g`;
+        document.getElementById('heroCaffeine').textContent = `${product.caffeine} mg`;
+        document.getElementById('productName').textContent = product.name;
+        document.getElementById('humanText').textContent = product.human;
+        const packageArt = document.getElementById('packageArt');
+        packageArt.className = `package ${product.shape === 'bottle' ? 'bottle' : ''}`;
+        packageArt.style.setProperty('--pack', product.color);
+        document.getElementById('packageLabel').innerHTML = packageLabel(product.name);
+        document.getElementById('topTags').innerHTML = product.tags.map((tag) => `<span class="pill ok">${tag}</span>`).join('');
+        document.getElementById('quickPills').innerHTML = product.pills.map(([type, text]) => `<span class="pill ${type}">${text}</span>`).join('');
+
+        const scoreItems = [product.scores.daily, product.scores.weight, product.scores.kids, product.scores.energy, product.scores.sport];
+        document.getElementById('scoreList').innerHTML = scoreItems.map(([value, label, text]) => `
+          <div class="score-card">
+            <div class="score-head"><span>${label}</span><span>${value}/10</span></div>
+            <div class="bar" style="--value:${value * 10}%;--color:${scoreColor(value)}"><span></span></div>
+            <p class="note">${text}</p>
+          </div>
+        `).join('');
+
+        document.getElementById('insights').innerHTML = `
+          <div class="insight"><strong>Déenko říká:</strong><p>${product.type}, ${product.package}. Přibližně ${product.calories} kcal v balení.</p></div>
+          <div class="insight"><strong>Cukr lidsky</strong><p>${product.sugar} g cukru v balení je zhruba ${product.cubes} kostek. Na 100 ml: ${product.sugarPer100} g cukru.</p></div>
+          <div class="insight"><strong>Kofein a kalorie</strong><p>${product.caffeine} mg kofeinu v balení, ${product.caloriesPer100} kcal na 100 ml.</p></div>
+          <div class="insight"><strong>Sladidla</strong><p>${(product.sweeteners && product.sweeteners.length) ? product.sweeteners.join(' · ') : 'bez sladidel v datech'}</p></div>
+          <div class="insight"><strong>Ečka</strong><p>${(product.eNumbers && product.eNumbers.length) ? product.eNumbers.join(' · ') : 'bez éček v datech'}</p></div>
+          <div class="insight"><strong>Největší výhody</strong><p>${product.pros.join(' · ')}</p></div>
+          <div class="insight"><strong>Největší nevýhody</strong><p>${product.cons.join(' · ')}</p></div>
+        `;
+        renderSense(product);
+        document.getElementById('similarDrinks').innerHTML = product.similar.map((item) => {
+          const target = findLinkedProduct(item);
+          if (!target) return `<li><strong>${escapeHtml(item)}</strong></li>`;
+          return `<li><button class="ingredient-button similar-button" type="button" data-name="${escapeHtml(item)}">${escapeHtml(item)}</button></li>`;
+        }).join('');
+        document.querySelectorAll('.similar-button').forEach((button) => {
+          button.addEventListener('click', () => {
+            const target = findProduct(button.dataset.name);
+            render(target, { pushUrl: true });
+            document.getElementById('productDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        });
+        document.getElementById('betterAlternatives').innerHTML = product.alternatives.map(([goal, alternative]) => `<li><strong>${goal}</strong><br><span class="note">${alternative}</span></li>`).join('');
+        const story = sugarStory(product.sugar);
+        document.getElementById('annualSugarText').innerHTML = `
+          <div class="sugar-story">
+            <div class="sugar-story-main">
+              <span>Déenko spočítalo: za rok</span>
+              <strong>${story.year} cukru</strong>
+              <p class="note">${story.image}</p>
+            </div>
+            <div class="sugar-story-grid">
+              <div class="sugar-story-stat"><span>Za týden</span><strong>${story.week}</strong></div>
+              <div class="sugar-story-stat"><span>Za měsíc</span><strong>${story.month}</strong></div>
+              <div class="sugar-story-stat"><span>Kostky za rok</span><strong>${story.cubes}</strong></div>
+            </div>
+            <p class="note">${story.sentence}</p>
+          </div>
+        `;
+        document.getElementById('faqList').innerHTML = `
+          <div class="faq-item"><strong>Je vhodné pro děti?</strong><p class="note">${product.faq.kids}</p></div>
+          <div class="faq-item"><strong>Dá se pít při hubnutí?</strong><p class="note">${product.faq.weight}</p></div>
+          <div class="faq-item"><strong>Obsahuje kofein?</strong><p class="note">${product.faq.caffeine}</p></div>
+          <div class="faq-item"><strong>Je vhodné před sportem?</strong><p class="note">${product.faq.sport}</p></div>
+        `;
+        document.getElementById('dataSource').innerHTML = `
+          <div class="source-item"><span><span class="source-label">Trh</span>${product.sourceInfo.market} (${product.sourceInfo.variant})</span></div>
+          <div class="source-item"><span><span class="source-label">Zdroj</span>${product.sourceInfo.source}</span></div>
+          <div class="source-item"><span><span class="source-label">Ověřeno</span>${product.sourceInfo.verifiedAt}</span></div>
+          <div class="source-item"><span><span class="source-label">EAN</span>${product.sourceInfo.ean}</span></div>
+          <div class="source-date">Poslední kontrola:<br><strong>${product.sourceInfo.compositionCheckedAt}</strong></div>
+        `;
+        document.getElementById('ingredientList').innerHTML = product.ingredients.map((ingredient) => `
+          <button class="ingredient-button" type="button" data-ingredient="${escapeHtml(ingredient)}">${escapeHtml(ingredient)}</button>
+        `).join('');
+        document.querySelectorAll('.ingredient-button').forEach((button) => {
+          button.addEventListener('click', () => renderEckoDetail(button.dataset.ingredient));
+        });
+        renderEckoDetail(product.ingredients.find((item) => item.includes('E150d')) || product.ingredients[0]);
+        renderCards();
+      }
+
+      function renderCards() {
+        document.getElementById('knownCount').textContent = `Déenko už zná ${modelProducts.length} nápojů.`;
+        const categorySlug = categoryFromPath();
+        const visibleProducts = categorySlug ? productsForCategorySlug(categorySlug) : modelProducts;
+        const featuredNames = [
+          'Coca-Cola Original CZ',
+          'Coca-Cola Zero CZ',
+          'Kofola Original CZ',
+          'Pepsi Original CZ',
+          'Red Bull Energy Drink CZ',
+          'Red Bull Sugarfree CZ',
+          'Monster Ultra White CZ',
+          'Big Shock Original CZ',
+          'Mattoni Jemně Perlivá CZ',
+          'Magnesia Neperlivá CZ',
+          'Rajec Neperlivá CZ',
+          'Prime Hydration Ice Pop CZ'
+        ];
+        const featuredRank = new Map(featuredNames.map((name, index) => [name, index]));
+        const orderedProducts = [...visibleProducts].sort((a, b) => {
+          const rankA = featuredRank.has(a.name) ? featuredRank.get(a.name) : Number.POSITIVE_INFINITY;
+          const rankB = featuredRank.has(b.name) ? featuredRank.get(b.name) : Number.POSITIVE_INFINITY;
+          return rankA - rankB || a.name.localeCompare(b.name, 'cs');
+        });
+        if (categorySlug) updateCategorySeo(categorySlug, visibleProducts);
+        compareGrid.innerHTML = orderedProducts.map((product) => `
+          <article class="mini-card ${product.id === activeProduct.id ? 'active' : ''}" data-id="${product.id}">
+            <strong>${product.name}</strong>
+            <small>${product.sugar} g cukru · ${product.caffeine} mg kofeinu</small>
+          </article>
+        `).join('');
+        compareGrid.querySelectorAll('.mini-card').forEach((card) => {
+          card.addEventListener('click', () => {
+            const product = modelProducts.find((item) => item.id === card.dataset.id);
+            if (!product) return;
+            render(product, { pushUrl: true });
+            document.getElementById('productDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        });
+      }
+
+      function renderSearchResults(results, query = '') {
+        const visibleResults = results.slice(0, 8);
+        if (!visibleResults.length) {
+          suggestions.innerHTML = `<span class="suggestion" aria-live="polite">Nic nenalezeno pro „${query}“</span>`;
+          return;
+        }
+        suggestions.innerHTML = visibleResults.map((product) => `
+          <button class="suggestion" type="button" data-id="${product.id}">
+            ${product.name}
+          </button>
+        `).join('');
+        suggestions.querySelectorAll('.suggestion[data-id]').forEach((item) => {
+          item.addEventListener('click', () => {
+            const product = modelProducts.find((entry) => entry.id === item.dataset.id);
+            if (!product) return;
+            render(product, { pushUrl: true });
+            renderSearchResults(searchProducts(product.name), product.name);
+          });
+        });
+      }
+
+      function bindControls() {
+        const freshButton = button.cloneNode(true);
+        button.replaceWith(freshButton);
+        const freshInput = input.cloneNode(true);
+        input.replaceWith(freshInput);
+
+        freshButton.addEventListener('click', () => {
+          const product = findProduct(freshInput.value);
+          if (!product) return;
+          render(product, { pushUrl: true });
+        });
+        freshInput.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            const product = findProduct(freshInput.value);
+            if (!product) return;
+            render(product, { pushUrl: true });
+          }
+        });
+        freshInput.addEventListener('input', () => {
+          let query = freshInput.value;
+          if (freshInput.dataset.autofilled === 'true' && activeProduct && query !== activeProduct.name && query.includes(activeProduct.name)) {
+            query = query.replace(activeProduct.name, '').trim();
+            freshInput.value = query;
+          }
+          freshInput.dataset.autofilled = 'false';
+          const results = searchProducts(query);
+          renderSearchResults(results, query.trim());
+        });
+        eckoSearch.addEventListener('input', () => renderEckoList(eckoSearch.value));
+        eckoClear.addEventListener('click', () => {
+          eckoSearch.value = '';
+          renderEckoList('');
+        });
+        renderSearchResults(modelProducts);
+      }
+
+      async function initFromJson() {
+        try {
+          const parts = window.DAMENAPOJ_DATA
+            ? [window.DAMENAPOJ_DATA]
+            : await Promise.all(DATA_URLS.map(async (url) => {
+            const response = await fetch(url, { cache: 'no-store' });
+            if (!response.ok) throw new Error(`JSON se nepodařilo načíst: ${url} (${response.status})`);
+            return response.json();
+          }));
+          const data = mergeDatabases(parts);
+          modelProducts = mapModel(data);
+          if (!modelProducts.length) throw new Error('Databáze neobsahuje žádné nápoje.');
+          buildEckoEntries();
+          bindControls();
+          renderRankings();
+          renderCategories();
+          renderEckoList('');
+          render(initialProductFromRoute(), { pushUrl: false });
+          window.addEventListener('popstate', () => {
+            render(initialProductFromRoute(), { pushUrl: false });
+          });
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      initFromJson();
+    })();
+  </script>
+</body>
+</html>
+
