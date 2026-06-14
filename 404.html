@@ -657,6 +657,47 @@
       margin-bottom: 0;
     }
 
+    .compare-selects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .compare-selects select {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 850;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .compare-table tr:last-child th,
+    .compare-table tr:last-child td {
+      border-bottom: 0;
+    }
+
     .sugar-story {
       display: grid;
       gap: 12px;
@@ -778,6 +819,7 @@
 
       .quick-stats,
       .compare-grid,
+      .compare-selects,
       .sugar-story-grid,
       .sense-list,
       .rankings-grid,
@@ -896,6 +938,19 @@
           <h2>Rozcestník nápojů</h2>
           <p class="note" id="knownCount">Déenko už zná přes 30 nápojů.</p>
           <div class="compare-grid" id="compareGrid"></div>
+        </div>
+      </section>
+
+      <section class="section detail-only">
+        <div class="container">
+          <h2>Porovnat nápoje</h2>
+          <div class="content-block">
+            <div class="compare-selects">
+              <select id="compareDrinkA" aria-label="První nápoj"></select>
+              <select id="compareDrinkB" aria-label="Druhý nápoj"></select>
+            </div>
+            <div id="comparisonResult"></div>
+          </div>
         </div>
       </section>
 
@@ -1046,6 +1101,9 @@
       const eckoClear = document.getElementById('eckoClear');
       const eckoList = document.getElementById('eckoList');
       const eckoDatabaseDetail = document.getElementById('eckoDatabaseDetail');
+      const compareDrinkA = document.getElementById('compareDrinkA');
+      const compareDrinkB = document.getElementById('compareDrinkB');
+      const comparisonResult = document.getElementById('comparisonResult');
       let modelProducts = [];
       let activeProduct = null;
       let eckoEntries = [];
@@ -1410,8 +1468,43 @@
         });
       }
 
+      function eckoSearchTerms(name) {
+        const stripped = name.replace(/^E\d+\s+/, '');
+        const terms = new Set([name, stripped]);
+        const aliases = {
+          'E150d': ['Barvivo E150d'],
+          'E330': ['Kyselina citronová'],
+          'E330 Kyselina citronová': ['E330', 'Kyselina citronová'],
+          'E950': ['Acesulfam K', 'E950 Acesulfam K'],
+          'E950 Acesulfam K': ['E950', 'Acesulfam K'],
+          'E951': ['Aspartam', 'E951 Aspartam'],
+          'E951 Aspartam': ['E951', 'Aspartam'],
+          'E955': ['Sukralóza', 'E955 Sukralóza'],
+          'E955 Sukralóza': ['E955', 'Sukralóza'],
+          'Aspartam': ['E951', 'E951 Aspartam'],
+          'Acesulfam K': ['E950', 'E950 Acesulfam K'],
+          'Sukralóza': ['E955', 'E955 Sukralóza'],
+          'Kyselina citronová': ['E330', 'E330 Kyselina citronová']
+        };
+        [...(aliases[name] || []), ...(aliases[stripped] || [])].forEach((term) => terms.add(term));
+        return [...terms].map(normalizeText).filter(Boolean);
+      }
+
+      function productsForEcko(name) {
+        const terms = eckoSearchTerms(name);
+        return modelProducts.filter((product) => {
+          const values = [...(product.ingredients || []), ...(product.substances || [])].map(normalizeText);
+          return values.some((value) => terms.some((term) => value === term || value.includes(term) || term.includes(value)));
+        });
+      }
+
       function renderEckoDatabaseDetail(name) {
-        const detail = ingredientDetails(name);
+        const detailName = name.replace(/^E\d+\s+/, '');
+        const detail = ingredientDetails(detailName);
+        const products = productsForEcko(name).slice(0, 12);
+        const productsHtml = products.length
+          ? `<p><strong>Vyskytuje se v nápojích:</strong></p><ul class="simple-list">${products.map((product) => `<li>${productLink(product)}<br><span class="note">${escapeHtml(product.categoryLabel)} · ${product.sugar} g cukru · ${product.caffeine} mg kofeinu</span></li>`).join('')}</ul>`
+          : '<p><strong>Vyskytuje se v nápojích:</strong><br>V aktuální databázi není u této látky přiřazený nápoj.</p>';
         eckoDatabaseDetail.innerHTML = `
           <h4>${escapeHtml(detail.title)}</h4>
           <p><strong>Co to je:</strong><br>${escapeHtml(detail.what || detail.usage)}</p>
@@ -1419,7 +1512,9 @@
           <p><strong>Kde se používá:</strong><br>${escapeHtml(detail.common)}</p>
           <p><strong>Vhodnost pro děti:</strong><br>${escapeHtml(detail.kids)}</p>
           <p><strong>Poznámky pro hubnutí:</strong><br>${escapeHtml(detail.weight)}</p>
+          ${productsHtml}
         `;
+        bindProductLinks(eckoDatabaseDetail);
       }
 
       function buildEckoEntries() {
@@ -1477,9 +1572,9 @@
           </button>
         `).join('');
         eckoList.querySelectorAll('[data-ecko]').forEach((button) => {
-          button.addEventListener('click', () => renderEckoDatabaseDetail(button.dataset.ecko.replace(/^E\\d+\\s+/, '')));
+          button.addEventListener('click', () => renderEckoDatabaseDetail(button.dataset.ecko));
         });
-        renderEckoDatabaseDetail((filtered[0] && filtered[0].name.replace(/^E\\d+\\s+/, '')) || 'Kofein');
+        renderEckoDatabaseDetail((filtered[0] && filtered[0].name) || 'Kofein');
       }
 
       function pillForSugar(sugar) {
@@ -1965,6 +2060,65 @@
         });
       }
 
+      function sweetenerText(product) {
+        const sweeteners = (product.substances || []).filter((item) => {
+          const value = normalizeText(item);
+          return value.includes('aspartam') || value.includes('acesulfam') || value.includes('sukraloza') || value.includes('steviol') || value.includes('sladid');
+        });
+        return sweeteners.length ? sweeteners.join(', ') : 'bez sladidel v datech';
+      }
+
+      function compareValue(product, key) {
+        return numericValue(product?.scores?.[key]?.[0]);
+      }
+
+      function renderComparison() {
+        if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
+        const first = modelProducts.find((product) => product.id === compareDrinkA.value) || modelProducts[0];
+        const second = modelProducts.find((product) => product.id === compareDrinkB.value) || modelProducts[1] || modelProducts[0];
+        const rows = [
+          ['Cukr v balení', `${first.sugar} g`, `${second.sugar} g`],
+          ['Kalorie v balení', `${first.calories} kcal`, `${second.calories} kcal`],
+          ['Kofein v balení', `${first.caffeine} mg`, `${second.caffeine} mg`],
+          ['Sladidla', sweetenerText(first), sweetenerText(second)],
+          ['Hubnutí', `${compareValue(first, 'weight')}/10`, `${compareValue(second, 'weight')}/10`],
+          ['Děti', `${compareValue(first, 'kids')}/10`, `${compareValue(second, 'kids')}/10`],
+          ['Energie', `${compareValue(first, 'energy')}/10`, `${compareValue(second, 'energy')}/10`],
+          ['Sport', `${compareValue(first, 'sport')}/10`, `${compareValue(second, 'sport')}/10`]
+        ];
+        comparisonResult.innerHTML = `
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Hodnota</th>
+                <th>${productLink(first)}</th>
+                <th>${productLink(second)}</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map(([label, valueA, valueB]) => `<tr><th>${escapeHtml(label)}</th><td>${escapeHtml(valueA)}</td><td>${escapeHtml(valueB)}</td></tr>`).join('')}
+            </tbody>
+          </table>
+        `;
+        bindProductLinks(comparisonResult);
+      }
+
+      function renderComparisonControls() {
+        if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
+        const options = modelProducts
+          .map((product) => `<option value="${escapeHtml(product.id)}">${escapeHtml(product.name)}</option>`)
+          .join('');
+        compareDrinkA.innerHTML = options;
+        compareDrinkB.innerHTML = options;
+        const coca = modelProducts.find((product) => product.id === 'coca-cola-original-cz') || findProduct('Coca-Cola Original') || modelProducts[0];
+        const kofola = modelProducts.find((product) => product.id === 'kofola-original-cz') || findProduct('Kofola Original') || modelProducts[1] || modelProducts[0];
+        compareDrinkA.value = coca.id;
+        compareDrinkB.value = kofola.id;
+        compareDrinkA.addEventListener('change', renderComparison);
+        compareDrinkB.addEventListener('change', renderComparison);
+        renderComparison();
+      }
+
       function numericValue(value, fallback = 0) {
         const number = Number(value);
         return Number.isFinite(number) ? number : fallback;
@@ -2283,6 +2437,7 @@
           if (!modelProducts.length) throw new Error('Databáze neobsahuje žádné nápoje.');
           buildEckoEntries();
           bindControls();
+          renderComparisonControls();
           renderRankings();
           renderCategories();
           renderEckoList('');
