@@ -807,6 +807,73 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .category-overview {
+      display: none;
+      margin: 16px 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #ffffff, #f7fbff 54%, #f1fbf5);
+    }
+
+    .category-overview.visible {
+      display: block;
+    }
+
+    .category-overview h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .category-overview .category-intro {
+      max-width: 820px;
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .category-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .category-stat,
+    .category-pick {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .category-stat span,
+    .category-pick span {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .category-stat strong,
+    .category-pick strong {
+      color: var(--ink);
+      font-weight: 950;
+    }
+
+    .category-picks {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .category-pick a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
     .ecko-grid {
       grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
       margin-top: 16px;
@@ -965,6 +1032,114 @@
       font-weight: 850;
     }
 
+    .compare-scale {
+      margin: 0 0 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #ffffff, #f6fbff 58%, #eefbf6);
+    }
+
+    .scale-visual {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .scale-side {
+      position: relative;
+      min-height: 126px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      transition: transform 0.18s ease, opacity 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .scale-side strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .scale-side small {
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .scale-side.winner {
+      border-color: rgba(38, 171, 118, 0.34);
+      box-shadow: 0 18px 38px rgba(38, 171, 118, 0.14);
+      background: linear-gradient(135deg, #ffffff, #effcf5);
+      transform: translateY(-8px);
+    }
+
+    .scale-side.loser {
+      opacity: 0.62;
+      transform: translateY(8px);
+    }
+
+    .scale-side.even {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .winner-label {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(38, 171, 118, 0.12);
+      color: #126941;
+      font-size: 0.76rem;
+      font-weight: 950;
+    }
+
+    .compare-symbol {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #eaf4ff, #f8efff);
+      color: var(--ink);
+      font-size: 1.8rem;
+      box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.08);
+    }
+
+    .scale-reasons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scale-reasons li {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(45, 156, 255, 0.09);
+      color: #244259;
+      font-weight: 850;
+      font-size: 0.86rem;
+    }
+
+    .scale-summary {
+      margin: 0;
+      color: var(--ink);
+      font-weight: 850;
+    }
+
     .compare-winner {
       color: #126941;
       background: #e9f8f0;
@@ -1093,7 +1268,10 @@
       .quick-stats,
       .compare-grid,
       .compare-selects,
+      .scale-visual,
       .sugar-story-grid,
+      .category-stats,
+      .category-picks,
       .sense-list,
       .rankings-grid,
       .category-grid,
@@ -1102,6 +1280,10 @@
       .recommendation-list,
       .ingredient-list {
         grid-template-columns: 1fr;
+      }
+
+      .scale-center {
+        min-height: 190px;
       }
 
       .product-detail {
@@ -1227,6 +1409,7 @@
               <input id="cardFilterInput" type="text" aria-label="Filtrovat nápoje v rozcestníku" placeholder="Filtrovat nápoje podle názvu...">
             </div>
           </div>
+          <div class="category-overview" id="categoryOverview"></div>
           <div class="compare-grid" id="compareGrid"></div>
           <button class="button secondary" id="cardShowMore" type="button">Zobrazit další nápoje</button>
         </div>
@@ -1390,6 +1573,7 @@
       const cardAzFilter = document.getElementById('cardAzFilter');
       const cardFilterInput = document.getElementById('cardFilterInput');
       const cardShowMore = document.getElementById('cardShowMore');
+      const categoryOverview = document.getElementById('categoryOverview');
       const rankingsGrid = document.getElementById('rankingsGrid');
       const categoryGrid = document.getElementById('categoryGrid');
       const eckoSearch = document.getElementById('eckoSearch');
@@ -2732,7 +2916,8 @@
               window.history.pushState({ categorySlug: slug }, '', nextPath);
             }
             renderCards();
-            document.getElementById('compareGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const target = categoryOverview && categoryOverview.classList.contains('visible') ? categoryOverview : document.getElementById('compareGrid');
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           });
         });
       }
@@ -2764,6 +2949,63 @@
         return winner && product.id === winner.id ? ' class="compare-winner"' : '';
       }
 
+      function comparisonScale(first, second, rows) {
+        let firstWins = 0;
+        let secondWins = 0;
+        rows.forEach(({ winner }) => {
+          if (!winner) return;
+          if (winner.id === first.id) firstWins += 1;
+          if (winner.id === second.id) secondWins += 1;
+        });
+        const diff = firstWins - secondWins;
+        const winner = Math.abs(diff) <= 1 ? null : diff > 0 ? first : second;
+        const leftClass = !winner ? 'even' : winner.id === first.id ? 'winner' : 'loser';
+        const rightClass = !winner ? 'even' : winner.id === second.id ? 'winner' : 'loser';
+        return { firstWins, secondWins, winner, leftClass, rightClass };
+      }
+
+      function comparisonScaleSummary(first, second, rows, scale) {
+        if (!scale.winner) return 'Rozdíl mezi nápoji je malý.';
+        const other = scale.winner.id === first.id ? second : first;
+        const wins = rows
+          .filter(({ winner }) => winner && winner.id === scale.winner.id)
+          .map(({ label }) => label.toLowerCase());
+        if (wins.includes('hubnutí') && wins.includes('děti')) {
+          return `${scale.winner.name} vychází lépe pro hubnutí a děti.`;
+        }
+        if (wins.includes('energie')) {
+          return `${scale.winner.name} má v tomto srovnání víc energie.`;
+        }
+        if (wins.includes('cukr v balení') || wins.includes('kalorie v balení')) {
+          return `Rozdíl je hlavně v cukru a kaloriích. Lépe vychází ${scale.winner.name}.`;
+        }
+        return `${scale.winner.name} vychází celkově lépe než ${other.name}.`;
+      }
+
+      function comparisonPointText(count) {
+        if (count === 1) return '1 bod ve srovnání';
+        if (count >= 2 && count <= 4) return `${count} body ve srovnání`;
+        return `${count} bodů ve srovnání`;
+      }
+
+      function comparisonReasons(rows, scale) {
+        if (!scale.winner) return ['Rozdíl je malý'];
+        const labels = {
+          'Cukr v balení': 'méně cukru',
+          'Kalorie v balení': 'méně kalorií',
+          'Kofein v balení': 'méně kofeinu',
+          'Sladidla': 'lepší sladidla',
+          'Hubnutí': 'lepší pro hubnutí',
+          'Děti': 'lepší pro děti',
+          'Energie': 'více energie',
+          'Sport': 'lepší pro sport'
+        };
+        return rows
+          .filter(({ winner }) => winner && winner.id === scale.winner.id)
+          .map(({ label }) => labels[label] || label.toLowerCase())
+          .slice(0, 3);
+      }
+
       function renderComparison() {
         if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
         const first = modelProducts.find((product) => product.id === compareDrinkA.value) || modelProducts[0];
@@ -2785,7 +3027,29 @@
         const sugarWinner = betterProduct(first, second, numericValue(first.sugar), numericValue(second.sugar), 'lower');
         const energyWinner = betterProduct(first, second, compareValue(first, 'energy'), compareValue(second, 'energy'), 'higher');
         const winnerText = (label, winner) => `${label}: ${winner ? winner.name : 'vyrovnané'}`;
+        const scale = comparisonScale(first, second, rows);
+        const scaleSummary = comparisonScaleSummary(first, second, rows, scale);
+        const reasons = comparisonReasons(rows, scale);
         comparisonResult.innerHTML = `
+          <div class="compare-scale">
+            <div class="scale-visual">
+              <div class="scale-side ${scale.leftClass}">
+                ${scale.winner && scale.winner.id === first.id ? '<span class="winner-label">Lepší volba</span>' : ''}
+                <strong>${escapeHtml(first.name)}</strong>
+                <small>${comparisonPointText(scale.firstWins)}</small>
+              </div>
+              <div class="compare-symbol" aria-hidden="true">⚖️</div>
+              <div class="scale-side ${scale.rightClass}">
+                ${scale.winner && scale.winner.id === second.id ? '<span class="winner-label">Lepší volba</span>' : ''}
+                <strong>${escapeHtml(second.name)}</strong>
+                <small>${comparisonPointText(scale.secondWins)}</small>
+              </div>
+            </div>
+            <ul class="scale-reasons">
+              ${reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`).join('')}
+            </ul>
+            <p class="scale-summary">${escapeHtml(scaleSummary)}</p>
+          </div>
           <p class="compare-verdict">${[
             winnerText('Lepší volba pro hubnutí', weightWinner),
             winnerText('Méně cukru', sugarWinner),
@@ -2894,6 +3158,77 @@
           'limonady': (product) => ['lemonade', 'iced_tea', 'tonic'].includes(product.raw.category)
         };
         return filters[slug] ? modelProducts.filter(filters[slug]) : modelProducts;
+      }
+
+      function categoryTitle(slug) {
+        return {
+          'energeticke-napoje': 'Energetické nápoje',
+          'kolove-napoje': 'Kolové nápoje',
+          'mineralni-vody': 'Minerální vody',
+          'zero-napoje': 'Zero nápoje',
+          'dzusy': 'Džusy a ovocné nápoje',
+          'limonady': 'Limonády'
+        }[slug] || 'Nápoje';
+      }
+
+      function categoryDescription(slug) {
+        return {
+          'energeticke-napoje': 'Energetické nápoje dávají smysl hlavně ve chvíli, kdy řešíte rychlé povzbuzení. Sledujte především kofein, cukr a to, jestli se z nich nestává každodenní pití.',
+          'kolove-napoje': 'Kolové nápoje jsou často o sladké chuti, kofeinu a zvyku. Rozdíly mezi nimi bývají hlavně v cukru, kaloriích, sladidlech a vhodnosti pro běžné pití.',
+          'mineralni-vody': 'Minerální vody jsou většinou dobrá volba pro běžné pití. Pozor hlavně na ochucené varianty, které mohou mít překvapivě hodně cukru.',
+          'zero-napoje': 'Zero nápoje pomáhají snížit cukr a kalorie, ale často stojí na sladidlech. Hodí se hlavně tehdy, když řešíte cukr, ne nutně jako univerzální pití pro každý den.',
+          'dzusy': 'Džusy a ovocné nápoje působí přirozeně, ale cukru v nich může být dost. Největší rozdíl dělá velikost porce a to, jestli jde o 100% džus nebo doslazovaný nápoj.',
+          'limonady': 'Limonády jsou hlavně chuťový nápoj. Pokud je pijete často, sledujte cukr, kalorie a to, jestli existuje lehčí varianta pro stejnou chuť.'
+        }[slug] || 'Tahle kategorie ukazuje nápoje se společným typem nebo účelem. Déenko z nich počítá cukr, kofein a vhodnost pro běžné situace.';
+      }
+
+      function bestCategoryPick(products, scoreKey) {
+        return [...products]
+          .sort((a, b) => scoreValue(b, scoreKey) - scoreValue(a, scoreKey) || nutritionPer100(a, 'sugar') - nutritionPer100(b, 'sugar') || nutritionPer100(a, 'calories') - nutritionPer100(b, 'calories'))
+          [0] || null;
+      }
+
+      function renderCategoryOverview(slug, products) {
+        if (!categoryOverview) return;
+        if (!slug) {
+          categoryOverview.classList.remove('visible');
+          categoryOverview.innerHTML = '';
+          return;
+        }
+        const safeProducts = products.filter(Boolean);
+        const count = safeProducts.length;
+        const averageSugar = count ? round(safeProducts.reduce((sum, product) => sum + nutritionPer100(product, 'sugar'), 0) / count, 1) : 0;
+        const zeroCount = safeProducts.filter((product) => nutritionPer100(product, 'sugar') === 0).length;
+        const highestSugar = [...safeProducts].sort((a, b) => nutritionPer100(b, 'sugar') - nutritionPer100(a, 'sugar'))[0] || null;
+        const highestSugarText = highestSugar && nutritionPer100(highestSugar, 'sugar') > 0
+          ? `${escapeHtml(highestSugar.name)} · ${nutritionPer100(highestSugar, 'sugar')} g / 100 ml`
+          : count ? 'Všechny zobrazené mají 0 g / 100 ml' : 'Zatím není dost dat';
+        const dailyPick = bestCategoryPick(safeProducts, 'daily');
+        const kidsPick = bestCategoryPick(safeProducts, 'kids');
+        const weightPick = bestCategoryPick(safeProducts, 'weight');
+        const pickHtml = (label, product) => `
+          <article class="category-pick">
+            <span>${escapeHtml(label)}</span>
+            <strong>${product ? productLink(product) : 'Zatím není dost dat'}</strong>
+          </article>
+        `;
+        categoryOverview.classList.add('visible');
+        categoryOverview.innerHTML = `
+          <h3>${escapeHtml(categoryTitle(slug))}</h3>
+          <p class="category-intro">${escapeHtml(categoryDescription(slug))}</p>
+          <div class="category-stats">
+            <article class="category-stat"><span>Počet nápojů</span><strong>${count}</strong></article>
+            <article class="category-stat"><span>Průměrný cukr</span><strong>${averageSugar} g / 100 ml</strong></article>
+            <article class="category-stat"><span>Bez cukru</span><strong>${zeroCount} nápojů</strong></article>
+            <article class="category-stat"><span>Nejvyšší cukr</span><strong>${highestSugarText}</strong></article>
+          </div>
+          <div class="category-picks">
+            ${pickHtml('Nejlepší pro běžné pití', dailyPick)}
+            ${pickHtml('Nejlepší pro děti', kidsPick)}
+            ${pickHtml('Nejlepší pro hubnutí', weightPick)}
+          </div>
+        `;
+        bindProductLinks(categoryOverview);
       }
 
       function initialProductFromRoute() {
@@ -3095,6 +3430,7 @@
         renderAzFilter();
         const displayedProducts = filteredProducts.slice(0, cardVisibleLimit);
         if (categorySlug) updateCategorySeo(categorySlug, visibleProducts);
+        renderCategoryOverview(categorySlug, visibleProducts);
         compareGrid.innerHTML = displayedProducts.length ? displayedProducts.map((product) => `
           <article class="mini-card ${product.id === activeProduct.id ? 'active' : ''}" data-id="${product.id}">
             <strong>${product.name}</strong>
@@ -3114,6 +3450,12 @@
             document.getElementById('productDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
           });
         });
+      }
+
+      function scrollToCategoryOverview() {
+        if (categoryOverview && categoryOverview.classList.contains('visible')) {
+          categoryOverview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
 
       function renderAzFilter() {
@@ -3225,9 +3567,11 @@
           render(initialProductFromRoute(), { pushUrl: false });
           window.addEventListener('popstate', () => {
             render(initialProductFromRoute(), { pushUrl: false });
+            if (categoryFromPath()) requestAnimationFrame(scrollToCategoryOverview);
           });
           window.addEventListener('hashchange', () => {
             render(initialProductFromRoute(), { pushUrl: false });
+            if (categoryFromPath()) requestAnimationFrame(scrollToCategoryOverview);
           });
         } catch (error) {
           console.error(error);
