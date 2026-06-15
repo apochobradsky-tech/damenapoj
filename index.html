@@ -197,6 +197,56 @@
       font-weight: 750;
     }
 
+    .search-input-wrap {
+      position: relative;
+      min-width: 0;
+    }
+
+    .search-input-wrap input {
+      position: relative;
+      z-index: 1;
+      background: transparent;
+    }
+
+    .typing-hint {
+      position: absolute;
+      left: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-weight: 700;
+      pointer-events: none;
+      opacity: 0.68;
+      z-index: 0;
+      transition: opacity 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .typing-hint.hidden {
+      opacity: 0;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 1px;
+      height: 1.1em;
+      margin-left: 2px;
+      background: currentColor;
+      vertical-align: -0.16em;
+      animation: cursorBlink 1.05s steps(2, start) infinite;
+    }
+
+    @keyframes cursorBlink {
+      0%, 45% { opacity: 1; }
+      46%, 100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .typing-cursor {
+        animation: none;
+      }
+    }
+
     .button {
       min-height: 56px;
       padding: 0 20px;
@@ -550,6 +600,118 @@
       color: var(--ink);
       font-weight: 950;
       text-decoration: none;
+    }
+
+    .feedback-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .feedback-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.74);
+      cursor: pointer;
+      opacity: 0.72;
+      transition: border-color 0.16s ease, background 0.16s ease, opacity 0.16s ease, transform 0.16s ease;
+    }
+
+    .feedback-button:hover,
+    .feedback-button.active {
+      border-color: rgba(38, 171, 118, 0.44);
+      background: rgba(38, 171, 118, 0.12);
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .feedback-thanks {
+      min-height: 1.1em;
+      opacity: 0;
+      transition: opacity 0.16s ease;
+    }
+
+    .feedback-thanks.visible {
+      opacity: 1;
+    }
+
+    .similar-feedback-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .similar-feedback-row .similar-button,
+    .similar-feedback-row strong {
+      min-width: 0;
+    }
+
+    .similar-feedback-row .feedback-controls {
+      flex: 0 0 auto;
+      margin-top: 0;
+      gap: 4px;
+      font-size: 0.78rem;
+      color: rgba(15, 23, 42, 0.38);
+    }
+
+    .similar-feedback-row .feedback-button {
+      width: 24px;
+      height: 24px;
+      border-color: rgba(15, 23, 42, 0.08);
+      background: transparent;
+      filter: grayscale(1);
+      opacity: 0.28;
+      transform: none;
+      transition: opacity 0.18s ease, filter 0.18s ease, color 0.18s ease, background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    }
+
+    .simple-list li:hover .similar-feedback-row .feedback-button,
+    .similar-feedback-row .feedback-button:hover,
+    .similar-feedback-row .feedback-button.active {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    .similar-feedback-row .feedback-button:hover {
+      border-color: rgba(37, 99, 235, 0.18);
+      background: rgba(37, 99, 235, 0.06);
+    }
+
+    .similar-feedback-row .feedback-button[data-feedback-value="up"].active {
+      border-color: rgba(38, 171, 118, 0.45);
+      background: rgba(38, 171, 118, 0.12);
+      color: #126941;
+    }
+
+    .similar-feedback-row .feedback-button[data-feedback-value="down"].active {
+      border-color: rgba(234, 88, 12, 0.42);
+      background: rgba(234, 88, 12, 0.11);
+      color: #9a3412;
+    }
+
+    .similar-feedback-row .feedback-thanks {
+      min-width: 34px;
+      min-height: 0;
+      font-size: 0.75rem;
+      line-height: 1;
+      color: #126941;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    @media (hover: none) {
+      .similar-feedback-row .feedback-button {
+        opacity: 0.42;
+      }
     }
 
     .recommendation-badge {
@@ -965,7 +1127,10 @@
             <p class="lead">Zadejte název nápoje. Během pár sekund uvidíte cukr, kofein, vhodnost pro hubnutí, děti i běžné pití v češtině, které rozumíte.</p>
             <div class="search-card">
               <div class="search-row">
-                <input id="searchInput" type="text" value="Coca-Cola Original" aria-label="Název nápoje">
+                <div class="search-input-wrap">
+                  <input id="searchInput" type="text" value="" aria-label="Název nápoje" autocomplete="off">
+                  <span class="typing-hint hidden" id="typingHint" aria-hidden="true"></span>
+                </div>
                 <button class="button" id="searchButton" type="button">Vysvětlit nápoj</button>
               </div>
               <div class="suggestions" id="suggestions"></div>
@@ -1220,6 +1385,7 @@
       const input = document.getElementById('searchInput');
       const button = document.getElementById('searchButton');
       const suggestions = document.getElementById('suggestions');
+      const typingHint = document.getElementById('typingHint');
       const compareGrid = document.getElementById('compareGrid');
       const cardAzFilter = document.getElementById('cardAzFilter');
       const cardFilterInput = document.getElementById('cardFilterInput');
@@ -1240,6 +1406,8 @@
       let cardActiveLetter = '';
       let cardVisibleLimit = 30;
       let lastCardCategorySlug = null;
+      let typingHintTimer = null;
+      let typingHintStopped = false;
 
       function byId(items) {
         return Object.fromEntries(items.map((item) => [item.id, item]));
@@ -2398,6 +2566,142 @@
         return `<a href="${productPath(product)}" data-product-link="${product.id}">${escapeHtml(product.name)}</a>`;
       }
 
+      function feedbackStorageKey(productName, section, itemName) {
+        return `damenapoj.feedback.${normalizeText(productName)}.${normalizeText(section)}.${normalizeText(itemName)}`;
+      }
+
+      function readFeedbackVote(key) {
+        try {
+          return localStorage.getItem(key);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function saveFeedbackVote(key, value) {
+        try {
+          localStorage.setItem(key, value);
+        } catch (error) {
+          // Local storage can be unavailable in strict browser modes; voting still works visually.
+        }
+      }
+
+      function applyFeedbackState(group, value) {
+        group.querySelectorAll('[data-feedback-value]').forEach((item) => item.classList.toggle('active', item.dataset.feedbackValue === value));
+        const thanks = group.querySelector('.feedback-thanks');
+        if (thanks && value) {
+          thanks.textContent = thanks.dataset.feedbackMessage || 'Děkujeme za zpětnou vazbu.';
+          thanks.classList.add('visible');
+        }
+      }
+
+      function feedbackMarkup(options = {}) {
+        const message = options.message || 'Děkujeme za zpětnou vazbu.';
+        const current = options.current || '';
+        const section = options.section || '';
+        const item = options.item || '';
+        return `
+          <div class="feedback-controls" data-feedback data-feedback-current="${escapeHtml(current)}" data-feedback-section="${escapeHtml(section)}" data-feedback-item="${escapeHtml(item)}">
+            <button class="feedback-button" type="button" data-feedback-value="up" aria-label="Tohle doporučení je užitečné">👍</button>
+            <button class="feedback-button" type="button" data-feedback-value="down" aria-label="Tohle doporučení není užitečné">👎</button>
+            <span class="feedback-thanks" data-feedback-message="${escapeHtml(message)}" aria-live="polite"></span>
+          </div>
+        `;
+      }
+
+      function bindFeedbackControls(scope = document) {
+        scope.querySelectorAll('[data-feedback]').forEach((group) => {
+          const key = feedbackStorageKey(group.dataset.feedbackCurrent || '', group.dataset.feedbackSection || '', group.dataset.feedbackItem || '');
+          applyFeedbackState(group, readFeedbackVote(key));
+          group.querySelectorAll('[data-feedback-value]').forEach((button) => {
+            button.addEventListener('click', (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              saveFeedbackVote(key, button.dataset.feedbackValue);
+              applyFeedbackState(group, button.dataset.feedbackValue);
+            });
+          });
+        });
+      }
+
+      function setTypingHintText(text) {
+        if (!typingHint) return;
+        typingHint.textContent = text;
+        const cursor = document.createElement('span');
+        cursor.className = 'typing-cursor';
+        typingHint.appendChild(cursor);
+      }
+
+      function hideTypingHint() {
+        if (typingHint) typingHint.classList.add('hidden');
+      }
+
+      function clearTypingHintTimer() {
+        if (typingHintTimer) {
+          clearTimeout(typingHintTimer);
+          typingHintTimer = null;
+        }
+      }
+
+      function stopTypingHint() {
+        typingHintStopped = true;
+        clearTypingHintTimer();
+        hideTypingHint();
+      }
+
+      function startTypingHint(field, options = {}) {
+        if (options.reset) typingHintStopped = false;
+        if (!typingHint || !field || typingHintStopped || field.value.trim() || document.activeElement === field) {
+          hideTypingHint();
+          return;
+        }
+        const examples = ['Coca-Cola', 'Red Bull', 'Kofola', 'Mattoni'];
+        let exampleIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const tick = () => {
+          if (typingHintStopped || field.value.trim() || document.activeElement === field) {
+            hideTypingHint();
+            typingHintTimer = null;
+            return;
+          }
+
+          const current = examples[exampleIndex];
+          setTypingHintText(current.slice(0, charIndex));
+          typingHint.classList.remove('hidden');
+
+          if (!deleting && charIndex < current.length) {
+            charIndex += 1;
+            typingHintTimer = setTimeout(tick, 95);
+            return;
+          }
+          if (!deleting && charIndex === current.length) {
+            deleting = true;
+            typingHintTimer = setTimeout(tick, 900);
+            return;
+          }
+          if (deleting && charIndex > 0) {
+            charIndex -= 1;
+            typingHintTimer = setTimeout(tick, 45);
+            return;
+          }
+
+          deleting = false;
+          exampleIndex = (exampleIndex + 1) % examples.length;
+          typingHintTimer = setTimeout(tick, 260);
+        };
+
+        if (!typingHintTimer) tick();
+      }
+
+      function setupTypingHint(field) {
+        if (!field) return;
+        field.addEventListener('focus', stopTypingHint, { once: true });
+        field.addEventListener('pointerdown', stopTypingHint, { once: true });
+        field.addEventListener('input', stopTypingHint, { once: true });
+      }
+
       function bindProductLinks(scope = document) {
         scope.querySelectorAll('[data-product-link]').forEach((link) => {
           link.addEventListener('click', (event) => {
@@ -2635,8 +2939,15 @@
           document.querySelector('.page')?.classList.remove('home-mode');
         }
         const currentInput = document.getElementById('searchInput');
-        currentInput.value = product.name;
-        currentInput.dataset.autofilled = 'true';
+        if (isHomeRoute() && !options.pushUrl) {
+          currentInput.value = '';
+          currentInput.dataset.autofilled = 'false';
+          startTypingHint(currentInput, { reset: true });
+        } else {
+          currentInput.value = product.name;
+          currentInput.dataset.autofilled = 'true';
+          hideTypingHint();
+        }
         document.getElementById('heroSugar').textContent = `${product.sugar} g`;
         document.getElementById('heroCaffeine').textContent = `${product.caffeine} mg`;
         document.getElementById('productName').textContent = product.name;
@@ -2676,16 +2987,21 @@
             <strong>${escapeHtml(label)}</strong>
             ${target ? productLink(target) : `<span>${escapeHtml(note)}</span>`}
             ${target ? `<p class="note">${escapeHtml(note)}</p>` : ''}
+            ${feedbackMarkup({ current: product.name, section: 'Déenko doporučuje', item: target ? target.name : label })}
           </article>
         `).join('');
         bindProductLinks(document.getElementById('recommendationsList'));
-        const renderSimilarList = (items) => items.map((item) => {
+        bindFeedbackControls(document.getElementById('recommendationsList'));
+        const renderSimilarList = (items, sectionName) => items.map((item) => {
           const target = findLinkedProduct(item);
-          if (!target) return `<li><strong>${escapeHtml(item)}</strong></li>`;
-          return `<li><button class="ingredient-button similar-button" type="button" data-name="${escapeHtml(item)}">${escapeHtml(item)}</button></li>`;
+          const feedback = feedbackMarkup({ current: product.name, section: sectionName, item: target ? target.name : item, message: 'Díky' });
+          if (!target) return `<li><div class="similar-feedback-row"><strong>${escapeHtml(item)}</strong>${feedback}</div></li>`;
+          return `<li><div class="similar-feedback-row"><button class="ingredient-button similar-button" type="button" data-name="${escapeHtml(item)}">${escapeHtml(item)}</button>${feedback}</div></li>`;
         }).join('');
-        document.getElementById('similarTasteDrinks').innerHTML = renderSimilarList(product.similarTaste || product.similar || []);
-        document.getElementById('similarCompositionDrinks').innerHTML = renderSimilarList(product.similarComposition || product.similar || []);
+        document.getElementById('similarTasteDrinks').innerHTML = renderSimilarList(product.similarTaste || product.similar || [], 'Podobné chutí');
+        document.getElementById('similarCompositionDrinks').innerHTML = renderSimilarList(product.similarComposition || product.similar || [], 'Podobné složením');
+        bindFeedbackControls(document.getElementById('similarTasteDrinks'));
+        bindFeedbackControls(document.getElementById('similarCompositionDrinks'));
         document.querySelectorAll('.similar-button').forEach((button) => {
           button.addEventListener('click', () => {
             const target = findProduct(button.dataset.name);
@@ -2840,6 +3156,7 @@
         button.replaceWith(freshButton);
         const freshInput = input.cloneNode(true);
         input.replaceWith(freshInput);
+        setupTypingHint(freshInput);
 
         freshButton.addEventListener('click', () => {
           const product = findProduct(freshInput.value);
