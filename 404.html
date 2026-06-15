@@ -1175,8 +1175,8 @@
       }
 
       function scoreColor(value) {
-        if (value >= 8) return 'linear-gradient(90deg, var(--green), var(--cyan))';
-        if (value >= 5) return 'linear-gradient(90deg, var(--yellow), #ffd166)';
+        if (value >= 7) return 'linear-gradient(90deg, var(--green), var(--cyan))';
+        if (value >= 4) return 'linear-gradient(90deg, var(--yellow), #ffd166)';
         return 'linear-gradient(90deg, var(--red), #ff9a9a)';
       }
 
@@ -1840,8 +1840,11 @@
 
       function similarityScore(source, candidate) {
         if (!source || !candidate || source.id === candidate.id) return -Infinity;
+        if (!similarCompatible(source, candidate)) return -Infinity;
         let score = 0;
-        if (source.raw.category === candidate.raw.category) score += 60;
+        if (source.raw.category === candidate.raw.category) score += 80;
+        if (productSimilarityKind(source) === productSimilarityKind(candidate)) score += 45;
+        if (productFlavorKind(source) && productFlavorKind(source) === productFlavorKind(candidate)) score += 35;
         if (source.brand === candidate.brand) score += 18;
         if ((source.sugar === 0) === (candidate.sugar === 0)) score += 14;
         if ((source.caffeine === 0) === (candidate.caffeine === 0)) score += 10;
@@ -1849,6 +1852,75 @@
         score -= Math.abs(numericValue(source.caffeine) - numericValue(candidate.caffeine)) / 20;
         score -= Math.abs(scoreValue(source, 'daily') - scoreValue(candidate, 'daily'));
         return score;
+      }
+
+      function productSimilarityKind(product) {
+        const text = normalizeText([product.name, product.brand, product.type, product.raw?.category || ''].join(' '));
+        const category = product.raw?.category || '';
+        if (text.includes('actimel') || text.includes('proactiv') || text.includes('kinderini') || text.includes('kakao') || text.includes('mlec')) return 'dairy_drink';
+        if (text.includes('birell') || text.includes('radler') || text.includes('nealko')) return 'non_alcoholic_beer';
+        if (text.includes('coffee') || text.includes('kava') || text.includes('nescafe') || text.includes('starbucks') || text.includes('espresso') || text.includes('nitro')) return 'coffee_drink';
+        if (category === 'cola' || category === 'cola_zero') return 'cola';
+        if (category === 'energy_drink' || category === 'energy_drink_zero') return 'energy_drink';
+        if (category === 'mineral_water' || category === 'water') return 'water';
+        if (category === 'flavored_water') return 'flavored_water';
+        if (category === 'hydration_drink') return 'hydration_drink';
+        if (category === 'juice' || category === 'juice_drink') return 'juice';
+        if (category === 'iced_tea') return 'iced_tea';
+        if (category === 'tonic') return 'tonic';
+        if (category === 'lemonade') return 'lemonade_soda';
+        return category || 'other';
+      }
+
+      function similarCompatible(source, candidate) {
+        if (!source || !candidate || source.id === candidate.id) return false;
+        return productSimilarityKind(source) === productSimilarityKind(candidate);
+      }
+
+      function productFlavorKind(product) {
+        const text = normalizeText([product.name, product.brand, ...(product.tags || [])].join(' '));
+        if (text.includes('orange') || text.includes('pomeranc') || text.includes('aranciata') || text.includes('mirinda')) return 'orange';
+        if (text.includes('citron') || text.includes('limet') || text.includes('lime') || text.includes('citrus') || text.includes('sprite') || text.includes('7up')) return 'citrus';
+        if (text.includes('malina') || text.includes('jahod') || text.includes('berry')) return 'berry';
+        if (text.includes('cola') || text.includes('kofola') || text.includes('pepsi') || text.includes('royal crown') || text.includes('rc cola')) return 'cola';
+        return '';
+      }
+
+      function findProductInList(products, name) {
+        const normalized = normalizeText(name);
+        return products.find((product) => normalizeText(product.name) === normalized)
+          || products.find((product) => normalizeText(product.name).includes(normalized) || normalized.includes(normalizeText(product.name)))
+          || null;
+      }
+
+      function computedSimilarProducts(product, products, limit = 4) {
+        return products
+          .filter((item) => similarCompatible(product, item))
+          .sort((a, b) => similarityScore(product, b) - similarityScore(product, a))
+          .slice(0, limit);
+      }
+
+      function preferredSimilarProducts(product, products) {
+        const text = normalizeText(product.name);
+        if (!['fanta', 'mirinda', 'sprite', '7up'].some((name) => text.includes(name))) return [];
+        return ['Fanta Orange CZ', 'Mirinda Orange CZ', 'Sprite CZ', '7UP CZ']
+          .map((name) => findProductInList(products, name))
+          .filter((item) => item && similarCompatible(product, item));
+      }
+
+      function resolveSimilarProducts(product, products, limit = 4) {
+        const manual = (product.similar || [])
+          .map((name) => findProductInList(products, name))
+          .filter((item) => item && similarCompatible(product, item));
+        const combined = [...manual, ...preferredSimilarProducts(product, products), ...computedSimilarProducts(product, products, products.length)];
+        const unique = [];
+        const seen = new Set();
+        combined.forEach((item) => {
+          if (!item || seen.has(item.id) || item.id === product.id) return;
+          seen.add(item.id);
+          unique.push(item);
+        });
+        return unique.slice(0, limit).map((item) => item.name);
       }
 
       function bestProductName(products, filter, fallback) {
@@ -1905,11 +1977,7 @@
           const products = data.napoje.map(mapUniversalDrink);
           return products.map((product) => ({
             ...product,
-            similar: product.similar.length ? product.similar : products
-              .filter((item) => item.id !== product.id)
-              .sort((a, b) => similarityScore(product, b) - similarityScore(product, a))
-              .slice(0, 4)
-              .map((item) => item.name),
+            similar: resolveSimilarProducts(product, products),
             alternatives: product.alternatives.length ? product.alternatives : betterAlternativesFor(product, products),
             faq: makeFaq(product)
           }));
@@ -2605,4 +2673,5 @@
   </script>
 </body>
 </html>
+<!-- TEST 1119 -->
 
