@@ -87,6 +87,85 @@
       display: none;
     }
 
+    .page.home-mode.rainbow-variant-a .hero::before,
+    .page.home-mode.rainbow-variant-b .hero::before,
+    .page.home-mode.rainbow-variant-b .hero::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .page.home-mode.rainbow-variant-a .hero::before {
+      right: max(-170px, -10vw);
+      top: -145px;
+      z-index: 0;
+      width: clamp(460px, 48vw, 760px);
+      height: clamp(420px, 44vw, 700px);
+      border-radius: 50%;
+      background:
+        radial-gradient(ellipse at 64% 28%, rgba(255, 255, 255, 0.72) 0%, transparent 23%),
+        radial-gradient(ellipse at 70% 44%, rgba(45, 156, 255, 0.18) 0%, transparent 42%),
+        conic-gradient(from 218deg at 82% 76%,
+          transparent 0deg,
+          rgba(244, 122, 181, 0.02) 13deg,
+          rgba(244, 122, 181, 0.2) 21deg,
+          rgba(242, 169, 31, 0.17) 31deg,
+          rgba(41, 168, 109, 0.18) 43deg,
+          rgba(52, 199, 197, 0.2) 56deg,
+          rgba(45, 156, 255, 0.18) 69deg,
+          rgba(148, 118, 244, 0.14) 82deg,
+          rgba(148, 118, 244, 0.01) 94deg,
+          transparent 112deg);
+      filter: blur(18px) saturate(1.18);
+      opacity: 0.16;
+      transform: rotate(-8deg);
+      mix-blend-mode: multiply;
+      mask-image:
+        radial-gradient(ellipse at 78% 76%,
+          transparent 42%,
+          rgba(0, 0, 0, 0.18) 50%,
+          rgba(0, 0, 0, 0.92) 58%,
+          rgba(0, 0, 0, 0.56) 68%,
+          transparent 78%),
+        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.7) 32%, rgba(0, 0, 0, 0.94) 100%);
+    }
+
+    .page.home-mode.rainbow-variant-b .hero::before {
+      right: -70px;
+      bottom: -80px;
+      z-index: 0;
+      width: clamp(340px, 40vw, 620px);
+      height: clamp(260px, 30vw, 440px);
+      border-radius: 46% 0 0 0;
+      background:
+        radial-gradient(ellipse at 74% 34%, rgba(255, 255, 255, 0.86), transparent 23%),
+        radial-gradient(ellipse at 82% 42%, rgba(52, 199, 197, 0.16), transparent 42%),
+        conic-gradient(from 224deg at 96% 86%,
+          transparent 0deg,
+          rgba(244, 122, 181, 0.12) 18deg,
+          rgba(242, 169, 31, 0.1) 30deg,
+          rgba(41, 168, 109, 0.14) 44deg,
+          rgba(52, 199, 197, 0.16) 58deg,
+          rgba(45, 156, 255, 0.14) 72deg,
+          transparent 100deg);
+      filter: blur(9px) saturate(1.18);
+      opacity: 0.72;
+      mask-image: radial-gradient(ellipse at 86% 74%, rgba(0, 0, 0, 0.9), transparent 72%);
+    }
+
+    .page.home-mode.rainbow-variant-b .hero::after {
+      right: 0;
+      bottom: -28px;
+      z-index: 0;
+      width: min(44vw, 560px);
+      height: 180px;
+      background:
+        linear-gradient(115deg, transparent 0%, rgba(45, 156, 255, 0.1) 36%, rgba(52, 199, 197, 0.14) 52%, rgba(41, 168, 109, 0.1) 66%, transparent 100%);
+      filter: blur(18px);
+      opacity: 0.8;
+      transform: rotate(-5deg);
+    }
+
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
@@ -133,10 +212,14 @@
     }
 
     .hero {
+      position: relative;
+      isolation: isolate;
       padding: 56px 0 30px;
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.6fr);
       gap: 28px;
@@ -380,6 +463,7 @@
       border: 1px solid rgba(78, 104, 130, 0.2);
       background: linear-gradient(90deg, rgba(255,255,255,0.45), transparent 42%), var(--pack);
       box-shadow: inset -18px 0 28px rgba(20, 48, 71, 0.08), 0 24px 34px rgba(20, 48, 71, 0.13);
+      overflow: visible;
     }
 
     .package.bottle {
@@ -402,11 +486,12 @@
 
     .package-label {
       position: absolute;
-      inset: 72px 10px auto;
-      min-height: 82px;
+      inset: 68px 8px auto;
+      min-height: 96px;
+      max-height: 108px;
       display: grid;
       place-items: center;
-      padding: 8px;
+      padding: 10px 7px;
       color: #fff;
       background: rgba(20, 48, 71, 0.8);
       border-radius: var(--radius);
@@ -415,6 +500,32 @@
       line-height: 1.05;
       text-transform: uppercase;
       font-size: 0.92rem;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+    }
+
+    .package.bottle .package-label {
+      inset: 76px 7px auto;
+      min-height: 98px;
+    }
+
+    .package-label span {
+      display: block;
+      width: 100%;
+    }
+
+    .package-label.is-long {
+      font-size: 0.78rem;
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .package-label.is-very-long {
+      font-size: 0.66rem;
+      line-height: 1;
+      letter-spacing: 0;
     }
 
     .pill-row,
@@ -1268,6 +1379,25 @@
         transform: perspective(860px) rotateX(56deg) rotateZ(-3deg) skewX(-5deg) translate3d(0, -14vh, 0);
       }
 
+      .page.home-mode.rainbow-variant-a .hero::before {
+        right: -220px;
+        top: -120px;
+        width: 520px;
+        height: 480px;
+        opacity: 0.12;
+      }
+
+      .page.home-mode.rainbow-variant-b .hero::before {
+        right: -110px;
+        bottom: -70px;
+        opacity: 0.48;
+      }
+
+      .page.home-mode.rainbow-variant-b .hero::after {
+        width: 70vw;
+        opacity: 0.46;
+      }
+
       .hero-grid,
       .detail-top,
       .main-grid,
@@ -1329,7 +1459,7 @@
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="page rainbow-variant-a">
     <header class="header">
       <div class="container nav">
         <div class="brand"><span class="mark">DN</span><span>DámeNápoj.cz</span></div>
@@ -1525,6 +1655,54 @@
         juice_drink: 'linear-gradient(155deg, #fed7aa, #ffffff 48%, #fb923c)'
       };
 
+      function productVisualColor(name = '', brand = '', category = '') {
+        const text = normalizeText(`${brand} ${name}`);
+        const categoryColor = colorsByCategory[category] || 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)';
+        const hasZero = /\b(zero|max|bez cukru|sugarfree|sugar free|light|no sugar)\b/.test(text);
+
+        if (text.includes('coca-cola') && hasZero) return 'linear-gradient(155deg, #05070b 0%, #1f2937 48%, #d71920 49%, #9f1018 100%)';
+        if (text.includes('coca-cola')) return 'linear-gradient(155deg, #e41e2b 0%, #b6111c 52%, #7f0e16 100%)';
+        if (text.includes('pepsi')) return hasZero
+          ? 'linear-gradient(155deg, #071a3d 0%, #0f3c8a 56%, #101827 100%)'
+          : 'linear-gradient(155deg, #0b3f91 0%, #1557b0 52%, #e11d2e 100%)';
+        if (text.includes('kofola')) return hasZero
+          ? 'linear-gradient(155deg, #231313 0%, #3a161c 54%, #b91c1c 100%)'
+          : 'linear-gradient(155deg, #2a1711 0%, #4b1f18 52%, #7c2d2d 100%)';
+        if (text.includes('red bull')) return 'linear-gradient(155deg, #e5eef8 0%, #b8c9dc 36%, #1f5fae 58%, #d4212d 100%)';
+        if (text.includes('monster') && hasZero) return 'linear-gradient(155deg, #f8fafc 0%, #dbeafe 43%, #38bdf8 74%, #0f172a 100%)';
+        if (text.includes('monster')) return 'linear-gradient(155deg, #050807 0%, #111827 55%, #39d353 100%)';
+        if (text.includes('big shock')) return hasZero
+          ? 'linear-gradient(155deg, #0f172a 0%, #334155 50%, #38bdf8 100%)'
+          : 'linear-gradient(155deg, #facc15 0%, #ef4444 52%, #111827 100%)';
+        if (text.includes('tiger')) return hasZero
+          ? 'linear-gradient(155deg, #020617 0%, #1f2937 56%, #22c55e 100%)'
+          : 'linear-gradient(155deg, #f97316 0%, #111827 56%, #facc15 100%)';
+        if (text.includes('hell')) return hasZero
+          ? 'linear-gradient(155deg, #111827 0%, #334155 56%, #60a5fa 100%)'
+          : 'linear-gradient(155deg, #111827 0%, #dc2626 58%, #f59e0b 100%)';
+        if (text.includes('semtex')) return hasZero
+          ? 'linear-gradient(155deg, #0f172a 0%, #64748b 52%, #22c55e 100%)'
+          : 'linear-gradient(155deg, #065f46 0%, #16a34a 52%, #facc15 100%)';
+        if (text.includes('fanta')) return hasZero
+          ? 'linear-gradient(155deg, #f97316 0%, #ffedd5 44%, #0ea5e9 100%)'
+          : 'linear-gradient(155deg, #fb6f18 0%, #f97316 54%, #facc15 100%)';
+        if (text.includes('mirinda')) return 'linear-gradient(155deg, #f97316 0%, #fb923c 56%, #22c55e 100%)';
+        if (text.includes('sprite') || text.includes('7up')) return hasZero
+          ? 'linear-gradient(155deg, #f8fafc 0%, #22c55e 48%, #0f766e 100%)'
+          : 'linear-gradient(155deg, #16a34a 0%, #eafff4 48%, #0ea5e9 100%)';
+        if (text.includes('mattoni')) return 'linear-gradient(155deg, #0f8f55 0%, #e8fff4 48%, #48b36d 100%)';
+        if (text.includes('rajec')) return 'linear-gradient(155deg, #dff6ff 0%, #ffffff 50%, #7dd3fc 100%)';
+        if (text.includes('aquila')) return 'linear-gradient(155deg, #dbeafe 0%, #ffffff 46%, #2563eb 100%)';
+        if (text.includes('magnesia')) return 'linear-gradient(155deg, #e0f2fe 0%, #ffffff 45%, #38bdf8 100%)';
+        if (text.includes('dobra voda') || text.includes('bonaqua') || text.includes('toma natura')) return 'linear-gradient(155deg, #e0f7ff 0%, #ffffff 48%, #60a5fa 100%)';
+        if (text.includes('korunni')) return 'linear-gradient(155deg, #eff6ff 0%, #ffffff 48%, #3b82f6 100%)';
+        if (text.includes('capri-sun') || text.includes('capri sun') || text.includes('multivitamin')) return 'linear-gradient(155deg, #fb923c 0%, #fff7ed 48%, #facc15 100%)';
+        if (text.includes('relax') || text.includes('cappy') || text.includes('toma pomeranc') || text.includes('hello pomeranc')) return 'linear-gradient(155deg, #fb923c 0%, #fff7ed 48%, #f97316 100%)';
+        if (text.includes('lipton') || text.includes('fuzetea') || text.includes('nestea')) return 'linear-gradient(155deg, #fef3c7 0%, #ffffff 46%, #d97706 100%)';
+        if (text.includes('schweppes') || text.includes('kinley') || text.includes('tonic')) return 'linear-gradient(155deg, #dbeafe 0%, #ffffff 48%, #93c5fd 100%)';
+        return categoryColor;
+      }
+
       const similarByProduct = {
         'product-coca-cola-original': ['Pepsi', 'Kofola', 'Coca-Cola Zero', 'RC Cola'],
         'product-coca-cola-zero': ['Coca-Cola Original', 'Pepsi Max', 'Kofola Bez cukru', 'RC Cola Zero'],
@@ -1644,9 +1822,24 @@
       }
 
       function packageLabel(productName) {
-        const parts = productName.split(' ');
-        if (parts.length <= 2) return productName.replace(' ', '<br>');
-        return `${parts.slice(0, 2).join(' ')}<br>${parts.slice(2).join(' ')}`;
+        const cleanName = productName.replace(/\s+CZ$/, '').trim();
+        const parts = cleanName.split(/\s+/).filter(Boolean);
+        if (parts.length <= 2) return parts.map((part) => `<span>${escapeHtml(part)}</span>`).join('');
+        const firstLine = parts.slice(0, 2).join(' ');
+        const remaining = parts.slice(2);
+        const secondLine = remaining.length > 3 ? remaining.slice(0, 2).join(' ') : remaining.join(' ');
+        const thirdLine = remaining.length > 3 ? remaining.slice(2).join(' ') : '';
+        return [firstLine, secondLine, thirdLine]
+          .filter(Boolean)
+          .map((line) => `<span>${escapeHtml(line)}</span>`)
+          .join('');
+      }
+
+      function packageLabelClass(productName) {
+        const cleanName = productName.replace(/\s+CZ$/, '').trim();
+        if (cleanName.length > 28) return 'package-label is-very-long';
+        if (cleanName.length > 18 || cleanName.split(/\s+/).length > 3) return 'package-label is-long';
+        return 'package-label';
       }
 
       function packageText(pkg) {
@@ -2176,7 +2369,7 @@
           calories: drink.kcalPerPackage,
           caloriesPer100: drink.kcalPer100ml,
           cubes: sugarCubes(sugar),
-          color: colorsByCategory[category] || 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)',
+          color: productVisualColor(drink.productName, drink.brand, category),
           shape: isBottle ? 'bottle' : 'can',
           tags: [drink.brand, categoryLabel(category), drink.market, ...drink.tags.slice(0, 3)],
           pills: [
@@ -2261,7 +2454,7 @@
           calories,
           caloriesPer100: drink.kalorie_na_100_ml,
           cubes: sugarCubes(sugar),
-          color: colorsByCategory[category] || 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)',
+          color: productVisualColor(drink.nazev, drink.vyrobce, category),
           shape: ['cola', 'cola_zero', 'energy_drink', 'energy_drink_zero'].includes(category) ? 'can' : 'bottle',
           tags: [drink.vyrobce, drink.kategorie, ...sweeteners, ...eNumbers],
           pills: [
@@ -2534,40 +2727,118 @@
       function isTasteAlternative(source, candidate) {
         if (!source || !candidate) return false;
         const sameFlavor = productFlavorKind(source) && productFlavorKind(source) === productFlavorKind(candidate);
-        return similarCompatible(source, candidate) && sameFlavor;
+        const sameKind = similarCompatible(source, candidate);
+        const sameBrand = source.brand === candidate.brand;
+        const noKnownFlavor = !productFlavorKind(source) && !productFlavorKind(candidate);
+        return sameKind && (sameFlavor || sameBrand || noKnownFlavor);
       }
 
       function strictBetterRecommendations(product, candidates, options = {}) {
         return sortedByComposition(product, candidates.filter((item) => validRecommendation(product, item, options)));
       }
 
+      function hasZeroLikeName(product) {
+        return /\b(zero|max|bez cukru|sugarfree|sugar free|light|no sugar)\b/.test(normalizeText(product?.name || ''));
+      }
+
+      function categoryClosenessScore(source, candidate) {
+        if (source.raw?.category === candidate.raw?.category) return 20;
+        if (productSimilarityKind(source) === productSimilarityKind(candidate)) return 16;
+        const closeGroups = [
+          ['lemonade_soda', 'cola', 'tonic'],
+          ['water', 'flavored_water', 'hydration_drink'],
+          ['juice', 'iced_tea', 'lemonade_soda']
+        ];
+        const sourceKind = productSimilarityKind(source);
+        const candidateKind = productSimilarityKind(candidate);
+        return closeGroups.some((group) => group.includes(sourceKind) && group.includes(candidateKind)) ? 8 : 0;
+      }
+
+      function flavorClosenessScore(source, candidate) {
+        const sourceFlavor = productFlavorKind(source);
+        const candidateFlavor = productFlavorKind(candidate);
+        if (sourceFlavor && sourceFlavor === candidateFlavor) return 40;
+        if (source.brand === candidate.brand && productSimilarityKind(source) === productSimilarityKind(candidate)) return 24;
+        if (productSimilarityKind(source) === productSimilarityKind(candidate)) return 14;
+        return 0;
+      }
+
+      function healthImprovementScore(source, candidate) {
+        let score = 0;
+        const sugarDiff = nutritionPer100(source, 'sugar') - nutritionPer100(candidate, 'sugar');
+        const kcalDiff = nutritionPer100(source, 'calories') - nutritionPer100(candidate, 'calories');
+        const caffeineDiff = nutritionPer100(source, 'caffeine') - nutritionPer100(candidate, 'caffeine');
+        if (sugarDiff > 0) score += Math.min(10, sugarDiff * 1.2);
+        if (kcalDiff > 0) score += Math.min(6, kcalDiff / 5);
+        if (!isEnergyGoal(source) && caffeineDiff > 0) score += Math.min(3, caffeineDiff / 8);
+        if (hasCompareSweeteners(source) && !hasCompareSweeteners(candidate)) score += 2;
+        return Math.min(20, score);
+      }
+
+      function typeSimilarityScore(source, candidate) {
+        if (productSimilarityKind(source) === productSimilarityKind(candidate)) return 10;
+        if (source.shape === candidate.shape) return 4;
+        return 0;
+      }
+
+      function goalImprovementScore(source, candidate) {
+        const keys = isEnergyGoal(source) ? ['energy', 'sport', 'weight'] : ['weight', 'kids', 'daily', 'sport'];
+        const diff = keys.reduce((sum, key) => sum + Math.max(0, scoreValue(candidate, key) - scoreValue(source, key)), 0);
+        return Math.min(10, diff * 1.4);
+      }
+
+      function recommendationScore(source, candidate, options = {}) {
+        if (!candidate || candidate.id === source.id) return -Infinity;
+        let score = 0;
+        score += flavorClosenessScore(source, candidate);
+        score += categoryClosenessScore(source, candidate);
+        score += healthImprovementScore(source, candidate);
+        score += typeSimilarityScore(source, candidate);
+        score += goalImprovementScore(source, candidate);
+        if (options.preferTaste && isTasteAlternative(source, candidate)) score += 18;
+        if (options.preferHealthy && productSimilarityKind(candidate) === 'water') score += 16;
+        if (!options.preferHealthy && productSimilarityKind(candidate) === 'water' && productSimilarityKind(source) !== 'water') score -= 18;
+        if (hasZeroLikeName(candidate) && nutritionPer100(source, 'sugar') > 0 && productSimilarityKind(source) === productSimilarityKind(candidate)) score += 12;
+        if (source.brand === candidate.brand && nutritionPer100(candidate, 'sugar') <= nutritionPer100(source, 'sugar')) score += 8;
+        return score;
+      }
+
+      function canRecommendCandidate(source, candidate, options = {}) {
+        if (!source || !candidate || source.id === candidate.id) return false;
+        if (nutritionPer100(candidate, 'sugar') > nutritionPer100(source, 'sugar')) return false;
+        if (nutritionPer100(candidate, 'calories') > nutritionPer100(source, 'calories')) return false;
+        if (!options.allowMoreCaffeine && nutritionPer100(candidate, 'caffeine') > nutritionPer100(source, 'caffeine')) return false;
+        const allowedDrop = options.allowSmallScoreDrop ? 1 : 0;
+        if (scoreValue(candidate, 'weight') < scoreValue(source, 'weight') - allowedDrop) return false;
+        if (scoreValue(candidate, 'kids') < scoreValue(source, 'kids') - allowedDrop) return false;
+        if (scoreValue(candidate, 'daily') < scoreValue(source, 'daily') - allowedDrop) return false;
+        return improvesMainParameter(source, candidate) || nutritionPer100(source, 'sugar') === 0;
+      }
+
+      function rankedRecommendations(product, candidates, options = {}) {
+        return candidates
+          .filter((item) => canRecommendCandidate(product, item, options))
+          .sort((a, b) => recommendationScore(product, b, options) - recommendationScore(product, a, options));
+      }
+
       function recommendationItems(product) {
-        const sameKind = modelProducts.filter((item) => similarCompatible(product, item));
-        const waters = modelProducts.filter((item) => ['water', 'mineral_water', 'flavored_water'].includes(item.raw?.category) && nutritionPer100(item, 'sugar') === 0 && nutritionPer100(item, 'calories') <= nutritionPer100(product, 'calories') && nutritionPer100(item, 'caffeine') <= nutritionPer100(product, 'caffeine'));
-        const flavoredZeroWaters = waters.filter((item) => {
-          const text = normalizeText(item.name);
-          return item.raw?.category === 'flavored_water' || text.includes('esence') || text.includes('jahod') || text.includes('citron') || text.includes('materidouska') || text.includes('malina') || text.includes('broskev');
-        });
-        const zeroSameKind = strictBetterRecommendations(product, sameKind.filter((item) => nutritionPer100(item, 'sugar') === 0));
-        const lowerSugarSameKind = strictBetterRecommendations(product, sameKind.filter((item) => nutritionPer100(item, 'sugar') > 0 && nutritionPer100(item, 'sugar') < nutritionPer100(product, 'sugar')));
-        const sameFlavorBetter = strictBetterRecommendations(product, sameKind.filter((item) => {
-          const sameFlavor = productFlavorKind(product) && productFlavorKind(product) === productFlavorKind(item);
-          return sameFlavor;
-        }));
-        const anyStrictBetter = strictBetterRecommendations(product, [...sameKind, ...waters], { allowMoreCaffeine: isEnergyGoal(product) });
+        const options = { allowMoreCaffeine: isEnergyGoal(product) };
+        const sourceKind = productSimilarityKind(product);
+        const sameKind = modelProducts.filter((item) => item.id !== product.id && productSimilarityKind(item) === sourceKind);
+        const sameFlavor = modelProducts.filter((item) => item.id !== product.id && productFlavorKind(product) && productFlavorKind(product) === productFlavorKind(item) && (productSimilarityKind(item) === sourceKind || item.brand === product.brand || item.raw?.category === product.raw?.category));
+        const waters = modelProducts.filter((item) => item.id !== product.id && productSimilarityKind(item) === 'water' && nutritionPer100(item, 'sugar') === 0 && nutritionPer100(item, 'calories') === 0 && nutritionPer100(item, 'caffeine') === 0);
+        const tasteRanked = rankedRecommendations(product, [...sameFlavor, ...sameKind], { ...options, preferTaste: true, allowSmallScoreDrop: true });
+        const healthyRanked = rankedRecommendations(product, [...waters, ...modelProducts], { ...options, preferHealthy: true });
+        const bestSameKindRanked = rankedRecommendations(product, [...sameFlavor, ...sameKind], { ...options, allowSmallScoreDrop: true });
+        const bestRanked = rankedRecommendations(product, [...sameFlavor, ...sameKind, ...modelProducts], options);
         const used = new Set([product.id]);
-        const best = firstUniqueRecommendation(used, nutritionPer100(product, 'sugar') > 0 ? [...zeroSameKind, ...waters, ...anyStrictBetter] : [...waters, ...anyStrictBetter]);
-        if (best) used.add(best.id);
-        const tasteBetter = firstUniqueRecommendation(used, [...sameFlavorBetter, ...zeroSameKind, ...lowerSugarSameKind, ...flavoredZeroWaters, ...waters]);
+        const tasteBetter = firstUniqueRecommendation(used, tasteRanked);
         if (tasteBetter) used.add(tasteBetter.id);
-        const lighter = firstUniqueRecommendation(used, [...lowerSugarSameKind, ...waters, ...anyStrictBetter]);
+        const healthy = firstUniqueRecommendation(used, healthyRanked);
+        if (healthy) used.add(healthy.id);
+        const best = firstUniqueRecommendation(used, [...bestSameKindRanked, ...bestRanked, ...healthyRanked]);
+        if (best) used.add(best.id);
         return [
-          {
-            label: 'Nejlepší volba',
-            target: best,
-            note: best ? recommendationNutritionNote(best) : 'voda nebo neslazený čaj',
-            badge: best && !isTasteAlternative(product, best) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
-          },
           {
             label: 'Podobná chuť, lepší parametry',
             target: tasteBetter,
@@ -2575,10 +2846,16 @@
             badge: tasteBetter && !isTasteAlternative(product, tasteBetter) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
           },
           {
-            label: 'Lehčí varianta',
-            target: lighter,
-            note: lighter ? recommendationNutritionNote(lighter) : 'menší porce nebo voda',
-            badge: lighter && !isTasteAlternative(product, lighter) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
+            label: 'Zdravější náhrada',
+            target: healthy,
+            note: healthy ? recommendationNutritionNote(healthy) : 'voda nebo neslazený čaj',
+            badge: 'Zdravější náhrada, ne chuťová alternativa'
+          },
+          {
+            label: 'Nejlepší volba',
+            target: best,
+            note: best ? recommendationNutritionNote(best) : 'menší porce nebo voda',
+            badge: best && !isTasteAlternative(product, best) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
           }
         ];
       }
@@ -2633,7 +2910,7 @@
             caffeine,
             calories,
             cubes: sugarCubes(sugar),
-            color: colorsByCategory[category] || 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)',
+            color: productVisualColor(product.name, brand.name, category),
             shape: pkg.package_type === 'can' ? 'can' : 'bottle',
             tags: [brand.name, categoryLabel(category), variant.country_iso_code],
             pills: [
@@ -3332,7 +3609,9 @@
         const packageArt = document.getElementById('packageArt');
         packageArt.className = `package ${product.shape === 'bottle' ? 'bottle' : ''}`;
         packageArt.style.setProperty('--pack', product.color);
-        document.getElementById('packageLabel').innerHTML = packageLabel(product.name);
+        const labelElement = document.getElementById('packageLabel');
+        labelElement.className = packageLabelClass(product.name);
+        labelElement.innerHTML = packageLabel(product.name);
         document.getElementById('topTags').innerHTML = product.tags.map((tag) => `<span class="pill ok">${tag}</span>`).join('');
         document.getElementById('quickPills').innerHTML = product.pills.map(([type, text]) => `<span class="pill ${type}">${text}</span>`).join('');
 
