@@ -1407,7 +1407,6 @@
       let cardVisibleLimit = 30;
       let lastCardCategorySlug = null;
       let typingHintTimer = null;
-      let typingHintStopped = false;
 
       function byId(items) {
         return Object.fromEntries(items.map((item) => [item.id, item]));
@@ -2644,15 +2643,13 @@
       }
 
       function stopTypingHint() {
-        typingHintStopped = true;
         clearTypingHintTimer();
         hideTypingHint();
       }
 
-      function startTypingHint(field, options = {}) {
-        if (options.reset) typingHintStopped = false;
-        if (!typingHint || !field || typingHintStopped || field.value.trim() || document.activeElement === field) {
-          hideTypingHint();
+      function startTypingHint(field) {
+        if (!typingHint || !field || field.value.trim() || document.activeElement === field) {
+          stopTypingHint();
           return;
         }
         const examples = ['Coca-Cola', 'Red Bull', 'Kofola', 'Mattoni'];
@@ -2661,9 +2658,8 @@
         let deleting = false;
 
         const tick = () => {
-          if (typingHintStopped || field.value.trim() || document.activeElement === field) {
-            hideTypingHint();
-            typingHintTimer = null;
+          if (field.value.trim() || document.activeElement === field) {
+            stopTypingHint();
             return;
           }
 
@@ -2695,11 +2691,21 @@
         if (!typingHintTimer) tick();
       }
 
+      function syncTypingHint(field = document.getElementById('searchInput')) {
+        if (!field) return;
+        if (field.value.trim() || document.activeElement === field) {
+          stopTypingHint();
+        } else {
+          startTypingHint(field);
+        }
+      }
+
       function setupTypingHint(field) {
         if (!field) return;
-        field.addEventListener('focus', stopTypingHint, { once: true });
-        field.addEventListener('pointerdown', stopTypingHint, { once: true });
-        field.addEventListener('input', stopTypingHint, { once: true });
+        field.addEventListener('focus', stopTypingHint);
+        field.addEventListener('pointerdown', stopTypingHint);
+        field.addEventListener('input', () => syncTypingHint(field));
+        field.addEventListener('blur', () => syncTypingHint(field));
       }
 
       function bindProductLinks(scope = document) {
@@ -2942,11 +2948,11 @@
         if (isHomeRoute() && !options.pushUrl) {
           currentInput.value = '';
           currentInput.dataset.autofilled = 'false';
-          startTypingHint(currentInput, { reset: true });
+          syncTypingHint(currentInput);
         } else {
           currentInput.value = product.name;
           currentInput.dataset.autofilled = 'true';
-          hideTypingHint();
+          stopTypingHint();
         }
         document.getElementById('heroSugar').textContent = `${product.sugar} g`;
         document.getElementById('heroCaffeine').textContent = `${product.caffeine} mg`;
@@ -3218,6 +3224,9 @@
           renderEckoList('');
           render(initialProductFromRoute(), { pushUrl: false });
           window.addEventListener('popstate', () => {
+            render(initialProductFromRoute(), { pushUrl: false });
+          });
+          window.addEventListener('hashchange', () => {
             render(initialProductFromRoute(), { pushUrl: false });
           });
         } catch (error) {
