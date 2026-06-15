@@ -391,7 +391,7 @@
 
     .main-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
+      grid-template-columns: minmax(0, 1fr);
       gap: 18px;
       align-items: start;
     }
@@ -488,11 +488,79 @@
       margin-top: 18px;
     }
 
+    .detail-flow {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .detail-section-title {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+    }
+
+    .similar-sections {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      grid-column: 1 / -1;
+    }
+
     .content-block {
       padding: 18px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
+    }
+
+    .recommendation-block {
+      padding: 22px;
+      border: 1px solid rgba(38, 171, 118, 0.36);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.76), transparent 28%),
+        linear-gradient(135deg, #e9fff5 0%, #ddf7ff 52%, #f7efff 100%);
+      box-shadow: 0 22px 60px rgba(44, 145, 116, 0.16);
+    }
+
+    .recommendation-block h3 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+    }
+
+    .recommendation-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .recommendation-item {
+      padding: 14px;
+      border: 1px solid rgba(38, 171, 118, 0.24);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .recommendation-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .recommendation-item a {
+      color: var(--ink);
+      font-weight: 950;
+      text-decoration: none;
+    }
+
+    .recommendation-badge {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(18, 105, 65, 0.1);
+      color: #126941;
+      font-size: 0.78rem;
+      font-weight: 900;
     }
 
     .simple-list,
@@ -868,6 +936,8 @@
       .rankings-grid,
       .category-grid,
       .ecko-grid,
+      .similar-sections,
+      .recommendation-list,
       .ingredient-list {
         grid-template-columns: 1fr;
       }
@@ -933,42 +1003,48 @@
             </div>
 
             <div class="main-grid">
-              <div class="score-list" id="scoreList"></div>
-              <aside class="aside-card">
-                <div class="insight-list" id="insights"></div>
-              </aside>
+              <section>
+                <h2 class="detail-section-title">Skóre</h2>
+                <div class="score-list" id="scoreList"></div>
+              </section>
             </div>
 
-            <div class="extra-grid">
+            <div class="detail-flow">
+              <section class="content-block">
+                <h3>Déenko říká</h3>
+                <p class="human-text" id="denkoSaysText"></p>
+              </section>
+              <section class="content-block">
+                <h3>Cukr lidsky</h3>
+                <p class="human-text" id="sugarHumanText"></p>
+              </section>
               <section class="content-block">
                 <h3>Pro koho dává smysl</h3>
                 <div class="sense-list" id="senseList"></div>
               </section>
-              <section class="content-block">
-                <h3>Podobné nápoje</h3>
-                <ul class="simple-list" id="similarDrinks"></ul>
+              <section class="recommendation-block" id="recommendations">
+                <h3>🟢 Déenko doporučuje místo <span id="recommendationProductName"></span></h3>
+                <div class="recommendation-list" id="recommendationsList"></div>
               </section>
-              <section class="content-block">
-                <h3>Lepší alternativa pro stejný cíl</h3>
+              <div class="similar-sections">
+                <section class="content-block">
+                  <h3>Podobné chutí</h3>
+                  <ul class="simple-list" id="similarTasteDrinks"></ul>
+                </section>
+                <section class="content-block">
+                  <h3>Podobné složením</h3>
+                  <ul class="simple-list" id="similarCompositionDrinks"></ul>
+                </section>
+              </div>
+              <div hidden>
+                <div class="insight-list" id="insights"></div>
                 <ul class="simple-list" id="betterAlternatives"></ul>
-              </section>
-              <section class="content-block">
-                <h3>Kdyby to byl 1 kus denně</h3>
                 <div class="human-text" id="annualSugarText"></div>
-              </section>
-              <section class="content-block">
-                <h3>Nejčastější otázky</h3>
                 <div class="faq-list" id="faqList"></div>
-              </section>
-              <section class="content-block source-card">
-                <h3>Zdroj dat / ověřeno / český trh</h3>
                 <div class="source-list" id="dataSource"></div>
-              </section>
-              <section class="content-block ingredients-card">
-                <h3>Složení</h3>
                 <div class="ingredient-list" id="ingredientList"></div>
                 <div class="ecko-detail" id="eckoDetail"></div>
-              </section>
+              </div>
             </div>
           </article>
 
@@ -1846,10 +1922,10 @@
         if (productSimilarityKind(source) === productSimilarityKind(candidate)) score += 45;
         if (productFlavorKind(source) && productFlavorKind(source) === productFlavorKind(candidate)) score += 35;
         if (source.brand === candidate.brand) score += 18;
-        if ((source.sugar === 0) === (candidate.sugar === 0)) score += 14;
-        if ((source.caffeine === 0) === (candidate.caffeine === 0)) score += 10;
-        score -= Math.abs(numericValue(source.sugar) - numericValue(candidate.sugar)) / 3;
-        score -= Math.abs(numericValue(source.caffeine) - numericValue(candidate.caffeine)) / 20;
+        if ((nutritionPer100(source, 'sugar') === 0) === (nutritionPer100(candidate, 'sugar') === 0)) score += 14;
+        if ((nutritionPer100(source, 'caffeine') === 0) === (nutritionPer100(candidate, 'caffeine') === 0)) score += 10;
+        score -= Math.abs(nutritionPer100(source, 'sugar') - nutritionPer100(candidate, 'sugar')) / 3;
+        score -= Math.abs(nutritionPer100(source, 'caffeine') - nutritionPer100(candidate, 'caffeine')) / 6;
         score -= Math.abs(scoreValue(source, 'daily') - scoreValue(candidate, 'daily'));
         return score;
       }
@@ -1900,6 +1976,33 @@
           .slice(0, limit);
       }
 
+      function tasteSimilarityScore(source, candidate) {
+        if (!similarCompatible(source, candidate)) return -Infinity;
+        let score = 0;
+        if (productFlavorKind(source) && productFlavorKind(source) === productFlavorKind(candidate)) score += 90;
+        if (productSimilarityKind(source) === productSimilarityKind(candidate)) score += 55;
+        if (source.raw.category === candidate.raw.category) score += 25;
+        if (source.brand === candidate.brand) score += 16;
+        score -= Math.abs(nutritionPer100(source, 'sugar') - nutritionPer100(candidate, 'sugar')) / 4;
+        score -= Math.abs(scoreValue(source, 'daily') - scoreValue(candidate, 'daily')) / 2;
+        return score;
+      }
+
+      function compositionSimilarityScore(source, candidate) {
+        if (!similarCompatible(source, candidate)) return -Infinity;
+        let score = 0;
+        if (productSimilarityKind(source) === productSimilarityKind(candidate)) score += 70;
+        if (source.raw.category === candidate.raw.category) score += 35;
+        if ((nutritionPer100(source, 'sugar') === 0) === (nutritionPer100(candidate, 'sugar') === 0)) score += 18;
+        if ((nutritionPer100(source, 'caffeine') === 0) === (nutritionPer100(candidate, 'caffeine') === 0)) score += 18;
+        if (hasCompareSweeteners(source) === hasCompareSweeteners(candidate)) score += 14;
+        score -= Math.abs(nutritionPer100(source, 'sugar') - nutritionPer100(candidate, 'sugar')) * 2.6;
+        score -= Math.abs(nutritionPer100(source, 'calories') - nutritionPer100(candidate, 'calories')) / 2;
+        score -= Math.abs(nutritionPer100(source, 'caffeine') - nutritionPer100(candidate, 'caffeine')) / 2;
+        score -= Math.abs(scoreValue(source, 'weight') - scoreValue(candidate, 'weight')) * 1.5;
+        return score;
+      }
+
       function preferredSimilarProducts(product, products) {
         const text = normalizeText(product.name);
         if (!['fanta', 'mirinda', 'sprite', '7up'].some((name) => text.includes(name))) return [];
@@ -1908,11 +2011,28 @@
           .filter((item) => item && similarCompatible(product, item));
       }
 
-      function resolveSimilarProducts(product, products, limit = 4) {
+      function resolveSimilarTasteProducts(product, products, limit = 4) {
         const manual = (product.similar || [])
           .map((name) => findProductInList(products, name))
           .filter((item) => item && similarCompatible(product, item));
-        const combined = [...manual, ...preferredSimilarProducts(product, products), ...computedSimilarProducts(product, products, products.length)];
+        const computed = products
+          .filter((item) => similarCompatible(product, item))
+          .sort((a, b) => tasteSimilarityScore(product, b) - tasteSimilarityScore(product, a));
+        const combined = [...manual, ...preferredSimilarProducts(product, products), ...computed];
+        const unique = [];
+        const seen = new Set();
+        combined.forEach((item) => {
+          if (!item || seen.has(item.id) || item.id === product.id) return;
+          seen.add(item.id);
+          unique.push(item);
+        });
+        return unique.slice(0, limit).map((item) => item.name);
+      }
+
+      function resolveSimilarCompositionProducts(product, products, limit = 4) {
+        const combined = products
+          .filter((item) => similarCompatible(product, item))
+          .sort((a, b) => compositionSimilarityScore(product, b) - compositionSimilarityScore(product, a));
         const unique = [];
         const seen = new Set();
         combined.forEach((item) => {
@@ -1929,13 +2049,13 @@
       }
 
       function betterAlternativesFor(product, products) {
-        const sameBrandZero = bestProductName(products, (item) => item.id !== product.id && item.brand === product.brand && item.raw.category === product.raw.category && item.sugar === 0, '');
-        const sameCategoryZero = sameBrandZero || bestProductName(products, (item) => item.id !== product.id && item.raw.category === product.raw.category && item.sugar === 0, 'zero varianta');
-        const water = bestProductName(products, (item) => item.raw.category === 'water' && item.sugar === 0 && item.caffeine === 0, 'voda');
-        const flavoredWater = bestProductName(products, (item) => item.raw.category === 'water' && item.sugar === 0 && item.name !== water, 'ochucená voda bez cukru');
-        const sameBrandZeroEnergy = bestProductName(products, (item) => item.id !== product.id && item.brand === product.brand && item.raw.category === 'energy_drink' && item.sugar === 0 && item.caffeine > 0, '');
-        const zeroEnergy = sameBrandZeroEnergy || bestProductName(products, (item) => item.raw.category === 'energy_drink' && item.sugar === 0 && item.caffeine > 0, 'energy drink bez cukru');
-        const lowSugarSport = bestProductName(products, (item) => item.raw.category === 'hydration_drink' && item.sugar <= 5, 'voda + jídlo po sportu');
+        const sameBrandZero = bestProductName(products, (item) => item.id !== product.id && item.brand === product.brand && item.raw.category === product.raw.category && nutritionPer100(item, 'sugar') === 0, '');
+        const sameCategoryZero = sameBrandZero || bestProductName(products, (item) => item.id !== product.id && item.raw.category === product.raw.category && nutritionPer100(item, 'sugar') === 0, 'zero varianta');
+        const water = bestProductName(products, (item) => item.raw.category === 'water' && nutritionPer100(item, 'sugar') === 0 && nutritionPer100(item, 'caffeine') === 0, 'voda');
+        const flavoredWater = bestProductName(products, (item) => item.raw.category === 'water' && nutritionPer100(item, 'sugar') === 0 && item.name !== water, 'ochucená voda bez cukru');
+        const sameBrandZeroEnergy = bestProductName(products, (item) => item.id !== product.id && item.brand === product.brand && item.raw.category === 'energy_drink' && nutritionPer100(item, 'sugar') === 0 && nutritionPer100(item, 'caffeine') > 0, '');
+        const zeroEnergy = sameBrandZeroEnergy || bestProductName(products, (item) => item.raw.category === 'energy_drink' && nutritionPer100(item, 'sugar') === 0 && nutritionPer100(item, 'caffeine') > 0, 'energy drink bez cukru');
+        const lowSugarSport = bestProductName(products, (item) => item.raw.category === 'hydration_drink' && nutritionPer100(item, 'sugar') <= 5, 'voda + jídlo po sportu');
 
         if (product.raw.category === 'water') {
           return [
@@ -1946,8 +2066,8 @@
         }
         if (product.raw.category === 'energy_drink') {
           return [
-            ['Chci energii', product.sugar > 0 ? zeroEnergy : 'káva + voda'],
-            ['Chci méně cukru', product.sugar > 0 ? zeroEnergy : water],
+            ['Chci energii', nutritionPer100(product, 'sugar') > 0 ? zeroEnergy : 'káva + voda'],
+            ['Chci méně cukru', nutritionPer100(product, 'sugar') > 0 ? zeroEnergy : water],
             ['Chci běžné pití', water]
           ];
         }
@@ -1958,7 +2078,7 @@
             ['Chci sladkou chuť', flavoredWater]
           ];
         }
-        if (product.sugar > 0) {
+        if (nutritionPer100(product, 'sugar') > 0) {
           return [
             ['Chci stejný typ s méně cukrem', sameCategoryZero],
             ['Chci běžné pití', water],
@@ -1972,12 +2092,118 @@
         ];
       }
 
+      function sortedByComposition(source, candidates) {
+        return [...candidates].sort((a, b) => compositionSimilarityScore(source, b) - compositionSimilarityScore(source, a));
+      }
+
+      function firstUniqueRecommendation(used, candidates) {
+        return candidates.find((item) => item && !used.has(item.id)) || null;
+      }
+
+      function nutritionPer100(product, key) {
+        const map = {
+          sugar: 'sugarPer100',
+          calories: 'caloriesPer100',
+          caffeine: 'caffeinePer100'
+        };
+        return numericValue(product?.[map[key]]);
+      }
+
+      function recommendationNutritionNote(product) {
+        return [
+          `na 100 ml: ${nutritionPer100(product, 'sugar')} g cukru, ${nutritionPer100(product, 'calories')} kcal, ${nutritionPer100(product, 'caffeine')} mg kofeinu`,
+          `v balení: ${product.sugar} g cukru, ${product.calories} kcal, ${product.caffeine} mg kofeinu`
+        ].join(' · ');
+      }
+
+      function isEnergyGoal(product) {
+        return ['energy_drink', 'energy_drink_zero'].includes(product.raw?.category);
+      }
+
+      function improvesMainParameter(source, candidate) {
+        if (!source || !candidate || source.id === candidate.id) return false;
+        if (nutritionPer100(candidate, 'sugar') < nutritionPer100(source, 'sugar')) return true;
+        if (nutritionPer100(candidate, 'calories') < nutritionPer100(source, 'calories')) return true;
+        if (!isEnergyGoal(source) && nutritionPer100(candidate, 'caffeine') < nutritionPer100(source, 'caffeine')) return true;
+        if (hasCompareSweeteners(source) && !hasCompareSweeteners(candidate)) return true;
+        return ['daily', 'weight', 'kids', 'energy', 'sport'].some((key) => scoreValue(candidate, key) > scoreValue(source, key));
+      }
+
+      function isNotWorseMainParameter(source, candidate, options = {}) {
+        if (!source || !candidate || source.id === candidate.id) return false;
+        if (nutritionPer100(candidate, 'sugar') > nutritionPer100(source, 'sugar')) return false;
+        if (nutritionPer100(candidate, 'calories') > nutritionPer100(source, 'calories')) return false;
+        if (!options.allowMoreCaffeine && nutritionPer100(candidate, 'caffeine') > nutritionPer100(source, 'caffeine')) return false;
+        if (scoreValue(candidate, 'kids') < scoreValue(source, 'kids')) return false;
+        if (scoreValue(candidate, 'weight') < scoreValue(source, 'weight')) return false;
+        if (scoreValue(candidate, 'daily') < scoreValue(source, 'daily')) return false;
+        return true;
+      }
+
+      function validRecommendation(source, candidate, options = {}) {
+        return isNotWorseMainParameter(source, candidate, options) && improvesMainParameter(source, candidate);
+      }
+
+      function isTasteAlternative(source, candidate) {
+        if (!source || !candidate) return false;
+        const sameFlavor = productFlavorKind(source) && productFlavorKind(source) === productFlavorKind(candidate);
+        return similarCompatible(source, candidate) && sameFlavor;
+      }
+
+      function strictBetterRecommendations(product, candidates, options = {}) {
+        return sortedByComposition(product, candidates.filter((item) => validRecommendation(product, item, options)));
+      }
+
+      function recommendationItems(product) {
+        const sameKind = modelProducts.filter((item) => similarCompatible(product, item));
+        const waters = modelProducts.filter((item) => ['water', 'mineral_water', 'flavored_water'].includes(item.raw?.category) && nutritionPer100(item, 'sugar') === 0 && nutritionPer100(item, 'calories') <= nutritionPer100(product, 'calories') && nutritionPer100(item, 'caffeine') <= nutritionPer100(product, 'caffeine'));
+        const flavoredZeroWaters = waters.filter((item) => {
+          const text = normalizeText(item.name);
+          return item.raw?.category === 'flavored_water' || text.includes('esence') || text.includes('jahod') || text.includes('citron') || text.includes('materidouska') || text.includes('malina') || text.includes('broskev');
+        });
+        const zeroSameKind = strictBetterRecommendations(product, sameKind.filter((item) => nutritionPer100(item, 'sugar') === 0));
+        const lowerSugarSameKind = strictBetterRecommendations(product, sameKind.filter((item) => nutritionPer100(item, 'sugar') > 0 && nutritionPer100(item, 'sugar') < nutritionPer100(product, 'sugar')));
+        const sameFlavorBetter = strictBetterRecommendations(product, sameKind.filter((item) => {
+          const sameFlavor = productFlavorKind(product) && productFlavorKind(product) === productFlavorKind(item);
+          return sameFlavor;
+        }));
+        const anyStrictBetter = strictBetterRecommendations(product, [...sameKind, ...waters], { allowMoreCaffeine: isEnergyGoal(product) });
+        const used = new Set([product.id]);
+        const best = firstUniqueRecommendation(used, nutritionPer100(product, 'sugar') > 0 ? [...zeroSameKind, ...waters, ...anyStrictBetter] : [...waters, ...anyStrictBetter]);
+        if (best) used.add(best.id);
+        const tasteBetter = firstUniqueRecommendation(used, [...sameFlavorBetter, ...zeroSameKind, ...lowerSugarSameKind, ...flavoredZeroWaters, ...waters]);
+        if (tasteBetter) used.add(tasteBetter.id);
+        const lighter = firstUniqueRecommendation(used, [...lowerSugarSameKind, ...waters, ...anyStrictBetter]);
+        return [
+          {
+            label: 'Nejlepší volba',
+            target: best,
+            note: best ? recommendationNutritionNote(best) : 'voda nebo neslazený čaj',
+            badge: best && !isTasteAlternative(product, best) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
+          },
+          {
+            label: 'Podobná chuť, lepší parametry',
+            target: tasteBetter,
+            note: tasteBetter ? recommendationNutritionNote(tasteBetter) : 'pokud není lepší podobná chuť, dejte přednost lehčí volbě',
+            badge: tasteBetter && !isTasteAlternative(product, tasteBetter) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
+          },
+          {
+            label: 'Lehčí varianta',
+            target: lighter,
+            note: lighter ? recommendationNutritionNote(lighter) : 'menší porce nebo voda',
+            badge: lighter && !isTasteAlternative(product, lighter) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
+          }
+        ];
+      }
+
       function mapModel(data) {
         if (data.napoje) {
           const products = data.napoje.map(mapUniversalDrink);
           return products.map((product) => ({
             ...product,
-            similar: resolveSimilarProducts(product, products),
+            similar: resolveSimilarTasteProducts(product, products),
+            similarTaste: resolveSimilarTasteProducts(product, products),
+            similarComposition: resolveSimilarCompositionProducts(product, products),
             alternatives: product.alternatives.length ? product.alternatives : betterAlternativesFor(product, products),
             faq: makeFaq(product)
           }));
@@ -2440,12 +2666,26 @@
           <div class="insight"><strong>Největší výhody</strong><p>${product.pros.join(' · ')}</p></div>
           <div class="insight"><strong>Největší nevýhody</strong><p>${product.cons.join(' · ')}</p></div>
         `;
+        document.getElementById('denkoSaysText').textContent = `${product.type}, ${product.package}. ${product.human}`;
+        document.getElementById('sugarHumanText').textContent = `${product.sugar} g cukru v balení je zhruba ${product.cubes} kostek. Na 100 ml: ${product.sugarPer100} g cukru. Pokud si dáte jeden kus denně, za rok je to ${sugarStory(product.sugar).year} cukru.`;
         renderSense(product);
-        document.getElementById('similarDrinks').innerHTML = product.similar.map((item) => {
+        document.getElementById('recommendationProductName').textContent = product.name;
+        document.getElementById('recommendationsList').innerHTML = recommendationItems(product).map(({ label, target, note, badge }) => `
+          <article class="recommendation-item">
+            <span class="recommendation-badge">${escapeHtml(badge)}</span>
+            <strong>${escapeHtml(label)}</strong>
+            ${target ? productLink(target) : `<span>${escapeHtml(note)}</span>`}
+            ${target ? `<p class="note">${escapeHtml(note)}</p>` : ''}
+          </article>
+        `).join('');
+        bindProductLinks(document.getElementById('recommendationsList'));
+        const renderSimilarList = (items) => items.map((item) => {
           const target = findLinkedProduct(item);
           if (!target) return `<li><strong>${escapeHtml(item)}</strong></li>`;
           return `<li><button class="ingredient-button similar-button" type="button" data-name="${escapeHtml(item)}">${escapeHtml(item)}</button></li>`;
         }).join('');
+        document.getElementById('similarTasteDrinks').innerHTML = renderSimilarList(product.similarTaste || product.similar || []);
+        document.getElementById('similarCompositionDrinks').innerHTML = renderSimilarList(product.similarComposition || product.similar || []);
         document.querySelectorAll('.similar-button').forEach((button) => {
           button.addEventListener('click', () => {
             const target = findProduct(button.dataset.name);
