@@ -54,7 +54,33 @@
     }
 
     .page {
+      position: relative;
       overflow: hidden;
+      min-height: 100vh;
+    }
+
+    .page.home-mode::before {
+      content: "";
+      position: fixed;
+      left: -22vw;
+      top: 52px;
+      z-index: 0;
+      width: 150vw;
+      height: 150vh;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(43, 184, 177, 0.32) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(43, 184, 177, 0.24) 1px, transparent 1px);
+      background-size: 76px 76px;
+      opacity: 1;
+      transform: perspective(980px) rotateX(58deg) rotateZ(-4deg) skewX(-7deg) translate3d(0, -15vh, 0);
+      transform-origin: left top;
+      mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.64) 50%, rgba(0, 0, 0, 0.84));
+    }
+
+    .page > main {
+      position: relative;
+      z-index: 1;
     }
 
     .page.home-mode .detail-section {
@@ -1232,6 +1258,16 @@
     }
 
     @media (max-width: 980px) {
+      .page.home-mode::before {
+        left: -36vw;
+        top: 36px;
+        width: 170vw;
+        height: 145vh;
+        background-size: 88px 88px;
+        opacity: 0.82;
+        transform: perspective(860px) rotateX(56deg) rotateZ(-3deg) skewX(-5deg) translate3d(0, -14vh, 0);
+      }
+
       .hero-grid,
       .detail-top,
       .main-grid,
@@ -1399,6 +1435,20 @@
         </div>
       </section>
 
+      <section class="section detail-only">
+        <div class="container">
+          <h2>TOP žebříčky podle cíle</h2>
+          <div class="rankings-grid" id="rankingsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section detail-only">
+        <div class="container">
+          <h2>Kategorie nápojů</h2>
+          <div class="category-grid" id="categoryGrid"></div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container">
           <h2>Rozcestník nápojů</h2>
@@ -1425,20 +1475,6 @@
             </div>
             <div id="comparisonResult"></div>
           </div>
-        </div>
-      </section>
-
-      <section class="section detail-only">
-        <div class="container">
-          <h2>TOP žebříčky podle cíle</h2>
-          <div class="rankings-grid" id="rankingsGrid"></div>
-        </div>
-      </section>
-
-      <section class="section detail-only">
-        <div class="container">
-          <h2>Kategorie nápojů</h2>
-          <div class="category-grid" id="categoryGrid"></div>
         </div>
       </section>
 
