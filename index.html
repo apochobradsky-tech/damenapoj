@@ -962,12 +962,45 @@
       font-size: 1.35rem;
     }
 
+    .category-overview h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.12;
+    }
+
     .category-overview .category-intro {
       max-width: 820px;
       margin: 0 0 16px;
       color: var(--muted);
       line-height: 1.55;
       font-weight: 650;
+    }
+
+    .landing-links,
+    .landing-faq {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .landing-links a,
+    .landing-faq article {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .landing-links a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .landing-faq strong {
+      display: block;
+      margin-bottom: 4px;
     }
 
     .category-stats {
@@ -1955,15 +1988,24 @@
         mineral_water: 'mineralni-vody',
         water: 'mineralni-vody',
         flavored_water: 'mineralni-vody',
+        hydration_drink: 'iontove-napoje',
         juice: 'dzusy',
         juice_drink: 'dzusy',
         lemonade: 'limonady',
-        iced_tea: 'limonady',
-        tonic: 'limonady'
+        iced_tea: 'ledove-caje',
+        tonic: 'toniky'
       };
 
       function categoryPath(category) {
         return appPath(`/kategorie/${categoryRoutes[category] || category}`);
+      }
+
+      function brandPath(brand) {
+        return appPath(`/znacka/${slugify(brand)}`);
+      }
+
+      function substancePath(name) {
+        return appPath(`/latka/${slugify(name)}`);
       }
 
       function productUrl(product) {
@@ -3235,6 +3277,36 @@
         });
       }
 
+      function openLandingRoute(path, state = {}) {
+        const nextPath = appPath(path);
+        if (window.location.protocol === 'file:') {
+          if (window.location.hash !== nextPath) window.history.pushState(state, '', nextPath);
+        } else if (window.location.pathname !== nextPath) {
+          window.history.pushState(state, '', nextPath);
+        }
+        render(initialProductFromRoute(), { pushUrl: false });
+        const target = categoryOverview && categoryOverview.classList.contains('visible') ? categoryOverview : document.getElementById('compareGrid');
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function bindLandingLinks(scope = document) {
+        bindCategoryLinks(scope);
+        scope.querySelectorAll('[data-brand-link]').forEach((link) => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const slug = link.dataset.brandLink;
+            if (slug) openLandingRoute(`/znacka/${slug}`, { brandSlug: slug });
+          });
+        });
+        scope.querySelectorAll('[data-substance-link]').forEach((link) => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const slug = link.dataset.substanceLink;
+            if (slug) openLandingRoute(`/latka/${slug}`, { substanceSlug: slug });
+          });
+        });
+      }
+
       function sweetenerText(product) {
         const sweeteners = (product.substances || []).filter((item) => {
           const value = normalizeText(item);
@@ -3438,7 +3510,10 @@
           ['Minerální vody', 'mineralni-vody', (product) => ['mineral_water', 'water', 'flavored_water'].includes(product.raw.category)],
           ['Zero nápoje', 'zero-napoje', (product) => product.sugar === 0],
           ['Džusy', 'dzusy', (product) => ['juice', 'juice_drink'].includes(product.raw.category)],
-          ['Limonády', 'limonady', (product) => ['lemonade', 'iced_tea', 'tonic'].includes(product.raw.category)]
+          ['Limonády', 'limonady', (product) => product.raw.category === 'lemonade'],
+          ['Ledové čaje', 'ledove-caje', (product) => product.raw.category === 'iced_tea'],
+          ['Iontové nápoje', 'iontove-napoje', (product) => product.raw.category === 'hydration_drink'],
+          ['Toniky', 'toniky', (product) => product.raw.category === 'tonic']
         ];
         const cards = categories.map(([title, slug, filter]) => {
           const count = modelProducts.filter((product) => product && product.raw && filter(product)).length;
@@ -3461,6 +3536,26 @@
         return match ? decodeURIComponent(match[1]) : null;
       }
 
+      function brandFromPath() {
+        const match = routePathname().match(/^\/znacka\/([^/]+)\/?$/);
+        return match ? decodeURIComponent(match[1]) : null;
+      }
+
+      function substanceFromPath() {
+        const match = routePathname().match(/^\/latka\/([^/]+)\/?$/);
+        return match ? decodeURIComponent(match[1]) : null;
+      }
+
+      function currentLandingRoute() {
+        const categorySlug = categoryFromPath();
+        if (categorySlug) return { type: 'category', slug: categorySlug };
+        const brandSlug = brandFromPath();
+        if (brandSlug) return { type: 'brand', slug: brandSlug };
+        const substanceSlug = substanceFromPath();
+        if (substanceSlug) return { type: 'substance', slug: substanceSlug };
+        return null;
+      }
+
       function productsForCategorySlug(slug) {
         const filters = {
           'energeticke-napoje': (product) => product.raw.category.includes('energy'),
@@ -3468,9 +3563,40 @@
           'mineralni-vody': (product) => ['mineral_water', 'water', 'flavored_water'].includes(product.raw.category),
           'zero-napoje': (product) => product.sugar === 0,
           'dzusy': (product) => ['juice', 'juice_drink'].includes(product.raw.category),
-          'limonady': (product) => ['lemonade', 'iced_tea', 'tonic'].includes(product.raw.category)
+          'limonady': (product) => product.raw.category === 'lemonade',
+          'ledove-caje': (product) => product.raw.category === 'iced_tea',
+          'iontove-napoje': (product) => product.raw.category === 'hydration_drink',
+          'toniky': (product) => product.raw.category === 'tonic'
         };
         return filters[slug] ? modelProducts.filter(filters[slug]) : modelProducts;
+      }
+
+      function productsForBrandSlug(slug) {
+        return modelProducts.filter((product) => slugify(product.brand) === slug);
+      }
+
+      function productSubstanceNames(product) {
+        return [...new Set([
+          ...(product.ingredients || []),
+          ...(product.substances || []),
+          ...(product.sweeteners || []),
+          ...(product.eNumbers || [])
+        ].filter(Boolean))];
+      }
+
+      function productsForSubstanceSlug(slug) {
+        return modelProducts.filter((product) => {
+          if (slug === 'cukr' && nutritionPer100(product, 'sugar') > 0) return true;
+          return productSubstanceNames(product).some((name) => slugify(name.replace(/^E\d+\s+/, '')) === slug || slugify(name) === slug);
+        });
+      }
+
+      function productsForLandingRoute(route) {
+        if (!route) return modelProducts;
+        if (route.type === 'category') return productsForCategorySlug(route.slug);
+        if (route.type === 'brand') return productsForBrandSlug(route.slug);
+        if (route.type === 'substance') return productsForSubstanceSlug(route.slug);
+        return modelProducts;
       }
 
       function categoryTitle(slug) {
@@ -3480,7 +3606,10 @@
           'mineralni-vody': 'Minerální vody',
           'zero-napoje': 'Zero nápoje',
           'dzusy': 'Džusy a ovocné nápoje',
-          'limonady': 'Limonády'
+          'limonady': 'Limonády',
+          'ledove-caje': 'Ledové čaje',
+          'iontove-napoje': 'Iontové nápoje',
+          'toniky': 'Toniky'
         }[slug] || 'Nápoje';
       }
 
@@ -3491,8 +3620,94 @@
           'mineralni-vody': 'Minerální vody jsou většinou dobrá volba pro běžné pití. Pozor hlavně na ochucené varianty, které mohou mít překvapivě hodně cukru.',
           'zero-napoje': 'Zero nápoje pomáhají snížit cukr a kalorie, ale často stojí na sladidlech. Hodí se hlavně tehdy, když řešíte cukr, ne nutně jako univerzální pití pro každý den.',
           'dzusy': 'Džusy a ovocné nápoje působí přirozeně, ale cukru v nich může být dost. Největší rozdíl dělá velikost porce a to, jestli jde o 100% džus nebo doslazovaný nápoj.',
-          'limonady': 'Limonády jsou hlavně chuťový nápoj. Pokud je pijete často, sledujte cukr, kalorie a to, jestli existuje lehčí varianta pro stejnou chuť.'
+          'limonady': 'Limonády jsou hlavně chuťový nápoj. Pokud je pijete často, sledujte cukr, kalorie a to, jestli existuje lehčí varianta pro stejnou chuť.',
+          'ledove-caje': 'Ledové čaje působí lehčeji než limonády, ale cukr a někdy i kofein se pořád vyplatí sledovat.',
+          'iontove-napoje': 'Iontové nápoje dávají smysl hlavně kolem delší sportovní aktivity. Pro běžné pití sledujte cukr, kalorie a sladidla.',
+          'toniky': 'Toniky bývají hořké, ale často obsahují cukr podobně jako sladké limonády. Zero varianty řeší cukr, ale mohou obsahovat sladidla.'
         }[slug] || 'Tahle kategorie ukazuje nápoje se společným typem nebo účelem. Déenko z nich počítá cukr, kofein a vhodnost pro běžné situace.';
+      }
+
+      function brandNameFromSlug(slug) {
+        const product = modelProducts.find((item) => slugify(item.brand) === slug);
+        return product ? product.brand : slug.replaceAll('-', ' ');
+      }
+
+      function substanceNameFromSlug(slug) {
+        if (slug === 'cukr') return 'Cukr';
+        const names = modelProducts.flatMap(productSubstanceNames);
+        return names.find((name) => slugify(name.replace(/^E\d+\s+/, '')) === slug || slugify(name) === slug) || slug.replaceAll('-', ' ');
+      }
+
+      function landingTitle(route) {
+        if (!route) return 'Nápoje';
+        if (route.type === 'category') return categoryTitle(route.slug);
+        if (route.type === 'brand') return `Nápoje značky ${brandNameFromSlug(route.slug)}`;
+        if (route.type === 'substance') return `${substanceNameFromSlug(route.slug)} v nápojích`;
+        return 'Nápoje';
+      }
+
+      function landingIntro(route, products) {
+        if (!route) return '';
+        if (route.type === 'category') return categoryDescription(route.slug);
+        if (route.type === 'brand') {
+          const brand = brandNameFromSlug(route.slug);
+          return `${brand} v databázi DámeNápoj.cz. Déenko zobrazuje cukr, kofein, sladidla, skóre a podobné nápoje pro český trh.`;
+        }
+        if (route.type === 'substance') {
+          const name = substanceNameFromSlug(route.slug);
+          const detail = ingredientDetails(name.replace(/^E\d+\s+/, ''));
+          return `${name} se v databázi objevuje u ${products.length} nápojů. ${detail.what || detail.usage}`;
+        }
+        return '';
+      }
+
+      function frequencyItems(values, limit = 6) {
+        return Object.entries(values.reduce((acc, value) => {
+          if (!value) return acc;
+          acc[value] = (acc[value] || 0) + 1;
+          return acc;
+        }, {}))
+          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'cs'))
+          .slice(0, limit)
+          .map(([name]) => name);
+      }
+
+      function landingInternalLinks(route, products) {
+        const links = [];
+        const categories = frequencyItems(products.map((product) => categoryRoutes[product.raw?.category] || product.raw?.category), 4);
+        categories.forEach((slug) => {
+          if (slug && !(route?.type === 'category' && route.slug === slug)) {
+            links.push(`<a href="${appPath(`/kategorie/${slug}`)}" data-category-link="${escapeHtml(slug)}">${escapeHtml(categoryTitle(slug))}</a>`);
+          }
+        });
+        const brands = frequencyItems(products.map((product) => product.brand), 4);
+        brands.forEach((brand) => {
+          const slug = slugify(brand);
+          if (slug && !(route?.type === 'brand' && route.slug === slug)) {
+            links.push(`<a href="${brandPath(brand)}" data-brand-link="${escapeHtml(slug)}">${escapeHtml(brand)}</a>`);
+          }
+        });
+        const substances = frequencyItems(products.flatMap((product) => productSubstanceNames(product).map((name) => name.replace(/^E\d+\s+/, ''))), 4);
+        substances.forEach((name) => {
+          const slug = slugify(name);
+          if (slug && !(route?.type === 'substance' && route.slug === slug)) {
+            links.push(`<a href="${substancePath(name)}" data-substance-link="${escapeHtml(slug)}">${escapeHtml(name)}</a>`);
+          }
+        });
+        return [...new Set(links)].slice(0, 9);
+      }
+
+      function landingFaq(route, products) {
+        const title = landingTitle(route).toLowerCase();
+        const count = products.length;
+        const zeroCount = products.filter((product) => nutritionPer100(product, 'sugar') === 0).length;
+        const avgSugar = count ? round(products.reduce((sum, product) => sum + nutritionPer100(product, 'sugar'), 0) / count, 1) : 0;
+        return [
+          ['Kolik nápojů tu Déenko zná?', `V této stránce je aktuálně ${count} nápojů z české MVP databáze.`],
+          ['Je to dobré pro hubnutí?', `Sledujte hlavně cukr a kalorie. Průměr této stránky je ${avgSugar} g cukru na 100 ml.`],
+          ['Jsou tu i nápoje bez cukru?', `Ano, bez cukru je tu ${zeroCount} nápojů.`],
+          ['Jak stránku používat?', `Klikněte na konkrétní nápoj a Déenko ukáže detail, doporučení, podobné nápoje a složení lidskou řečí.`]
+        ];
       }
 
       function bestCategoryPick(products, scoreKey) {
@@ -3501,9 +3716,9 @@
           [0] || null;
       }
 
-      function renderCategoryOverview(slug, products) {
+      function renderLandingOverview(route, products) {
         if (!categoryOverview) return;
-        if (!slug) {
+        if (!route) {
           categoryOverview.classList.remove('visible');
           categoryOverview.innerHTML = '';
           return;
@@ -3519,6 +3734,8 @@
         const dailyPick = bestCategoryPick(safeProducts, 'daily');
         const kidsPick = bestCategoryPick(safeProducts, 'kids');
         const weightPick = bestCategoryPick(safeProducts, 'weight');
+        const links = landingInternalLinks(route, safeProducts);
+        const faq = landingFaq(route, safeProducts);
         const pickHtml = (label, product) => `
           <article class="category-pick">
             <span>${escapeHtml(label)}</span>
@@ -3527,8 +3744,8 @@
         `;
         categoryOverview.classList.add('visible');
         categoryOverview.innerHTML = `
-          <h3>${escapeHtml(categoryTitle(slug))}</h3>
-          <p class="category-intro">${escapeHtml(categoryDescription(slug))}</p>
+          <h1>${escapeHtml(landingTitle(route))}</h1>
+          <p class="category-intro">${escapeHtml(landingIntro(route, safeProducts))}</p>
           <div class="category-stats">
             <article class="category-stat"><span>Počet nápojů</span><strong>${count}</strong></article>
             <article class="category-stat"><span>Průměrný cukr</span><strong>${averageSugar} g / 100 ml</strong></article>
@@ -3540,15 +3757,20 @@
             ${pickHtml('Nejlepší pro děti', kidsPick)}
             ${pickHtml('Nejlepší pro hubnutí', weightPick)}
           </div>
+          ${links.length ? `<div class="landing-links">${links.join('')}</div>` : ''}
+          <div class="landing-faq">
+            ${faq.map(([question, answer]) => `<article><strong>${escapeHtml(question)}</strong><p class="note">${escapeHtml(answer)}</p></article>`).join('')}
+          </div>
         `;
         bindProductLinks(categoryOverview);
+        bindLandingLinks(categoryOverview);
       }
 
       function initialProductFromRoute() {
         const routeProduct = productFromPath();
         if (routeProduct) return routeProduct;
-        const categorySlug = categoryFromPath();
-        if (categorySlug) return productsForCategorySlug(categorySlug)[0] || modelProducts[0];
+        const landingRoute = currentLandingRoute();
+        if (landingRoute) return productsForLandingRoute(landingRoute)[0] || modelProducts[0];
         return modelProducts[0];
       }
 
@@ -3564,7 +3786,10 @@
           'mineralni-vody': 'Minerální vody',
           'zero-napoje': 'Zero nápoje',
           'dzusy': 'Džusy a ovocné nápoje',
-          'limonady': 'Limonády'
+          'limonady': 'Limonády',
+          'ledove-caje': 'Ledové čaje',
+          'iontove-napoje': 'Iontové nápoje',
+          'toniky': 'Toniky'
         };
         const title = `${titles[slug] || 'Kategorie nápojů'} | DámeNápoj.cz`;
         const description = `${titles[slug] || 'Kategorie nápojů'} pro český trh: cukr, kofein, složení a lidské vysvětlení u ${products.length} nápojů.`;
@@ -3574,6 +3799,43 @@
         setMeta('meta[property="og:description"]', 'content', description);
         setMeta('meta[property="og:type"]', 'content', 'website');
         document.querySelector('link[rel="canonical"]')?.setAttribute('href', `${window.location.origin}${appPath(`/kategorie/${slug}`)}`);
+        document.getElementById('productSchema').textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: titles[slug] || 'Kategorie nápojů',
+          description,
+          url: `${window.location.origin}${appPath(`/kategorie/${slug}`)}`
+        });
+      }
+
+      function landingPath(route) {
+        if (route.type === 'category') return `/kategorie/${route.slug}`;
+        if (route.type === 'brand') return `/znacka/${route.slug}`;
+        if (route.type === 'substance') return `/latka/${route.slug}`;
+        return '/';
+      }
+
+      function updateLandingSeo(route, products) {
+        if (!route) return;
+        if (route.type === 'category') {
+          updateCategorySeo(route.slug, products);
+          return;
+        }
+        const title = `${landingTitle(route)} | DámeNápoj.cz`;
+        const description = `${landingTitle(route)} pro český trh: ${products.length} nápojů, cukr, kofein, složení, skóre a lidské vysvětlení.`;
+        document.title = title;
+        setMeta('meta[name="description"]', 'content', description);
+        setMeta('meta[property="og:title"]', 'content', title);
+        setMeta('meta[property="og:description"]', 'content', description);
+        setMeta('meta[property="og:type"]', 'content', 'website');
+        document.querySelector('link[rel="canonical"]')?.setAttribute('href', `${window.location.origin}${appPath(landingPath(route))}`);
+        document.getElementById('productSchema').textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: landingTitle(route),
+          description,
+          url: `${window.location.origin}${appPath(landingPath(route))}`
+        });
       }
 
       function render(product, options = {}) {
@@ -3707,15 +3969,16 @@
 
       function renderCards() {
         document.getElementById('knownCount').textContent = `Déenko už zná ${modelProducts.length} nápojů.`;
-        const categorySlug = categoryFromPath();
-        if (categorySlug !== lastCardCategorySlug) {
+        const landingRoute = currentLandingRoute();
+        const landingKey = landingRoute ? `${landingRoute.type}:${landingRoute.slug}` : '';
+        if (landingKey !== lastCardCategorySlug) {
           cardVisibleLimit = 30;
           cardFilterQuery = '';
           cardActiveLetter = '';
           if (cardFilterInput) cardFilterInput.value = '';
-          lastCardCategorySlug = categorySlug;
+          lastCardCategorySlug = landingKey;
         }
-        const visibleProducts = categorySlug ? productsForCategorySlug(categorySlug) : modelProducts;
+        const visibleProducts = landingRoute ? productsForLandingRoute(landingRoute) : modelProducts;
         const normalizedFilter = normalizeText(cardFilterQuery.trim());
         const featuredNames = [
           'Coca-Cola Original CZ',
@@ -3744,8 +4007,8 @@
           : orderedProducts;
         renderAzFilter();
         const displayedProducts = filteredProducts.slice(0, cardVisibleLimit);
-        if (categorySlug) updateCategorySeo(categorySlug, visibleProducts);
-        renderCategoryOverview(categorySlug, visibleProducts);
+        if (landingRoute) updateLandingSeo(landingRoute, visibleProducts);
+        renderLandingOverview(landingRoute, visibleProducts);
         compareGrid.innerHTML = displayedProducts.length ? displayedProducts.map((product) => `
           <article class="mini-card ${product.id === activeProduct.id ? 'active' : ''}" data-id="${product.id}">
             <strong>${product.name}</strong>
@@ -3882,11 +4145,11 @@
           render(initialProductFromRoute(), { pushUrl: false });
           window.addEventListener('popstate', () => {
             render(initialProductFromRoute(), { pushUrl: false });
-            if (categoryFromPath()) requestAnimationFrame(scrollToCategoryOverview);
+            if (currentLandingRoute()) requestAnimationFrame(scrollToCategoryOverview);
           });
           window.addEventListener('hashchange', () => {
             render(initialProductFromRoute(), { pushUrl: false });
-            if (categoryFromPath()) requestAnimationFrame(scrollToCategoryOverview);
+            if (currentLandingRoute()) requestAnimationFrame(scrollToCategoryOverview);
           });
         } catch (error) {
           console.error(error);
