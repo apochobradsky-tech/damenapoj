@@ -1493,6 +1493,19 @@
 </head>
 <body>
   <div class="page rainbow-variant-a">
+    <script>
+      (() => {
+        const page = document.currentScript.closest('.page');
+        const hash = window.location.hash || '';
+        const hashRoute = hash.startsWith('#/') ? hash.slice(1) : '';
+        const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+        const isHomeHash = !hash || hash === '#' || hash === '#top';
+        const isHomePath = pathname === '/' || pathname.endsWith('/index.html') || pathname === '/damenapoj';
+        if ((hashRoute && (hashRoute === '/' || hashRoute === '/index.html')) || (!hashRoute && isHomeHash && isHomePath)) {
+          page?.classList.add('home-mode');
+        }
+      })();
+    </script>
     <header class="header">
       <div class="container nav">
         <div class="brand"><span class="mark">DN</span><span>DámeNápoj.cz</span></div>
@@ -1665,7 +1678,14 @@
     const DAMENAPOJ_ASSET_BASE = window.location.protocol === 'file:' ? '' : `${DAMENAPOJ_BASE_PATH || ''}/`;
     window.DAMENAPOJ_BASE_PATH = DAMENAPOJ_BASE_PATH;
     window.DAMENAPOJ_ASSET_BASE = DAMENAPOJ_ASSET_BASE;
-    document.write(`<script src="${DAMENAPOJ_ASSET_BASE}universal-drinks.cz.js"><\/script>`);
+    window.DAMENAPOJ_DATA_READY = new Promise((resolve) => {
+      const dataScript = document.createElement('script');
+      dataScript.src = `${DAMENAPOJ_ASSET_BASE}universal-drinks.cz.js`;
+      dataScript.async = true;
+      dataScript.onload = () => resolve(true);
+      dataScript.onerror = () => resolve(false);
+      document.head.appendChild(dataScript);
+    });
   </script>
   <script>
     (() => {
@@ -2480,8 +2500,8 @@
           ...eNumbers
         ].filter(Boolean);
         return {
-          id: slugify(drink.nazev),
-          productId: slugify(drink.nazev),
+          id: drink.slug || slugify(drink.nazev),
+          productId: drink.slug || slugify(drink.nazev),
           productName: drink.nazev,
           variantName: drink.nazev,
           name: drink.nazev,
@@ -4126,6 +4146,7 @@
 
       async function initFromJson() {
         try {
+          if (window.DAMENAPOJ_DATA_READY) await window.DAMENAPOJ_DATA_READY;
           const parts = window.DAMENAPOJ_DATA
             ? [window.DAMENAPOJ_DATA]
             : await Promise.all(DATA_URLS.map(async (url) => {
@@ -4156,7 +4177,9 @@
         }
       }
 
-      initFromJson();
+      requestAnimationFrame(() => {
+        setTimeout(initFromJson, 0);
+      });
     })();
   </script>
 </body>
