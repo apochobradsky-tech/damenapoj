@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DámeNápoj.cz - produktová analýza</title>
-  <meta name="description" content="DámeNápoj.cz překládá etikety nápojů do lidské řeči: cukr, kofein, kalorie, složení, vhodnost pro děti, hubnutí, sport a běžné pití.">
+  <title>DámeNápoj.cz – co přesně piju? Překlad etiket nápojů</title>
+  <meta name="description" content="Zjisti, kolik cukru, kofeinu, kalorií a éček má tvůj nápoj. DámeNápoj překládá etikety do lidské řeči a ukáže lepší alternativy.">
   <link rel="canonical" href="https://www.damenapoj.cz/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DámeNápoj.cz">
-  <meta property="og:title" content="DámeNápoj.cz - produktová analýza">
-  <meta property="og:description" content="Překládáme etikety nápojů do lidské řeči.">
+  <meta property="og:title" content="DámeNápoj.cz – co přesně piju? Překlad etiket nápojů">
+  <meta property="og:description" content="Zjisti, kolik cukru, kofeinu, kalorií a éček má tvůj nápoj. DámeNápoj překládá etikety do lidské řeči a ukáže lepší alternativy.">
   <meta property="og:url" content="https://www.damenapoj.cz/">
   <script type="application/ld+json" id="productSchema">{}</script>
   <style>
@@ -1177,6 +1177,8 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fff;
+      opacity: 0.82;
+      font-size: 0.94rem;
     }
 
     .compare-table th,
@@ -1203,57 +1205,94 @@
     }
 
     .compare-scale {
+      position: relative;
       margin: 0 0 14px;
-      padding: 18px;
+      padding: 34px 34px 28px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, #ffffff, #f6fbff 58%, #eefbf6);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 78% 54%, rgba(38, 171, 118, 0.17), transparent 15rem),
+        radial-gradient(circle at 23% 57%, rgba(239, 108, 78, 0.05), transparent 12rem),
+        linear-gradient(180deg, #ffffff 0%, #fbfdff 72%, #f5f9fc 100%);
+      box-shadow: 0 24px 60px rgba(20, 48, 71, 0.12);
+      overflow: hidden;
+    }
+
+    .compare-scale-title {
+      margin: 0 0 14px;
+      text-align: center;
+      color: var(--ink);
+      font-size: clamp(1.45rem, 2.55vw, 2.6rem);
+      line-height: 1.1;
+      font-weight: 950;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .compare-scale-title::after {
+      content: "";
+      display: block;
+      width: 78px;
+      height: 5px;
+      margin: 18px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #24c5d3 0 74%, transparent 74% 82%, #24c5d3 82%);
+    }
+
+    .compare-scale-subtitle {
+      margin: 0 0 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 760;
     }
 
     .scale-visual {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 12px;
+      position: relative;
+      min-height: 560px;
+      margin: 0 auto 8px;
     }
 
     .scale-side {
-      position: relative;
-      min-height: 126px;
-      padding: 16px;
-      border: 1px solid var(--line);
+      position: absolute;
+      top: 170px;
+      width: 190px;
+      min-height: 245px;
+      padding: 0;
+      border: 0;
       border-radius: var(--radius);
-      background: #fff;
+      background: transparent;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 6px;
       transition: transform 0.18s ease, opacity 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      z-index: 8;
     }
 
     .scale-side strong {
       display: block;
       margin-bottom: 4px;
-      font-size: 1rem;
+      font-size: 1.32rem;
       line-height: 1.2;
     }
 
     .scale-side small {
+      align-self: flex-start;
       color: var(--muted);
       font-weight: 750;
+      padding: 0;
+      border: 0;
+      background: transparent;
     }
 
     .scale-side.winner {
-      border-color: rgba(38, 171, 118, 0.34);
-      box-shadow: 0 18px 38px rgba(38, 171, 118, 0.14);
-      background: linear-gradient(135deg, #ffffff, #effcf5);
-      transform: translateY(-8px);
+      transform: none;
     }
 
     .scale-side.loser {
-      opacity: 0.62;
-      transform: translateY(8px);
+      opacity: 1;
+      transform: none;
     }
 
     .scale-side.even {
@@ -1261,29 +1300,463 @@
       opacity: 1;
     }
 
-    .winner-label {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 5px 8px;
+    .scale-side.is-left {
+      left: 2.5%;
+      text-align: left;
+    }
+
+    .scale-side.is-right {
+      right: 2.5%;
+      text-align: right;
+    }
+
+    .scale-side.is-right small {
+      align-self: flex-end;
+    }
+
+    .scale-score-card {
+      width: min(100%, 150px);
+      margin-top: 32px;
+      padding: 16px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 14px 30px rgba(20, 48, 71, 0.08);
+    }
+
+    .scale-side.is-right .scale-score-card {
+      align-self: flex-end;
+    }
+
+    .scale-score-card span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .scale-score-card strong {
+      display: inline;
+      margin: 0;
+      color: #ef5b45;
+      font-size: 2.55rem;
+      line-height: 1;
+    }
+
+    .scale-side.winner .scale-score-card strong {
+      color: #17a65d;
+    }
+
+    .scale-score-card em {
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 900;
+    }
+
+    .side-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: max-content;
+      margin-top: 10px;
+      padding: 9px 12px;
       border-radius: 999px;
-      background: rgba(38, 171, 118, 0.12);
+      background: rgba(36, 66, 89, 0.08);
+      color: #53687a;
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .scale-side.is-right .side-status {
+      align-self: flex-end;
+    }
+
+    .scale-side.winner .side-status {
+      background: linear-gradient(135deg, #21b66f, #149251);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(38, 171, 118, 0.2);
+    }
+
+    .winner-label {
+      display: none;
+    }
+
+    .balance-stage {
+      position: absolute;
+      inset: 0 4% 0 4%;
+      min-height: 560px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 77% 71%, rgba(38, 171, 118, 0.22), transparent 8.5rem),
+        radial-gradient(ellipse at 52% 92%, rgba(20, 48, 71, 0.1), transparent 12rem);
+      overflow: hidden;
+    }
+
+    .balance-stage::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 70px;
+      width: 108px;
+      height: 342px;
+      transform: translateX(-50%);
+      border-radius: 44px 44px 18px 18px;
+      background:
+        radial-gradient(circle at 50% 20px, rgba(36, 66, 89, 0.62) 0 18px, transparent 19px),
+        linear-gradient(180deg, transparent 40px, rgba(36, 66, 89, 0.52) 41px 242px, transparent 243px);
+      opacity: 0.34;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .balance-stage::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 48px;
+      width: 166px;
+      height: 32px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(36, 66, 89, 0.28), rgba(36, 66, 89, 0.08));
+      box-shadow: 0 14px 30px rgba(20, 48, 71, 0.14);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .balance-person {
+      position: absolute;
+      left: 50%;
+      bottom: 58px;
+      width: 164px;
+      height: 360px;
+      transform: translateX(-50%);
+      opacity: 0.42;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .balance-person::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #223c53;
+      box-shadow: 0 50px 0 16px rgba(34, 60, 83, 0.84), 0 192px 0 8px rgba(34, 60, 83, 0.76);
+    }
+
+    .balance-person::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 170px;
+      height: 32px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #223c53;
+    }
+
+    .balance-arm {
+      position: absolute;
+      top: 84px;
+      left: 50%;
+      width: 152px;
+      height: 11px;
+      border-radius: 999px;
+      background: #223c53;
+      transform-origin: 0 50%;
+    }
+
+    .balance-arm.left {
+      transform: translateX(-10px) rotate(-18deg);
+    }
+
+    .balance-arm.right {
+      transform: translateX(10px) rotate(18deg) scaleX(-1);
+    }
+
+    .balance-beam {
+      position: absolute;
+      left: 11.5%;
+      right: 11.5%;
+      top: 112px;
+      height: 20px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #48657f, #21384e);
+      box-shadow: 0 8px 18px rgba(20, 48, 71, 0.18);
+      transform-origin: 50% 50%;
+      transition: transform 0.18s ease;
+      z-index: 3;
+    }
+
+    .balance-stage.tilt-left .balance-beam {
+      transform: rotate(-8deg);
+    }
+
+    .balance-stage.tilt-right .balance-beam {
+      transform: rotate(8deg);
+    }
+
+    .balance-stage.tilt-even .balance-beam {
+      transform: rotate(0deg);
+    }
+
+    .balance-center {
+      position: absolute;
+      left: 50%;
+      top: 94px;
+      width: 50px;
+      height: 50px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: linear-gradient(135deg, #334f68, #172b40);
+      box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.12), 0 10px 22px rgba(20, 48, 71, 0.2);
+      z-index: 4;
+    }
+
+    .balance-pan {
+      position: absolute;
+      top: 128px;
+      width: 330px;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      transition: transform 0.18s ease, opacity 0.18s ease, filter 0.18s ease;
+      z-index: 5;
+    }
+
+    .balance-pan.left {
+      left: 7%;
+    }
+
+    .balance-pan.right {
+      right: 7%;
+    }
+
+    .balance-stage.tilt-left .balance-pan.left,
+    .balance-stage.tilt-right .balance-pan.right {
+      transform: translateY(34px);
+    }
+
+    .balance-stage.tilt-left .balance-pan.right,
+    .balance-stage.tilt-right .balance-pan.left {
+      transform: translateY(-26px);
+      opacity: 0.78;
+      filter: saturate(0.8);
+    }
+
+    .balance-stage.tilt-even .balance-pan {
+      transform: translateY(0);
+    }
+
+    .balance-chain {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 206px;
+      background: repeating-linear-gradient(180deg, rgba(143, 97, 28, 0.92) 0 5px, transparent 5px 10px);
+      transform-origin: top;
+      z-index: 1;
+    }
+
+    .balance-chain.chain-a {
+      left: 58px;
+      transform: rotate(16deg);
+    }
+
+    .balance-chain.chain-b {
+      right: 58px;
+      transform: rotate(-16deg);
+    }
+
+    .pan-dish {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      width: 306px;
+      height: 70px;
+      transform: translateX(-50%);
+      border-radius: 0 0 88px 88px / 0 0 34px 34px;
+      background: linear-gradient(180deg, #f1c36e, #9a5d25 70%, #60360e);
+      box-shadow: inset 0 5px 7px rgba(255, 255, 255, 0.24), 0 16px 26px rgba(20, 48, 71, 0.18);
+      z-index: 2;
+    }
+
+    .pan-dish::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: -8px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(255, 244, 190, 0.95), rgba(181, 120, 40, 0.72));
+      border: 1px solid rgba(115, 78, 25, 0.2);
+    }
+
+    .balance-pan.winner .pan-dish {
+      background: linear-gradient(180deg, #d9f8b6, #21a861 70%, #11683d);
+      box-shadow: inset 0 5px 7px rgba(255, 255, 255, 0.28), 0 20px 42px rgba(38, 171, 118, 0.34), 0 0 44px rgba(38, 171, 118, 0.22);
+    }
+
+    .balance-product {
+      position: relative;
+      width: 164px;
+      height: 285px;
+      display: grid;
+      place-items: end center;
+      margin-bottom: 72px;
+      z-index: 4;
+    }
+
+    .balance-product .package {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%) scale(1.04);
+      transform-origin: bottom center;
+    }
+
+    .balance-product .package.bottle {
+      transform: translateX(-50%) scale(0.9);
+    }
+
+    .balance-product .package-label {
+      pointer-events: none;
+    }
+
+    .winner-callout {
+      position: static;
+      min-width: 210px;
+      width: max-content;
+      max-width: 100%;
+      margin-top: 18px;
+      padding: 15px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.92);
       color: #126941;
-      font-size: 0.76rem;
+      box-shadow: 0 14px 30px rgba(38, 171, 118, 0.18);
+      text-align: center;
+      font-size: 1.08rem;
+      font-weight: 950;
+      z-index: 10;
+    }
+
+    .winner-callout small {
+      display: block;
+      margin-top: 2px;
+      color: #244259;
+      font-size: 0.72rem;
+      font-weight: 850;
+    }
+
+    .compare-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin: 0 auto 24px;
+      max-width: 780px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 14px 34px rgba(20, 48, 71, 0.08);
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+
+    .compare-metric {
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 10px;
+      align-items: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .compare-metric:last-child {
+      border-right: 0;
+    }
+
+    .metric-icon {
+      grid-row: span 2;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(45, 156, 255, 0.1);
+      color: #19a9c2;
       font-weight: 950;
     }
 
-    .compare-symbol {
-      width: 58px;
-      height: 58px;
-      border-radius: 999px;
+    .compare-metric strong {
+      color: var(--ink);
+      font-size: 0.96rem;
+    }
+
+    .metric-values {
       display: flex;
       align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #eaf4ff, #f8efff);
+      gap: 8px;
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    .metric-values .metric-loser {
+      color: #ef5b45;
+    }
+
+    .metric-values .metric-winner {
+      color: #17a65d;
+    }
+
+    .metric-vs {
+      width: 26px;
+      height: 26px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: #edf4fb;
+      color: #244259;
+      font-size: 0.68rem;
+      font-weight: 950;
+    }
+
+    .compare-score-note {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0 auto 12px;
+      max-width: 980px;
+      padding: 16px 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(248, 252, 255, 0.92);
+      color: #244259;
+      font-weight: 760;
+    }
+
+    .compare-score-note strong {
       color: var(--ink);
-      font-size: 1.8rem;
-      box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.08);
+      font-weight: 950;
+    }
+
+    .compare-score-note .brand-mark {
+      color: #1ea9bd;
+      font-size: 1.3rem;
+      font-weight: 950;
+      white-space: nowrap;
     }
 
     .scale-reasons {
@@ -1306,8 +1779,10 @@
 
     .scale-summary {
       margin: 0;
-      color: var(--ink);
-      font-weight: 850;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 760;
     }
 
     .compare-winner {
@@ -1438,6 +1913,51 @@
         grid-template-columns: 1fr;
       }
 
+      .scale-visual {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        display: grid;
+        gap: 16px;
+      }
+
+      .scale-side {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        min-height: auto;
+        text-align: left;
+      }
+
+      .scale-side.is-right {
+        text-align: left;
+      }
+
+      .scale-side.is-right small,
+      .scale-side.is-right .scale-score-card,
+      .scale-side.is-right .side-status {
+        align-self: flex-start;
+      }
+
+      .balance-stage {
+        position: relative;
+        inset: auto;
+        min-height: 430px;
+      }
+
+      .compare-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .compare-metric:nth-child(2) {
+        border-right: 0;
+      }
+
+      .compare-metric:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+      }
+
       .compare-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1481,8 +2001,65 @@
         grid-template-columns: 1fr;
       }
 
-      .scale-center {
-        min-height: 190px;
+      .balance-stage {
+        min-height: 360px;
+      }
+
+      .balance-pan {
+        top: 104px;
+        width: 176px;
+        height: 226px;
+      }
+
+      .balance-pan.left {
+        left: 1%;
+      }
+
+      .balance-pan.right {
+        right: 1%;
+      }
+
+      .pan-dish {
+        width: 166px;
+        height: 46px;
+      }
+
+      .balance-chain.chain-a {
+        left: 38px;
+      }
+
+      .balance-chain.chain-b {
+        right: 38px;
+      }
+
+      .balance-product {
+        width: 104px;
+        height: 168px;
+        margin-bottom: 48px;
+      }
+
+      .balance-product .package {
+        transform: translateX(-50%) scale(0.66);
+      }
+
+      .balance-product .package.bottle {
+        transform: translateX(-50%) scale(0.56);
+      }
+
+      .winner-callout {
+        min-width: 118px;
+        padding: 7px 8px;
+        font-size: 0.68rem;
+      }
+
+      .winner-callout small {
+        font-size: 0.64rem;
+      }
+
+      .balance-person {
+        opacity: 0.22;
+        transform: translateX(-50%) scale(0.76);
+        transform-origin: bottom center;
       }
 
       .product-detail {
@@ -1517,7 +2094,7 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <p class="hero-title" role="heading" aria-level="2">Co přesně piju?</p>
+            <h1 class="hero-title">Co přesně piju?</h1>
             <p class="lead">Zadejte název nápoje. Během pár sekund uvidíte cukr, kofein, vhodnost pro hubnutí, děti i běžné pití v češtině, které rozumíte.</p>
             <div class="search-card">
               <div class="search-row">
@@ -1555,7 +2132,7 @@
               </div>
               <div>
                 <div class="tag-row" id="topTags"></div>
-                <h1 class="product-title" id="productName">Coca-Cola Original</h1>
+                <h2 class="product-title" id="productName">Coca-Cola Original</h2>
                 <div class="pill-row" id="quickPills"></div>
                 <p class="human-text" id="humanText"></p>
               </div>
@@ -2922,6 +3499,72 @@
         ];
       }
 
+      function incomingDynamicLinkMap(products) {
+        const incoming = new Map(products.map((product) => [product.id, new Set()]));
+        const addLink = (source, target) => {
+          if (!source || !target || source.id === target.id || !incoming.has(target.id)) return;
+          incoming.get(target.id).add(source.id);
+        };
+        products.forEach((source) => {
+          [...(source.similarTaste || []), ...(source.similarComposition || [])].forEach((name) => addLink(source, findProductInList(products, name)));
+          recommendationItems(source).forEach((target) => addLink(source, target));
+        });
+        return incoming;
+      }
+
+      function bestInternalLinkSource(target, products) {
+        return products
+          .filter((source) => source.id !== target.id && similarCompatible(source, target))
+          .map((source) => {
+            const tasteScore = tasteSimilarityScore(source, target);
+            const compositionScore = compositionSimilarityScore(source, target);
+            const section = tasteScore > compositionScore ? 'similarTaste' : 'similarComposition';
+            return { source, section, score: Math.max(tasteScore, compositionScore) };
+          })
+          .filter((item) => Number.isFinite(item.score) && item.score > 0)
+          .sort((a, b) => b.score - a.score)[0] || null;
+      }
+
+      function addIncomingSimilarLink(source, target, section, incoming, maxItems = 4) {
+        const list = Array.isArray(source[section]) ? [...source[section]] : [];
+        if (list.some((name) => findProductInList(modelProducts, name)?.id === target.id)) return false;
+        if (list.length < maxItems) {
+          list.push(target.name);
+          source[section] = list;
+          return true;
+        }
+        const scoreFn = section === 'similarTaste' ? tasteSimilarityScore : compositionSimilarityScore;
+        const replacementIndex = list
+          .map((name, index) => {
+            const item = findProductInList(modelProducts, name);
+            return { index, item, score: item ? scoreFn(source, item) : -Infinity, incomingCount: item ? (incoming.get(item.id)?.size || 0) : 0 };
+          })
+          .filter((item) => item.item && item.incomingCount > 1)
+          .sort((a, b) => a.score - b.score)[0]?.index;
+        if (replacementIndex === undefined) {
+          list.push(target.name);
+        } else {
+          list[replacementIndex] = target.name;
+        }
+        source[section] = list;
+        return true;
+      }
+
+      function ensureIncomingDynamicLinks(products) {
+        let incoming = incomingDynamicLinkMap(products);
+        let changed = false;
+        products.forEach((target) => {
+          if ((incoming.get(target.id)?.size || 0) > 0) return;
+          const candidate = bestInternalLinkSource(target, products);
+          if (!candidate) return;
+          if (addIncomingSimilarLink(candidate.source, target, candidate.section, incoming)) {
+            changed = true;
+            incoming.get(target.id)?.add(candidate.source.id);
+          }
+        });
+        return changed;
+      }
+
       function mapModel(data) {
         if (data.napoje) {
           const products = data.napoje.map(mapUniversalDrink);
@@ -3411,6 +4054,55 @@
           .slice(0, 3);
       }
 
+      function comparisonProductArt(product) {
+        return `
+          <div class="balance-product" aria-hidden="true">
+            <div class="package ${product.shape === 'bottle' ? 'bottle' : ''}" style="--pack:${product.color}">
+              <div class="${packageLabelClass(product.name)}">${packageLabel(product.name)}</div>
+            </div>
+          </div>
+        `;
+      }
+
+      function comparisonVisualScore(wins, total) {
+        if (!total) return '0,0';
+        return (Math.round((wins / total) * 100) / 10).toLocaleString('cs-CZ', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      }
+
+      function productENumberCount(product) {
+        const values = [...(product.eNumbers || []), ...(product.substances || []), ...(product.ingredients || [])];
+        return [...new Set(values.filter((item) => /^e\d+/i.test(normalizeText(item))))].length;
+      }
+
+      function comparisonMetricStrip(first, second, rows) {
+        const rowWinner = (label) => rows.find((row) => row.label === label)?.winner || null;
+        const metricClass = (product, winner) => winner && product.id === winner.id ? 'metric-winner' : winner ? 'metric-loser' : '';
+        const eFirst = productENumberCount(first);
+        const eSecond = productENumberCount(second);
+        const eWinner = betterProduct(first, second, eFirst, eSecond, 'lower');
+        const items = [
+          { icon: '□', label: 'Cukr', valueA: `${first.sugar} g`, valueB: `${second.sugar} g`, winner: rowWinner('Cukr v balení') },
+          { icon: '⚡', label: 'Kofein', valueA: `${first.caffeine} mg`, valueB: `${second.caffeine} mg`, winner: rowWinner('Kofein v balení') },
+          { icon: '◌', label: 'Kalorie', valueA: `${first.calories} kcal`, valueB: `${second.calories} kcal`, winner: rowWinner('Kalorie v balení') },
+          { icon: '◇', label: 'Éčka', valueA: `${eFirst}`, valueB: `${eSecond}`, winner: eWinner }
+        ];
+        return `
+          <div class="compare-metrics">
+            ${items.map((item) => `
+              <div class="compare-metric">
+                <span class="metric-icon">${item.icon}</span>
+                <strong>${escapeHtml(item.label)}</strong>
+                <span class="metric-values">
+                  <span class="${metricClass(first, item.winner)}">${escapeHtml(item.valueA)}</span>
+                  <span class="metric-vs">vs</span>
+                  <span class="${metricClass(second, item.winner)}">${escapeHtml(item.valueB)}</span>
+                </span>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
       function renderComparison() {
         if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
         const first = modelProducts.find((product) => product.id === compareDrinkA.value) || modelProducts[0];
@@ -3435,24 +4127,56 @@
         const scale = comparisonScale(first, second, rows);
         const scaleSummary = comparisonScaleSummary(first, second, rows, scale);
         const reasons = comparisonReasons(rows, scale);
+        const tiltClass = !scale.winner ? 'tilt-even' : scale.winner.id === first.id ? 'tilt-left' : 'tilt-right';
+        const pointDiff = Math.abs(scale.firstWins - scale.secondWins);
+        const pointDiffUnit = pointDiff === 1 ? 'bod' : pointDiff >= 2 && pointDiff <= 4 ? 'body' : 'bodů';
+        const pointDiffText = `o ${pointDiff} ${pointDiffUnit} lepší volba`;
+        const firstVisualScore = comparisonVisualScore(scale.firstWins, rows.length);
+        const secondVisualScore = comparisonVisualScore(scale.secondWins, rows.length);
         comparisonResult.innerHTML = `
           <div class="compare-scale">
+            <h3 class="compare-scale-title">Vizuální porovnání</h3>
+            <p class="compare-scale-subtitle">Který nápoj je pro vás lepší volba?</p>
             <div class="scale-visual">
-              <div class="scale-side ${scale.leftClass}">
+              <div class="scale-side is-left ${scale.leftClass}">
                 ${scale.winner && scale.winner.id === first.id ? '<span class="winner-label">Lepší volba</span>' : ''}
                 <strong>${escapeHtml(first.name)}</strong>
-                <small>${comparisonPointText(scale.firstWins)}</small>
+                <small>${escapeHtml(first.package || '')}</small>
+                <div class="scale-score-card"><span>Celkové skóre</span><strong>${firstVisualScore}</strong><em>/10</em></div>
+                <span class="side-status">${scale.winner && scale.winner.id === first.id ? 'Doporučená volba' : scale.winner ? 'Méně doporučená' : 'Vyrovnané'}</span>
+                ${scale.winner && scale.winner.id === first.id ? `<span class="winner-callout">DámeNápoj doporučuje<small>${escapeHtml(pointDiffText)}</small></span>` : ''}
               </div>
-              <div class="compare-symbol" aria-hidden="true">⚖️</div>
-              <div class="scale-side ${scale.rightClass}">
+              <div class="balance-stage ${tiltClass}" aria-hidden="true">
+                <div class="balance-person"><span class="balance-arm left"></span><span class="balance-arm right"></span></div>
+                <div class="balance-beam"></div>
+                <div class="balance-center"></div>
+                <div class="balance-pan left ${scale.winner && scale.winner.id === first.id ? 'winner' : ''}">
+                  <span class="balance-chain chain-a"></span>
+                  <span class="balance-chain chain-b"></span>
+                  ${comparisonProductArt(first)}
+                  <span class="pan-dish"></span>
+                </div>
+                <div class="balance-pan right ${scale.winner && scale.winner.id === second.id ? 'winner' : ''}">
+                  <span class="balance-chain chain-a"></span>
+                  <span class="balance-chain chain-b"></span>
+                  ${comparisonProductArt(second)}
+                  <span class="pan-dish"></span>
+                </div>
+              </div>
+              <div class="scale-side is-right ${scale.rightClass}">
                 ${scale.winner && scale.winner.id === second.id ? '<span class="winner-label">Lepší volba</span>' : ''}
                 <strong>${escapeHtml(second.name)}</strong>
-                <small>${comparisonPointText(scale.secondWins)}</small>
+                <small>${escapeHtml(second.package || '')}</small>
+                <div class="scale-score-card"><span>Celkové skóre</span><strong>${secondVisualScore}</strong><em>/10</em></div>
+                <span class="side-status">${scale.winner && scale.winner.id === second.id ? 'Doporučená volba' : scale.winner ? 'Méně doporučená' : 'Vyrovnané'}</span>
+                ${scale.winner && scale.winner.id === second.id ? `<span class="winner-callout">DámeNápoj doporučuje<small>${escapeHtml(pointDiffText)}</small></span>` : ''}
               </div>
             </div>
-            <ul class="scale-reasons">
-              ${reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`).join('')}
-            </ul>
+            ${comparisonMetricStrip(first, second, rows)}
+            <div class="compare-score-note">
+              <span><strong>Skóre je vypočteno na základě kritérií:</strong> cukr, kofein, kalorie, éčka a sladidla.</span>
+              <span class="brand-mark">DámeNápoj</span>
+            </div>
             <p class="scale-summary">${escapeHtml(scaleSummary)}</p>
           </div>
           <p class="compare-verdict">${[
@@ -3886,7 +4610,16 @@
         }
         document.getElementById('heroSugar').textContent = `${product.sugar} g`;
         document.getElementById('heroCaffeine').textContent = `${product.caffeine} mg`;
-        document.getElementById('productName').textContent = product.name;
+        const productTitleTag = isHomeRoute() && !options.pushUrl ? 'h2' : 'h1';
+        let productTitle = document.getElementById('productName');
+        if (productTitle && productTitle.tagName.toLowerCase() !== productTitleTag) {
+          const replacement = document.createElement(productTitleTag);
+          replacement.id = productTitle.id;
+          replacement.className = productTitle.className;
+          productTitle.replaceWith(replacement);
+          productTitle = replacement;
+        }
+        productTitle.textContent = product.name;
         document.getElementById('humanText').textContent = product.human;
         const packageArt = document.getElementById('packageArt');
         packageArt.className = `package ${product.shape === 'bottle' ? 'bottle' : ''}`;
@@ -4157,6 +4890,7 @@
           const data = mergeDatabases(parts);
           modelProducts = mapModel(data);
           if (!modelProducts.length) throw new Error('Databáze neobsahuje žádné nápoje.');
+          ensureIncomingDynamicLinks(modelProducts);
           buildEckoEntries();
           bindControls();
           renderComparisonControls();
