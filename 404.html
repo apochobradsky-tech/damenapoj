@@ -1539,7 +1539,7 @@
     }
 
     .balance-pan.right {
-      right: 7%;
+      right: 6.4%;
     }
 
     .balance-stage.tilt-left .balance-pan.left,
@@ -1569,13 +1569,23 @@
     }
 
     .balance-chain.chain-a {
-      left: 58px;
-      transform: rotate(16deg);
+      left: 64px;
+      transform: rotate(14deg);
     }
 
     .balance-chain.chain-b {
-      right: 58px;
-      transform: rotate(-16deg);
+      right: 64px;
+      transform: rotate(-14deg);
+    }
+
+    .balance-pan.right .balance-chain.chain-a {
+      left: 70px;
+      transform: rotate(13deg);
+    }
+
+    .balance-pan.right .balance-chain.chain-b {
+      right: 50px;
+      transform: rotate(-18deg);
     }
 
     .pan-dish {
@@ -1610,8 +1620,8 @@
 
     .balance-product {
       position: relative;
-      width: 164px;
-      height: 285px;
+      width: 148px;
+      height: 278px;
       display: grid;
       place-items: end center;
       margin-bottom: 72px;
@@ -1622,12 +1632,12 @@
       position: absolute;
       left: 50%;
       bottom: 0;
-      transform: translateX(-50%) scale(1.04);
+      transform: translateX(-50%) scale(0.98);
       transform-origin: bottom center;
     }
 
     .balance-product .package.bottle {
-      transform: translateX(-50%) scale(0.9);
+      transform: translateX(-50%) scale(0.82);
     }
 
     .balance-product .package-label {
@@ -2435,6 +2445,11 @@
       let cardVisibleLimit = 30;
       let lastCardCategorySlug = null;
       let typingHintTimer = null;
+      let recommendationCache = new Map();
+      let recommendationGraphReady = false;
+      let recommendationGraphScheduled = false;
+      let comparisonControlsReady = false;
+      let initStartedAt = 0;
 
       function byId(items) {
         return Object.fromEntries(items.map((item) => [item.id, item]));
@@ -3319,6 +3334,23 @@
         return candidates.find((item) => item && !used.has(item.id)) || null;
       }
 
+      function lightweightRecommendationItems(product) {
+        const targets = (product.alternatives || [])
+          .map(([, name]) => findProductInList(modelProducts, name))
+          .filter((item) => item && item.id !== product.id)
+          .slice(0, 3);
+        const fallbackLabels = ['Podobná chuť, lepší parametry', 'Zdravější náhrada', 'Nejlepší volba'];
+        return fallbackLabels.map((label, index) => {
+          const target = targets[index] || null;
+          return {
+            label,
+            target,
+            note: target ? recommendationNutritionNote(target) : 'Doporučení se zpřesní po načtení grafu.',
+            badge: target && !isTasteAlternative(product, target) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
+          };
+        });
+      }
+
       function nutritionPer100(product, key) {
         const map = {
           sugar: 'sugarPer100',
@@ -3461,6 +3493,12 @@
       }
 
       function recommendationItems(product) {
+        if (recommendationCache.has(product.id)) return recommendationCache.get(product.id);
+        if (!recommendationGraphReady) {
+          const items = lightweightRecommendationItems(product);
+          recommendationCache.set(product.id, items);
+          return items;
+        }
         const options = { allowMoreCaffeine: isEnergyGoal(product) };
         const sourceKind = productSimilarityKind(product);
         const sameKind = modelProducts.filter((item) => item.id !== product.id && productSimilarityKind(item) === sourceKind);
@@ -3477,7 +3515,7 @@
         if (healthy) used.add(healthy.id);
         const best = firstUniqueRecommendation(used, [...bestSameKindRanked, ...bestRanked, ...healthyRanked]);
         if (best) used.add(best.id);
-        return [
+        const items = [
           {
             label: 'Podobná chuť, lepší parametry',
             target: tasteBetter,
@@ -3497,6 +3535,8 @@
             badge: best && !isTasteAlternative(product, best) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
           }
         ];
+        recommendationCache.set(product.id, items);
+        return items;
       }
 
       function incomingDynamicLinkMap(products) {
@@ -3565,14 +3605,49 @@
         return changed;
       }
 
+      function completeSimilarProductLinks(products) {
+        products.forEach((product) => {
+          product.similar = resolveSimilarTasteProducts(product, products);
+          product.similarTaste = resolveSimilarTasteProducts(product, products);
+          product.similarComposition = resolveSimilarCompositionProducts(product, products);
+        });
+      }
+
+      function runAfterFirstRender(callback) {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(callback, { timeout: 2500 });
+          return;
+        }
+        setTimeout(callback, 0);
+      }
+
+      function scheduleIncomingDynamicLinks() {
+        if (recommendationGraphReady || recommendationGraphScheduled) return;
+        recommendationGraphScheduled = true;
+        runAfterFirstRender(() => {
+          console.log('RECOMMENDATION GRAPH START');
+          console.time('ensureIncomingDynamicLinksDeferred');
+          completeSimilarProductLinks(modelProducts);
+          recommendationGraphReady = true;
+          recommendationCache = new Map();
+          const changed = ensureIncomingDynamicLinks(modelProducts);
+          recommendationCache = new Map();
+          console.timeEnd('ensureIncomingDynamicLinksDeferred');
+          console.log('RECOMMENDATION GRAPH DONE');
+          if (changed && activeProduct && !isHomeRoute()) {
+            render(activeProduct, { pushUrl: false });
+          }
+        });
+      }
+
       function mapModel(data) {
         if (data.napoje) {
           const products = data.napoje.map(mapUniversalDrink);
           return products.map((product) => ({
             ...product,
-            similar: resolveSimilarTasteProducts(product, products),
-            similarTaste: resolveSimilarTasteProducts(product, products),
-            similarComposition: resolveSimilarCompositionProducts(product, products),
+            similar: product.similar || [],
+            similarTaste: product.similar || [],
+            similarComposition: product.similar || [],
             alternatives: product.alternatives.length ? product.alternatives : betterAlternativesFor(product, products),
             faq: makeFaq(product)
           }));
@@ -3947,7 +4022,7 @@
         } else if (window.location.pathname !== nextPath) {
           window.history.pushState(state, '', nextPath);
         }
-        render(initialProductFromRoute(), { pushUrl: false });
+        renderCurrentRoute({ pushUrl: false });
         const target = categoryOverview && categoryOverview.classList.contains('visible') ? categoryOverview : document.getElementById('compareGrid');
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -4104,6 +4179,7 @@
       }
 
       function renderComparison() {
+        if (!comparisonControlsReady) renderComparisonControls();
         if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
         const first = modelProducts.find((product) => product.id === compareDrinkA.value) || modelProducts[0];
         const second = modelProducts.find((product) => product.id === compareDrinkB.value) || modelProducts[1] || modelProducts[0];
@@ -4201,6 +4277,7 @@
       }
 
       function renderComparisonControls() {
+        if (comparisonControlsReady) return;
         if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
         const options = modelProducts
           .map((product) => `<option value="${escapeHtml(product.id)}">${escapeHtml(product.name)}</option>`)
@@ -4211,9 +4288,20 @@
         const kofola = modelProducts.find((product) => product.id === 'kofola-original-cz') || findProduct('Kofola Original') || modelProducts[1] || modelProducts[0];
         compareDrinkA.value = coca.id;
         compareDrinkB.value = kofola.id;
+        comparisonControlsReady = true;
         compareDrinkA.addEventListener('change', renderComparison);
         compareDrinkB.addEventListener('change', renderComparison);
         renderComparison();
+      }
+
+      function bindLazyComparisonControls() {
+        if (!compareDrinkA || !compareDrinkB || !comparisonResult) return;
+        const init = () => renderComparisonControls();
+        compareDrinkA.addEventListener('focus', init, { once: true });
+        compareDrinkB.addEventListener('focus', init, { once: true });
+        compareDrinkA.addEventListener('pointerdown', init, { once: true });
+        compareDrinkB.addEventListener('pointerdown', init, { once: true });
+        comparisonResult.addEventListener('pointerenter', init, { once: true });
       }
 
       function numericValue(value, fallback = 0) {
@@ -4515,7 +4603,29 @@
         if (routeProduct) return routeProduct;
         const landingRoute = currentLandingRoute();
         if (landingRoute) return productsForLandingRoute(landingRoute)[0] || modelProducts[0];
-        return modelProducts[0];
+        return null;
+      }
+
+      function renderHomeShell() {
+        activeProduct = null;
+        document.querySelector('.page')?.classList.add('home-mode');
+        updateHomeSeo();
+        const currentInput = document.getElementById('searchInput');
+        if (currentInput) {
+          currentInput.value = '';
+          currentInput.dataset.autofilled = 'false';
+          syncTypingHint(currentInput);
+        }
+        renderCards();
+      }
+
+      function renderCurrentRoute(options = {}) {
+        const product = initialProductFromRoute();
+        if (product) {
+          render(product, options);
+          return;
+        }
+        renderHomeShell();
       }
 
       function isHomeRoute() {
@@ -4718,6 +4828,9 @@
         });
         renderEckoDetail(product.ingredients.find((item) => item.includes('E150d')) || product.ingredients[0]);
         renderCards();
+        if (productFromPath()) {
+          scheduleIncomingDynamicLinks();
+        }
       }
 
       function renderCards() {
@@ -4763,7 +4876,7 @@
         if (landingRoute) updateLandingSeo(landingRoute, visibleProducts);
         renderLandingOverview(landingRoute, visibleProducts);
         compareGrid.innerHTML = displayedProducts.length ? displayedProducts.map((product) => `
-          <article class="mini-card ${product.id === activeProduct.id ? 'active' : ''}" data-id="${product.id}">
+          <article class="mini-card ${product.id === activeProduct?.id ? 'active' : ''}" data-id="${product.id}">
             <strong>${product.name}</strong>
             <small>${product.sugar} g cukru · ${product.caffeine} mg kofeinu</small>
           </article>
@@ -4875,11 +4988,15 @@
           renderCards();
         });
         renderSearchResults(modelProducts);
+        console.log(`SEARCH READY ${Math.round(performance.now() - initStartedAt)}ms`);
       }
 
       async function initFromJson() {
         try {
+          console.time('totalInit');
+          initStartedAt = performance.now();
           if (window.DAMENAPOJ_DATA_READY) await window.DAMENAPOJ_DATA_READY;
+          console.log(`DATA LOADED ${Math.round(performance.now() - initStartedAt)}ms`);
           const parts = window.DAMENAPOJ_DATA
             ? [window.DAMENAPOJ_DATA]
             : await Promise.all(DATA_URLS.map(async (url) => {
@@ -4888,18 +5005,28 @@
             return response.json();
           }));
           const data = mergeDatabases(parts);
+          console.time('mapModel');
           modelProducts = mapModel(data);
+          recommendationCache = new Map();
+          recommendationGraphReady = false;
+          recommendationGraphScheduled = false;
+          console.timeEnd('mapModel');
+          console.log('FAST MODEL READY');
           if (!modelProducts.length) throw new Error('Databáze neobsahuje žádné nápoje.');
-          ensureIncomingDynamicLinks(modelProducts);
+          console.time('firstHomepageRender');
           buildEckoEntries();
           bindControls();
-          renderComparisonControls();
+          console.log('CONTROLS BOUND');
+          bindLazyComparisonControls();
           renderRankings();
           renderCategories();
           renderEckoList('');
-          render(initialProductFromRoute(), { pushUrl: false });
+          renderCurrentRoute({ pushUrl: false });
+          console.timeEnd('firstHomepageRender');
+          console.log(`HOMEPAGE RENDERED ${Math.round(performance.now() - initStartedAt)}ms`);
+          console.timeEnd('totalInit');
           window.addEventListener('popstate', () => {
-            render(initialProductFromRoute(), { pushUrl: false });
+            renderCurrentRoute({ pushUrl: false });
             if (currentLandingRoute()) requestAnimationFrame(scrollToCategoryOverview);
           });
           window.addEventListener('hashchange', () => {
