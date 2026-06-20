@@ -2262,7 +2262,13 @@
 
   <script>
     const DAMENAPOJ_BASE_PATH = window.location.hostname.endsWith('github.io') && window.location.pathname.startsWith('/damenapoj') ? '/damenapoj' : '';
-    const DAMENAPOJ_ASSET_BASE = window.location.protocol === 'file:' ? '' : `${DAMENAPOJ_BASE_PATH || ''}/`;
+    function damenapojFileAssetBase() {
+      const pathname = decodeURIComponent(window.location.pathname).replace(/\\/g, '/');
+      if (!/(?:^|\/)napoj(?:e)?\/[^/]+\/index\.html$/i.test(pathname)) return '';
+      if (pathname.includes('/data-workflow/releases/')) return '../../../../../';
+      return '../../';
+    }
+    const DAMENAPOJ_ASSET_BASE = window.location.protocol === 'file:' ? damenapojFileAssetBase() : `${DAMENAPOJ_BASE_PATH || ''}/`;
     window.DAMENAPOJ_BASE_PATH = DAMENAPOJ_BASE_PATH;
     window.DAMENAPOJ_ASSET_BASE = DAMENAPOJ_ASSET_BASE;
     window.DAMENAPOJ_DATA_READY = new Promise((resolve) => {
@@ -2277,7 +2283,7 @@
   <script>
     (() => {
       const APP_BASE_PATH = window.DAMENAPOJ_BASE_PATH || '';
-      const ASSET_BASE = window.location.protocol === 'file:' ? '' : `${APP_BASE_PATH || ''}/`;
+      const ASSET_BASE = window.DAMENAPOJ_ASSET_BASE || (window.location.protocol === 'file:' ? '' : `${APP_BASE_PATH || ''}/`);
       const DATA_URLS = [`${ASSET_BASE}universal-drinks.cz.json`];
       const colorsByCategory = {
         cola: 'linear-gradient(155deg, #d71920, #8f1018)',
@@ -4358,7 +4364,7 @@
       }
 
       function productFromPath() {
-        const match = routePathname().match(/^\/napoj(?:e)?\/([^/]+)\/?$/);
+        const match = routePathname().match(/(?:^|\/)napoj(?:e)?\/([^/]+)(?:\/index\.html)?\/?$/);
         if (!match) return null;
         return modelProducts.find((product) => product.id === decodeURIComponent(match[1])) || null;
       }
@@ -4630,6 +4636,7 @@
 
       function isHomeRoute() {
         const path = routePathname();
+        if (/(?:^|\/)napoj(?:e)?\/[^/]+(?:\/index\.html)?\/?$/.test(path)) return false;
         return path === '/' || path.endsWith('/index.html');
       }
 
@@ -5046,4 +5053,5 @@
 </body>
 </html>
 <!-- TEST 1119 -->
+
 
