@@ -221,9 +221,9 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.6fr);
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 0.78fr) minmax(520px, 1.12fr);
+      gap: clamp(28px, 4vw, 58px);
+      align-items: center;
     }
 
     h1,
@@ -397,6 +397,349 @@
       display: grid;
       align-content: space-between;
       gap: 20px;
+    }
+
+    .truth-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(18px, 2.4vw, 28px);
+      min-height: 590px;
+      border: 0;
+      border-radius: 34px;
+      box-shadow: none;
+      background:
+        radial-gradient(circle at 58% 18%, rgba(97, 217, 255, .42), transparent 34%),
+        radial-gradient(circle at 72% 78%, rgba(112, 228, 170, .2), transparent 42%),
+        linear-gradient(145deg, rgba(255,255,255,.62), rgba(239,250,255,.42));
+    }
+
+    .truth-panel::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border-radius: 28px;
+      border: 1px solid rgba(201, 226, 240, .28);
+      pointer-events: none;
+    }
+
+    .truth-panel::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(85, 205, 255, .2), transparent 68%);
+      pointer-events: none;
+    }
+
+    .truth-kicker {
+      position: relative;
+      z-index: 1;
+      max-width: 420px;
+      margin: 0 0 18px;
+      color: var(--ink);
+      font-size: clamp(1.9rem, 3.4vw, 3.35rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+
+    .truth-visual {
+      position: relative;
+      z-index: 1;
+      min-height: 455px;
+      display: grid;
+      grid-template-columns: .82fr 1fr 178px;
+      align-items: end;
+      gap: 14px;
+      margin: 4px 0 4px;
+    }
+
+    .truth-can {
+      justify-self: end;
+      position: relative;
+      width: 150px;
+      height: 342px;
+      border-radius: 38px 38px 28px 28px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.18), transparent 22%, rgba(255,255,255,.14) 70%, transparent),
+        linear-gradient(155deg, #081b39 0%, #0e315d 44%, #10b9d4 45%, #092445 47%, #07172e 100%);
+      box-shadow:
+        inset 0 12px 20px rgba(255,255,255,.18),
+        inset 0 -24px 36px rgba(0,0,0,.28),
+        0 28px 44px rgba(11, 51, 85, .22);
+    }
+
+    .truth-can::before {
+      content: "";
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      top: -10px;
+      height: 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #102c4e, #22d3ee, #0e2846);
+      box-shadow: 0 6px 12px rgba(10, 40, 70, .22);
+    }
+
+    .truth-can::after {
+      content: "";
+      position: absolute;
+      left: 47px;
+      top: 86px;
+      width: 66px;
+      height: 170px;
+      clip-path: polygon(63% 0, 16% 55%, 50% 55%, 29% 100%, 84% 38%, 52% 39%);
+      background: linear-gradient(180deg, rgba(49, 225, 255, .95), rgba(62, 245, 178, .65));
+      filter: drop-shadow(0 0 14px rgba(49, 225, 255, .5));
+    }
+
+    .truth-glass {
+      justify-self: start;
+      position: relative;
+      width: 282px;
+      height: 350px;
+      border-radius: 26px 26px 34px 34px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.72), rgba(255,255,255,.2) 18%, rgba(123, 221, 245, .16) 52%, rgba(255,255,255,.36)),
+        linear-gradient(180deg, rgba(255,255,255,.42), rgba(119, 222, 244, .12));
+      border: 2px solid rgba(165, 219, 238, .78);
+      box-shadow:
+        inset 10px 0 20px rgba(255,255,255,.5),
+        inset -10px 0 20px rgba(62, 178, 218, .13),
+        0 28px 44px rgba(37, 105, 140, .18);
+    }
+
+    .truth-glass::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      right: -8px;
+      top: -14px;
+      height: 28px;
+      border: 2px solid rgba(166, 221, 240, .86);
+      border-radius: 50%;
+      background: rgba(255,255,255,.52);
+      box-shadow: inset 0 2px 12px rgba(70, 178, 220, .16);
+    }
+
+    .truth-glass::after {
+      content: "";
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 18px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(45, 167, 209, .18);
+      filter: blur(.3px);
+    }
+
+    .truth-sugar {
+      position: absolute;
+      left: 62px;
+      bottom: 56px;
+      width: 34px;
+      height: 34px;
+      border-radius: 5px;
+      background: linear-gradient(145deg, #fff, #e8f0f7);
+      box-shadow:
+        46px 2px 0 #f9fbff,
+        23px -32px 0 #fff,
+        84px -26px 0 #edf4fb,
+        108px 12px 0 #fff,
+        15px 31px 0 #f5f9fd,
+        74px 38px 0 #fff;
+    }
+
+    .truth-crystals {
+      position: absolute;
+      left: 82px;
+      bottom: 154px;
+      width: 118px;
+      height: 66px;
+      background:
+        radial-gradient(circle at 20% 70%, rgba(176, 143, 255, .72) 0 10px, transparent 11px),
+        radial-gradient(circle at 45% 50%, rgba(118, 208, 255, .72) 0 14px, transparent 15px),
+        radial-gradient(circle at 72% 66%, rgba(209, 175, 255, .66) 0 12px, transparent 13px);
+      filter: drop-shadow(0 0 14px rgba(134, 203, 255, .4));
+    }
+
+    .truth-spark {
+      position: absolute;
+      right: 82px;
+      bottom: 128px;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #fff 0 18%, #ffd45c 34%, rgba(255, 165, 45, .15) 70%);
+      box-shadow: 0 0 22px rgba(255, 190, 59, .7);
+    }
+
+    .truth-e {
+      position: absolute;
+      z-index: 2;
+      padding: 7px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.86);
+      color: #33506d;
+      font-size: .88rem;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(46, 91, 125, .12);
+    }
+
+    .truth-e:nth-of-type(4) { left: 76px; top: 108px; transform: rotate(-8deg); }
+    .truth-e:nth-of-type(5) { left: 160px; top: 92px; transform: rotate(7deg); }
+    .truth-e:nth-of-type(6) { left: 126px; top: 150px; transform: rotate(-2deg); }
+
+    .truth-labels {
+      position: relative;
+      right: auto;
+      top: auto;
+      z-index: 3;
+      display: grid;
+      align-self: center;
+      gap: 14px;
+    }
+
+    .truth-label {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      align-items: center;
+      gap: 9px;
+      min-width: 170px;
+      padding: 10px 12px;
+      border: 1px solid rgba(214, 229, 239, .9);
+      border-radius: 14px;
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 10px 24px rgba(29, 70, 106, .1);
+      backdrop-filter: blur(10px);
+    }
+
+    .truth-label i {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #f4fbff;
+      font-style: normal;
+      font-size: 1.24rem;
+    }
+
+    .truth-label strong {
+      display: block;
+      color: var(--ink);
+      font-size: .96rem;
+      line-height: 1.05;
+    }
+
+    .truth-label span {
+      display: block;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 750;
+      line-height: 1.2;
+    }
+
+    .truth-label b {
+      color: var(--ink);
+      font-weight: 950;
+    }
+
+    .truth-realization {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 28px auto 34px;
+      padding: 28px 20px 24px;
+      border: 1px solid rgba(220, 232, 241, .82);
+      border-radius: 34px;
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 22px 56px rgba(39, 78, 112, .11);
+      text-align: center;
+    }
+
+    .truth-realization h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -.025em;
+    }
+
+    .truth-realization p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+      font-weight: 750;
+    }
+
+    .truth-realization strong {
+      color: var(--blue);
+    }
+
+    .truth-realization .down-cue {
+      display: block;
+      margin-top: 10px;
+      color: var(--blue);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .truth-impact {
+      position: relative;
+      z-index: 1;
+      margin-top: 0;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .impact-card {
+      min-height: 280px;
+      padding: 28px 18px;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 7px;
+      border: 1px solid rgba(218, 231, 241, .95);
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,252,255,.9)),
+        radial-gradient(circle at 50% 100%, rgba(91, 201, 255, .16), transparent 62%);
+      text-align: center;
+      box-shadow: 0 22px 48px rgba(35, 78, 112, .1);
+    }
+
+    .impact-card i {
+      width: 132px;
+      height: 132px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: linear-gradient(145deg, rgba(222, 248, 255, .96), rgba(232, 252, 239, .86));
+      color: #0a8fc1;
+      font-style: normal;
+      font-size: 3rem;
+      box-shadow: inset 0 0 0 1px rgba(127, 211, 235, .35);
+    }
+
+    .impact-card strong {
+      color: var(--ink);
+      font-size: clamp(1.45rem, 2.5vw, 2.25rem);
+      line-height: 1;
+    }
+
+    .impact-card span {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.15;
     }
 
     .quick-stats {
@@ -2022,6 +2365,59 @@
         grid-template-columns: 1fr;
       }
 
+      .truth-panel {
+        min-height: auto;
+        padding: 18px 0 8px;
+      }
+
+      .truth-visual {
+        min-height: 390px;
+        grid-template-columns: .72fr 1fr;
+        gap: 10px;
+      }
+
+      .truth-can {
+        width: 104px;
+        height: 238px;
+      }
+
+      .truth-glass {
+        width: 190px;
+        height: 240px;
+      }
+
+      .truth-labels {
+        position: relative;
+        right: auto;
+        top: auto;
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 8px;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .impact-card {
+        min-height: 190px;
+      }
+
+      .impact-card i {
+        width: 88px;
+        height: 88px;
+        font-size: 2.2rem;
+      }
+
+      .truth-realization {
+        margin: 22px auto 26px;
+      }
+
+      .truth-realization h3 {
+        font-size: 2rem;
+      }
+
       .scale-visual {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -2573,16 +2969,41 @@
             </div>
           </div>
 
-          <aside class="summary-card" aria-label="Rychlé shrnutí">
-            <div>
-              <h3>10sekundový výstup</h3>
-              <p class="lead" style="font-size:1rem;margin-bottom:0;">Žádné luštění tabulek. Nejdřív lidské vysvětlení, potom jasná čísla a důsledky.</p>
-            </div>
-            <div class="quick-stats">
-              <div class="stat"><strong id="heroSugar">35 g</strong><span>cukr v balení</span></div>
-              <div class="stat"><strong id="heroCaffeine">32 mg</strong><span>kofein v balení</span></div>
+          <aside class="summary-card truth-panel" aria-label="Co je uvnitř nápoje">
+            <h3 class="truth-kicker">Co je uvnitř tvého nápoje?</h3>
+            <div class="truth-visual" aria-hidden="true">
+              <div class="truth-can"></div>
+              <div class="truth-glass">
+                <span class="truth-sugar"></span>
+                <span class="truth-crystals"></span>
+                <span class="truth-spark"></span>
+                <span class="truth-e">E150d</span>
+                <span class="truth-e">E330</span>
+                <span class="truth-e">E951</span>
+              </div>
+              <div class="truth-labels">
+                <div class="truth-label"><i>▣</i><span><strong>Cukr</strong><span><b id="heroSugar">35 g</b> v balení</span></span></div>
+                <div class="truth-label"><i>⚡</i><span><strong>Kofein</strong><span><b id="heroCaffeine">32 mg</b> v balení</span></span></div>
+                <div class="truth-label"><i>✦</i><span><strong>Sladidla</strong><span>bez cukru neznamená bez otázek</span></span></div>
+                <div class="truth-label"><i>E</i><span><strong>Éčka</strong><span>stačí vědět, proč tam jsou</span></span></div>
+              </div>
             </div>
           </aside>
+        </div>
+
+        <div class="truth-realization">
+          <h3>Věděl jsi to?</h3>
+          <p>DámeNápoj překládá etikety <strong>do lidské řeči.</strong></p>
+          <span class="down-cue" aria-hidden="true">⌄</span>
+        </div>
+
+        <div class="truth-impact" aria-label="Na co může mít nápoj vliv">
+          <div class="impact-grid">
+            <div class="impact-card"><i>♡</i><strong>Tep</strong><span>energie a stimulace</span></div>
+            <div class="impact-card"><i>◌</i><strong>Tuk v těle</strong><span>kalorie, cukr, návyky</span></div>
+            <div class="impact-card"><i>⌁</i><strong>Síla</strong><span>výkon a regenerace</span></div>
+            <div class="impact-card"><i>↗</i><strong>Sprint</strong><span>rychlá energie</span></div>
+          </div>
         </div>
       </section>
 
@@ -5262,7 +5683,14 @@
           <div class="insight"><strong>Největší nevýhody</strong><p>${product.cons.join(' · ')}</p></div>
         `;
         document.getElementById('denkoSaysText').textContent = `${product.type}, ${product.package}. ${product.human}`;
-        document.getElementById('sugarHumanText').textContent = `${product.sugar} g cukru v balení je zhruba ${product.cubes} kostek. Na 100 ml: ${product.sugarPer100} g cukru. Pokud si dáte jeden kus denně, za rok je to ${sugarStory(product.sugar).year} cukru.`;
+        const sugarValue = Number(product.sugar) || 0;
+        const caffeineValue = Number(product.caffeine) || 0;
+        const sugarHumanCopy = sugarValue <= 0
+          ? (caffeineValue <= 0
+            ? 'Tenhle nápoj je bez cukru. Z pohledu cukru je vhodný i pro každodenní pití; dál dává smysl sledovat hlavně složení a vlastní toleranci.'
+            : 'Tenhle nápoj je bez cukru. Z pohledu cukru nezatěžuje denní příjem, takže hlavní roli hrají jiné věci: sladidla, kofein, kyseliny nebo to, jak často ho pijete.')
+          : `${product.sugar} g cukru v balení je zhruba ${product.cubes} kostek. Na 100 ml: ${product.sugarPer100} g cukru. Pokud si dáte jeden kus denně, za rok je to ${sugarStory(product.sugar).year} cukru.`;
+        document.getElementById('sugarHumanText').textContent = sugarHumanCopy;
         renderSense(product);
         document.getElementById('recommendationProductName').textContent = product.name;
         document.getElementById('recommendationsList').innerHTML = recommendationItems(product).map(({ label, target, note, badge }) => `
