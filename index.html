@@ -715,6 +715,105 @@
       font-size: 1.25rem;
     }
 
+    .sample-badge {
+      display: inline-flex;
+      width: fit-content;
+      margin: 0 0 10px;
+      padding: 7px 11px;
+      border: 1px solid rgba(31, 119, 180, .18);
+      border-radius: 999px;
+      background: #edf8ff;
+      color: #145c88;
+      font-size: .82rem;
+      font-weight: 850;
+    }
+
+    .next-step-block {
+      padding: 20px;
+      border: 1px solid rgba(31, 119, 180, .18);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(237, 248, 255, .96), rgba(255,255,255,.98)),
+        radial-gradient(circle at 0% 0%, rgba(54, 192, 180, .12), transparent 40%);
+    }
+
+    .next-step-block h3,
+    .secondary-path-note h3,
+    .ecko-actions h4 {
+      margin: 0 0 8px;
+    }
+
+    .next-step-actions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .next-step-card {
+      display: block;
+      min-height: 112px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+      box-shadow: 0 14px 36px rgba(16, 35, 63, .06);
+    }
+
+    .next-step-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    .next-step-card span {
+      display: block;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.45;
+    }
+
+    .secondary-path-note {
+      margin: 0 0 18px;
+      padding: 16px 18px;
+      border: 1px solid rgba(226, 237, 247, .95);
+      border-radius: 20px;
+      background: rgba(255,255,255,.78);
+    }
+
+    .secondary-path-note p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .ecko-actions {
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px dashed rgba(31, 119, 180, .24);
+      border-radius: 18px;
+      background: #f7fbff;
+    }
+
+    .ecko-action-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .ecko-action-list span {
+      display: inline-flex;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 750;
+      border: 1px solid var(--line);
+    }
+
     .recommendation-list {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2005,6 +2104,7 @@
       .rankings-grid,
       .category-grid,
       .ecko-grid,
+      .next-step-actions,
       .similar-sections,
       .recommendation-list,
       .ingredient-list {
@@ -2076,9 +2176,345 @@
         padding: 18px;
       }
     }
+
+    .dn-floating-guide-wrap {
+      position: fixed;
+      left: 28px;
+      top: 50%;
+      z-index: 60;
+      width: 176px;
+      transform: translateY(-50%);
+    }
+
+    .dn-guide-state {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .dn-guide-mini {
+      display: none;
+      width: 148px;
+      height: 54px;
+      grid-template-columns: 34px 1fr;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 13px;
+      border: 1px solid rgba(186, 207, 228, .86);
+      border-radius: 999px;
+      background: rgba(255,255,255,.9);
+      color: #153b67;
+      box-shadow: 0 20px 52px rgba(14, 44, 78, .26);
+      cursor: pointer;
+      user-select: none;
+      backdrop-filter: blur(18px);
+    }
+
+    .dn-guide-mini span {
+      filter: drop-shadow(0 3px 4px rgba(0,0,0,.18));
+    }
+
+    .dn-guide-mini strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .dn-floating-guide {
+      position: relative;
+      width: 190px;
+      padding: 18px 15px 20px;
+      border: 1px solid rgba(186, 207, 228, .9);
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.9), rgba(236,248,255,.82)),
+        radial-gradient(circle at 50% 0%, rgba(91, 201, 255, .18), transparent 55%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.94),
+        0 24px 70px rgba(14, 44, 78, .24);
+      text-align: center;
+      backdrop-filter: blur(20px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .dn-floating-guide::before,
+    .dn-floating-guide::after {
+      content: "";
+      position: absolute;
+      top: 35px;
+      width: 32px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(111, 129, 148, .44));
+    }
+
+    .dn-floating-guide::before {
+      left: 16px;
+    }
+
+    .dn-floating-guide::after {
+      right: 16px;
+      transform: scaleX(-1);
+    }
+
+    .dn-guide-minimize {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(192, 211, 228, .96);
+      border-radius: 999px;
+      background: rgba(255,255,255,.94);
+      color: #37506d;
+      font-weight: 900;
+      font-size: 22px;
+      box-shadow: 0 12px 30px rgba(24, 47, 72, .18);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .dn-guide-kicker {
+      display: block;
+      margin: 0 0 14px;
+      color: #153b67;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .dn-bubble-stack {
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+    }
+
+    .dn-guide-bubble {
+      width: 128px;
+      height: 128px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      box-shadow:
+        inset 0 6px 12px rgba(255,255,255,.38),
+        inset 0 -20px 30px rgba(0,0,0,.28),
+        0 22px 38px rgba(20, 55, 94, .3);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .dn-guide-bubble:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        inset 0 6px 12px rgba(255,255,255,.42),
+        inset 0 -20px 30px rgba(0,0,0,.27),
+        0 24px 42px rgba(25, 53, 89, .3);
+    }
+
+    .dn-guide-bubble::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: inherit;
+      background: linear-gradient(145deg, rgba(255,255,255,.72), rgba(210,228,242,.28));
+      z-index: -1;
+      box-shadow:
+        0 12px 22px rgba(38, 68, 101, .12),
+        inset 0 0 0 1px rgba(255,255,255,.8);
+    }
+
+    .dn-guide-bubble::after {
+      content: "";
+      position: absolute;
+      inset: 9px 16px auto;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0));
+      transform: rotate(-9deg);
+      pointer-events: none;
+    }
+
+    .dn-bubble-blue {
+      background:
+        radial-gradient(circle at 32% 18%, rgba(255,255,255,.4), transparent 26%),
+        linear-gradient(145deg, #56b8f6 0%, #247ed3 55%, #115da5 100%);
+    }
+
+    .dn-bubble-primary {
+      box-shadow:
+        inset 0 8px 14px rgba(255,255,255,.42),
+        inset 0 -22px 34px rgba(0,0,0,.32),
+        0 0 0 8px rgba(63, 159, 236, .14),
+        0 24px 44px rgba(15, 86, 160, .42);
+    }
+
+    .dn-bubble-gold {
+      background:
+        radial-gradient(circle at 32% 18%, rgba(255,255,255,.36), transparent 26%),
+        linear-gradient(145deg, #ffcf45 0%, #f09316 54%, #d06700 100%);
+    }
+
+    .dn-bubble-green {
+      background:
+        radial-gradient(circle at 32% 18%, rgba(255,255,255,.34), transparent 26%),
+        linear-gradient(145deg, #32dd78 0%, #0aa852 55%, #08793d 100%);
+    }
+
+    .dn-bubble-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      gap: 5px;
+      text-align: center;
+    }
+
+    .dn-bubble-icon {
+      font-size: 38px;
+      line-height: 1;
+      filter: drop-shadow(0 4px 7px rgba(0,0,0,.28));
+    }
+
+    .dn-bubble-primary .dn-bubble-icon {
+      font-size: 39px;
+      margin-bottom: 1px;
+    }
+
+    .dn-bubble-title {
+      width: 104px;
+      color: #fff;
+      font-size: 21px;
+      font-weight: 1000;
+      line-height: 1.02;
+      text-align: center;
+      text-wrap: balance;
+      text-shadow: 0 2px 5px rgba(13, 37, 67, .34);
+    }
+
+    .dn-bubble-primary .dn-bubble-title {
+      font-size: 28px;
+      line-height: .98;
+      letter-spacing: -.015em;
+      text-shadow: 0 2px 5px rgba(12, 43, 76, .36);
+    }
+
+    .dn-bubble-gold .dn-bubble-title {
+      font-size: 37px;
+      line-height: .95;
+      letter-spacing: -.02em;
+    }
+
+    .dn-bubble-green .dn-bubble-title {
+      font-size: 33px;
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .dn-bubble-note {
+      display: block;
+      color: rgba(255,255,255,.92);
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 850;
+      text-align: center;
+      text-transform: capitalize;
+      text-shadow: 0 2px 5px rgba(13, 37, 67, .3);
+    }
+
+    .dn-guide-state:checked ~ .dn-floating-guide {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-12px) scale(.96);
+    }
+
+    .dn-guide-state:checked ~ .dn-guide-mini {
+      display: grid;
+    }
+
+    @media (max-width: 860px) {
+      .dn-floating-guide-wrap {
+        left: 50%;
+        top: auto;
+        bottom: 28px;
+        width: min(94vw, 430px);
+        transform: translateX(-50%);
+      }
+
+      .dn-floating-guide {
+        width: min(94vw, 430px);
+        padding: 16px 18px;
+        border-radius: 34px;
+      }
+
+      .dn-floating-guide::before,
+      .dn-floating-guide::after {
+        display: none;
+      }
+
+      .dn-guide-kicker {
+        margin-bottom: 10px;
+      }
+
+      .dn-guide-minimize {
+        right: 2px;
+        top: -14px;
+      }
+
+      .dn-bubble-stack {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .dn-guide-mini {
+        width: 146px;
+        height: 54px;
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
+  <aside class="dn-floating-guide-wrap" aria-label="Vizuální průvodce DámeNápoj">
+    <input class="dn-guide-state" id="dn-guide-minimized" type="checkbox">
+    <label class="dn-guide-mini" for="dn-guide-minimized" aria-label="Zobrazit průvodce">
+      <span>🎯</span>
+      <strong>Průvodce</strong>
+    </label>
+
+    <div class="dn-floating-guide">
+      <label class="dn-guide-minimize" for="dn-guide-minimized" aria-label="Skrýt průvodce">−</label>
+      <span class="dn-guide-kicker">Průvodce</span>
+      <div class="dn-bubble-stack">
+        <a class="dn-guide-bubble dn-bubble-blue dn-bubble-primary" href="/seo/co-pit-pri-hubnuti/" aria-label="Co pít když">
+          <span class="dn-bubble-content">
+            <span class="dn-bubble-icon">🎯</span>
+            <span class="dn-bubble-title">Co pít<br>když...</span>
+          </span>
+        </a>
+
+        <a class="dn-guide-bubble dn-bubble-gold" href="#napoje-a-z" aria-label="Nápoje A-Z">
+          <span class="dn-bubble-content">
+            <span class="dn-bubble-note">Nápoje</span>
+            <span class="dn-bubble-title">A-Z</span>
+          </span>
+        </a>
+
+        <a class="dn-guide-bubble dn-bubble-green" href="#eckopedie" aria-label="Éčka">
+          <span class="dn-bubble-content">
+            <span class="dn-bubble-icon">🧪</span>
+            <span class="dn-bubble-title">Éčka</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
   <div class="page rainbow-variant-a">
     <script>
       (() => {
@@ -2142,6 +2578,7 @@
               </div>
               <div>
                 <div class="tag-row" id="topTags"></div>
+                <div class="sample-badge" id="sampleDetailBadge">Ukázka vysvětlení na příkladu nápoje</div>
                 <h2 class="product-title" id="productName">Coca-Cola Original</h2>
                 <div class="pill-row" id="quickPills"></div>
                 <p class="human-text" id="humanText"></p>
@@ -2182,6 +2619,24 @@
                   <ul class="simple-list" id="similarCompositionDrinks"></ul>
                 </section>
               </div>
+              <section class="next-step-block" id="nextStepBlock">
+                <h3>Co dál?</h3>
+                <p class="human-text">Když už víte, co pijete, další krok je jednoduchý: porovnat, najít podobnou chuť nebo vybrat nápoj podle cíle.</p>
+                <div class="next-step-actions">
+                  <a class="next-step-card" href="#porovnat-napoje">
+                    <strong>Porovnat s lepší alternativou</strong>
+                    <span>Postavte vedle sebe cukr, kofein, kalorie a skóre.</span>
+                  </a>
+                  <a class="next-step-card" href="#napoje-a-z">
+                    <strong>Najít podobný nápoj</strong>
+                    <span>Projděte databázi a otevřete další nápoj k porovnání.</span>
+                  </a>
+                  <a class="next-step-card" href="/seo/co-pit-pri-hubnuti/">
+                    <strong>Vybrat podle cíle</strong>
+                    <span>Hubnutí, sport nebo méně kofeinu: začněte praktickou otázkou.</span>
+                  </a>
+                </div>
+              </section>
               <div hidden>
                 <div class="insight-list" id="insights"></div>
                 <ul class="simple-list" id="betterAlternatives"></ul>
@@ -2201,6 +2656,10 @@
       <section class="section detail-only">
         <div class="container">
           <h2>TOP žebříčky podle cíle</h2>
+          <div class="secondary-path-note">
+            <h3>Když nehledáte konkrétní nápoj</h3>
+            <p>Žebříčky jsou rychlá zkratka podle situace: hubnutí, energie, děti, běžné pití nebo sport.</p>
+          </div>
           <div class="rankings-grid" id="rankingsGrid"></div>
         </div>
       </section>
@@ -2208,11 +2667,15 @@
       <section class="section detail-only">
         <div class="container">
           <h2>Kategorie nápojů</h2>
+          <div class="secondary-path-note">
+            <h3>Další možnost: vybrat typ nápoje</h3>
+            <p>Kategorie pomáhají, když víte, že řešíte třeba energy drink, colu, vodu nebo ionťák.</p>
+          </div>
           <div class="category-grid" id="categoryGrid"></div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="napoje-a-z">
         <div class="container">
           <h2>Rozcestník nápojů</h2>
           <p class="note" id="knownCount">Déenko už zná přes 30 nápojů.</p>
@@ -2228,7 +2691,7 @@
         </div>
       </section>
 
-      <section class="section detail-only">
+      <section class="section detail-only" id="porovnat-napoje">
         <div class="container">
           <h2>Porovnat nápoje</h2>
           <div class="content-block">
@@ -2241,7 +2704,7 @@
         </div>
       </section>
 
-      <section class="section detail-only">
+      <section class="section detail-only" id="eckopedie">
         <div class="container">
           <h2>Ečkopedie</h2>
           <p class="note">Vyhledatelné vysvětlení látek, které se v nápojích objevují nejčastěji.</p>
@@ -2253,7 +2716,17 @@
           </div>
           <div class="ecko-grid">
             <div class="source-list" id="eckoList"></div>
-            <div class="ecko-detail" id="eckoDatabaseDetail"></div>
+            <div>
+              <div class="ecko-detail" id="eckoDatabaseDetail"></div>
+              <div class="ecko-actions">
+                <h4>Co s tím dál?</h4>
+                <p class="note">U vybrané látky můžete pokračovat přes nápoje, kde se v databázi objevuje. Vyhledání nápojů bez látky je připravené jako další krok.</p>
+                <div class="ecko-action-list">
+                  <span>Najít nápoje s touto látkou</span>
+                  <span>Najít nápoje bez této látky</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -4746,6 +5219,10 @@
         labelElement.innerHTML = packageLabel(product.name);
         document.getElementById('topTags').innerHTML = product.tags.map((tag) => `<span class="pill ok">${tag}</span>`).join('');
         document.getElementById('quickPills').innerHTML = product.pills.map(([type, text]) => `<span class="pill ${type}">${text}</span>`).join('');
+        const sampleDetailBadge = document.getElementById('sampleDetailBadge');
+        if (sampleDetailBadge) {
+          sampleDetailBadge.hidden = !isHomeRoute() || !!productFromPath();
+        }
 
         const scoreItems = [product.scores.daily, product.scores.weight, product.scores.kids, product.scores.energy, product.scores.sport];
         document.getElementById('scoreList').innerHTML = scoreItems.map(([value, label, text]) => `
