@@ -221,7 +221,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 0.78fr) minmax(520px, 1.12fr);
+      grid-template-columns: minmax(0, 760px);
       gap: clamp(28px, 4vw, 58px);
       align-items: center;
     }
@@ -2969,26 +2969,8 @@
             </div>
           </div>
 
-          <aside class="summary-card truth-panel" aria-label="Co je uvnitř nápoje">
-            <h3 class="truth-kicker">Co je uvnitř tvého nápoje?</h3>
-            <div class="truth-visual" aria-hidden="true">
-              <div class="truth-can"></div>
-              <div class="truth-glass">
-                <span class="truth-sugar"></span>
-                <span class="truth-crystals"></span>
-                <span class="truth-spark"></span>
-                <span class="truth-e">E150d</span>
-                <span class="truth-e">E330</span>
-                <span class="truth-e">E951</span>
-              </div>
-              <div class="truth-labels">
-                <div class="truth-label"><i>▣</i><span><strong>Cukr</strong><span><b id="heroSugar">35 g</b> v balení</span></span></div>
-                <div class="truth-label"><i>⚡</i><span><strong>Kofein</strong><span><b id="heroCaffeine">32 mg</b> v balení</span></span></div>
-                <div class="truth-label"><i>✦</i><span><strong>Sladidla</strong><span>bez cukru neznamená bez otázek</span></span></div>
-                <div class="truth-label"><i>E</i><span><strong>Éčka</strong><span>stačí vědět, proč tam jsou</span></span></div>
-              </div>
-            </div>
-          </aside>
+          <span id="heroSugar" hidden>35 g</span>
+          <span id="heroCaffeine" hidden>32 mg</span>
         </div>
 
         <div class="truth-realization">
@@ -5977,5 +5959,3 @@
 </body>
 </html>
 <!-- TEST 1119 -->
-
-
