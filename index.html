@@ -2179,11 +2179,19 @@
 
     .dn-floating-guide-wrap {
       position: fixed;
-      left: 28px;
+      left: 9px;
       top: 50%;
       z-index: 60;
       width: 176px;
       transform: translateY(-50%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+    }
+
+    body.dn-guide-visible .dn-floating-guide-wrap {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .dn-guide-state {
@@ -2294,8 +2302,8 @@
     }
 
     .dn-guide-bubble {
-      width: 109px;
-      height: 109px;
+      width: 98px;
+      height: 98px;
       position: relative;
       display: grid;
       place-items: center;
@@ -2376,20 +2384,20 @@
     }
 
     .dn-bubble-icon {
-      font-size: 32px;
+      font-size: 29px;
       line-height: 1;
       filter: drop-shadow(0 4px 7px rgba(0,0,0,.28));
     }
 
     .dn-bubble-primary .dn-bubble-icon {
-      font-size: 33px;
+      font-size: 30px;
       margin-bottom: 1px;
     }
 
     .dn-bubble-title {
-      width: 88px;
+      width: 79px;
       color: #fff;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 1000;
       line-height: 1.02;
       text-align: center;
@@ -2398,20 +2406,20 @@
     }
 
     .dn-bubble-primary .dn-bubble-title {
-      font-size: 24px;
+      font-size: 22px;
       line-height: .98;
       letter-spacing: -.015em;
       text-shadow: 0 2px 5px rgba(12, 43, 76, .36);
     }
 
     .dn-bubble-gold .dn-bubble-title {
-      font-size: 31px;
+      font-size: 28px;
       line-height: .95;
       letter-spacing: -.02em;
     }
 
     .dn-bubble-green .dn-bubble-title {
-      font-size: 28px;
+      font-size: 25px;
       line-height: 1;
       letter-spacing: -.02em;
     }
@@ -2419,7 +2427,7 @@
     .dn-bubble-note {
       display: block;
       color: rgba(255,255,255,.92);
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1;
       font-weight: 850;
       text-align: center;
@@ -2514,6 +2522,17 @@
       </div>
     </div>
   </aside>
+
+  <script>
+    (() => {
+      const revealGuide = () => document.body.classList.add('dn-guide-visible');
+      if (window.scrollY > 12) {
+        revealGuide();
+      } else {
+        window.addEventListener('scroll', revealGuide, { passive: true, once: true });
+      }
+    })();
+  </script>
 
   <div class="page rainbow-variant-a">
     <script>
