@@ -87,6 +87,18 @@
       display: none;
     }
 
+    /* HOTFIX: schovat pouze pravou hero grafiku a bloky pod ní, kluzák ponechat */
+    .page.home-mode .truth-panel,
+    .page.home-mode .truth-realization,
+    .page.home-mode .truth-impact {
+      display: none !important;
+    }
+
+    .page.home-mode .hero-grid {
+      grid-template-columns: minmax(0, 720px) !important;
+      justify-content: center;
+    }
+
     .page.home-mode.rainbow-variant-a .hero::before,
     .page.home-mode.rainbow-variant-b .hero::before,
     .page.home-mode.rainbow-variant-b .hero::after {
