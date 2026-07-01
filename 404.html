@@ -1300,7 +1300,11 @@
       margin-bottom: 14px;
     }
 
-    .compare-selects select {
+    .compare-combobox {
+      position: relative;
+    }
+
+    .compare-combobox-input {
       width: 100%;
       min-height: 48px;
       padding: 0 14px;
@@ -1313,9 +1317,57 @@
       font-weight: 850;
     }
 
-    .compare-selects option {
+    .compare-combobox-input:focus {
+      outline: none;
+      border-color: rgba(45, 156, 255, 0.45);
+      box-shadow: 0 0 0 4px rgba(45, 156, 255, 0.12);
+    }
+
+    .compare-combobox-list {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      z-index: 30;
+      max-height: 280px;
+      overflow: auto;
       background: #fff;
       color: var(--ink);
+      border: 1px solid rgba(204, 226, 239, 0.92);
+      border-radius: 16px;
+      box-shadow: 0 18px 42px rgba(15, 37, 61, 0.16);
+      padding: 6px;
+    }
+
+    .compare-combobox-list[hidden] {
+      display: none;
+    }
+
+    .compare-combobox-option {
+      width: 100%;
+      display: block;
+      padding: 10px 12px;
+      border: 0;
+      border-radius: 11px;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .compare-combobox-option:hover,
+    .compare-combobox-option.active {
+      background: linear-gradient(135deg, rgba(238, 252, 255, 0.96), rgba(225, 251, 243, 0.82));
+      color: #0f4f62;
+    }
+
+    .compare-combobox-empty {
+      display: block;
+      padding: 10px 12px;
+      color: var(--muted);
+      font-weight: 760;
     }
 
     .compare-table {
@@ -3849,12 +3901,16 @@
           <h2>Porovnat nápoje</h2>
           <div class="content-block">
             <div class="compare-selects">
-              <select id="compareDrinkA" aria-label="První nápoj">
-                <option value="">Vyber první nápoj</option>
-              </select>
-              <select id="compareDrinkB" aria-label="Druhý nápoj">
-                <option value="">Vyber druhý nápoj</option>
-              </select>
+              <div class="compare-combobox" data-compare-combobox>
+                <input id="compareDrinkA" type="hidden" value="">
+                <input class="compare-combobox-input" id="compareDrinkAInput" type="text" role="combobox" aria-label="První nápoj" aria-expanded="false" aria-controls="compareDrinkAList" placeholder="Vyber první nápoj" autocomplete="off">
+                <div class="compare-combobox-list" id="compareDrinkAList" role="listbox" hidden></div>
+              </div>
+              <div class="compare-combobox" data-compare-combobox>
+                <input id="compareDrinkB" type="hidden" value="">
+                <input class="compare-combobox-input" id="compareDrinkBInput" type="text" role="combobox" aria-label="Druhý nápoj" aria-expanded="false" aria-controls="compareDrinkBList" placeholder="Vyber druhý nápoj" autocomplete="off">
+                <div class="compare-combobox-list" id="compareDrinkBList" role="listbox" hidden></div>
+              </div>
             </div>
             <div id="comparisonResult"></div>
           </div>
@@ -4088,6 +4144,10 @@
       const eckoDatabaseDetail = document.getElementById('eckoDatabaseDetail');
       const compareDrinkA = document.getElementById('compareDrinkA');
       const compareDrinkB = document.getElementById('compareDrinkB');
+      const compareDrinkAInput = document.getElementById('compareDrinkAInput');
+      const compareDrinkBInput = document.getElementById('compareDrinkBInput');
+      const compareDrinkAList = document.getElementById('compareDrinkAList');
+      const compareDrinkBList = document.getElementById('compareDrinkBList');
       const comparisonResult = document.getElementById('comparisonResult');
       let modelProducts = [];
       let activeProduct = null;
@@ -5925,7 +5985,7 @@
         const hint = comparisonResult.querySelector('[data-focus-select]');
         if (!hint) return;
         hint.addEventListener('click', () => {
-          const target = hint.dataset.focusSelect === 'second' ? compareDrinkB : compareDrinkA;
+          const target = hint.dataset.focusSelect === 'second' ? compareDrinkBInput : compareDrinkAInput;
           target?.focus();
         });
       }
@@ -6005,18 +6065,97 @@
 
       function renderComparisonControls() {
         if (comparisonControlsReady) return;
-        if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
-        const options = modelProducts
-          .map((product) => `<option value="${escapeHtml(product.id)}">${escapeHtml(product.name)}</option>`)
-          .join('');
-        compareDrinkA.innerHTML = `<option value="">Vyber první nápoj</option>${options}`;
-        compareDrinkB.innerHTML = `<option value="">Vyber druhý nápoj</option>${options}`;
+        if (!compareDrinkA || !compareDrinkB || !compareDrinkAInput || !compareDrinkBInput || !compareDrinkAList || !compareDrinkBList || !comparisonResult || !modelProducts.length) return;
         compareDrinkA.value = '';
         compareDrinkB.value = '';
+        compareDrinkAInput.value = '';
+        compareDrinkBInput.value = '';
+        setupCompareCombobox(compareDrinkA, compareDrinkAInput, compareDrinkAList);
+        setupCompareCombobox(compareDrinkB, compareDrinkBInput, compareDrinkBList);
         comparisonControlsReady = true;
-        compareDrinkA.addEventListener('change', renderComparison);
-        compareDrinkB.addEventListener('change', renderComparison);
         renderComparison();
+      }
+
+      function setupCompareCombobox(hiddenInput, textInput, listElement) {
+        if (textInput.dataset.bound === 'true') return;
+        textInput.dataset.bound = 'true';
+        let activeIndex = -1;
+        let visibleProducts = [];
+
+        const closeList = () => {
+          listElement.hidden = true;
+          textInput.setAttribute('aria-expanded', 'false');
+          activeIndex = -1;
+        };
+
+        const renderOptions = () => {
+          const query = normalizeText(textInput.value.trim());
+          visibleProducts = modelProducts
+            .filter((product) => !query || normalizeText(product.name).includes(query))
+            .sort((a, b) => a.name.localeCompare(b.name, 'cs'));
+          if (!visibleProducts.length) {
+            listElement.innerHTML = '<span class="compare-combobox-empty">Žádný nápoj nenalezen</span>';
+            activeIndex = -1;
+          } else {
+            listElement.innerHTML = visibleProducts.map((product, index) => `
+              <button class="compare-combobox-option ${index === activeIndex ? 'active' : ''}" type="button" role="option" data-id="${escapeHtml(product.id)}" aria-selected="${index === activeIndex ? 'true' : 'false'}">${escapeHtml(product.name)}</button>
+            `).join('');
+          }
+          listElement.hidden = false;
+          textInput.setAttribute('aria-expanded', 'true');
+        };
+
+        const selectProduct = (product) => {
+          if (!product) return;
+          hiddenInput.value = product.id;
+          textInput.value = product.name;
+          closeList();
+          renderComparison();
+        };
+
+        textInput.addEventListener('focus', () => {
+          renderComparisonControls();
+          renderOptions();
+        });
+
+        textInput.addEventListener('input', () => {
+          hiddenInput.value = '';
+          activeIndex = 0;
+          renderOptions();
+          renderComparison();
+        });
+
+        textInput.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            if (listElement.hidden) renderOptions();
+            if (visibleProducts.length) activeIndex = Math.min(activeIndex + 1, visibleProducts.length - 1);
+            renderOptions();
+          } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            if (listElement.hidden) renderOptions();
+            if (visibleProducts.length) activeIndex = Math.max(activeIndex - 1, 0);
+            renderOptions();
+          } else if (event.key === 'Enter') {
+            if (!listElement.hidden && visibleProducts[activeIndex]) {
+              event.preventDefault();
+              selectProduct(visibleProducts[activeIndex]);
+            }
+          } else if (event.key === 'Escape') {
+            closeList();
+          }
+        });
+
+        listElement.addEventListener('pointerdown', (event) => {
+          const option = event.target.closest('[data-id]');
+          if (!option) return;
+          event.preventDefault();
+          selectProduct(modelProducts.find((product) => product.id === option.dataset.id));
+        });
+
+        document.addEventListener('pointerdown', (event) => {
+          if (!textInput.closest('[data-compare-combobox]')?.contains(event.target)) closeList();
+        });
       }
 
       function bindLazyComparisonControls() {
@@ -6024,10 +6163,10 @@
         comparisonResult.innerHTML = comparisonSceneMarkup({ message: 'Vyberte dva nápoje pro porovnání.', focusTarget: 'first' });
         bindComparisonHint();
         const init = () => renderComparisonControls();
-        compareDrinkA.addEventListener('focus', init, { once: true });
-        compareDrinkB.addEventListener('focus', init, { once: true });
-        compareDrinkA.addEventListener('pointerdown', init, { once: true });
-        compareDrinkB.addEventListener('pointerdown', init, { once: true });
+        compareDrinkAInput?.addEventListener('focus', init, { once: true });
+        compareDrinkBInput?.addEventListener('focus', init, { once: true });
+        compareDrinkAInput?.addEventListener('pointerdown', init, { once: true });
+        compareDrinkBInput?.addEventListener('pointerdown', init, { once: true });
         comparisonResult.addEventListener('pointerenter', init, { once: true });
       }
 
