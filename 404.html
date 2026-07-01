@@ -2266,6 +2266,21 @@
       isolation: isolate;
     }
 
+    .comparison-scene::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 26px;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 31% 50%, rgba(32, 199, 214, 0.15), transparent 24%),
+        radial-gradient(circle at 69% 50%, rgba(42, 202, 145, 0.14), transparent 24%),
+        radial-gradient(ellipse at 50% 72%, rgba(32, 199, 214, 0.08), transparent 52%);
+      filter: blur(1px);
+      opacity: 0.9;
+    }
+
     .comparison-scene-layer {
       position: absolute;
       display: block;
@@ -2387,6 +2402,54 @@
 
     .comparison-scene .comparison-drink-card::before {
       display: none;
+    }
+
+    .comparison-scene.is-partial-left::before,
+    .comparison-scene.is-partial-right::before {
+      content: "";
+      position: absolute;
+      inset: 20% 5.5% 28%;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 31% 56%, rgba(32, 199, 214, 0.13), transparent 18%),
+        radial-gradient(circle at 69% 56%, rgba(32, 199, 214, 0.13), transparent 18%),
+        radial-gradient(ellipse at 50% 58%, rgba(36, 182, 111, 0.08), transparent 48%);
+      filter: blur(2px);
+      opacity: 0.92;
+    }
+
+    .comparison-scene.is-partial-left .is-right::after,
+    .comparison-scene.is-partial-right .is-left::after {
+      content: "";
+      position: absolute;
+      top: 26%;
+      width: 34%;
+      height: 35%;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 58%, rgba(32, 199, 214, 0.16), transparent 54%);
+      animation: compareWaitingPulse 1.8s ease-in-out infinite;
+    }
+
+    .comparison-scene.is-partial-left .is-right::after {
+      right: 6.1%;
+    }
+
+    .comparison-scene.is-partial-right .is-left::after {
+      left: 6.1%;
+    }
+
+    @keyframes compareWaitingPulse {
+      0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.98);
+      }
+      50% {
+        opacity: 0.52;
+        transform: scale(1.03);
+      }
     }
 
     .comparison-scene .comparison-drink-head {
@@ -4002,7 +4065,6 @@
         tonic: 'linear-gradient(155deg, #dbeafe, #ffffff 48%, #93c5fd)',
         juice_drink: 'linear-gradient(155deg, #fed7aa, #ffffff 48%, #fb923c)'
       };
-
       function productVisualColor(name = '', brand = '', category = '') {
         const text = normalizeText(`${brand} ${name}`);
         const categoryColor = colorsByCategory[category] || 'linear-gradient(155deg, #dff8ff, #ffffff 46%, #6bc6d7)';
@@ -5955,9 +6017,10 @@
       function comparisonSceneMarkup({ first = null, second = null, scale = null, rows = [], firstScore = '—', secondScore = '—', message = '', focusTarget = '', showFull = false }) {
         const leftStatus = showFull ? (scale?.winner && scale.winner.id === first?.id ? 'Lepší volba' : scale?.winner ? 'Méně doporučená' : 'Vyrovnané') : '';
         const rightStatus = showFull ? (scale?.winner && scale.winner.id === second?.id ? 'Lepší volba' : scale?.winner ? 'Méně doporučená' : 'Vyrovnané') : '';
+        const sceneStateClass = !showFull && first && !second ? 'is-partial-left' : !showFull && second && !first ? 'is-partial-right' : '';
         return `
           <div class="compare-scale">
-            <div class="comparison-template comparison-scene">
+            <div class="comparison-template comparison-scene ${sceneStateClass}">
               <img class="comparison-scene-layer comparison-scene-panel" src="assets/compare-scene-static.png" alt="" aria-hidden="true">
               ${comparisonSideMarkup(first, 'left', { className: scale?.leftClass, showScore: showFull, score: firstScore, status: leftStatus })}
               ${showFull ? `
