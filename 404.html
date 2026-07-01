@@ -192,8 +192,21 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      color: var(--ink);
       font-weight: 900;
+      text-decoration: none;
       white-space: nowrap;
+    }
+
+    .brand:hover {
+      color: var(--blue);
+    }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
     }
 
     .mark {
@@ -211,6 +224,36 @@
       font-weight: 750;
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+    }
+
+    .nav-risk-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 6px 11px;
+      border: 1px solid rgba(32, 199, 214, 0.28);
+      border-radius: 999px;
+      color: #0f4f62;
+      background: linear-gradient(135deg, rgba(238, 252, 255, 0.94), rgba(225, 251, 243, 0.82));
+      box-shadow: 0 8px 18px rgba(32, 199, 214, 0.09);
+      font-size: 0.86rem;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-risk-link:hover {
+      color: #08394b;
+      border-color: rgba(32, 199, 214, 0.44);
+      background: linear-gradient(135deg, rgba(232, 250, 255, 0.98), rgba(215, 248, 238, 0.92));
+      transform: translateY(-1px);
+    }
+
     .hero {
       position: relative;
       isolation: isolate;
@@ -221,9 +264,9 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 0.78fr) minmax(520px, 1.12fr);
-      gap: clamp(28px, 4vw, 58px);
-      align-items: center;
+      grid-template-columns: minmax(0, 760px);
+      gap: 28px;
+      align-items: stretch;
     }
 
     h1,
@@ -397,349 +440,6 @@
       display: grid;
       align-content: space-between;
       gap: 20px;
-    }
-
-    .truth-panel {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(18px, 2.4vw, 28px);
-      min-height: 590px;
-      border: 0;
-      border-radius: 34px;
-      box-shadow: none;
-      background:
-        radial-gradient(circle at 58% 18%, rgba(97, 217, 255, .42), transparent 34%),
-        radial-gradient(circle at 72% 78%, rgba(112, 228, 170, .2), transparent 42%),
-        linear-gradient(145deg, rgba(255,255,255,.62), rgba(239,250,255,.42));
-    }
-
-    .truth-panel::before {
-      content: "";
-      position: absolute;
-      inset: 20px;
-      border-radius: 28px;
-      border: 1px solid rgba(201, 226, 240, .28);
-      pointer-events: none;
-    }
-
-    .truth-panel::after {
-      content: "";
-      position: absolute;
-      right: -80px;
-      top: -80px;
-      width: 260px;
-      height: 260px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(85, 205, 255, .2), transparent 68%);
-      pointer-events: none;
-    }
-
-    .truth-kicker {
-      position: relative;
-      z-index: 1;
-      max-width: 420px;
-      margin: 0 0 18px;
-      color: var(--ink);
-      font-size: clamp(1.9rem, 3.4vw, 3.35rem);
-      line-height: 1.05;
-      letter-spacing: -.03em;
-    }
-
-    .truth-visual {
-      position: relative;
-      z-index: 1;
-      min-height: 455px;
-      display: grid;
-      grid-template-columns: .82fr 1fr 178px;
-      align-items: end;
-      gap: 14px;
-      margin: 4px 0 4px;
-    }
-
-    .truth-can {
-      justify-self: end;
-      position: relative;
-      width: 150px;
-      height: 342px;
-      border-radius: 38px 38px 28px 28px;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.18), transparent 22%, rgba(255,255,255,.14) 70%, transparent),
-        linear-gradient(155deg, #081b39 0%, #0e315d 44%, #10b9d4 45%, #092445 47%, #07172e 100%);
-      box-shadow:
-        inset 0 12px 20px rgba(255,255,255,.18),
-        inset 0 -24px 36px rgba(0,0,0,.28),
-        0 28px 44px rgba(11, 51, 85, .22);
-    }
-
-    .truth-can::before {
-      content: "";
-      position: absolute;
-      left: 28px;
-      right: 28px;
-      top: -10px;
-      height: 18px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #102c4e, #22d3ee, #0e2846);
-      box-shadow: 0 6px 12px rgba(10, 40, 70, .22);
-    }
-
-    .truth-can::after {
-      content: "";
-      position: absolute;
-      left: 47px;
-      top: 86px;
-      width: 66px;
-      height: 170px;
-      clip-path: polygon(63% 0, 16% 55%, 50% 55%, 29% 100%, 84% 38%, 52% 39%);
-      background: linear-gradient(180deg, rgba(49, 225, 255, .95), rgba(62, 245, 178, .65));
-      filter: drop-shadow(0 0 14px rgba(49, 225, 255, .5));
-    }
-
-    .truth-glass {
-      justify-self: start;
-      position: relative;
-      width: 282px;
-      height: 350px;
-      border-radius: 26px 26px 34px 34px;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.72), rgba(255,255,255,.2) 18%, rgba(123, 221, 245, .16) 52%, rgba(255,255,255,.36)),
-        linear-gradient(180deg, rgba(255,255,255,.42), rgba(119, 222, 244, .12));
-      border: 2px solid rgba(165, 219, 238, .78);
-      box-shadow:
-        inset 10px 0 20px rgba(255,255,255,.5),
-        inset -10px 0 20px rgba(62, 178, 218, .13),
-        0 28px 44px rgba(37, 105, 140, .18);
-    }
-
-    .truth-glass::before {
-      content: "";
-      position: absolute;
-      left: -8px;
-      right: -8px;
-      top: -14px;
-      height: 28px;
-      border: 2px solid rgba(166, 221, 240, .86);
-      border-radius: 50%;
-      background: rgba(255,255,255,.52);
-      box-shadow: inset 0 2px 12px rgba(70, 178, 220, .16);
-    }
-
-    .truth-glass::after {
-      content: "";
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 18px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(45, 167, 209, .18);
-      filter: blur(.3px);
-    }
-
-    .truth-sugar {
-      position: absolute;
-      left: 62px;
-      bottom: 56px;
-      width: 34px;
-      height: 34px;
-      border-radius: 5px;
-      background: linear-gradient(145deg, #fff, #e8f0f7);
-      box-shadow:
-        46px 2px 0 #f9fbff,
-        23px -32px 0 #fff,
-        84px -26px 0 #edf4fb,
-        108px 12px 0 #fff,
-        15px 31px 0 #f5f9fd,
-        74px 38px 0 #fff;
-    }
-
-    .truth-crystals {
-      position: absolute;
-      left: 82px;
-      bottom: 154px;
-      width: 118px;
-      height: 66px;
-      background:
-        radial-gradient(circle at 20% 70%, rgba(176, 143, 255, .72) 0 10px, transparent 11px),
-        radial-gradient(circle at 45% 50%, rgba(118, 208, 255, .72) 0 14px, transparent 15px),
-        radial-gradient(circle at 72% 66%, rgba(209, 175, 255, .66) 0 12px, transparent 13px);
-      filter: drop-shadow(0 0 14px rgba(134, 203, 255, .4));
-    }
-
-    .truth-spark {
-      position: absolute;
-      right: 82px;
-      bottom: 128px;
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle, #fff 0 18%, #ffd45c 34%, rgba(255, 165, 45, .15) 70%);
-      box-shadow: 0 0 22px rgba(255, 190, 59, .7);
-    }
-
-    .truth-e {
-      position: absolute;
-      z-index: 2;
-      padding: 7px 10px;
-      border-radius: 10px;
-      background: rgba(255,255,255,.86);
-      color: #33506d;
-      font-size: .88rem;
-      font-weight: 900;
-      box-shadow: 0 8px 18px rgba(46, 91, 125, .12);
-    }
-
-    .truth-e:nth-of-type(4) { left: 76px; top: 108px; transform: rotate(-8deg); }
-    .truth-e:nth-of-type(5) { left: 160px; top: 92px; transform: rotate(7deg); }
-    .truth-e:nth-of-type(6) { left: 126px; top: 150px; transform: rotate(-2deg); }
-
-    .truth-labels {
-      position: relative;
-      right: auto;
-      top: auto;
-      z-index: 3;
-      display: grid;
-      align-self: center;
-      gap: 14px;
-    }
-
-    .truth-label {
-      display: grid;
-      grid-template-columns: 34px minmax(0, 1fr);
-      align-items: center;
-      gap: 9px;
-      min-width: 170px;
-      padding: 10px 12px;
-      border: 1px solid rgba(214, 229, 239, .9);
-      border-radius: 14px;
-      background: rgba(255,255,255,.82);
-      box-shadow: 0 10px 24px rgba(29, 70, 106, .1);
-      backdrop-filter: blur(10px);
-    }
-
-    .truth-label i {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #f4fbff;
-      font-style: normal;
-      font-size: 1.24rem;
-    }
-
-    .truth-label strong {
-      display: block;
-      color: var(--ink);
-      font-size: .96rem;
-      line-height: 1.05;
-    }
-
-    .truth-label span {
-      display: block;
-      color: var(--muted);
-      font-size: .78rem;
-      font-weight: 750;
-      line-height: 1.2;
-    }
-
-    .truth-label b {
-      color: var(--ink);
-      font-weight: 950;
-    }
-
-    .truth-realization {
-      position: relative;
-      z-index: 1;
-      max-width: 1120px;
-      margin: 28px auto 34px;
-      padding: 28px 20px 24px;
-      border: 1px solid rgba(220, 232, 241, .82);
-      border-radius: 34px;
-      background: rgba(255,255,255,.9);
-      box-shadow: 0 22px 56px rgba(39, 78, 112, .11);
-      text-align: center;
-    }
-
-    .truth-realization h3 {
-      margin: 0 0 8px;
-      color: var(--ink);
-      font-size: clamp(2rem, 3.4vw, 3rem);
-      line-height: 1;
-      letter-spacing: -.025em;
-    }
-
-    .truth-realization p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.15rem;
-      font-weight: 750;
-    }
-
-    .truth-realization strong {
-      color: var(--blue);
-    }
-
-    .truth-realization .down-cue {
-      display: block;
-      margin-top: 10px;
-      color: var(--blue);
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-
-    .truth-impact {
-      position: relative;
-      z-index: 1;
-      margin-top: 0;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .impact-card {
-      min-height: 280px;
-      padding: 28px 18px;
-      display: grid;
-      align-content: center;
-      justify-items: center;
-      gap: 7px;
-      border: 1px solid rgba(218, 231, 241, .95);
-      border-radius: 30px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,252,255,.9)),
-        radial-gradient(circle at 50% 100%, rgba(91, 201, 255, .16), transparent 62%);
-      text-align: center;
-      box-shadow: 0 22px 48px rgba(35, 78, 112, .1);
-    }
-
-    .impact-card i {
-      width: 132px;
-      height: 132px;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      background: linear-gradient(145deg, rgba(222, 248, 255, .96), rgba(232, 252, 239, .86));
-      color: #0a8fc1;
-      font-style: normal;
-      font-size: 3rem;
-      box-shadow: inset 0 0 0 1px rgba(127, 211, 235, .35);
-    }
-
-    .impact-card strong {
-      color: var(--ink);
-      font-size: clamp(1.45rem, 2.5vw, 2.25rem);
-      line-height: 1;
-    }
-
-    .impact-card span {
-      color: var(--muted);
-      font-size: 1rem;
-      font-weight: 800;
-      line-height: 1.15;
     }
 
     .quick-stats {
@@ -1608,8 +1308,14 @@
       border-radius: var(--radius);
       background: #fff;
       color: var(--ink);
+      color-scheme: light;
       font: inherit;
       font-weight: 850;
+    }
+
+    .compare-selects option {
+      background: #fff;
+      color: var(--ink);
     }
 
     .compare-table {
@@ -1644,6 +1350,40 @@
       background: #f0fbf5;
       color: #214c35;
       font-weight: 850;
+    }
+
+    .compare-empty-state {
+      margin: 0;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--muted);
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .compare-selection-hint {
+      width: 100%;
+      margin: 12px 0 0;
+      padding: 10px 14px;
+      border: 1px solid rgba(204, 226, 239, 0.84);
+      border-radius: 14px;
+      background: rgba(248, 252, 255, 0.86);
+      color: #53687a;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .compare-selection-hint:hover,
+    .compare-selection-hint:focus-visible {
+      color: #244259;
+      border-color: rgba(45, 156, 255, 0.34);
+      background: rgba(240, 249, 255, 0.96);
+      outline: none;
     }
 
     .compare-scale {
@@ -2237,6 +1977,891 @@
       font-weight: 760;
     }
 
+    .comparison-template {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(210px, 0.72fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+      margin: 20px 0 18px;
+    }
+
+    .comparison-drink-card,
+    .comparison-decision {
+      position: relative;
+      min-height: 330px;
+      border: 1px solid rgba(204, 226, 239, 0.92);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(32, 199, 214, 0.12), transparent 36%),
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(240,249,252,0.9));
+      box-shadow: 0 18px 48px rgba(16, 43, 70, 0.08);
+    }
+
+    .comparison-drink-card {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 14px;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .comparison-drink-card::before {
+      content: "";
+      position: absolute;
+      inset: auto 18px 72px;
+      height: 28px;
+      border-radius: 999px;
+      background: radial-gradient(ellipse at center, rgba(33, 55, 82, 0.18), transparent 70%);
+      opacity: 0.55;
+    }
+
+    .comparison-drink-card.winner {
+      border-color: rgba(38, 171, 118, 0.45);
+      box-shadow: 0 22px 58px rgba(38, 171, 118, 0.16), 0 0 0 1px rgba(38, 171, 118, 0.08);
+    }
+
+    .comparison-drink-card.loser {
+      opacity: 0.78;
+    }
+
+    .comparison-drink-head {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 4px;
+    }
+
+    .comparison-drink-head strong {
+      color: var(--ink);
+      font-size: clamp(1.15rem, 1.7vw, 1.55rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .comparison-drink-head small {
+      color: var(--muted);
+      font-weight: 850;
+    }
+
+    .comparison-product-slot {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: end center;
+      min-height: 160px;
+      padding-top: 8px;
+    }
+
+    .comparison-product-slot .balance-product {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      width: 132px;
+      height: 170px;
+      margin: 0;
+    }
+
+    .comparison-product-slot .balance-product .package {
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%) scale(0.88);
+    }
+
+    .comparison-product-slot .balance-product .package.bottle {
+      transform: translateX(-50%) scale(0.74);
+    }
+
+    .comparison-score-row {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .comparison-score {
+      padding: 12px;
+      border: 1px solid rgba(212, 228, 238, 0.92);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.78);
+    }
+
+    .comparison-score span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .comparison-score strong {
+      color: #ef5b45;
+      font-size: 1.9rem;
+      line-height: 1;
+    }
+
+    .comparison-score em {
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 900;
+      margin-left: 2px;
+    }
+
+    .comparison-drink-card.winner .comparison-score strong {
+      color: #17a65d;
+    }
+
+    .comparison-status {
+      justify-self: end;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: #6b7a8e;
+      background: #eef3f7;
+      font-size: 0.78rem;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .comparison-drink-card.winner .comparison-status {
+      color: #fff;
+      background: linear-gradient(135deg, #21b66f, #149251);
+      box-shadow: 0 12px 24px rgba(38, 171, 118, 0.2);
+    }
+
+    .comparison-decision {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 14px;
+      padding: 22px 18px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 44%, rgba(38, 171, 118, 0.16), transparent 42%),
+        linear-gradient(180deg, rgba(255,255,255,0.95), rgba(241,249,252,0.88));
+    }
+
+    .comparison-vs {
+      width: 86px;
+      height: 86px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      color: #09223a;
+      background: linear-gradient(135deg, #ffffff, #e8f8fb);
+      border: 1px solid rgba(191, 223, 236, 0.9);
+      box-shadow: 0 18px 42px rgba(22, 57, 83, 0.14);
+      font-size: 1.55rem;
+      font-weight: 1000;
+    }
+
+    .comparison-decision strong {
+      color: var(--ink);
+      font-size: 1.2rem;
+      line-height: 1.15;
+    }
+
+    .comparison-decision small {
+      color: var(--muted);
+      font-weight: 850;
+      line-height: 1.35;
+    }
+
+    .comparison-reasons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .comparison-reasons li {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(45, 156, 255, 0.09);
+      color: #21506b;
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .comparison-recommend {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, #21b66f, #149251);
+      font-weight: 950;
+      box-shadow: 0 14px 28px rgba(38, 171, 118, 0.22);
+    }
+
+    .comparison-template {
+      position: relative;
+      display: block;
+      aspect-ratio: 1535 / 1024;
+      width: min(100%, 1180px);
+      margin: 18px auto 14px;
+      background: none;
+      border-radius: 26px;
+      overflow: hidden;
+    }
+
+    .comparison-scene {
+      isolation: isolate;
+    }
+
+    .comparison-scene-layer {
+      position: absolute;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+    }
+
+      .comparison-scene-panel {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        z-index: 0;
+      }
+
+    .comparison-scene-figure {
+      left: 19.5%;
+      top: 15.2%;
+      width: 61%;
+      height: 48%;
+      object-fit: contain;
+      z-index: 2;
+    }
+
+    .comparison-scene-pan {
+      width: 24.8%;
+      height: 34.5%;
+      object-fit: contain;
+      z-index: 3;
+    }
+
+    .comparison-scene-pan.is-left {
+      left: 17.1%;
+      top: 28.6%;
+    }
+
+    .comparison-scene-pan.is-right {
+      right: 17.1%;
+      top: 30.4%;
+    }
+
+    .comparison-scene-glow {
+      width: 26.8%;
+      height: 28%;
+      object-fit: contain;
+      opacity: 0.88;
+      z-index: 1;
+      mix-blend-mode: multiply;
+    }
+
+    .comparison-scene-glow.is-left {
+      left: 16.4%;
+      top: 35.6%;
+    }
+
+    .comparison-scene-glow.is-right {
+      right: 16.4%;
+      top: 37.4%;
+    }
+
+    .comparison-scene-title {
+      position: absolute;
+      left: 50%;
+      top: 4.5%;
+      z-index: 4;
+      transform: translateX(-50%);
+      margin: 0;
+      color: #10233c;
+      font-size: clamp(1.45rem, 3vw, 2.85rem);
+      line-height: 1;
+      font-weight: 1000;
+      letter-spacing: 0.02em;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .comparison-scene-title::after {
+      content: "";
+      display: block;
+      width: 78px;
+      height: 6px;
+      margin: 16px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #20c7d6, #20c7d6 75%, transparent 75%);
+      box-shadow: 26px 0 0 -22px #20c7d6;
+    }
+
+    .comparison-scene-subtitle {
+      position: absolute;
+      left: 50%;
+      top: 14.1%;
+      z-index: 4;
+      transform: translateX(-50%);
+      margin: 0;
+      color: #607085;
+      font-size: clamp(0.78rem, 1.35vw, 1.25rem);
+      font-weight: 650;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .comparison-scene .comparison-drink-card,
+    .comparison-scene .comparison-decision {
+      min-height: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .comparison-scene .comparison-drink-card {
+      position: static;
+      display: block;
+      padding: 0;
+      overflow: visible;
+      opacity: 1;
+    }
+
+    .comparison-scene .comparison-drink-card::before {
+      display: none;
+    }
+
+    .comparison-scene .comparison-drink-head {
+      position: absolute;
+      width: 15.5%;
+      height: 7.8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      z-index: 3;
+    }
+
+    .comparison-scene .is-left .comparison-drink-head {
+      left: 7.4%;
+      top: 28.6%;
+      text-align: left;
+    }
+
+    .comparison-scene .is-right .comparison-drink-head {
+      right: 7.4%;
+      top: 28.6%;
+      text-align: left;
+    }
+
+    .comparison-scene .comparison-drink-head strong {
+      color: #09223a;
+      font-size: clamp(0.78rem, 1.12vw, 1.18rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-height: 2.25em;
+      overflow: hidden;
+    }
+
+    .comparison-scene .comparison-drink-head small {
+      color: #52647a;
+      font-size: clamp(0.62rem, 0.82vw, 0.88rem);
+      line-height: 1.18;
+      font-weight: 750;
+      max-height: 2.4em;
+      overflow: hidden;
+    }
+
+    .comparison-scene .comparison-product-slot {
+      position: absolute;
+      z-index: 4;
+      width: 9.8%;
+      height: 18.8%;
+      min-height: 0;
+      display: grid;
+      place-items: end center;
+      padding: 0;
+      pointer-events: none;
+    }
+
+    .comparison-scene .is-left .comparison-product-slot {
+      left: 26.8%;
+      top: 39.3%;
+    }
+
+    .comparison-scene .is-right .comparison-product-slot {
+      right: 26.8%;
+      top: 41.1%;
+    }
+
+    .comparison-scene .comparison-product-slot .balance-product {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      transform: none;
+      display: grid;
+      place-items: end center;
+      filter: drop-shadow(0 18px 18px rgba(13, 31, 52, 0.22));
+    }
+
+    .comparison-scene .comparison-product-slot .balance-product .package {
+      width: 50%;
+      height: 90%;
+      max-width: 72%;
+      max-height: 94%;
+    }
+
+    .comparison-scene .comparison-product-slot .balance-product .package.bottle {
+      width: 48%;
+      height: 94%;
+    }
+
+    .comparison-scene .comparison-score-row {
+      position: static;
+      display: block;
+    }
+
+    .comparison-scene .comparison-score {
+      position: absolute;
+      z-index: 3;
+      width: 11.2%;
+      height: 14.1%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1.35%;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .comparison-scene .is-left .comparison-score {
+      left: 7.4%;
+      top: 39.8%;
+    }
+
+    .comparison-scene .is-right .comparison-score {
+      right: 7.4%;
+      top: 39.8%;
+    }
+
+    .comparison-scene .comparison-score span {
+      color: #53657b;
+      font-size: clamp(0.55rem, 0.66vw, 0.7rem);
+      letter-spacing: 0;
+    }
+
+    .comparison-scene .comparison-score strong {
+      color: #e45f4d;
+      font-size: clamp(1.45rem, 2.55vw, 2.65rem);
+      letter-spacing: -0.04em;
+    }
+
+    .comparison-scene .comparison-drink-card.winner .comparison-score strong {
+      color: #17a65d;
+    }
+
+    .comparison-scene .comparison-score em {
+      font-size: clamp(0.75rem, 1.25vw, 1.1rem);
+    }
+
+    .comparison-scene .comparison-status {
+      position: absolute;
+      z-index: 4;
+      width: 14.6%;
+      height: 4.6%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.1%;
+      border-radius: 10px;
+      font-size: clamp(0.52rem, 0.72vw, 0.74rem);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      box-shadow: none;
+    }
+
+    .comparison-scene .is-left .comparison-status {
+      left: 7.4%;
+      top: 57.3%;
+    }
+
+    .comparison-scene .is-right .comparison-status {
+      right: 7.4%;
+      top: 57.3%;
+    }
+
+    .comparison-scene .comparison-decision {
+      position: absolute;
+      z-index: 5;
+      right: 7.2%;
+      top: 64.1%;
+      width: 17.2%;
+      height: 7.7%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 1.1%;
+      text-align: left;
+    }
+
+    .comparison-scene .comparison-vs,
+    .comparison-scene .comparison-decision small,
+    .comparison-scene .comparison-reasons {
+      display: none;
+    }
+
+    .comparison-scene .comparison-decision strong {
+      display: none;
+    }
+
+    .comparison-scene .comparison-recommend {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      font-size: clamp(0.64rem, 0.95vw, 1rem);
+      white-space: normal;
+      text-align: center;
+    }
+
+    .comparison-scene .comparison-recommend::before {
+      content: "★";
+      font-size: 1.55em;
+      line-height: 1;
+    }
+
+    .comparison-scene .compare-metrics {
+      position: absolute;
+      z-index: 5;
+      left: 8.2%;
+      right: 8.2%;
+      top: 70.6%;
+      height: 11.6%;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2.4%;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .comparison-scene .compare-metric {
+      min-height: 0;
+      height: 100%;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 6px;
+      padding: 0 8px;
+      border: 0;
+      background: transparent;
+      text-align: center;
+    }
+
+    .comparison-scene .metric-label,
+    .comparison-scene .compare-metric strong {
+      font-size: clamp(0.78rem, 1.12vw, 1.12rem);
+      color: #10233c;
+    }
+
+    .comparison-scene .metric-values {
+      gap: 8px;
+      font-size: clamp(0.8rem, 1.1vw, 1.05rem);
+    }
+
+    .comparison-scene .metric-icon {
+      color: #18a9ba;
+      font-size: clamp(1rem, 1.35vw, 1.35rem);
+    }
+
+    .comparison-scene .metric-vs {
+      width: 28px;
+      height: 28px;
+      font-size: 0.68rem;
+    }
+
+    .comparison-scene .compare-score-note {
+      position: absolute;
+      z-index: 4;
+      left: 8.2%;
+      right: 8.2%;
+      top: 86.3%;
+      height: 9.6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 3.6%;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .comparison-scene .compare-score-note span:first-child {
+      color: #385067;
+      font-size: clamp(0.72rem, 0.98vw, 0.95rem);
+      line-height: 1.35;
+    }
+
+    .comparison-scene .brand-mark {
+      color: #0f253d;
+      font-size: clamp(1rem, 1.65vw, 1.45rem);
+    }
+
+    @media (min-width: 761px) {
+      .comparison-scene-title,
+      .comparison-scene-subtitle,
+      .comparison-scene-figure,
+      .comparison-scene-pan,
+      .comparison-scene-glow {
+        display: none;
+      }
+
+      .comparison-scene .comparison-product-slot {
+        width: 7.8%;
+        height: 16.8%;
+      }
+
+      .comparison-scene .is-left .comparison-product-slot {
+        left: 31.4%;
+        top: 36.2%;
+        transform: translateX(-50%);
+      }
+
+      .comparison-scene .is-right .comparison-product-slot {
+        right: 31.4%;
+        top: 36.2%;
+        transform: translateX(50%);
+      }
+
+      .comparison-scene .comparison-product-slot .balance-product .package-label {
+        display: none;
+      }
+
+      .comparison-scene .comparison-product-slot .balance-product .package {
+        width: 56%;
+        height: 90%;
+        max-width: 78%;
+        max-height: 96%;
+      }
+
+      .comparison-scene .comparison-product-slot .balance-product .package.bottle {
+        width: 52%;
+        height: 94%;
+      }
+
+      .comparison-scene .comparison-drink-head {
+        width: 13.4%;
+        height: 8.1%;
+        padding: 0.5% 0.7%;
+        overflow: hidden;
+      }
+
+      .comparison-scene .comparison-drink-head strong {
+        font-size: clamp(0.64rem, 0.94vw, 0.98rem);
+        line-height: 1.05;
+        max-height: 2.12em;
+      }
+
+      .comparison-scene .comparison-drink-head small {
+        font-size: clamp(0.54rem, 0.68vw, 0.74rem);
+        line-height: 1.12;
+        max-height: 2.24em;
+      }
+
+      .comparison-scene .is-left .comparison-drink-head {
+        left: 4.9%;
+        top: 20.4%;
+      }
+
+      .comparison-scene .is-right .comparison-drink-head {
+        right: 4.9%;
+        top: 20.4%;
+      }
+
+      .comparison-scene .comparison-score {
+        width: 12.6%;
+        height: 12.8%;
+        padding: 0.6% 1%;
+        overflow: hidden;
+      }
+
+      .comparison-scene .comparison-score span {
+        font-size: clamp(0.48rem, 0.58vw, 0.62rem);
+        line-height: 1.05;
+      }
+
+      .comparison-scene .comparison-score strong {
+        font-size: clamp(1.25rem, 2.15vw, 2.25rem);
+        line-height: 0.95;
+      }
+
+      .comparison-scene .comparison-score em {
+        font-size: clamp(0.62rem, 0.95vw, 0.92rem);
+      }
+
+      .comparison-scene .is-left .comparison-score {
+        left: 4.9%;
+        top: 34.1%;
+      }
+
+      .comparison-scene .is-right .comparison-score {
+        right: 4.9%;
+        top: 34.1%;
+      }
+
+      .comparison-scene .comparison-status {
+        width: 12.8%;
+        height: 3.9%;
+        padding: 0 0.7%;
+        overflow: hidden;
+        font-size: clamp(0.46rem, 0.6vw, 0.64rem);
+        white-space: nowrap;
+      }
+
+      .comparison-scene .is-left .comparison-status {
+        left: 4.9%;
+        top: 50.4%;
+      }
+
+      .comparison-scene .is-right .comparison-status {
+        right: 4.9%;
+        top: 50.4%;
+      }
+
+      .comparison-scene .comparison-decision {
+        top: 55.8%;
+        width: 12.8%;
+        height: 5.1%;
+      }
+
+      .comparison-scene .comparison-decision.is-left-winner {
+        left: 4.9%;
+        right: auto;
+      }
+
+      .comparison-scene .comparison-decision.is-right-winner,
+      .comparison-scene .comparison-decision.is-even {
+        right: 4.9%;
+        left: auto;
+      }
+
+      .comparison-scene .comparison-recommend {
+        border-radius: 14px;
+        font-size: clamp(0.52rem, 0.72vw, 0.78rem);
+        line-height: 1.08;
+        padding: 0 8%;
+        overflow: hidden;
+      }
+
+      .comparison-scene .comparison-recommend::before {
+        font-size: 1.35em;
+      }
+
+      .comparison-scene .compare-metrics {
+        left: 5.15%;
+        right: 5.15%;
+        top: 68.8%;
+        height: 12.4%;
+        gap: 2.15%;
+      }
+
+      .comparison-scene .compare-metric {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        align-content: center;
+        justify-items: start;
+        align-items: center;
+        gap: 4px 9px;
+        padding: 0 8%;
+        overflow: hidden;
+        text-align: left;
+      }
+
+      .comparison-scene .metric-values {
+        grid-column: 2;
+        display: flex;
+        gap: 6px;
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: clamp(0.64rem, 0.84vw, 0.84rem);
+        line-height: 1.05;
+      }
+
+      .comparison-scene .metric-label,
+      .comparison-scene .compare-metric strong {
+        grid-column: 2;
+        font-size: clamp(0.68rem, 0.95vw, 0.98rem);
+        line-height: 1.05;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .comparison-scene .metric-values span:not(.metric-vs) {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .comparison-scene .metric-vs {
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        font-size: 0.56rem;
+      }
+
+      .comparison-scene .metric-icon {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: rgba(45, 156, 255, 0.1);
+        font-size: clamp(0.85rem, 1vw, 1rem);
+        line-height: 1;
+      }
+
+      .comparison-scene .compare-score-note {
+        left: 5.15%;
+        right: 5.15%;
+        top: 85.1%;
+        height: 9.7%;
+        padding: 0 3.2%;
+        overflow: hidden;
+      }
+
+      .comparison-scene .compare-score-note span:first-child {
+        font-size: clamp(0.62rem, 0.82vw, 0.82rem);
+        line-height: 1.28;
+      }
+
+      .comparison-scene .brand-mark {
+        font-size: clamp(0.9rem, 1.25vw, 1.18rem);
+      }
+    }
+
     .compare-winner {
       color: #126941;
       background: #e9f8f0;
@@ -2364,65 +2989,20 @@
       .extra-grid {
         grid-template-columns: 1fr;
       }
-
-      .truth-panel {
-        min-height: auto;
-        padding: 18px 0 8px;
-      }
-
-      .truth-visual {
-        min-height: 390px;
-        grid-template-columns: .72fr 1fr;
-        gap: 10px;
-      }
-
-      .truth-can {
-        width: 104px;
-        height: 238px;
-      }
-
-      .truth-glass {
-        width: 190px;
-        height: 240px;
-      }
-
-      .truth-labels {
-        position: relative;
-        right: auto;
-        top: auto;
-        grid-column: 1 / -1;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        margin-top: 8px;
-      }
-
-      .impact-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .impact-card {
-        min-height: 190px;
-      }
-
-      .impact-card i {
-        width: 88px;
-        height: 88px;
-        font-size: 2.2rem;
-      }
-
-      .truth-realization {
-        margin: 22px auto 26px;
-      }
-
-      .truth-realization h3 {
-        font-size: 2rem;
-      }
-
       .scale-visual {
         grid-template-columns: 1fr;
         min-height: auto;
         display: grid;
         gap: 16px;
+      }
+
+      .comparison-template {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-drink-card,
+      .comparison-decision {
+        min-height: 0;
       }
 
       .scale-side {
@@ -2558,6 +3138,32 @@
         font-size: 0.68rem;
       }
 
+      .compare-scale {
+        padding: 18px 14px;
+      }
+
+      .comparison-template {
+        gap: 12px;
+      }
+
+      .comparison-drink-card {
+        padding: 16px;
+      }
+
+      .comparison-product-slot {
+        min-height: 132px;
+      }
+
+      .comparison-product-slot .balance-product {
+        height: 142px;
+      }
+
+      .comparison-vs {
+        width: 68px;
+        height: 68px;
+        font-size: 1.18rem;
+      }
+
       .winner-callout small {
         font-size: 0.64rem;
       }
@@ -2579,7 +3185,8 @@
       top: 50%;
       z-index: 60;
       width: 176px;
-      transform: translateY(-50%);
+      transform: translateY(-50%) scale(0.925);
+      transform-origin: left center;
       opacity: 0;
       pointer-events: none;
       transition: opacity .2s ease;
@@ -2628,10 +3235,10 @@
 
     .dn-floating-guide {
       position: relative;
-      width: 190px;
-      padding: 18px 15px 20px;
+      width: 182px;
+      padding: 15px 12px 17px;
       border: 1px solid rgba(186, 207, 228, .9);
-      border-radius: 30px;
+      border-radius: 28px;
       background:
         linear-gradient(180deg, rgba(255,255,255,.9), rgba(236,248,255,.82)),
         radial-gradient(circle at 50% 0%, rgba(91, 201, 255, .18), transparent 55%);
@@ -2647,18 +3254,18 @@
     .dn-floating-guide::after {
       content: "";
       position: absolute;
-      top: 35px;
-      width: 32px;
+      top: 32px;
+      width: 29px;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(111, 129, 148, .44));
     }
 
     .dn-floating-guide::before {
-      left: 16px;
+      left: 15px;
     }
 
     .dn-floating-guide::after {
-      right: 16px;
+      right: 15px;
       transform: scaleX(-1);
     }
 
@@ -2666,8 +3273,8 @@
       position: absolute;
       right: -10px;
       top: -10px;
-      width: 42px;
-      height: 42px;
+      width: 39px;
+      height: 39px;
       display: grid;
       place-items: center;
       border: 1px solid rgba(192, 211, 228, .96);
@@ -2675,7 +3282,7 @@
       background: rgba(255,255,255,.94);
       color: #37506d;
       font-weight: 900;
-      font-size: 22px;
+      font-size: 20px;
       box-shadow: 0 12px 30px rgba(24, 47, 72, .18);
       cursor: pointer;
       user-select: none;
@@ -2683,9 +3290,9 @@
 
     .dn-guide-kicker {
       display: block;
-      margin: 0 0 14px;
+      margin: 0 0 13px;
       color: #153b67;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
       letter-spacing: .05em;
       text-transform: uppercase;
@@ -2693,7 +3300,7 @@
 
     .dn-bubble-stack {
       display: grid;
-      gap: 18px;
+      gap: 15px;
       justify-items: center;
     }
 
@@ -2724,7 +3331,7 @@
     .dn-guide-bubble::before {
       content: "";
       position: absolute;
-      inset: -8px;
+      inset: -7px;
       border-radius: inherit;
       background: linear-gradient(145deg, rgba(255,255,255,.72), rgba(210,228,242,.28));
       z-index: -1;
@@ -2736,8 +3343,8 @@
     .dn-guide-bubble::after {
       content: "";
       position: absolute;
-      inset: 9px 16px auto;
-      height: 34px;
+      inset: 8px 15px auto;
+      height: 31px;
       border-radius: 999px;
       background: linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0));
       transform: rotate(-9deg);
@@ -2770,52 +3377,80 @@
         linear-gradient(145deg, #32dd78 0%, #0aa852 55%, #08793d 100%);
     }
 
+    .dn-bubble-coral {
+      background:
+        radial-gradient(circle at 32% 18%, rgba(255,255,255,.36), transparent 26%),
+        linear-gradient(145deg, #ff7a8a 0%, #e34269 55%, #b82152 100%);
+    }
+
+    .dn-bubble-violet {
+      background:
+        radial-gradient(circle at 32% 18%, rgba(255,255,255,.38), transparent 26%),
+        linear-gradient(145deg, #8d8cff 0%, #6351dc 55%, #352fa4 100%);
+    }
+
     .dn-bubble-content {
       position: relative;
       z-index: 1;
       display: grid;
       place-items: center;
-      gap: 5px;
+      gap: 4px;
       text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 12px 7px 10px;
     }
 
     .dn-bubble-icon {
-      font-size: 29px;
+      font-size: 25px;
       line-height: 1;
       filter: drop-shadow(0 4px 7px rgba(0,0,0,.28));
     }
 
     .dn-bubble-primary .dn-bubble-icon {
-      font-size: 30px;
-      margin-bottom: 1px;
+      font-size: 26px;
+      margin-bottom: 0;
     }
 
     .dn-bubble-title {
-      width: 79px;
+      width: 76px;
       color: #fff;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 1000;
-      line-height: 1.02;
+      line-height: 0.98;
       text-align: center;
       text-wrap: balance;
       text-shadow: 0 2px 5px rgba(13, 37, 67, .34);
+      align-self: center;
     }
 
     .dn-bubble-primary .dn-bubble-title {
-      font-size: 22px;
+      font-size: 18px;
       line-height: .98;
       letter-spacing: -.015em;
       text-shadow: 0 2px 5px rgba(12, 43, 76, .36);
     }
 
     .dn-bubble-gold .dn-bubble-title {
-      font-size: 28px;
+      font-size: 19px;
       line-height: .95;
       letter-spacing: -.02em;
     }
 
     .dn-bubble-green .dn-bubble-title {
-      font-size: 25px;
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .dn-bubble-coral .dn-bubble-title {
+      font-size: 16px;
+      line-height: .98;
+      letter-spacing: -.02em;
+    }
+
+    .dn-bubble-violet .dn-bubble-title {
+      font-size: 15px;
       line-height: 1;
       letter-spacing: -.02em;
     }
@@ -2848,6 +3483,7 @@
         bottom: 28px;
         width: min(94vw, 430px);
         transform: translateX(-50%);
+        transform-origin: center bottom;
       }
 
       .dn-floating-guide {
@@ -2871,14 +3507,123 @@
       }
 
       .dn-bubble-stack {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .dn-guide-bubble {
+        width: 70px;
+        height: 70px;
+      }
+
+      .dn-bubble-title,
+      .dn-bubble-primary .dn-bubble-title,
+      .dn-bubble-gold .dn-bubble-title,
+      .dn-bubble-green .dn-bubble-title,
+      .dn-bubble-coral .dn-bubble-title,
+      .dn-bubble-violet .dn-bubble-title {
+        width: 58px;
+        font-size: 10px;
+        line-height: 0.96;
+      }
+
+      .dn-bubble-icon,
+      .dn-bubble-primary .dn-bubble-icon {
+        font-size: 21px;
+      }
+
+      .dn-bubble-note {
+        font-size: 9px;
       }
 
       .dn-guide-mini {
         width: 146px;
         height: 54px;
         font-size: 18px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .comparison-template {
+        min-height: 0;
+        aspect-ratio: 1535 / 1024;
+        background-size: 100% 100%;
+        background-position: center;
+      }
+
+      .comparison-scene .comparison-product-slot .balance-product {
+        width: 100%;
+        height: 100%;
+      }
+
+      .comparison-scene .comparison-product-slot .balance-product .package {
+        width: 54%;
+        height: 88%;
+      }
+
+      .comparison-scene .comparison-product-slot .balance-product .package.bottle {
+        width: 48%;
+        height: 92%;
+      }
+
+      .comparison-scene .comparison-decision {
+        top: 64.1%;
+        width: 17.2%;
+        height: 7.7%;
+      }
+
+      .comparison-scene .comparison-recommend {
+        height: 100%;
+        border-radius: 12px;
+        font-size: 0.58rem;
+      }
+
+      .comparison-scene .comparison-recommend::before {
+        display: none;
+      }
+
+      .comparison-scene .compare-metrics {
+        top: 70.6%;
+        height: 11.6%;
+      }
+
+      .comparison-scene .compare-metric {
+        min-height: 0;
+        gap: 3px;
+      }
+
+      .comparison-scene .metric-icon {
+        display: none;
+      }
+
+      .comparison-scene .metric-label,
+      .comparison-scene .compare-metric strong {
+        font-size: 0.62rem;
+      }
+
+      .comparison-scene .metric-values {
+        gap: 4px;
+        font-size: 0.58rem;
+      }
+
+      .comparison-scene .metric-vs {
+        width: 20px;
+        height: 20px;
+        font-size: 0.5rem;
+      }
+
+      .comparison-scene .compare-score-note {
+        top: 86.3%;
+        height: 9.6%;
+        padding: 0 3%;
+      }
+
+      .comparison-scene .compare-score-note span:first-child {
+        font-size: 0.58rem;
+      }
+
+      .comparison-scene .brand-mark {
+        font-size: 0.78rem;
       }
     }
   </style>
@@ -2898,21 +3643,35 @@
         <a class="dn-guide-bubble dn-bubble-blue dn-bubble-primary" href="/seo/co-pit-pri-hubnuti/" aria-label="Co pít když">
           <span class="dn-bubble-content">
             <span class="dn-bubble-icon">🎯</span>
-            <span class="dn-bubble-title">Co pít<br>když...</span>
+            <span class="dn-bubble-title">Co pít<br>když</span>
           </span>
         </a>
 
-        <a class="dn-guide-bubble dn-bubble-gold" href="#napoje-a-z" aria-label="Nápoje A-Z">
+        <a class="dn-guide-bubble dn-bubble-gold" href="#top" aria-label="Vyhledat nápoj">
           <span class="dn-bubble-content">
-            <span class="dn-bubble-note">Nápoje</span>
-            <span class="dn-bubble-title">A-Z</span>
+            <span class="dn-bubble-icon">🔍</span>
+            <span class="dn-bubble-title">Vyhledat<br>nápoj</span>
           </span>
         </a>
 
-        <a class="dn-guide-bubble dn-bubble-green" href="#eckopedie" aria-label="Éčka">
+        <a class="dn-guide-bubble dn-bubble-green" href="#zebricky" aria-label="Žebříčky">
+          <span class="dn-bubble-content">
+            <span class="dn-bubble-icon">🏆</span>
+            <span class="dn-bubble-title">Žebříčky</span>
+          </span>
+        </a>
+
+        <a class="dn-guide-bubble dn-bubble-coral" href="/rizikova-ecka/" aria-label="Riziková éčka">
           <span class="dn-bubble-content">
             <span class="dn-bubble-icon">🧪</span>
-            <span class="dn-bubble-title">Éčka</span>
+            <span class="dn-bubble-title">Riziková<br>éčka</span>
+          </span>
+        </a>
+
+        <a class="dn-guide-bubble dn-bubble-violet" href="#porovnat-napoje" aria-label="Porovnávač">
+          <span class="dn-bubble-content">
+            <span class="dn-bubble-icon">⚖️</span>
+            <span class="dn-bubble-title">Porovnávač</span>
           </span>
         </a>
       </div>
@@ -2946,13 +3705,18 @@
     </script>
     <header class="header">
       <div class="container nav">
-        <div class="brand"><span class="mark">DN</span><span>DámeNápoj.cz</span></div>
-        <small>Překládáme etikety do lidské řeči.</small>
+        <div class="nav-main">
+          <a class="brand" href="/" aria-label="DámeNápoj.cz - homepage"><span class="mark">DN</span><span>DámeNápoj.cz</span></a>
+          <a class="nav-risk-link" href="rizikova-ecka/">Riziková éčka 🧪</a>
+        </div>
+        <div class="nav-actions">
+          <small>Překládáme etikety do lidské řeči.</small>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" id="top">
         <div class="container hero-grid">
           <div>
             <h1 class="hero-title">Co přesně piju?</h1>
@@ -2969,41 +3733,6 @@
             </div>
           </div>
 
-          <aside class="summary-card truth-panel" aria-label="Co je uvnitř nápoje">
-            <h3 class="truth-kicker">Co je uvnitř tvého nápoje?</h3>
-            <div class="truth-visual" aria-hidden="true">
-              <div class="truth-can"></div>
-              <div class="truth-glass">
-                <span class="truth-sugar"></span>
-                <span class="truth-crystals"></span>
-                <span class="truth-spark"></span>
-                <span class="truth-e">E150d</span>
-                <span class="truth-e">E330</span>
-                <span class="truth-e">E951</span>
-              </div>
-              <div class="truth-labels">
-                <div class="truth-label"><i>▣</i><span><strong>Cukr</strong><span><b id="heroSugar">35 g</b> v balení</span></span></div>
-                <div class="truth-label"><i>⚡</i><span><strong>Kofein</strong><span><b id="heroCaffeine">32 mg</b> v balení</span></span></div>
-                <div class="truth-label"><i>✦</i><span><strong>Sladidla</strong><span>bez cukru neznamená bez otázek</span></span></div>
-                <div class="truth-label"><i>E</i><span><strong>Éčka</strong><span>stačí vědět, proč tam jsou</span></span></div>
-              </div>
-            </div>
-          </aside>
-        </div>
-
-        <div class="truth-realization">
-          <h3>Věděl jsi to?</h3>
-          <p>DámeNápoj překládá etikety <strong>do lidské řeči.</strong></p>
-          <span class="down-cue" aria-hidden="true">⌄</span>
-        </div>
-
-        <div class="truth-impact" aria-label="Na co může mít nápoj vliv">
-          <div class="impact-grid">
-            <div class="impact-card"><i>♡</i><strong>Tep</strong><span>energie a stimulace</span></div>
-            <div class="impact-card"><i>◌</i><strong>Tuk v těle</strong><span>kalorie, cukr, návyky</span></div>
-            <div class="impact-card"><i>⌁</i><strong>Síla</strong><span>výkon a regenerace</span></div>
-            <div class="impact-card"><i>↗</i><strong>Sprint</strong><span>rychlá energie</span></div>
-          </div>
         </div>
       </section>
 
@@ -3093,7 +3822,7 @@
         </div>
       </section>
 
-      <section class="section detail-only">
+      <section class="section detail-only" id="zebricky">
         <div class="container">
           <h2>TOP žebříčky podle cíle</h2>
           <div class="secondary-path-note">
@@ -3115,6 +3844,23 @@
         </div>
       </section>
 
+      <section class="section detail-only" id="porovnat-napoje">
+        <div class="container">
+          <h2>Porovnat nápoje</h2>
+          <div class="content-block">
+            <div class="compare-selects">
+              <select id="compareDrinkA" aria-label="První nápoj">
+                <option value="">Vyber první nápoj</option>
+              </select>
+              <select id="compareDrinkB" aria-label="Druhý nápoj">
+                <option value="">Vyber druhý nápoj</option>
+              </select>
+            </div>
+            <div id="comparisonResult"></div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="napoje-a-z">
         <div class="container">
           <h2>Rozcestník nápojů</h2>
@@ -3128,19 +3874,6 @@
           <div class="category-overview" id="categoryOverview"></div>
           <div class="compare-grid" id="compareGrid"></div>
           <button class="button secondary" id="cardShowMore" type="button">Zobrazit další nápoje</button>
-        </div>
-      </section>
-
-      <section class="section detail-only" id="porovnat-napoje">
-        <div class="container">
-          <h2>Porovnat nápoje</h2>
-          <div class="content-block">
-            <div class="compare-selects">
-              <select id="compareDrinkA" aria-label="První nápoj"></select>
-              <select id="compareDrinkB" aria-label="Druhý nápoj"></select>
-            </div>
-            <div id="comparisonResult"></div>
-          </div>
         </div>
       </section>
 
@@ -3361,7 +4094,7 @@
       let eckoEntries = [];
       let cardFilterQuery = '';
       let cardActiveLetter = '';
-      let cardVisibleLimit = 30;
+      let cardVisibleLimit = directoryBatchLimit();
       let lastCardCategorySlug = null;
       let typingHintTimer = null;
       let recommendationCache = new Map();
@@ -4264,7 +4997,7 @@
           return {
             label,
             target,
-            note: target ? recommendationNutritionNote(target) : 'Doporučení se zpřesní po načtení grafu.',
+            note: target ? recommendationNutritionNote(target) : 'Déenko zatím nemá pro tuto pozici dost silnou alternativu.',
             badge: target && !isTasteAlternative(product, target) ? 'Zdravější náhrada, ne chuťová alternativa' : 'Chuťová alternativa'
           };
         });
@@ -4415,7 +5148,6 @@
         if (recommendationCache.has(product.id)) return recommendationCache.get(product.id);
         if (!recommendationGraphReady) {
           const items = lightweightRecommendationItems(product);
-          recommendationCache.set(product.id, items);
           return items;
         }
         const options = { allowMoreCaffeine: isEnergyGoal(product) };
@@ -4977,10 +5709,14 @@
       }
 
       function compareValue(product, key) {
-        return numericValue(product?.scores?.[key]?.[0]);
+        const value = product?.scores?.[key]?.[0];
+        if (value === null || value === undefined || value === '') return null;
+        const number = Number(value);
+        return Number.isFinite(number) ? number : null;
       }
 
       function betterProduct(first, second, valueA, valueB, mode) {
+        if (!Number.isFinite(valueA) || !Number.isFinite(valueB)) return null;
         if (valueA === valueB) return null;
         if (mode === 'lower') return valueA < valueB ? first : second;
         if (mode === 'higher') return valueA > valueB ? first : second;
@@ -4994,19 +5730,24 @@
       function comparisonScale(first, second, rows) {
         let firstWins = 0;
         let secondWins = 0;
-        rows.forEach(({ winner }) => {
+        const comparableRows = rows.filter(({ comparable }) => comparable !== false);
+        comparableRows.forEach(({ winner }) => {
           if (!winner) return;
           if (winner.id === first.id) firstWins += 1;
           if (winner.id === second.id) secondWins += 1;
         });
+        if (comparableRows.length < 3) {
+          return { firstWins, secondWins, winner: null, leftClass: 'even', rightClass: 'even', insufficientData: true, comparableTotal: comparableRows.length };
+        }
         const diff = firstWins - secondWins;
         const winner = Math.abs(diff) <= 1 ? null : diff > 0 ? first : second;
         const leftClass = !winner ? 'even' : winner.id === first.id ? 'winner' : 'loser';
         const rightClass = !winner ? 'even' : winner.id === second.id ? 'winner' : 'loser';
-        return { firstWins, secondWins, winner, leftClass, rightClass };
+        return { firstWins, secondWins, winner, leftClass, rightClass, insufficientData: false, comparableTotal: comparableRows.length };
       }
 
       function comparisonScaleSummary(first, second, rows, scale) {
+        if (scale.insufficientData) return 'Na jasný verdikt zatím není dost porovnatelných dat.';
         if (!scale.winner) return 'Rozdíl mezi nápoji je malý.';
         const other = scale.winner.id === first.id ? second : first;
         const wins = rows
@@ -5052,14 +5793,48 @@
         return `
           <div class="balance-product" aria-hidden="true">
             <div class="package ${product.shape === 'bottle' ? 'bottle' : ''}" style="--pack:${product.color}">
-              <div class="${packageLabelClass(product.name)}">${packageLabel(product.name)}</div>
+              <div class="${packageLabelClass(comparisonPackageText(product.name))}">${comparisonPackageLabel(product.name)}</div>
             </div>
           </div>
         `;
       }
 
+      function comparisonPackageText(productName) {
+        return productName
+          .replace(/\s+CZ$/, '')
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean)
+          .slice(0, 2)
+          .join(' ');
+      }
+
+      function comparisonPackageLabel(productName) {
+        const label = comparisonPackageText(productName);
+        return label
+          .split(/\s+/)
+          .filter(Boolean)
+          .map((part) => `<span>${escapeHtml(part)}</span>`)
+          .join('');
+      }
+
+      function comparableNumber(value) {
+        if (value === null || value === undefined || value === '') return null;
+        const number = Number(value);
+        return Number.isFinite(number) ? number : null;
+      }
+
+      function formatCompareValue(value, unit) {
+        const number = comparableNumber(value);
+        return number === null ? '—' : `${number} ${unit}`.trim();
+      }
+
+      function formatCompareScore(value) {
+        return Number.isFinite(value) ? `${value}/10` : '—/10';
+      }
+
       function comparisonVisualScore(wins, total) {
-        if (!total) return '0,0';
+        if (!total) return '—';
         return (Math.round((wins / total) * 100) / 10).toLocaleString('cs-CZ', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
       }
 
@@ -5075,10 +5850,10 @@
         const eSecond = productENumberCount(second);
         const eWinner = betterProduct(first, second, eFirst, eSecond, 'lower');
         const items = [
-          { icon: '□', label: 'Cukr', valueA: `${first.sugar} g`, valueB: `${second.sugar} g`, winner: rowWinner('Cukr v balení') },
-          { icon: '⚡', label: 'Kofein', valueA: `${first.caffeine} mg`, valueB: `${second.caffeine} mg`, winner: rowWinner('Kofein v balení') },
-          { icon: '◌', label: 'Kalorie', valueA: `${first.calories} kcal`, valueB: `${second.calories} kcal`, winner: rowWinner('Kalorie v balení') },
-          { icon: '◇', label: 'Éčka', valueA: `${eFirst}`, valueB: `${eSecond}`, winner: eWinner }
+          { icon: '▦', label: 'Cukr', valueA: formatCompareValue(first.sugar, 'g'), valueB: formatCompareValue(second.sugar, 'g'), winner: rowWinner('Cukr v balení') },
+          { icon: '⚡', label: 'Kofein', valueA: formatCompareValue(first.caffeine, 'mg'), valueB: formatCompareValue(second.caffeine, 'mg'), winner: rowWinner('Kofein v balení') },
+          { icon: '🔥', label: 'Kalorie', valueA: formatCompareValue(first.calories, 'kcal'), valueB: formatCompareValue(second.calories, 'kcal'), winner: rowWinner('Kalorie v balení') },
+          { icon: 'E', label: 'Éčka', valueA: `${eFirst}`, valueB: `${eSecond}`, winner: eWinner }
         ];
         return `
           <div class="compare-metrics">
@@ -5097,87 +5872,120 @@
         `;
       }
 
+      function comparisonSideMarkup(product, side, state = {}) {
+        return `
+          <article class="comparison-drink-card is-${side} ${state.className || 'even'} ${product ? '' : 'is-empty'}">
+            ${product ? `
+              <div class="comparison-drink-head">
+                <strong>${escapeHtml(product.name)}</strong>
+                <small>${escapeHtml(product.package || '')}</small>
+              </div>
+            ` : ''}
+            ${product ? `<div class="comparison-product-slot">${comparisonProductArt(product)}</div>` : ''}
+            ${state.showScore ? `
+              <div class="comparison-score-row">
+                <div class="comparison-score"><span>Celkové skóre 1–10</span><strong>${escapeHtml(state.score || '—')}</strong></div>
+                <span class="comparison-status">${escapeHtml(state.status || 'Vyrovnané')}</span>
+              </div>
+            ` : ''}
+          </article>
+        `;
+      }
+
+      function comparisonSceneMarkup({ first = null, second = null, scale = null, rows = [], firstScore = '—', secondScore = '—', message = '', focusTarget = '', showFull = false }) {
+        const leftStatus = showFull ? (scale?.winner && scale.winner.id === first?.id ? 'Lepší volba' : scale?.winner ? 'Méně doporučená' : 'Vyrovnané') : '';
+        const rightStatus = showFull ? (scale?.winner && scale.winner.id === second?.id ? 'Lepší volba' : scale?.winner ? 'Méně doporučená' : 'Vyrovnané') : '';
+        return `
+          <div class="compare-scale">
+            <div class="comparison-template comparison-scene">
+              <img class="comparison-scene-layer comparison-scene-panel" src="assets/compare-scene-static.png" alt="" aria-hidden="true">
+              ${comparisonSideMarkup(first, 'left', { className: scale?.leftClass, showScore: showFull, score: firstScore, status: leftStatus })}
+              ${showFull ? `
+                <div class="comparison-decision ${scale?.winner && scale.winner.id === first?.id ? 'is-left-winner' : scale?.winner && scale.winner.id === second?.id ? 'is-right-winner' : 'is-even'}">
+                  ${scale?.winner ? '<span class="comparison-recommend">Déenko doporučuje</span>' : ''}
+                </div>
+              ` : ''}
+              ${comparisonSideMarkup(second, 'right', { className: scale?.rightClass, showScore: showFull, score: secondScore, status: rightStatus })}
+              ${showFull ? comparisonMetricStrip(first, second, rows) : ''}
+              ${showFull ? `
+                <div class="compare-score-note">
+                  <span><strong>Skóre je vypočteno na základě kritérií:</strong> cukr, kofein, kalorie, éčka a sladidla.</span>
+                  <span class="brand-mark">DámeNápoj</span>
+                </div>
+              ` : ''}
+            </div>
+            ${message && !showFull ? `<button class="compare-selection-hint" type="button" data-focus-select="${escapeHtml(focusTarget || 'first')}">${escapeHtml(message)}</button>` : ''}
+            ${message && showFull ? `<p class="scale-summary">${escapeHtml(message)}</p>` : ''}
+          </div>
+        `;
+      }
+
+      function bindComparisonHint() {
+        if (!comparisonResult) return;
+        const hint = comparisonResult.querySelector('[data-focus-select]');
+        if (!hint) return;
+        hint.addEventListener('click', () => {
+          const target = hint.dataset.focusSelect === 'second' ? compareDrinkB : compareDrinkA;
+          target?.focus();
+        });
+      }
+
       function renderComparison() {
         if (!comparisonControlsReady) renderComparisonControls();
         if (!compareDrinkA || !compareDrinkB || !comparisonResult || !modelProducts.length) return;
-        const first = modelProducts.find((product) => product.id === compareDrinkA.value) || modelProducts[0];
-        const second = modelProducts.find((product) => product.id === compareDrinkB.value) || modelProducts[1] || modelProducts[0];
+        const first = modelProducts.find((product) => product.id === compareDrinkA.value);
+        const second = modelProducts.find((product) => product.id === compareDrinkB.value);
+        if (!first && !second) {
+          comparisonResult.innerHTML = comparisonSceneMarkup({ message: 'Vyberte dva nápoje pro porovnání.', focusTarget: 'first' });
+          bindComparisonHint();
+          return;
+        }
+        if (!first || !second) {
+          comparisonResult.innerHTML = comparisonSceneMarkup({ first, second, message: 'Vyberte druhý nápoj pro porovnání.', focusTarget: first ? 'second' : 'first' });
+          bindComparisonHint();
+          return;
+        }
+        const sugarA = comparableNumber(first.sugar);
+        const sugarB = comparableNumber(second.sugar);
+        const caloriesA = comparableNumber(first.calories);
+        const caloriesB = comparableNumber(second.calories);
+        const caffeineA = comparableNumber(first.caffeine);
+        const caffeineB = comparableNumber(second.caffeine);
+        const weightA = compareValue(first, 'weight');
+        const weightB = compareValue(second, 'weight');
+        const kidsA = compareValue(first, 'kids');
+        const kidsB = compareValue(second, 'kids');
+        const energyA = compareValue(first, 'energy');
+        const energyB = compareValue(second, 'energy');
+        const sportA = compareValue(first, 'sport');
+        const sportB = compareValue(second, 'sport');
         const sweetenerWinner = hasCompareSweeteners(first) === hasCompareSweeteners(second)
           ? null
           : hasCompareSweeteners(first) ? second : first;
         const rows = [
-          { label: 'Cukr v balení', valueA: `${first.sugar} g`, valueB: `${second.sugar} g`, winner: betterProduct(first, second, numericValue(first.sugar), numericValue(second.sugar), 'lower') },
-          { label: 'Kalorie v balení', valueA: `${first.calories} kcal`, valueB: `${second.calories} kcal`, winner: betterProduct(first, second, numericValue(first.calories), numericValue(second.calories), 'lower') },
-          { label: 'Kofein v balení', valueA: `${first.caffeine} mg`, valueB: `${second.caffeine} mg`, winner: betterProduct(first, second, numericValue(first.caffeine), numericValue(second.caffeine), 'lower') },
+          { label: 'Cukr v balení', valueA: formatCompareValue(first.sugar, 'g'), valueB: formatCompareValue(second.sugar, 'g'), winner: betterProduct(first, second, sugarA, sugarB, 'lower'), comparable: sugarA !== null && sugarB !== null },
+          { label: 'Kalorie v balení', valueA: formatCompareValue(first.calories, 'kcal'), valueB: formatCompareValue(second.calories, 'kcal'), winner: betterProduct(first, second, caloriesA, caloriesB, 'lower'), comparable: caloriesA !== null && caloriesB !== null },
+          { label: 'Kofein v balení', valueA: formatCompareValue(first.caffeine, 'mg'), valueB: formatCompareValue(second.caffeine, 'mg'), winner: betterProduct(first, second, caffeineA, caffeineB, 'lower'), comparable: caffeineA !== null && caffeineB !== null },
           { label: 'Sladidla', valueA: sweetenerText(first), valueB: sweetenerText(second), winner: sweetenerWinner },
-          { label: 'Hubnutí', valueA: `${compareValue(first, 'weight')}/10`, valueB: `${compareValue(second, 'weight')}/10`, winner: betterProduct(first, second, compareValue(first, 'weight'), compareValue(second, 'weight'), 'higher') },
-          { label: 'Děti', valueA: `${compareValue(first, 'kids')}/10`, valueB: `${compareValue(second, 'kids')}/10`, winner: betterProduct(first, second, compareValue(first, 'kids'), compareValue(second, 'kids'), 'higher') },
-          { label: 'Energie', valueA: `${compareValue(first, 'energy')}/10`, valueB: `${compareValue(second, 'energy')}/10`, winner: betterProduct(first, second, compareValue(first, 'energy'), compareValue(second, 'energy'), 'higher') },
-          { label: 'Sport', valueA: `${compareValue(first, 'sport')}/10`, valueB: `${compareValue(second, 'sport')}/10`, winner: betterProduct(first, second, compareValue(first, 'sport'), compareValue(second, 'sport'), 'higher') }
+          { label: 'Hubnutí', valueA: formatCompareScore(weightA), valueB: formatCompareScore(weightB), winner: betterProduct(first, second, weightA, weightB, 'higher'), comparable: weightA !== null && weightB !== null },
+          { label: 'Děti', valueA: formatCompareScore(kidsA), valueB: formatCompareScore(kidsB), winner: betterProduct(first, second, kidsA, kidsB, 'higher'), comparable: kidsA !== null && kidsB !== null },
+          { label: 'Energie', valueA: formatCompareScore(energyA), valueB: formatCompareScore(energyB), winner: betterProduct(first, second, energyA, energyB, 'higher'), comparable: energyA !== null && energyB !== null },
+          { label: 'Sport', valueA: formatCompareScore(sportA), valueB: formatCompareScore(sportB), winner: betterProduct(first, second, sportA, sportB, 'higher'), comparable: sportA !== null && sportB !== null }
         ];
-        const weightWinner = betterProduct(first, second, compareValue(first, 'weight'), compareValue(second, 'weight'), 'higher');
-        const sugarWinner = betterProduct(first, second, numericValue(first.sugar), numericValue(second.sugar), 'lower');
-        const energyWinner = betterProduct(first, second, compareValue(first, 'energy'), compareValue(second, 'energy'), 'higher');
-        const winnerText = (label, winner) => `${label}: ${winner ? winner.name : 'vyrovnané'}`;
+        const weightWinner = betterProduct(first, second, weightA, weightB, 'higher');
+        const sugarWinner = betterProduct(first, second, sugarA, sugarB, 'lower');
+        const energyWinner = betterProduct(first, second, energyA, energyB, 'higher');
+        const winnerText = (label, winner, comparable = true) => `${label}: ${comparable ? (winner ? winner.name : 'vyrovnané') : 'nedostatek dat'}`;
         const scale = comparisonScale(first, second, rows);
         const scaleSummary = comparisonScaleSummary(first, second, rows, scale);
-        const reasons = comparisonReasons(rows, scale);
-        const tiltClass = !scale.winner ? 'tilt-even' : scale.winner.id === first.id ? 'tilt-left' : 'tilt-right';
-        const pointDiff = Math.abs(scale.firstWins - scale.secondWins);
-        const pointDiffUnit = pointDiff === 1 ? 'bod' : pointDiff >= 2 && pointDiff <= 4 ? 'body' : 'bodů';
-        const pointDiffText = `o ${pointDiff} ${pointDiffUnit} lepší volba`;
-        const firstVisualScore = comparisonVisualScore(scale.firstWins, rows.length);
-        const secondVisualScore = comparisonVisualScore(scale.secondWins, rows.length);
+        const firstVisualScore = comparisonVisualScore(scale.firstWins, scale.comparableTotal);
+        const secondVisualScore = comparisonVisualScore(scale.secondWins, scale.comparableTotal);
         comparisonResult.innerHTML = `
-          <div class="compare-scale">
-            <h3 class="compare-scale-title">Vizuální porovnání</h3>
-            <p class="compare-scale-subtitle">Který nápoj je pro vás lepší volba?</p>
-            <div class="scale-visual">
-              <div class="scale-side is-left ${scale.leftClass}">
-                ${scale.winner && scale.winner.id === first.id ? '<span class="winner-label">Lepší volba</span>' : ''}
-                <strong>${escapeHtml(first.name)}</strong>
-                <small>${escapeHtml(first.package || '')}</small>
-                <div class="scale-score-card"><span>Celkové skóre</span><strong>${firstVisualScore}</strong><em>/10</em></div>
-                <span class="side-status">${scale.winner && scale.winner.id === first.id ? 'Doporučená volba' : scale.winner ? 'Méně doporučená' : 'Vyrovnané'}</span>
-                ${scale.winner && scale.winner.id === first.id ? `<span class="winner-callout">DámeNápoj doporučuje<small>${escapeHtml(pointDiffText)}</small></span>` : ''}
-              </div>
-              <div class="balance-stage ${tiltClass}" aria-hidden="true">
-                <div class="balance-person"><span class="balance-arm left"></span><span class="balance-arm right"></span></div>
-                <div class="balance-beam"></div>
-                <div class="balance-center"></div>
-                <div class="balance-pan left ${scale.winner && scale.winner.id === first.id ? 'winner' : ''}">
-                  <span class="balance-chain chain-a"></span>
-                  <span class="balance-chain chain-b"></span>
-                  ${comparisonProductArt(first)}
-                  <span class="pan-dish"></span>
-                </div>
-                <div class="balance-pan right ${scale.winner && scale.winner.id === second.id ? 'winner' : ''}">
-                  <span class="balance-chain chain-a"></span>
-                  <span class="balance-chain chain-b"></span>
-                  ${comparisonProductArt(second)}
-                  <span class="pan-dish"></span>
-                </div>
-              </div>
-              <div class="scale-side is-right ${scale.rightClass}">
-                ${scale.winner && scale.winner.id === second.id ? '<span class="winner-label">Lepší volba</span>' : ''}
-                <strong>${escapeHtml(second.name)}</strong>
-                <small>${escapeHtml(second.package || '')}</small>
-                <div class="scale-score-card"><span>Celkové skóre</span><strong>${secondVisualScore}</strong><em>/10</em></div>
-                <span class="side-status">${scale.winner && scale.winner.id === second.id ? 'Doporučená volba' : scale.winner ? 'Méně doporučená' : 'Vyrovnané'}</span>
-                ${scale.winner && scale.winner.id === second.id ? `<span class="winner-callout">DámeNápoj doporučuje<small>${escapeHtml(pointDiffText)}</small></span>` : ''}
-              </div>
-            </div>
-            ${comparisonMetricStrip(first, second, rows)}
-            <div class="compare-score-note">
-              <span><strong>Skóre je vypočteno na základě kritérií:</strong> cukr, kofein, kalorie, éčka a sladidla.</span>
-              <span class="brand-mark">DámeNápoj</span>
-            </div>
-            <p class="scale-summary">${escapeHtml(scaleSummary)}</p>
-          </div>
+          ${comparisonSceneMarkup({ first, second, scale, rows, firstScore: firstVisualScore, secondScore: secondVisualScore, message: scaleSummary, showFull: true })}
           <p class="compare-verdict">${[
-            winnerText('Lepší volba pro hubnutí', weightWinner),
-            winnerText('Méně cukru', sugarWinner),
-            winnerText('Více energie', energyWinner)
+            winnerText('Lepší volba pro hubnutí', weightWinner, weightA !== null && weightB !== null),
+            winnerText('Méně cukru', sugarWinner, sugarA !== null && sugarB !== null),
+            winnerText('Více energie', energyWinner, energyA !== null && energyB !== null)
           ].join(' · ')}</p>
           <table class="compare-table">
             <thead>
@@ -5201,12 +6009,10 @@
         const options = modelProducts
           .map((product) => `<option value="${escapeHtml(product.id)}">${escapeHtml(product.name)}</option>`)
           .join('');
-        compareDrinkA.innerHTML = options;
-        compareDrinkB.innerHTML = options;
-        const coca = modelProducts.find((product) => product.id === 'coca-cola-original-cz') || findProduct('Coca-Cola Original') || modelProducts[0];
-        const kofola = modelProducts.find((product) => product.id === 'kofola-original-cz') || findProduct('Kofola Original') || modelProducts[1] || modelProducts[0];
-        compareDrinkA.value = coca.id;
-        compareDrinkB.value = kofola.id;
+        compareDrinkA.innerHTML = `<option value="">Vyber první nápoj</option>${options}`;
+        compareDrinkB.innerHTML = `<option value="">Vyber druhý nápoj</option>${options}`;
+        compareDrinkA.value = '';
+        compareDrinkB.value = '';
         comparisonControlsReady = true;
         compareDrinkA.addEventListener('change', renderComparison);
         compareDrinkB.addEventListener('change', renderComparison);
@@ -5215,6 +6021,8 @@
 
       function bindLazyComparisonControls() {
         if (!compareDrinkA || !compareDrinkB || !comparisonResult) return;
+        comparisonResult.innerHTML = comparisonSceneMarkup({ message: 'Vyberte dva nápoje pro porovnání.', focusTarget: 'first' });
+        bindComparisonHint();
         const init = () => renderComparisonControls();
         compareDrinkA.addEventListener('focus', init, { once: true });
         compareDrinkB.addEventListener('focus', init, { once: true });
@@ -5234,20 +6042,52 @@
 
       function renderRankings() {
         const rankingDefs = [
-          ['TOP nápoje na hubnutí', (product) => scoreValue(product, 'weight') * 10 - numericValue(product.sugar)],
-          ['TOP nápoje pro energii', (product) => scoreValue(product, 'energy') * 10 + numericValue(product.caffeine) / 10],
-          ['TOP nápoje pro děti', (product) => scoreValue(product, 'kids') * 10 - numericValue(product.caffeine) / 10 - numericValue(product.sugar) / 5],
-          ['TOP nápoje na každý den', (product) => scoreValue(product, 'daily') * 10 - numericValue(product.sugar) / 5],
-          ['TOP nápoje bez cukru', (product) => numericValue(product.sugar) === 0 ? scoreValue(product, 'daily') * 10 : -numericValue(product.sugar)],
-          ['TOP nápoje bez kofeinu', (product) => numericValue(product.caffeine) === 0 ? scoreValue(product, 'daily') * 10 - numericValue(product.sugar) / 5 : -numericValue(product.caffeine)]
+          ['TOP nápoje na hubnutí', '/seo/napoje-na-hubnuti/', (product) => scoreValue(product, 'weight') * 10 - numericValue(product.sugar)],
+          ['TOP nápoje pro energii', '/kategorie/energeticke-napoje', (product) => scoreValue(product, 'energy') * 10 + numericValue(product.caffeine) / 10],
+          ['TOP nápoje pro děti', '/seo/napoje-pro-deti/', (product) => scoreValue(product, 'kids') * 10 - numericValue(product.caffeine) / 10 - numericValue(product.sugar) / 5],
+          ['TOP nápoje na každý den', '#napoje-a-z', (product) => scoreValue(product, 'daily') * 10 - numericValue(product.sugar) / 5],
+          ['TOP nápoje bez cukru', '/seo/napoje-bez-cukru/', (product) => numericValue(product.sugar) === 0 ? scoreValue(product, 'daily') * 10 : -numericValue(product.sugar)],
+          ['TOP nápoje bez kofeinu', '/seo/napoje-bez-kofeinu/', (product) => numericValue(product.caffeine) === 0 ? scoreValue(product, 'daily') * 10 - numericValue(product.sugar) / 5 : -numericValue(product.caffeine)]
         ];
         const products = modelProducts.filter((product) => product && product.id && product.name);
-        const cards = rankingDefs.map(([title, ranker]) => {
-          const items = [...products]
-            .sort((a, b) => ranker(b) - ranker(a))
-            .slice(0, 8);
+        const homepageBrandUse = new Map();
+        const brandKey = (product) => normalizeText(product.brand || product.name || product.id);
+        const selectHomepageRankingItems = (sortedProducts, limit = 3) => {
+          const selected = [];
+          const localBrands = new Set();
+          const candidates = sortedProducts.slice(0, 16);
+          candidates.forEach((product) => {
+            if (selected.length >= limit) return;
+            const brand = brandKey(product);
+            if (localBrands.has(brand)) return;
+            if ((homepageBrandUse.get(brand) || 0) >= 2) return;
+            selected.push(product);
+            localBrands.add(brand);
+          });
+          candidates.forEach((product) => {
+            if (selected.length >= limit) return;
+            if (selected.some((item) => item.id === product.id)) return;
+            const brand = brandKey(product);
+            if (localBrands.has(brand)) return;
+            selected.push(product);
+            localBrands.add(brand);
+          });
+          sortedProducts.forEach((product) => {
+            if (selected.length >= limit) return;
+            if (selected.some((item) => item.id === product.id)) return;
+            selected.push(product);
+          });
+          selected.forEach((product) => {
+            const brand = brandKey(product);
+            homepageBrandUse.set(brand, (homepageBrandUse.get(brand) || 0) + 1);
+          });
+          return selected;
+        };
+        const cards = rankingDefs.map(([title, href, ranker]) => {
+          const sorted = [...products].sort((a, b) => ranker(b) - ranker(a));
+          const items = selectHomepageRankingItems(sorted, 3);
           if (!items.length) return '';
-          return `<section class="ranking-card"><strong>${title}</strong><ol>${items.map((product) => `<li>${productLink(product)}</li>`).join('')}</ol></section>`;
+          return `<section class="ranking-card"><strong>${title}</strong><ol>${items.map((product) => `<li>${productLink(product)}</li>`).join('')}</ol><a class="button secondary" href="${href}">Zobrazit celý žebříček</a></section>`;
         }).filter(Boolean);
         toggleDataSection(rankingsGrid, cards.length > 0);
         rankingsGrid.innerHTML = cards.join('');
@@ -5638,8 +6478,10 @@
           currentInput.dataset.autofilled = 'true';
           stopTypingHint();
         }
-        document.getElementById('heroSugar').textContent = `${product.sugar} g`;
-        document.getElementById('heroCaffeine').textContent = `${product.caffeine} mg`;
+        const heroSugar = document.getElementById('heroSugar');
+        const heroCaffeine = document.getElementById('heroCaffeine');
+        if (heroSugar) heroSugar.textContent = `${product.sugar} g`;
+        if (heroCaffeine) heroCaffeine.textContent = `${product.caffeine} mg`;
         const productTitleTag = isHomeRoute() && !options.pushUrl ? 'h2' : 'h1';
         let productTitle = document.getElementById('productName');
         if (productTitle && productTitle.tagName.toLowerCase() !== productTitleTag) {
@@ -5683,14 +6525,7 @@
           <div class="insight"><strong>Největší nevýhody</strong><p>${product.cons.join(' · ')}</p></div>
         `;
         document.getElementById('denkoSaysText').textContent = `${product.type}, ${product.package}. ${product.human}`;
-        const sugarValue = Number(product.sugar) || 0;
-        const caffeineValue = Number(product.caffeine) || 0;
-        const sugarHumanCopy = sugarValue <= 0
-          ? (caffeineValue <= 0
-            ? 'Tenhle nápoj je bez cukru. Z pohledu cukru je vhodný i pro každodenní pití; dál dává smysl sledovat hlavně složení a vlastní toleranci.'
-            : 'Tenhle nápoj je bez cukru. Z pohledu cukru nezatěžuje denní příjem, takže hlavní roli hrají jiné věci: sladidla, kofein, kyseliny nebo to, jak často ho pijete.')
-          : `${product.sugar} g cukru v balení je zhruba ${product.cubes} kostek. Na 100 ml: ${product.sugarPer100} g cukru. Pokud si dáte jeden kus denně, za rok je to ${sugarStory(product.sugar).year} cukru.`;
-        document.getElementById('sugarHumanText').textContent = sugarHumanCopy;
+        document.getElementById('sugarHumanText').textContent = `${product.sugar} g cukru v balení je zhruba ${product.cubes} kostek. Na 100 ml: ${product.sugarPer100} g cukru. Pokud si dáte jeden kus denně, za rok je to ${sugarStory(product.sugar).year} cukru.`;
         renderSense(product);
         document.getElementById('recommendationProductName').textContent = product.name;
         document.getElementById('recommendationsList').innerHTML = recommendationItems(product).map(({ label, target, note, badge }) => `
@@ -5769,7 +6604,7 @@
         const landingRoute = currentLandingRoute();
         const landingKey = landingRoute ? `${landingRoute.type}:${landingRoute.slug}` : '';
         if (landingKey !== lastCardCategorySlug) {
-          cardVisibleLimit = 30;
+          cardVisibleLimit = directoryBatchLimit();
           cardFilterQuery = '';
           cardActiveLetter = '';
           if (cardFilterInput) cardFilterInput.value = '';
@@ -5846,15 +6681,23 @@
           button.addEventListener('click', () => {
             cardActiveLetter = button.dataset.letter;
             cardFilterQuery = '';
-            cardVisibleLimit = 30;
+            cardVisibleLimit = directoryBatchLimit();
             if (cardFilterInput) cardFilterInput.value = '';
             renderCards();
           });
         });
       }
 
+      function directoryBatchLimit() {
+        return window.matchMedia('(max-width: 700px)').matches ? 6 : 10;
+      }
+
+      function searchSuggestionLimit() {
+        return window.matchMedia('(max-width: 700px)').matches ? 4 : 6;
+      }
+
       function renderSearchResults(results, query = '') {
-        const visibleResults = results.slice(0, 8);
+        const visibleResults = results.slice(0, searchSuggestionLimit());
         if (!visibleResults.length) {
           suggestions.innerHTML = `<span class="suggestion" aria-live="polite">Nic nenalezeno pro „${query}“</span>`;
           return;
@@ -5911,11 +6754,11 @@
         cardFilterInput.addEventListener('input', () => {
           cardFilterQuery = cardFilterInput.value;
           if (cardFilterQuery.trim()) cardActiveLetter = '';
-          cardVisibleLimit = 30;
+          cardVisibleLimit = directoryBatchLimit();
           renderCards();
         });
         cardShowMore.addEventListener('click', () => {
-          cardVisibleLimit += 30;
+          cardVisibleLimit += directoryBatchLimit();
           renderCards();
         });
         renderSearchResults(modelProducts);
@@ -5977,5 +6820,7 @@
 </body>
 </html>
 <!-- TEST 1119 -->
+
+
 
 

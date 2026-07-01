@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riziková éčka v nápojích: kterým se raději vyhnout | DámeNápoj.cz</title>
+  <meta name="description" content="Přehled problematičtějších éček, sladidel a přísad v nápojích. Zjisti, které látky se vyplatí hlídat a ve kterých nápojích jsou.">
+  <link rel="canonical" href="https://www.damenapoj.cz/rizikova-ecka/">
+  <meta property="og:title" content="Riziková éčka v nápojích | DámeNápoj.cz">
+  <meta property="og:description" content="Které látky v nápojích se vyplatí hlídat a ve kterých nápojích je najdeš.">
+  <meta property="og:url" content="https://www.damenapoj.cz/rizikova-ecka/">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --ink: #0c1730;
+      --muted: #62708a;
+      --line: rgba(118, 141, 166, .22);
+      --panel: rgba(255,255,255,.88);
+      --cyan: #20c7d6;
+      --warn: #ffb84a;
+      --violet: #8f7cff;
+      --green: #39d38a;
+      --red: #ff6b6b;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 8%, rgba(31, 202, 216, .18), transparent 34%),
+        radial-gradient(circle at 84% 16%, rgba(255, 184, 74, .16), transparent 32%),
+        linear-gradient(135deg, #071225 0%, #10243b 34%, #eef9fb 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      min-height: 100vh;
+      padding: 14px 20px 36px;
+      background-image:
+        linear-gradient(rgba(98, 216, 226, .09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(98, 216, 226, .09) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+
+    .container {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #27d7df, #55df99);
+      color: #052036;
+      box-shadow: 0 14px 38px rgba(18, 202, 205, .32);
+    }
+
+    .back {
+      color: rgba(255,255,255,.84);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .56fr);
+      gap: 14px;
+      align-items: stretch;
+      margin-bottom: 12px;
+    }
+
+    .hero-copy,
+    .lab-panel,
+    .substance-card,
+    .results-panel,
+    .note-panel {
+      border: 1px solid rgba(213, 230, 241, .74);
+      background: var(--panel);
+      box-shadow: 0 24px 70px rgba(4, 20, 38, .18);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-copy {
+      padding: clamp(18px, 2.4vw, 28px);
+      border-radius: 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: #0d7889;
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(29px, 3.45vw, 42px);
+      line-height: 1;
+      letter-spacing: -.04em;
+      max-width: 820px;
+    }
+
+    .lead {
+      max-width: 700px;
+      margin: 0;
+      color: #50627d;
+      font-size: clamp(14px, 1.35vw, 16px);
+      line-height: 1.38;
+    }
+
+    .lab-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 172px;
+      padding: 18px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 50% 34%, rgba(255, 184, 74, .22), transparent 32%),
+        radial-gradient(circle at 68% 70%, rgba(137, 124, 255, .24), transparent 36%),
+        rgba(245, 252, 253, .84);
+    }
+
+    .molecule {
+      position: absolute;
+      inset: 18px;
+      opacity: .66;
+    }
+
+    .node,
+    .bond {
+      position: absolute;
+      display: block;
+    }
+
+    .node {
+      width: 15px;
+      height: 15px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1ed2d9, #90f0bb);
+      box-shadow: 0 0 36px rgba(32, 199, 214, .45);
+    }
+
+    .bond {
+      height: 2px;
+      background: linear-gradient(90deg, rgba(32,199,214,.12), rgba(32,199,214,.72));
+      transform-origin: left center;
+    }
+
+    .node.one { left: 8%; top: 22%; }
+    .node.two { right: 16%; top: 18%; background: linear-gradient(135deg, #ffb84a, #ff7a65); }
+    .node.three { left: 38%; bottom: 20%; background: linear-gradient(135deg, #8f7cff, #20c7d6); }
+    .node.four { right: 8%; bottom: 16%; }
+    .bond.a { left: 17%; top: 27%; width: 42%; transform: rotate(18deg); }
+    .bond.b { left: 45%; top: 58%; width: 42%; transform: rotate(-26deg); }
+    .bond.c { left: 42%; bottom: 27%; width: 38%; transform: rotate(18deg); }
+
+    .lab-title {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #081a34;
+      font-size: 18px;
+      line-height: 1.12;
+      letter-spacing: -.03em;
+    }
+
+    .lab-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 320px;
+      margin-top: 6px;
+      color: #52617b;
+      line-height: 1.36;
+      font-size: 13px;
+    }
+
+    .risk-filter {
+      margin: 0 0 10px;
+      padding: 8px;
+      border: 1px solid rgba(129, 169, 192, .45);
+      border-radius: 19px;
+      background:
+        linear-gradient(135deg, rgba(9, 25, 48, .72), rgba(11, 42, 64, .58)),
+        radial-gradient(circle at 0% 50%, rgba(32, 199, 214, .2), transparent 38%);
+      box-shadow: 0 20px 58px rgba(4, 20, 38, .2);
+      backdrop-filter: blur(18px);
+    }
+
+    .risk-filter-track {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      padding-bottom: 2px;
+    }
+
+    .risk-filter button {
+      flex: 0 0 auto;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid rgba(202, 232, 241, .24);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: rgba(236, 250, 252, .86);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 950;
+      cursor: pointer;
+      transition: transform .16s ease, background .16s ease, color .16s ease, box-shadow .16s ease;
+    }
+
+    .risk-filter button:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.13);
+      color: #fff;
+    }
+
+    .risk-filter button.active {
+      color: #062237;
+      background: linear-gradient(135deg, #20c7d6, #45dd91);
+      border-color: rgba(255,255,255,.72);
+      box-shadow: 0 14px 32px rgba(32, 199, 214, .34);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 10px 0 20px;
+    }
+
+    .substance-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 218px;
+      display: grid;
+      align-content: space-between;
+      gap: 11px;
+      padding: 16px;
+      border-radius: 22px;
+      transition: opacity .18s ease, filter .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .grid.is-filtered .substance-card {
+      opacity: .38;
+      filter: saturate(.55) contrast(.86);
+      transform: scale(.985);
+    }
+
+    .grid.is-filtered .substance-card.is-match {
+      opacity: 1;
+      filter: none;
+      transform: translateY(-2px);
+      box-shadow: 0 26px 78px rgba(8, 34, 58, .24), 0 0 0 1px rgba(32, 199, 214, .18);
+    }
+
+    .substance-card::before {
+      content: "";
+      position: absolute;
+      inset: -44px -44px auto auto;
+      width: 112px;
+      height: 112px;
+      border-radius: 999px;
+      opacity: .2;
+      background: var(--accent, var(--cyan));
+    }
+
+    .substance-visual {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.95), rgba(229,244,249,.74));
+      color: var(--accent, var(--cyan));
+      font-size: 27px;
+      font-weight: 950;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 16px 32px rgba(20, 42, 66, .12);
+    }
+
+    .substance-card h2 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.12;
+      letter-spacing: -.03em;
+    }
+
+    .type {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(13, 120, 137, .09);
+      color: #0d7889;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .substance-card p {
+      margin: 0;
+      color: #58677f;
+      line-height: 1.38;
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 38px;
+      padding: 9px 13px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #20c7d6, #45dd91);
+      color: #052036;
+      font-weight: 950;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(24, 197, 174, .28);
+    }
+
+    .results-panel,
+    .note-panel {
+      border-radius: 30px;
+      padding: 26px;
+      margin-top: 24px;
+    }
+
+    .results-panel h2,
+    .note-panel h2 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      letter-spacing: -.035em;
+    }
+
+    .drink-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .drink-card {
+      display: grid;
+      gap: 10px;
+      min-height: 190px;
+      padding: 18px;
+      border: 1px solid rgba(202, 222, 235, .86);
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.96), rgba(238,249,251,.82)),
+        radial-gradient(circle at 92% 12%, rgba(32,199,214,.2), transparent 28%);
+      text-decoration: none;
+      box-shadow: 0 16px 38px rgba(16, 43, 70, .1);
+    }
+
+    .drink-card strong {
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: -.025em;
+    }
+
+    .drink-meta {
+      color: #62708a;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .drink-card p {
+      margin: 0;
+      color: #56677f;
+      line-height: 1.45;
+    }
+
+    .empty {
+      margin: 18px 0 0;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .72);
+      color: #61708a;
+    }
+
+    .source-text {
+      color: #5b6b84;
+      line-height: 1.6;
+    }
+
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .source-links a {
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #0d7889;
+      text-decoration: none;
+      font-weight: 850;
+      background: rgba(255,255,255,.64);
+    }
+
+    .tone-sweetener { --accent: var(--violet); }
+    .tone-color { --accent: var(--red); }
+    .tone-preservative { --accent: var(--green); }
+    .tone-stimulant { --accent: var(--warn); }
+    .tone-acid { --accent: var(--cyan); }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid,
+      .drink-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 12px 14px 32px; }
+      .topbar {
+        margin-bottom: 12px;
+        gap: 10px;
+      }
+      .hero {
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      h1 {
+        font-size: clamp(30px, 10vw, 38px);
+      }
+      .hero-copy,
+      .lab-panel {
+        padding: 16px;
+      }
+      .lab-panel {
+        min-height: 150px;
+      }
+      .risk-filter {
+        margin-bottom: 10px;
+        padding: 7px;
+        border-radius: 18px;
+      }
+      .risk-filter button {
+        min-height: 36px;
+        padding: 7px 10px;
+        font-size: 12px;
+      }
+      .hero-copy,
+      .lab-panel,
+      .substance-card,
+      .results-panel,
+      .note-panel {
+        border-radius: 24px;
+      }
+      .substance-card {
+        min-height: 0;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+      <header class="topbar">
+        <a class="brand" href="../"><span class="mark">DN</span><span>DámeNápoj.cz</span></a>
+        <a class="back" href="../">Zpět na vyhledávání</a>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Laboratorní přehled bez strašení</span>
+          <h1>Riziková éčka a přísady v nápojích</h1>
+          <p class="lead">Které látky v nápojích se vyplatí hlídat a ve kterých nápojích je najdeš.</p>
+        </div>
+        <aside class="lab-panel" aria-label="Chemický motiv">
+          <div class="molecule" aria-hidden="true">
+            <span class="node one"></span>
+            <span class="node two"></span>
+            <span class="node three"></span>
+            <span class="node four"></span>
+            <span class="bond a"></span>
+            <span class="bond b"></span>
+            <span class="bond c"></span>
+          </div>
+          <h2 class="lab-title">Ne všechno na etiketě je problém. Některé věci se ale vyplatí znát.</h2>
+          <p class="lab-copy">Déenko vybírá látky, které se řeší hlavně při častém pití, u dětí nebo u nápojů bez cukru.</p>
+        </aside>
+      </section>
+
+      <nav class="risk-filter" aria-label="Filtrovat látky podle typu">
+        <div class="risk-filter-track">
+          <button class="active" type="button" data-risk-filter="all" aria-pressed="true">Zobrazit vše</button>
+          <button type="button" data-risk-filter="sweetener" aria-pressed="false">Sladidla</button>
+          <button type="button" data-risk-filter="color" aria-pressed="false">Barviva</button>
+          <button type="button" data-risk-filter="preservative" aria-pressed="false">Konzervanty</button>
+          <button type="button" data-risk-filter="acid-stimulant" aria-pressed="false">Kyseliny a stimulanty</button>
+        </div>
+      </nav>
+
+      <section class="grid" id="substanceGrid" aria-label="Přehled rizikovějších látek"></section>
+
+      <section class="results-panel" id="substanceResults" aria-live="polite">
+        <h2>Vyber látku</h2>
+        <p class="source-text">Klikni na „Zobrazit nápoje“ u libovolné karty. DámeNápoj zkusí podle databáze najít nápoje, které danou látku obsahují.</p>
+      </section>
+
+      <section class="note-panel">
+        <h2>Zdroje a poznámka k hodnocení</h2>
+        <p class="source-text">Výběr látek vychází z veřejně dostupných informací a zohledňuje hlavně výskyt v nápojích, častou konzumaci, kontroverzi látky a vhodnost pro děti. Nejde o lékařské doporučení, ale o praktický přehled látek, které se vyplatí hlídat.</p>
+        <div class="source-links">
+          <a href="https://www.efsa.europa.eu/" rel="noopener">EFSA</a>
+          <a href="https://www.szpi.gov.cz/" rel="noopener">SZPI</a>
+          <a href="https://www.nzip.cz/" rel="noopener">NZIP</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="../universal-drinks.cz.js"></script>
+  <script>
+    const substances = [
+      { id: 'e150d', name: 'E150d karamelové barvivo', type: 'barvivo', tone: 'tone-color', visual: 'E', terms: ['e150d'], description: 'Tmavé karamelové barvivo typické pro kolové nápoje. U běžného pití nejde o paniku, ale při časté konzumaci coly je dobré vědět, že tam je.' },
+      { id: 'e951', name: 'E951 aspartam', type: 'sladidlo', tone: 'tone-sweetener', visual: '✦', terms: ['e951', 'aspartam'], description: 'Kontroverzně vnímané sladidlo v některých light a zero nápojích. Hodí se hlídat hlavně u dětí a při častém pití.' },
+      { id: 'e950', name: 'E950 acesulfam K', type: 'sladidlo', tone: 'tone-sweetener', visual: '◇', terms: ['e950', 'acesulfam', 'acesulfam-k'], description: 'Časté sladidlo v nápojích bez cukru. Samo o sobě neznamená problém, ale u zero nápojů se objevuje velmi často.' },
+      { id: 'e955', name: 'E955 sukralóza', type: 'sladidlo', tone: 'tone-sweetener', visual: '✧', terms: ['e955', 'sukraloza', 'sukralóza'], description: 'Sladidlo používané ve sportovních, zero a funkčních nápojích. Vyplatí se sledovat při každodenním pití.' },
+      { id: 'e952', name: 'E952 cyklamáty', type: 'sladidlo', tone: 'tone-sweetener', visual: '◇', terms: ['e952', 'cyklamat', 'cyklamáty'], description: 'Sladidlo, které se v Evropě používá, ale kolem něj existuje víc debat než u běžných surovin.' },
+      { id: 'e954', name: 'E954 sacharin', type: 'sladidlo', tone: 'tone-sweetener', visual: '✦', terms: ['e954', 'sacharin'], description: 'Starší intenzivní sladidlo. U nápojů má smysl hlídat hlavně kombinace více sladidel najednou.' },
+      { id: 'e211', name: 'E211 benzoan sodný', type: 'konzervant', tone: 'tone-preservative', visual: '▣', terms: ['e211', 'benzoan', 'benzoan sodny', 'benzoan sodný'], description: 'Konzervant v některých limonádách a ochucených nápojích. Praktický, ale u dětí a časté konzumace se vyplatí sledovat etiketu.' },
+      { id: 'e202', name: 'E202 sorban draselný', type: 'konzervant', tone: 'tone-preservative', visual: '▣', terms: ['e202', 'sorban', 'sorban draselny', 'sorban draselný'], description: 'Konzervant používaný proti kažení. Není automaticky špatně, jen patří mezi látky, které je dobré umět na etiketě poznat.' },
+      { id: 'e338', name: 'E338 kyselina fosforečná', type: 'kyselina', tone: 'tone-acid', visual: 'pH', terms: ['e338', 'kyselina fosforecna', 'kyselina fosforečná'], description: 'Kyselina typická pro kolové nápoje. Řeší se hlavně u častého pití sladkých col a u zubů.' },
+      { id: 'e330', name: 'E330 kyselina citronová', type: 'kyselina', tone: 'tone-acid', visual: 'pH', terms: ['e330', 'kyselina citronova', 'kyselina citronová'], description: 'Velmi běžná kyselina pro svěží chuť. Sama o sobě není strašák, ale u kyselých limonád a častého popíjení má smysl ji vnímat.' },
+      { id: 'kofein', name: 'Kofein', type: 'stimulant', tone: 'tone-stimulant', visual: '⚡', terms: ['kofein', 'caffeine'], description: 'Stimulant, který může pomoct s bdělostí, ale není ideální pro děti, večer nebo jako běžné pití celý den.' },
+      { id: 'taurin', name: 'Taurin', type: 'stimulant', tone: 'tone-stimulant', visual: '↯', terms: ['taurin'], description: 'Typická látka energy drinků. Nejde jen o cukr a kofein, energy nápoje často kombinují více stimulujících složek.' },
+      { id: 'chinin', name: 'Chinin', type: 'ostatní', tone: 'tone-acid', visual: '◌', terms: ['chinin', 'quinine'], description: 'Hořká látka typická pro toniky. U běžného množství jde hlavně o informaci, u citlivějších lidí se vyplatí vědět, že v nápoji je.' },
+      { id: 'e102', name: 'E102 tartrazin', type: 'barvivo', tone: 'tone-color', visual: 'E', terms: ['e102', 'tartrazin'], description: 'Syntetické žluté barvivo. Patří mezi barviva, která lidé často sledují hlavně u dětské konzumace.' },
+      { id: 'e110', name: 'E110 žluť SY', type: 'barvivo', tone: 'tone-color', visual: 'E', terms: ['e110', 'zlut sy', 'žluť sy'], description: 'Oranžovožluté barvivo. Pokud se v nápoji objeví, je dobré ho vnímat spíš jako látku k hlídání než jako běžnou surovinu.' }
+    ];
+
+    const grid = document.getElementById('substanceGrid');
+    const results = document.getElementById('substanceResults');
+    const filterButtons = document.querySelectorAll('[data-risk-filter]');
+    let activeFilter = 'all';
+
+    function normalize(value) {
+      return String(value || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function dataArray() {
+      const source = window.DAMENAPOJ_DATA || {};
+      if (Array.isArray(source)) return source;
+      return source.drinks || source.napoje || source.products || [];
+    }
+
+    function slugify(value) {
+      return normalize(value)
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function collectSearchText(drink) {
+      const values = [
+        drink.nazev,
+        drink.vyrobce,
+        drink.kategorie,
+        ...(Array.isArray(drink.ecka) ? drink.ecka : []),
+        ...(Array.isArray(drink.sladidla) ? drink.sladidla : []),
+        ...(Array.isArray(drink.ingredients) ? drink.ingredients : []),
+        ...(Array.isArray(drink.substances) ? drink.substances : []),
+        drink.slozeni,
+        drink.lidske_vysvetleni
+      ];
+      return normalize(values.filter(Boolean).join(' '));
+    }
+
+    function hasSubstance(drink, substance) {
+      const haystack = collectSearchText(drink);
+      if (substance.id === 'kofein' && Number(drink.kofein_na_100_ml || 0) > 0) return true;
+      return substance.terms.some((term) => haystack.includes(normalize(term)));
+    }
+
+    function groupForSubstance(item) {
+      if (item.type === 'sladidlo') return 'sweetener';
+      if (item.type === 'barvivo') return 'color';
+      if (item.type === 'konzervant') return 'preservative';
+      return 'acid-stimulant';
+    }
+
+    function applyTypeFilter() {
+      grid.classList.toggle('is-filtered', activeFilter !== 'all');
+      grid.querySelectorAll('.substance-card').forEach((card) => {
+        card.classList.toggle('is-match', activeFilter !== 'all' && card.dataset.group === activeFilter);
+      });
+      filterButtons.forEach((button) => {
+        const active = button.dataset.riskFilter === activeFilter;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+    }
+
+    function renderCards() {
+      grid.innerHTML = substances.map((item) => `
+        <article class="substance-card ${item.tone}" data-group="${groupForSubstance(item)}">
+          <div>
+            <div class="substance-visual" aria-hidden="true">${item.visual}</div>
+            <span class="type">${item.type}</span>
+          </div>
+          <div>
+            <h2>${item.name}</h2>
+            <p>${item.description}</p>
+          </div>
+          <a class="button" href="#${item.id}" data-substance="${item.id}">Zobrazit nápoje</a>
+        </article>
+      `).join('');
+      applyTypeFilter();
+    }
+
+    function renderSubstance(id) {
+      const substance = substances.find((item) => item.id === id) || substances[0];
+      const drinks = dataArray().filter((drink) => hasSubstance(drink, substance));
+      const cards = drinks.slice(0, 60).map((drink) => {
+        const slug = drink.slug || slugify(drink.nazev);
+        const category = drink.kategorie || 'nápoj';
+        return `
+          <a class="drink-card" href="../napoj/${slug}/">
+            <strong>${drink.nazev || 'Nápoj bez názvu'}</strong>
+            <span class="drink-meta">${drink.vyrobce || 'Výrobce neuveden'} · ${category}</span>
+            <p>Je v seznamu, protože podle databáze obsahuje nebo pravděpodobně souvisí s látkou ${substance.name}.</p>
+            <span class="button">Detail nápoje</span>
+          </a>
+        `;
+      }).join('');
+      results.innerHTML = `
+        <h2>${substance.name}: nápoje v databázi</h2>
+        <p class="source-text">Nalezeno: ${drinks.length}. Výpis vychází z aktuálních dat DámeNápoj a slouží jako pracovní přehled, ne jako náhrada etikety výrobce.</p>
+        ${cards ? `<div class="drink-grid">${cards}</div>` : `<div class="empty">V aktuální databázi jsme u této látky nenašli žádný nápoj. Může to znamenat, že látka v nápojích není, nebo že ji zatím nemáme v datech dost přesně označenou.</div>`}
+      `;
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    renderCards();
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.riskFilter || 'all';
+        applyTypeFilter();
+      });
+    });
+    if (window.location.hash.replace('#', '')) {
+      renderSubstance(window.location.hash.replace('#', ''));
+    }
+    window.addEventListener('hashchange', () => renderSubstance(window.location.hash.replace('#', '')));
+  </script>
+</body>
+</html>
